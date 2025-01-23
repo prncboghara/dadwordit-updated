@@ -1,0 +1,29 @@
+{
+    "clients": [
+        {
+            "image": "images/client/c-m-wise.webp",
+            "alt": "M-Wise",
+            "delay": ".2s"
+        },
+        {
+            "image": "images/client/c-esgway.webp",
+            "alt": "ESGWAY",
+            "delay": ".4s"
+        },
+        {
+            "image": "images/client/c-atralia.webp",
+            "alt": "Atralia",
+            "delay": ".6s"
+        },
+        {
+            "image": "images/client/c-perfume-online.webp",
+            "alt": "Perfume Online",
+            "delay": ".8s"
+        },
+        {
+            "image": "images/client/c-greet-eat.webp",
+            "alt": "Greet Eat",
+            "delay": "1s"
+        }
+    ]
+}

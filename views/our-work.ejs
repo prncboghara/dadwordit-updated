@@ -35,6 +35,58 @@
 	<!--Start Portfolio-->
 	<section class="portfolio-page pad-tb">
 		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-lg-6">
+			  <div class="common-heading">
+				<span>Our Work</span>
+				<h2 class="mb0">Portfolio</h2>
+			  </div>
+			</div>
+		  </div>
+	  
+		  <div class="row mt60">
+			<% portfolioItems.forEach(item => { %>
+			  <div class="col-lg-12 col-sm-12 wptbb">
+				<div class="pbwide shadow <%= item.bgClass %>">
+				  <div class="portfolio-item-info-tt">
+					<div class="logowide mb20">
+					  <img src="<%= item.logo %>" alt="logo" class="img-fluid">
+					</div>
+					<div class="widebloktag">
+					  <% item.tags.forEach(tag => { %>
+						<span><%= tag %></span>
+					  <% }) %>
+					</div>
+					<h3 class="mt30 mb30"><%= item.title %></h3>
+					<ul class="info-list-ul">
+					  <% item.technologies.forEach(tech => { %>
+						<li><%= tech %></li>
+					  <% }) %>
+					</ul>
+					<a href="<%= item.link %>" target="_blank" class="btn-outline lnk mt30">
+					  View Project <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span>
+					</a>
+				  </div>
+				  <div class="portfolio-wide-image">
+					<div class="img-wide-blocktt tilt-outer">
+					  <div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4" data-tilt-speed="1000" data-tilt-perspective="2000">
+						<div class="desktopblock shadow1">
+						  <img src="<%= item.desktopImage %>" alt="img" class="img-fluid">
+						</div>
+						<div class="mobileblock shadow1">
+						  <img src="<%= item.mobileImage %>" alt="img" class="img-fluid">
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			<% }) %>
+		  </div>
+		</div>
+	  </section>
+	<!-- <section class="portfolio-page pad-tb">
+		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
 					<div class="common-heading">
@@ -49,7 +101,7 @@
 				<div class="col-lg-12 col-sm-12 wptbb">
 					<div class="pbwide shadow bg-gradient1">
 						<div class="portfolio-item-info-tt">
-							<div class="logowide mb20"><img src="images/client/c-m-wise-portfolio.png" alt="logo" class="img-fluid"></div>
+							<div class="logowide mb20"><img src="images/client/c-m-wise-portfolio.webp" alt="logo" class="img-fluid"></div>
 							<div class="widebloktag"><span>Design</span> <span>Coding</span></div>
 							<h3 class="mt30 mb30">M-Wise - Loyalty Program Managment</h3>
 							<ul class="info-list-ul">
@@ -64,8 +116,8 @@
 							<div class="img-wide-blocktt tilt-outer">
 								<div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4"
 									data-tilt-speed="1000" data-tilt-perspective="2000">
-									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-1.png" alt="img" class="img-fluid"> </div>
-									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-1a.png" alt="img" class="img-fluid"> </div>
+									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-1.webp" alt="img" class="img-fluid"> </div>
+									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-1a.webp" alt="img" class="img-fluid"> </div>
 								</div>
 							</div>
 						</div>
@@ -76,7 +128,7 @@
 				<div class="col-lg-12 col-sm-12 wptbb">
 					<div class="pbwide shadow bg-gradient2">
 						<div class="portfolio-item-info-tt">
-							<div class="logowide mb20"><img src="images/client/c-m-greeteat-portfolio.png" alt="logo" class="img-fluid"></div>
+							<div class="logowide mb20"><img src="images/client/c-m-greeteat-portfolio.webp" alt="logo" class="img-fluid"></div>
 							<div class="widebloktag"><span>Design</span> <span>Coding</span> </div>
 							<h3 class="mt30 mb30">Greeteat - Online Meeting</h3>
 							<ul class="info-list-ul">
@@ -89,8 +141,8 @@
 						<div class="portfolio-wide-image">
 							<div class="img-wide-blocktt tilt-outer">
 								<div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4" data-tilt-speed="1000" data-tilt-perspective="2000">
-									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-2.png" alt="img" class="img-fluid"> </div>
-									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-2a.png" alt="img" class="img-fluid"> </div>
+									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-2.webp" alt="img" class="img-fluid"> </div>
+									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-2a.webp" alt="img" class="img-fluid"> </div>
 								</div>
 							</div>
 						</div>
@@ -100,7 +152,7 @@
 				<div class="col-lg-12 col-sm-12 wptbb">
 					<div class="pbwide shadow bg-gradient3">
 						<div class="portfolio-item-info-tt">
-							<div class="logowide mb20"><img src="images/client/c-m-perfume-online-portfolio.png" alt="logo" class="img-fluid"></div>
+							<div class="logowide mb20"><img src="images/client/c-m-perfume-online-portfolio.webp" alt="logo" class="img-fluid"></div>
 							<div class="widebloktag"><span>Design</span> <span>Coding</span> </div>
 							<h3 class="mt30 mb30">Perfume Online - E commerce</h3>
 							<ul class="info-list-ul">
@@ -112,8 +164,8 @@
 							<div class="img-wide-blocktt tilt-outer">
 								<div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4"
 									data-tilt-speed="1000" data-tilt-perspective="2000">
-									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-3.png" alt="img" class="img-fluid"> </div>
-									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-3a.png" alt="img" class="img-fluid"> </div>
+									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-3.webp" alt="img" class="img-fluid"> </div>
+									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-3a.webp" alt="img" class="img-fluid"> </div>
 								</div>
 							</div>
 						</div>
@@ -123,7 +175,7 @@
 				<div class="col-lg-12 col-sm-12 wptbb">
 					<div class="pbwide shadow bg-gradient4">
 						<div class="portfolio-item-info-tt">
-							<div class="logowide mb20"><img src="images/client/c-m-lumity-portfolio.png" alt="logo"
+							<div class="logowide mb20"><img src="images/client/c-m-lumity-portfolio.webp" alt="logo"
 									class="img-fluid"></div>
 							<div class="widebloktag"><span>Design</span> <span>Coding</span> </div>
 							<h3 class="mt30 mb30">Lumity - Landing Page</h3>
@@ -138,8 +190,8 @@
 							<div class="img-wide-blocktt tilt-outer">
 								<div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4"
 									data-tilt-speed="1000" data-tilt-perspective="2000">
-									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-4.png" alt="img" class="img-fluid"> </div>
-									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-4a.png" alt="img" class="img-fluid"> </div>
+									<div class="desktopblock shadow1"><img src="images/portfolio/portfolio-wide-4.webp" alt="img" class="img-fluid"> </div>
+									<div class="mobileblock shadow1"><img src="images/portfolio/portfolio-wide-4a.webp" alt="img" class="img-fluid"> </div>
 								</div>
 							</div>
 						</div>
@@ -150,7 +202,7 @@
 			</div>
 
 		</div>
-	</section>
+	</section> -->
 	<!--End Portfolio-->
 
 	<!--Start Footer-->

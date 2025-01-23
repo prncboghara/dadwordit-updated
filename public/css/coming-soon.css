@@ -2,7 +2,7 @@
 
 .wrapper {
   position: relative;
-  background: url(../images/hero/coming-soon-bg.png) no-repeat center center/cover;
+  background: url(../images/hero/coming-soon-bg.webp) no-repeat center center/cover;
   padding-top: 100px;
   padding-bottom: 100px;
   height: 100vh;
@@ -32,7 +32,7 @@
     position: relative;
     z-index: 999;
 }
-}
+
 .content h1 {
   margin-top: 0;
 }

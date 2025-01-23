@@ -52,11 +52,15 @@
               <div class="col-lg-4 col-md-4 mt30 mb30">
                 <div class="blog-share-icon text-left text-md-right">
                   <span>Share: </span>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                  <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= blog.blogUrl %>" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?url=<%= blog.blogUrl %>&text=<%= blog.name %>" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/sharing/share-offsite/?url=<%= blog.blogUrl %>" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -77,24 +81,26 @@
           </div> -->
           <div class="comments-block mt60">
             <h2 class="mb60">Comments:</h2>
-            <% if (blog.comments && blog.comments.length > 0) { %>
-              <% blog.comments.forEach(function(comment) { %>
-                <div class="media">
-                  <!-- <div class="user-image"><img src="/images/user-thumb/user3.jpg" alt="girl" class="img-fluid" /></div> -->
-                  <div class="media-body user-info  w-100">
-                    <h5 class="mb10">
-                      <%= comment.userName %> <small>says:</small>
-                      <span>
-                        <%= comment.createdAt %> <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                      </span>
-                    </h5>
-                    <p><%= comment.comment %></p>
-                  </div>
-                </div>
-              <% }) %>
-            <% } else { %>
+            <div id="commentsSection">
+              <% if (blog.comments && blog.comments.length > 0) { %>
+                <% blog.comments.forEach(function(comment) { %>
+                    <div class="media">
+                      <!-- <div class="user-image"><img src="//user3.jpg" alt="girl" class="img-fluid" /></div> -->
+                      <div class="media-body user-info  w-100">
+                        <h5 class="mb10">
+                          <%= comment.userName %> <small>says:</small>
+                          <span>
+                            <%= comment.createdAt %> <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                          </span>
+                        </h5>
+                        <p><%= comment.comment %></p>
+                      </div>
+                    </div>
+                  <% }) %>
+              <% } else { %>
                 <p>No comments available.</p>
-            <% } %>
+              <% } %>
+            </div>
             <!-- <div class="media">
               <div class="user-image"><img src="/images/user-thumb/user3.jpg" alt="girl" class="img-fluid" /></div>
               <div class="media-body user-info">
@@ -136,6 +142,9 @@
               </div>
             </div> -->
             <div class="form-block form-blog mt60">
+              <div id="successMessage" class="alert alert-success" style="display: none;">
+                Comment added successfully!
+              </div>
               <form id="commentForm">
                 <input type="hidden" name="id" value="<%= blog.id %>"> <!-- Replace with your blogPostId -->
                 <input type="hidden" name="title" value="<%= blog.name %>"> <!-- Replace with your blogPostId -->
@@ -157,7 +166,7 @@
           <div class="sidebar">
             <!--Start block for offer/ads-->
             <!-- <div class="offer-image">
-              <img src="/images/blog/strategy-guide.jpg" alt="offer" class="img-fluid" />
+              <img src="/images/blog/strategy-guide.webp" alt="offer" class="img-fluid" />
             </div> -->
             <!--End block for offer/ads-->
             <!--Start Recent post-->
@@ -270,7 +279,7 @@
 				</div>
 				<div class="col-lg-6 v-center">
 					<div class="enquire-image">
-						<img src="/images/about/contact.png" alt="enquire" class="img-fluid" />
+						<img src="/images/about/contact.webp" alt="enquire" class="img-fluid" />
 					</div>
 				</div>
 			</div>
@@ -315,8 +324,31 @@
 
         if (response.ok) {
           const result = await response.json();
-          alert('Comment added successfully!');
-          console.log(result);
+
+          const successMessage = document.getElementById('successMessage');
+          successMessage.style.display = 'block';
+
+          setTimeout(() => {
+            successMessage.style.display = 'none'
+          }, 5000);
+
+          const commentsSection = document.getElementById('commentsSection');
+          const newComment = document.createElement('div');
+          newComment.classList.add('media');
+          newComment.innerHTML = `
+            <div class="media-body user-info w-100">
+              <h5 class="mb10">
+                ${result.userName} <small>says:</small>
+                <span>
+                  ${result.createdAt} <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                </span>
+              </h5>
+              <p>${result.comment}</p>
+            </div>
+          `;
+
+          commentsSection.appendChild(newComment);
+          event.target.reset();
         } else {
           throw new Error('Failed to add comment');
         }

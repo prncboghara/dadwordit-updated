@@ -17,7 +17,7 @@ body.active-dark {    color: #a2a2a2; background: #101010;}
 .active-dark .about-agency:before { opacity: .4;}
 .active-dark .quote { background: #101010; color: #a2a2a2;  }
 .active-dark .service-section { background: #101010;}
-.active-dark .service-section:before { background: url(../images/shape/dot-shape.png) #101010;}
+.active-dark .service-section:before { background: url(../images/shape/dot-shape.webp) #101010;}
 .active-dark .service-section .s-block {background: url(../images/shape/shape-7.svg) #1d1d1d;   background-size: 0px;    border: 1px solid #151515;}
 .active-dark .shape-bg2:after {opacity: .4;}
 .active-dark .shape-bg2:before {opacity: .4;}

@@ -92,7 +92,8 @@ const getBlog = async (slug) => {
             slug: blog.slug,
             postBody: blog.postBody,
             metaDescription: blog.metaDescription,
-            comments: comments
+            comments: comments,
+            blogUrl:blog.url
         }));
 
     } catch (error) {
@@ -140,7 +141,7 @@ const postComment = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-
+        response.data.createdAt = moment(response.data.createdAt).format('MMM DD, YYYY'),
         res.status(200).json(response.data);
     } catch (error) {
         console.error('Error adding comment:', error.response?.data || error.message);

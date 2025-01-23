@@ -1,0 +1,79 @@
+{
+    "portfolioItems": [
+        {
+            "logo": "images/client/c-m-wise-portfolio.webp",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "M-Wise - Loyalty Program Management",
+            "technologies": [
+                "HTML, CSS, Bootstrap",
+                "Angular",
+                "React Js",
+                "Next Js"
+            ],
+            "link": "https://m-wise.eu/",
+            "desktopImage": "images/portfolio/portfolio-wide-1.webp",
+            "mobileImage": "images/portfolio/portfolio-wide-1a.webp",
+            "bgClass": "bg-gradient1",
+            "portfolioImg": "images/portfolio/m-wise.webp",
+            "sortTitle": "M-Wise"
+        },
+        {
+            "logo": "images/client/c-m-greeteat-portfolio.webp",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "Greeteat - Online Meeting",
+            "technologies": [
+                "HTML, CSS, Bootstrap",
+                "React JS",
+                "Node JS"
+            ],
+            "link": "https://greeteat.com/",
+            "desktopImage": "images/portfolio/portfolio-wide-2.webp",
+            "mobileImage": "images/portfolio/portfolio-wide-2a.webp",
+            "bgClass": "bg-gradient2",
+            "portfolioImg": "images/portfolio/greet-eat.webp",
+            "sortTitle": "Greeteat"
+        },
+        {
+            "logo": "images/client/c-m-perfume-online-portfolio.webp",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "Perfume Online - E commerce",
+            "technologies": [
+                "Shopify"
+            ],
+            "link": "https://perfumeonline.ca/",
+            "desktopImage": "images/portfolio/portfolio-wide-3.webp",
+            "mobileImage": "images/portfolio/portfolio-wide-3a.webp",
+            "bgClass": "bg-gradient3",
+            "portfolioImg": "images/portfolio/perfume-online.webp",
+            "sortTitle": "Perfume Online"
+        },
+        {
+            "logo": "images/client/c-m-lumity-portfolio.webp",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "Lumity - Landing Page",
+            "technologies": [
+                "HTML, CSS, Bootstrap",
+                "PHP",
+                "Laravel"
+            ],
+            "link": "https://lumity.com/",
+            "desktopImage": "images/portfolio/portfolio-wide-4.webp",
+            "mobileImage": "images/portfolio/portfolio-wide-4a.webp",
+            "bgClass": "bg-gradient4",
+            "portfolioImg": "images/portfolio/lumity.webp",
+            "sortTitle": "Lumity"
+        }
+    ]
+}

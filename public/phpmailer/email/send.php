@@ -100,7 +100,7 @@ class SendMail {
           <body>
             <div class="sw-email-body">
               <div class="emailheader">
-                <div class="logo-header"><img src="https://separateweb.com/demo-niwax/images/logo.png" alt="logo"></div>
+                <div class="logo-header"><img src="https://separateweb.com/demo-niwax/images/logo.webp" alt="logo"></div>
                 <p>We appreciate you contacting us. One of our colleagues will get back in touch with you soon! Have a great day!</p>
               </div>
               <div class="emailbodystart">

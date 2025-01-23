@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const { getRecentBlogs, getBlogs, getBlog, postComment } = require('./controllers/blog')
 const SEO_CONFIG = require('./seo/config')
+const fs = require('fs');
+const path = require('path');
 
 // Serve static files from the "public" directory
 app.use(express.static('public'));
@@ -21,12 +23,18 @@ app.use((req, res, next) => {
     }
 });
 
+const portfolioConfig = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/portfolio-config.json'), 'utf8'));
+const testimonialConfig = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/testimonial-config.json'), 'utf8'));
+const clientConfig = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/client-config.json'), 'utf8'));
 
 // routes of dadword it
 app.get('/', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
     res.render('index', { 
         recent_blogs: recent_blogs,
+        portfolioItems: portfolioConfig.portfolioItems,
+        testimonials: testimonialConfig.testimonials,
+        clients: clientConfig.clients,
         ...SEO_CONFIG.index,
         trackingId: process.env.G_TRACKING_ID
     });
@@ -54,6 +62,7 @@ app.get('/our-work', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
     res.render('our-work', { 
         recent_blogs: recent_blogs,
+        portfolioItems: portfolioConfig.portfolioItems,
         ...SEO_CONFIG.our_work,
         trackingId: process.env.G_TRACKING_ID
     });

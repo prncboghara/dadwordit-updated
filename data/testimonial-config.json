@@ -1,0 +1,25 @@
+{
+    "testimonials": [
+        {
+            "text": "They're very professional and deliver with a high level of technical knowledge.",
+            "image": "images/user-thumb/sergiu.webp",
+            "name": "Sergiu Manolache",
+            "role": "CEO of Sergman Software Services",
+            "location": "Bucharest, Romania"
+        },
+        {
+            "text": "Dadword IT is the ideal software agency. Passionate, communicative, and smart. Highly recommended.",
+            "image": "images/user-thumb/evazi.webp",
+            "name": "Yashar Evazi",
+            "role": "CEO of ESGWAY",
+            "location": "California, USA"
+        },
+        {
+            "text": "I highly recommend their services to anyone looking for quality Shopify development.",
+            "image": "images/user-thumb/anil.webp",
+            "name": "Anil Pareek",
+            "role": "CEO of Atralia",
+            "location": "Udaipur, India"
+        }
+    ]
+}

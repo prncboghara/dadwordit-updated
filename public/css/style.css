@@ -497,7 +497,7 @@ box-shadow: 0 10px 15px 0px rgba(233, 30, 99, .15);}
 .about-agency{position: relative;   overflow: hidden;}
 .about-agency:before {
 content: "";
-background: url(../images/shape/dot_bg.png);
+background: url(../images/shape/dot_bg.webp);
 position: absolute;
 width: 100%;
 height: 100%;
@@ -688,7 +688,7 @@ box-shadow:  -30px 30px 60px #f2f2f2,30px -30px 60px #ffffff;}
 .portfolio-section{ background: #fff; position: relative;}
 .portfolio-section:before{
 content: "";
-background: url(../images/shape/dot-pattern.png);
+background: url(../images/shape/dot-pattern.webp);
 position: absolute;
 height: 400px;
 right: 0;
@@ -1036,7 +1036,7 @@ footer{position: relative; }
 footer .row{    position: relative;  z-index: 1;}
 footer.ftshap:after{
 content: "";
-background: url(../images/shape/shape-1.png);
+background: url(../images/shape/shape-1.webp);
 position: absolute;
 width: 200px;
 height: 370px;
@@ -1049,7 +1049,7 @@ background-size: 80%;
 opacity: 0.5;}
 footer.ftshap:before{
 content: "";
-background: url(../images/shape/shape-2.png);
+background: url(../images/shape/shape-2.webp);
 position: absolute;
 width: 250px;
 height: 250px;
@@ -1183,7 +1183,7 @@ background: -webkit-linear-gradient(-45deg, #ffdee9 0%,#c8fff4  100%);
 background: linear-gradient(135deg, #ffdee9 0%,#c8fff4  100%);}
 .breadcrumb-area:after{
 content: ''; z-index:0;
-background: url(../images/banner/banner-shap-2.png);
+background: url(../images/banner/banner-shap-2.webp);
 background-size: auto;   position: absolute;   height: 100%;   width: 100%;   background-repeat: no-repeat;
 right: 0;   top: 0;   z-index: 1;   background-position: center right; background-size: contain;}
 .breadcrumb-area ul li {    display: block;    display: inline-block;}
@@ -1205,7 +1205,7 @@ top: -3px;}
 .block-1 .statnumb {margin: 0 0 0 0px;}
 .why-choose{background: #f7fcff;}
 /**Team page**/
-.banner-4{background: url(../images/banner/2.jpg);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
+.banner-4{background: url(../images/banner/2.webp);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
 .team{overflow:hidden;}
 .bg-gradient99{
 background: #ffffff;
@@ -1254,7 +1254,7 @@ right: -55px;
 bottom: -55px;
 z-index: 0;}
 /**Portfolio page**/
-.banner-3{background: url(../images/banner/5.jpg);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
+.banner-3{background: url(../images/banner/5.webp);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
 .common-heading.pp h2 { margin-bottom:0px;}
 .common-heading.pp{ padding: 0;    text-align: left;}
 .common-heading.pp p{    margin: 20px 0 0 0;}
@@ -1336,7 +1336,7 @@ box-shadow: 0 3.4px 2.7px -30px rgba(0, 0, 0, 0.059), 0 8.2px 8.9px -30px rgba(0
 .techonology-used-{
 text-align: center;
 background: #f9f9f9;}
-.banner-2{background: url(../images/banner/6.jpg);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
+.banner-2{background: url(../images/banner/6.webp);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
 .service{overflow:hidden;}
 .service .common-heading h2 {  margin-bottom: 20px;}
 .cta-area{
@@ -1487,7 +1487,7 @@ border-radius: 100%;
 padding: 10px;
 border: 8px solid #e9f8ff;}
 /**Case study page**/
-.banner-5{background: url(../images/banner/7.jpg);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
+.banner-5{background: url(../images/banner/7.webp);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
 .case-study1{overflow:hidden;}
 .case-study3{overflow:hidden;}
 .case-study .image-div{
@@ -1622,7 +1622,7 @@ border-radius: 5px;}
 .post-navigation span a {color: #6a6a8e;   margin-bottom: 5px;  display: block;}
 .post-navigation h4 a{ color: #050748;}
 /**contact page**/
-.banner-6{background: url(../images/banner/4.jpg);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
+.banner-6{background: url(../images/banner/4.webp);   background-repeat: no-repeat;    background-size: cover; background-position: center center;}
 .contact-location{overflow:hidden;}
 .info-card { padding: 30px;
 -webkit-box-shadow: 0 3.4px 2.7px -30px rgba(0, 0, 0, 0.059), 0 8.2px 8.9px -30px rgba(0, 0, 0, 0.071), 0 25px 40px -30px rgba(0, 0, 0, 0.2);
@@ -1752,7 +1752,7 @@ font-weight: 500;}
 .header-heading span{color: #e60072;}
 /**Lead Generation Homepage**/
 .lead-hero{
-background: url(../images/hero/bg-gradient.jpg);
+background: url(../images/hero/bg-gradient.webp);
 background-position: center center;
 background-size: cover;
 background-repeat: no-repeat;}
@@ -1779,7 +1779,7 @@ border-radius: 8px;}
 .why-choos-lg{position:relative;}
 .why-choos-lg:before{
 content: "";
-background: url(../images/shape/dot_bg.png);
+background: url(../images/shape/dot_bg.webp);
 position: absolute;
 width: 100%;
 height: 100%;
@@ -2245,12 +2245,12 @@ margin-top: 30px; position: relative; text-align: center; }
 .funfct img{width: 65px; margin: 0 auto 15px; display: block;}
 .funfct .services-cuntr{ display: inline-block; font-weight: 900; font-size: 30px; color: #050748; padding: 15px 0; }
 .about-sec-app{
-background: url(../images/shape/bg-light2.png);
+background: url(../images/shape/bg-light2.webp);
 background-size:contain;
 background-repeat: repeat-x;
 background-position: center center;}
 .service-section-app{
-background: url(../images/shape/wave-bg.png);
+background: url(../images/shape/wave-bg.webp);
 background-size:contain;
 background-repeat: repeat-x;
 background-position: center bottom;
@@ -2304,7 +2304,7 @@ right: 0; left: 0; text-align: center; top: 0; font-weight: 900; text-transform:
 .bg-flat5 {   background: #fff9f1;}
 .bg-flat6 {   background: #fff3f3;}
 .login-form-div{ max-width: 460px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px;}
-.login-page {background:url(../images/shape/bg-rectangles-.png), #101010; display: flex; height: 100vh; }
+.login-page {background:url(../images/shape/bg-rectangles-.webp), #101010; display: flex; height: 100vh; }
 .fb-btn {line-height: 46px;  background-color: #3b5998!important;}
 .google-btn {line-height: 46px;  background-color: #e94235!important;}
 .closes {right: 8px; font-size: 35px;  font-weight: 700; top: -2px; color: #d6d6d6; border: 0; background: transparent; }
@@ -3400,7 +3400,7 @@ a.smllbtnn {    line-height: 45px;    color: #fff;    border-radius: 8px;    pad
 .switch-wrapper  .slider.round:before {border-radius: 50%;}
 /****/
 .digitalagency20{
-    background: url(../images/shape/bg-glass.jpg);
+    background: url(../images/shape/bg-glass.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -3421,7 +3421,7 @@ a.smllbtnn {    line-height: 45px;    color: #fff;    border-radius: 8px;    pad
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;  
     padding: 60px 0;    
-    background: url(../images/shape/tt-work-bg.jpg);
+    background: url(../images/shape/tt-work-bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -3450,12 +3450,12 @@ a.smllbtnn {    line-height: 45px;    color: #fff;    border-radius: 8px;    pad
 .glassmorphism .work-categorys {
     background-color: #fbf9ed;
     position: relative;
-    background-image: url(../images/shape/tt-work-bg.jpg);
+    background-image: url(../images/shape/tt-work-bg.webp);
     background-size: cover;
     background-position: center center;
 }
 .glassmorphism .statistics-img {
-    background: url(../images/shape/shape-f.png),#feefff;
+    background: url(../images/shape/shape-f.webp),#feefff;
     background-position: left top;
     background-size: 130px;
     background-repeat: no-repeat;
@@ -3689,7 +3689,7 @@ a.smllbtnn {    line-height: 45px;    color: #fff;    border-radius: 8px;    pad
         background-size: auto;
 }
 .text-effect-3{
-    background: url(../images/shape/bg-gradient.jpg);
+    background: url(../images/shape/bg-gradient.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
