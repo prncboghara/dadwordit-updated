@@ -10,6 +10,18 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.json());
 
+app.use((req, res, next) => {
+    const host = req.headers.host;
+
+    // Redirect from non-www to www
+    if (!host.startsWith('www.') && process.env.NODE_ENV === 'production') {
+        res.redirect(301, `https://www.${host}${req.originalUrl}`);
+    } else {
+        next();
+    }
+});
+
+
 // routes of dadword it
 app.get('/', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
