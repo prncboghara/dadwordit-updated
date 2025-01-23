@@ -1,0 +1,132 @@
+<footer>
+    <!-- <div class="footer-row1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="email-subs">
+                        <h3>Get New Insights Weekly</h3>
+                        <p>News letter dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Enter your email</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 v-center">
+                    <div class="email-subs-form">
+                        <form>
+                            <input type="email" placeholder="Email Your Address" name="emails">
+                            <button type="submit" name="submit" class="lnk btn-main bg-btn">Subscribe <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="footer-row2">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-3 col-sm-6  ftr-brand-pp">
+                    <a class="navbar-brand mt30 mb25 f-dark-logo" href="#"> <img src="/images/logo.png" alt="Logo" /></a>
+                    <a class="navbar-brand mt30 mb25 f-white-logo" href="#"> <img src="/images/white-logo.png" alt="Logo" /></a>
+                    <p>Your Vision, Our Craft, Infinite Possibilities.</p>
+                    <!-- <a href="#" class="btn-main bg-btn3 lnk mt20">Become Partner <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a> -->
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-address-list ftr-details">
+                        <li>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <p>Email <span> <a href="mailto:contact@dadwordit.com">contact@dadwordit.com</a></span>
+                            </p>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <p>Phone <span> <a href="tel:+10000000000">+91 85110 96482</a></span></p>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-map-marker-alt"></i></span>
+                            <p>Address <span> S-305, South Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall, Rajkot - 360004</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <h5>Company</h5>
+                    <ul class="footer-address-list link-hover">
+                        <li><a href="/contact-us">Contact</a></li>
+                        <li><a href="/faq">Customer's FAQ</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-sm-6 footer-blog-">
+                    <h5>Latest Blogs</h5>
+                    <% if (recent_blogs && recent_blogs.length > 0) { %>
+                        <% recent_blogs.forEach(function(blog) { %>
+                            <div class="single-blog-">
+                                <div class="post-thumb">
+                                    <a href="<%= blog.url %>">
+                                        <img src="<%= blog.featuredImage %>" alt="<%= blog.name %>">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <p class="post-meta">
+                                        <span class="post-date"><i class="far fa-clock"></i> <%= blog.created %></span>
+                                    </p>
+                                    <h4 class="title">
+                                        <a href="<%= blog.url %>"><%= blog.name %></a>
+                                    </h4>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <p>No recent blogs available.</p>
+                    <% } %>
+                    
+                    <!-- <div class="single-blog-">
+                        <div class="post-thumb"><a href="#"><img src="images/blog/blog-small.jpg" alt="blog"></a>
+                        </div>
+                        <div class="content">
+                            <p class="post-meta"><span class="post-date"><i class="far fa-clock"></i>April 15, 2020</span></p>
+                            <h4 class="title"><a href="blog-sngle.html">We Provide you Best &amp; Creative Consulting Service</a></h4>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="footer-brands">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 v-center">
+                    <h5 class="mb10">Top App Development Companies</h5>
+                    <p>News letter dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                        Enter your email</p>
+                </div>
+                <div class="col-lg-8 v-center">
+                    <ul class="footer-badges-">
+                        <li><a href="#"><img src="images/about/badges-a.png" alt="badges"></a></li>
+                        <li><a href="#"><img src="images/about/badges-b.png" alt="badges"></a></li>
+                        <li><a href="#"><img src="images/about/badges-c.png" alt="badges"></a></li>
+                        <li><a href="#"><img src="images/about/badges-d.png" alt="badges"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="footer-row3">
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-social-media-icons">
+                            <a href="https://www.facebook.com/people/Dadword-It/61554692296159/" target="blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://x.com/dadwordit" target="blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/dadword_it/" target="blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/dadword-it/?originalSubdomain=in" target="blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="footer-">
+                            <p>© 2020-2025. All Rights Reserved By <a href="#" target="blank">Dadword IT</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,58 @@
+<head>
+	<meta charset="utf-8" />
+	<title><%= title %></title>
+	<meta name="description" content="<%= meta.description %>">
+	<meta name="keywords" content="<%= meta.keywords %>">
+	<meta name="author" content="<%= meta.author %>">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#c7ecff">
+
+	<!-- Open Graph (for social sharing) -->
+	<meta property="og:title" content="<%= og.title %>">
+	<meta property="og:description" content="<%= og.description %>">
+	<meta property="og:image" content="<%= og.image %>">
+	<meta property="og:url" content="<%= og.url %>">
+	<meta property="og:type" content="<%= og.type %>">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="<%= twitter.card %>">
+	<meta name="twitter:title" content="<%= twitter.title %>">
+	<meta name="twitter:description" content="<%= twitter.description %>">
+	<meta name="twitter:image" content="<%= twitter.image %>">
+
+	<!--website-favicon-->
+	<link href="/images/favicon.png" rel="icon">
+	<!--plugin-css-->
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/plugin.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!-- template-style-->
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/responsive.css" rel="stylesheet">
+	<link href="/css/darkmode.css" rel="stylesheet">
+
+	<% if (typeof canonical !== 'undefined' && canonical !== null) { %>
+		<link rel="canonical" href="<%= canonical %>" />
+	<% } %>
+
+
+	<% if (typeof schema !== 'undefined' && schema !== null) { %>
+		<script type="application/ld+json">
+			<%- JSON.stringify(schema) %>
+		</script>
+	<% } %>
+	
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', "<%= trackingId %>");
+    </script>
+
+</head>

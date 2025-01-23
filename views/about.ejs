@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+
+<body>
+	<!--Start Header -->
+	<%- include ('partials/header') %>
+	<!--End Header -->
+
+	<!--Breadcrumb Area-->
+	<section class="breadcrumb-area banner-1" data-background="images/banner/9.jpg">
+		<div class="text-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 v-center">
+						<div class="bread-inner">
+							<div class="bread-menu">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#">About Us</a></li>
+								</ul>
+							</div>
+							<div class="bread-title">
+								<h2>About Dadword IT</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Breadcrumb Area-->
+    
+	<!--Start About-->
+	<section class="about-agency pad-tb block-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 v-center">
+					<div class="about-image">
+						<img src="images/about/company-about.png" alt="about us" class="img-fluid" />
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="common-heading text-l ">
+						<span>About Us</span>
+						<h2>About Dadword IT</h2>
+						<p>At Dadword IT, we specialize in delivering innovative web design, development, and digital
+							solutions tailored to meet your business needs. With a passion for creativity and
+							technology, our dedicated in-house team works collaboratively to build engaging websites,
+							seamless user experiences, and robust digital strategies that drive growth and success.
+							Whether you're a startup or an enterprise, we ensure quality and reliability in every
+							project we undertake.</p>
+						<p>What sets us apart is our commitment to excellence and customer satisfaction. We believe in
+							building strong partnerships through transparent communication, timely delivery, and a
+							friendly, approachable work ethic. Trusted by businesses worldwide, our expertise spans
+							across industries, helping clients turn their visions into reality. At Dadword IT, your
+							success is our priority.</p>
+					</div>
+					<div class="row in-stats small about-statistics">
+						<div class="col-lg-4 col-sm-4">
+							<div class="statistics">
+								<div class="statnumb counter-number">
+									<span class="counter">20</span>
+									<p>Happy Clients</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-4">
+							<div class="statistics">
+								<div class="statnumb">
+									<span class="counter">2</span><span>k</span>
+									<p>Hours Worked</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-4">
+							<div class="statistics mb0">
+								<div class="statnumb counter-number">
+									<span class="counter">50</span>
+									<p>Projects Done</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End About-->
+
+	<!--Start why-choose-->
+	<section class="why-choose pad-tb">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="common-heading">
+						<span>We Are Awesome</span>
+						<h2 class="mb30">Why Choose Us</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row upset">
+				<div class="col-lg-3 col-sm-6 mt30">
+					<div class="s-block up-hor">
+						<div class="s-card-icon"><img src="images/icons/research.svg" alt="service" class="img-fluid" />
+						</div>
+						<h4>Reasearch and Analysis</h4>
+						<p>We dive deep into your business needs to deliver data-driven and effective solutions.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt30">
+					<div class="s-block up-hor">
+						<div class="s-card-icon"><img src="images/icons/chat.svg" alt="service" class="img-fluid" />
+						</div>
+						<h4>Negotiation and power</h4>
+						<p>We work closely with you to align solutions with your goals, ensuring mutual success.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt30">
+					<div class="s-block up-hor">
+						<div class="s-card-icon"><img src="images/icons/monitor.svg" alt="service" class="img-fluid" />
+						</div>
+						<h4>Creative and innovative solutions</h4>
+						<p>Our team delivers fresh, forward-thinking ideas that solve challenges and inspire growth.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt30">
+					<div class="s-block up-hor">
+						<div class="s-card-icon"><img src="images/icons/trasparency.svg" alt="service"
+								class="img-fluid" /></div>
+						<h4>Trasparency and ease of work</h4>
+						<p>We ensure clear communication and a seamless process for hassle-free collaboration.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End why-choose-->
+
+	<!--Start Footer-->
+	<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+	<!--End Footer-->
+
+	<!-- js placed at the end of the document so the pages load faster -->
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/plugin.min.js"></script>
+	<script src="js/dark-mode.js"></script>
+	<!--common script file-->
+	<script src="js/main.js"></script>
+</body>
+
+</html>
