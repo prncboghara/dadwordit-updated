@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+<head>
+	<link rel="preload" as="image" href="images/hero/hero-image-download.png" type="image/png" />
+	<link rel="preload" href="images/about/about-image-download.webp" as="image" />
+</head>
+
 
 <%- include ('partials/head', {title, meta, og, twitter, schema, trackingId}) %>
 
@@ -32,7 +37,7 @@
 					</div>
 					<div class="col-lg-6 v-center">
 						<div class="single-image wow fadeIn" data-wow-delay=".5s">
-							<img src="images/hero/hero-image-download.png" alt="web development" class="img-fluid" />
+							<img src="images/hero/hero-image-download.png" alt="web development" class="img-fluid" width="800" height="600" fetchpriority="high" />
 						</div>
 					</div>
 				</div>
@@ -47,7 +52,7 @@
 			<div class="row">
 				<div class="col-lg-6 v-center">
 					<div class="image-block">
-						<img src="images/about/about-image-download.webp" alt="about" class="img-fluid no-shadow" />
+						<img src="images/about/about-image-download.webp" alt="about" class="img-fluid no-shadow" fetchpriority="high" />
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -103,15 +108,6 @@
 						<a href="service-web.html">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
 					</div>
 				</div>
-				<!-- <div class="col-lg-3 col-sm-6 mt30 shape-loc wow fadeInUp" data-wow-delay="0.6s">
-					<div class="s-block" data-tilt data-tilt-max="5" data-tilt-speed="1000">
-						<div class="s-card-icon"><img src="images/icons/app.svg" alt="service" class="img-fluid" />
-						</div>
-						<h4>Mobile App Development</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-						<a href="service-web.html">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-					</div>
-				</div> -->
 				<div class="col-lg-3 col-sm-6 mt30 shape-loc wow fadeInUp" data-wow-delay="0.8s">
 					<div class="s-block mb0" data-tilt data-tilt-max="5" data-tilt-speed="1000">
 						<div class="s-card-icon"><img src="images/icons/marketing.svg" alt="service" class="img-fluid" /></div>
@@ -236,48 +232,6 @@
 				  </div>
 				<% }) %>
 			</div>
-			<!-- <div class="row">
-				<div class="col-lg-6 col-sm-6 mt60 wow fadeInUp" data-wow-delay="0.2s">
-					<div class="isotope_item hover-scale">
-						<div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-							<a href="/our-work"><img src="images/portfolio/m-wise.webp" alt="image" class="img-fluid" /> </a>
-						</div>
-						<div class="item-info">
-							<h4><a href="/our-work">M-Wise</a></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-sm-6 mt60 wow fadeInUp" data-wow-delay="0.8s">
-					<div class="isotope_item hover-scale">
-						<div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-							<a href="/our-work"><img src="images/portfolio/greet-eat.webp" alt="image" class="img-fluid" /> </a>
-						</div>
-						<div class="item-info">
-							<h4><a href="/our-work">Greeteat</a></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-sm-6 mt60 wow fadeInUp" data-wow-delay="0.8s">
-					<div class="isotope_item hover-scale">
-						<div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-							<a href="/our-work"><img src="images/portfolio/perfume-online.webp" alt="image" class="img-fluid" /> </a>
-						</div>
-						<div class="item-info">
-							<h4><a href="/our-work">Perfume Online</a></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-sm-6 mt60 wow fadeInUp" data-wow-delay="0.8s">
-					<div class="isotope_item hover-scale">
-						<div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-							<a href="/our-work"><img src="images/portfolio/lumity.webp" alt="image" class="img-fluid" /> </a>
-						</div>
-						<div class="item-info">
-							<h4><a href="/our-work">Lumity</a></h4>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</section>
 	<!--End Portfolio-->
@@ -297,21 +251,6 @@
 				<div class="col-lg-12">
 					<div class="opl">
 						<ul>
-							<!-- <li class=" wow fadeIn" data-wow-delay=".2s">
-								<div class="clients-logo"><img src="images/client/c-m-wise.webp" alt="text" class="img-fluid" /></div>
-							</li>
-							<li class=" wow fadeIn" data-wow-delay=".4s">
-								<div class="clients-logo"><img src="images/client/c-esgway.webp" alt="text" class="img-fluid" /></div>
-							</li>
-							<li class=" wow fadeIn" data-wow-delay=".6s">
-								<div class="clients-logo"><img src="images/client/c-atralia.webp" alt="text" class="img-fluid" /></div>
-							</li>
-							<li class=" wow fadeIn" data-wow-delay=".8s">
-								<div class="clients-logo"><img src="images/client/c-perfume-online.webp" alt="text" class="img-fluid" /></div>
-							</li>
-							<li class=" wow fadeIn" data-wow-delay="1s">
-								<div class="clients-logo"><img src="images/client/c-greet-eat.webp" alt="text" class="img-fluid" /></div>
-							</li> -->
 							<% clients.forEach(client => { %>
 								<li class="wow fadeIn" data-wow-delay="<%= client.delay %>">
 								  <div class="clients-logo">
@@ -457,52 +396,6 @@
 					  <% }) %>
 					</div>
 				</div>
-				<!-- <div class="col-lg-7">
-					<div class="owl-carousel testimonial-card-a pl25">
-						<div class="testimonial-card">
-							<div class="t-text">
-								<p>They're very professional and deliver with a high level of technical knowledge.</p>
-							</div>
-							<div class="client-thumbs mt30">
-								<div class="media v-center">
-									<div class="user-image bdr-radius"><img src="images/user-thumb/sergiu.webp" alt="girl" class="img-fluid" /></div>
-									<div class="media-body user-info v-center">
-										<h5>Sergiu Manolache</h5>
-										<p>CEO of Sergman Software Services, <small>Bucharest, Romania</small></p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="testimonial-card">
-							<div class="t-text">
-								<p>Dadword IT is the ideal software agency. Passionate, communicative, and smart. Highly recommended.</p>
-							</div>
-							<div class="client-thumbs mt30">
-								<div class="media v-center">
-									<div class="user-image bdr-radius"><img src="images/user-thumb/evazi.webp" alt="girl" class="img-fluid" /></div>
-									<div class="media-body user-info">
-										<h5>Yashar Evazi</h5>
-										<p>CEO of ESGWAY, <small>California, USA</small></p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="testimonial-card">
-							<div class="t-text">
-								<p>I highly recommend their services to anyone looking for quality Shopify development.</p>
-							</div>
-							<div class="client-thumbs mt30">
-								<div class="media v-center">
-									<div class="user-image bdr-radius"><img src="images/user-thumb/anil.webp" alt="girl" class="img-fluid" /></div>
-									<div class="media-body user-info">
-										<h5>Anil Pareek</h5>
-										<p>CEO of Atralia, <small>Udaipur, India</small></p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</section>
@@ -518,27 +411,8 @@
 						<h2 class="mt0">Have Question? Write a Message</h2>
 					</div>
 					<div class="form-block">
-						<!-- <form action="#" method="post" name="feedback-form">
-							<div class="fieldsets row">
-								<div class="col-md-6"><input type="text" placeholder="Full Name" name="name"></div>
-								<div class="col-md-6"><input type="email" placeholder="Email Address" name="email">
-								</div>
-							</div>
-							<div class="fieldsets row">
-								<div class="col-md-6"><input type="number" placeholder="Contact Number" name="phone">
-								</div>
-								<div class="col-md-6"><input type="text" placeholder="Subject" name="subject"></div>
-							</div>
-							<div class="fieldsets"><textarea placeholder="Message" name="message"></textarea></div>
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customCheck" name="example1" checked="checked">
-								<label class="custom-control-label" for="customCheck">I agree to the <a href="javascript:void(0)">Terms &amp; Conditions</a> of Business Name.</label>
-							</div>
-							<div class="fieldsets mt20"> <button type="submit" name="submit" class="lnk btn-main bg-btn">Submit <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></button> </div>
-							<p class="trm"><i class="fas fa-lock"></i>We hate spam, and we respect your privacy.</p>
-						</form> -->
-						<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-						<script>
+						<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js" defer></script>
+						<script defer>
 						hbspt.forms.create({
 							portalId: "46121436",
 							formId: "a4dda3ad-3513-478c-8b30-a551c782cb95"
@@ -580,31 +454,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div class="col-lg-4 col-sm-6 shape-loc wow fadeInUp" data-wow-delay=".4s">
-					<div class="office-card">
-						<div class="skyline-img" data-tilt data-tilt-max="4" data-tilt-speed="1000">
-							<img src="images/location/sydeny.png" alt="sydney" class="img-fluid" />
-						</div>
-						<div class="office-text">
-							<h4>Sydney</h4>
-							<p>2449 Columbia Boulevard, Sydney, 10021</p>
-							<a href="javascript:void(0)" target="blank" class="btn-outline">View on Map <i
-									class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 shape-loc wow fadeInUp" data-wow-delay=".6s">
-					<div class="office-card mb0">
-						<div class="skyline-img" data-tilt data-tilt-max="4" data-tilt-speed="1000">
-							<img src="images/location/rome.png" alt="rome" class="img-fluid" />
-						</div>
-						<div class="office-text">
-							<h4>Rome</h4>
-							<p>9988 Piazzetta Scalette Rubiani 99, Rome, 84090</p>
-							<a href="javascript:void(0)" target="blank" class="btn-outline">View on Map <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</section>
@@ -614,14 +463,14 @@
 	<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
 	<!--End Footer-->
 	<!-- js placed at the end of the document so the pages load faster -->
-	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/plugin.min.js"></script>
-	<script src="js/preloader.js"></script>
-	<script src="js/dark-mode.js"></script>
+	<script src="js/vendor/modernizr-3.5.0.min.js" defer></script>
+	<script src="js/jquery.min.js" defer></script>
+	<script src="js/bootstrap.bundle.min.js" defer></script>
+	<script src="js/plugin.min.js" defer></script>
+	<script src="js/preloader.js" defer></script>
+	<script src="js/dark-mode.js" defer></script>
 	<!--common script file-->
-	<script src="js/main.js"></script>
+	<script src="js/main.js" defer></script>
 </body>
 
 </html>

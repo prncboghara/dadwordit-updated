@@ -1,6 +1,6 @@
 //darkmode
 const chk = document.getElementById('niwax');
-chk.addEventListener('click', () => {
+chk?.addEventListener('click', () => {
   chk.checked?document.body.classList.add("active-dark"):document.body.classList.remove("active-dark");
   localStorage.setItem('darkModeStatus', chk.checked);
 });
