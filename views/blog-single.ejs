@@ -2,6 +2,10 @@
 <html lang="en" class="no-js">
 
 <%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+<style>
+ul{list-style:disc;}
+ul ul{list-style:circle;margin-left: 20px; }
+</style>
 
 <body>
   <!--Start Header -->
@@ -178,10 +182,10 @@
                   <% recent_blogs.forEach(function(blog) { %>
                     <div class="media">
                       <div class="post-image bdr-radius">
-                        <a href="<%= blog.url %>"><img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" class="img-fluid" /></a>
+                        <a href="/<%= blog.url %>"><img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" class="img-fluid" /></a>
                       </div>
                       <div class="media-body post-info">
-                        <h5><a href="<%= blog.url %>"><%= blog.name %></a></h5>
+                        <h5><a href="/<%= blog.url %>"><%= blog.name %></a></h5>
                         <p><%= blog.created %></p>
                       </div>
                     </div>

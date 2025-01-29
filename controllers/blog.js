@@ -93,7 +93,7 @@ const getBlog = async (slug) => {
             postBody: blog.postBody,
             metaDescription: blog.metaDescription,
             comments: comments,
-            blogUrl:blog.url
+            blogUrl: `https://dadwordit.com/${blog.slug}`
         }));
 
     } catch (error) {
