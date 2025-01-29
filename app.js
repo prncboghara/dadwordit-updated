@@ -84,9 +84,23 @@ app.get('/blog/:slug', async (req, res) => {
     const blog = await getBlog(`blog/${req.params.slug}`);
     res.render('blog-single', { 
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.blog,
         blog: blog[0],
-        trackingId: process.env.G_TRACKING_ID
+        trackingId: process.env.G_TRACKING_ID,
+        title: `${blog[0].name} | Dadword IT`,
+        meta: {
+            description: blog[0].metaDescription,
+            author: blog[0].authorName
+        },
+        og: {
+            title: blog[0].name,
+            description: blog[0].metaDescription,
+            image: blog[0].featuredImage,
+            url: `https://dadwordit.com/blog/${req.params.slug}`,
+            type: 'website'
+        },
+        twitter: null,
+        schema: null,
+        canonical: null
     });
 });
 
