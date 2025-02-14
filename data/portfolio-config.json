@@ -87,7 +87,7 @@
                 "Angular",
                 "Node"
             ],
-            "link": "https://lumity.com/",
+            "link": "https://organizm.ro/",
             "desktopImage": "images/portfolio/portfolio-wide-5.png",
             "mobileImage": "images/portfolio/portfolio-wide-5a.png",
             "bgClass": "bg-gradient4",
@@ -105,7 +105,7 @@
                 "HTML, CSS, Bootstrap",
                 "Webflow"
             ],
-            "link": "https://lumity.com/",
+            "link": "https://every.io/",
             "desktopImage": "images/portfolio/portfolio-wide-6.png",
             "mobileImage": "images/portfolio/portfolio-wide-6a.png",
             "bgClass": "bg-gradient4",
@@ -123,12 +123,12 @@
                 "HTML, CSS, Bootstrap",
                 "Angular"
             ],
-            "link": "https://lumity.com/",
+            "link": "https://www.pilim.net/",
             "desktopImage": "images/portfolio/portfolio-wide-7.png",
             "mobileImage": "images/portfolio/portfolio-wide-7a.png",
             "bgClass": "bg-gradient4",
             "portfolioImg": "images/portfolio/portfolio-wide-7.png",
-            "sortTitle": "Every"
+            "sortTitle": "Pilim"
         }
     ]
 }
