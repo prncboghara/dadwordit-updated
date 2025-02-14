@@ -120,7 +120,7 @@
 			<div class="-cta-btn mt70">
 				<div class="free-cta-title v-center wow zoomInDown" data-wow-delay=".9s">
 					<p>Hire a <span>Dedicated Developer</span></p>
-					<a href="get-quote.html" class="btn-main bg-btn2 lnk">Hire Now<i class="fas fa-chevron-right fa-icon"></i><span
+					<a href="/contact-us" class="btn-main bg-btn2 lnk">Hire Now<i class="fas fa-chevron-right fa-icon"></i><span
 							class="circle"></span></a>
 				</div>
 			</div>
@@ -217,7 +217,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<% portfolioItems.forEach((item, index) => { %>
+				<% portfolioItems.slice(0, 4).forEach((item, index) => { %>
 				  <div class="col-lg-6 col-sm-6 mt60 wow fadeInUp" data-wow-delay="<%= index % 2 === 0 ? '0.2s' : '0.8s' %>">
 					<div class="isotope_item hover-scale">
 					  <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
@@ -231,6 +231,13 @@
 					</div>
 				  </div>
 				<% }) %>
+
+				<div class="-cta-btn mt70">
+					<div class="free-cta-title v-center wow zoomInDown" data-wow-delay=".9s">
+						<a href="/our-work" class="btn-main bg-btn2 lnk">View More<i class="fas fa-chevron-right fa-icon"></i><span
+								class="circle"></span></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -410,7 +417,7 @@
 						<span>Contact Now</span>
 						<h2 class="mt0">Have Question? Write a Message</h2>
 					</div>
-					<div class="form-block">
+					<!-- <div class="form-block">
 						<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
 						<script>
 						hbspt.forms.create({
@@ -418,7 +425,8 @@
 							formId: "a4dda3ad-3513-478c-8b30-a551c782cb95"
 						});
 						</script>
-					</div>
+					</div> -->
+					<div class="form-block" id="hubspot-form"></div>
 				</div>
 				<div class="col-lg-6 v-center">
 					<div class="enquire-image">
@@ -464,13 +472,29 @@
 	<!--End Footer-->
 	<!-- js placed at the end of the document so the pages load faster -->
 	<script src="js/vendor/modernizr-3.5.0.min.js" defer></script>
-	<script src="js/jquery.min.js" defer></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js" defer></script>
-	<script src="js/plugin.min.js" defer></script>
+	<script src="js/plugin.min.js"></script>
 	<script src="js/preloader.js" defer></script>
 	<script src="js/dark-mode.js" defer></script>
 	<!--common script file-->
-	<script src="js/main.js" defer></script>
+	<script src="js/main.min.js"></script>
+
+	<script>
+		window.addEventListener("load", function () {
+		  const script = document.createElement("script");
+		  script.src = "https://js.hsforms.net/forms/embed/v2.js";
+		  script.charset = "utf-8";
+		  script.onload = function () {
+			hbspt.forms.create({
+			  portalId: "46121436",
+			  formId: "a4dda3ad-3513-478c-8b30-a551c782cb95",
+			  target: "#hubspot-form",
+			});
+		  };
+		  document.body.appendChild(script);
+		});
+	</script>
 </body>
 
 </html>

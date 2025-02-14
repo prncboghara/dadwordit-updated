@@ -74,6 +74,61 @@
             "bgClass": "bg-gradient4",
             "portfolioImg": "images/portfolio/lumity.webp",
             "sortTitle": "Lumity"
+        },
+        {
+            "logo": "images/client/c-m-organizm-portfolio.png",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "Organizm - Decision Making System",
+            "technologies": [
+                "HTML, CSS, Bootstrap",
+                "Angular",
+                "Node"
+            ],
+            "link": "https://lumity.com/",
+            "desktopImage": "images/portfolio/portfolio-wide-5.png",
+            "mobileImage": "images/portfolio/portfolio-wide-5a.png",
+            "bgClass": "bg-gradient4",
+            "portfolioImg": "images/portfolio/organizm.png",
+            "sortTitle": "Organizm"
+        },
+        {
+            "logo": "images/client/every.png",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "Every - Back Office Management",
+            "technologies": [
+                "HTML, CSS, Bootstrap",
+                "Webflow"
+            ],
+            "link": "https://lumity.com/",
+            "desktopImage": "images/portfolio/portfolio-wide-6.png",
+            "mobileImage": "images/portfolio/portfolio-wide-6a.png",
+            "bgClass": "bg-gradient4",
+            "portfolioImg": "images/portfolio/portfolio-wide-6.png",
+            "sortTitle": "Every"
+        },
+        {
+            "logo": "images/client/pilim.png",
+            "tags": [
+                "Design",
+                "Coding"
+            ],
+            "title": "Pilim - HR Management System",
+            "technologies": [
+                "HTML, CSS, Bootstrap",
+                "Angular"
+            ],
+            "link": "https://lumity.com/",
+            "desktopImage": "images/portfolio/portfolio-wide-7.png",
+            "mobileImage": "images/portfolio/portfolio-wide-7a.png",
+            "bgClass": "bg-gradient4",
+            "portfolioImg": "images/portfolio/portfolio-wide-7.png",
+            "sortTitle": "Every"
         }
     ]
 }

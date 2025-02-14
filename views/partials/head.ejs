@@ -50,19 +50,31 @@
 	<!--website-favicon-->
 	<link href="/images/favicon.png" rel="icon">
 	<!--plugin-css-->
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/plugin.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="/css/bootstrap.min.css" rel="stylesheet"></noscript>
+	
+	<link href="/css/plugin.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="/css/plugin.min.css" rel="stylesheet"></noscript>
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"></noscript>
+
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+	
 	<!-- template-style-->
-	<link href="/css/style.min.css" rel="stylesheet">
-	<link href="/css/responsive.min.css" rel="stylesheet">
-	<link href="/css/darkmode.min.css" rel="stylesheet">
+	<link href="/css/style.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="/css/style.min.css" rel="stylesheet"></noscript>
+
+	<link href="/css/responsive.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="/css/responsive.min.css" rel="stylesheet"></noscript>
+	
+	<link href="/css/darkmode.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link href="/css/darkmode.min.css" rel="stylesheet"></noscript>
 
 	<% if (typeof canonical !== 'undefined' && canonical !== null) { %>
 		<link rel="canonical" href="<%= canonical %>" />
 	<% } %>
-
 
 	<% if (typeof schema !== 'undefined' && schema !== null) { %>
 		<script type="application/ld+json">
