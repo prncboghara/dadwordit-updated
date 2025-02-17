@@ -51,7 +51,7 @@ app.get('/about', async (req, res) => {
 
 app.get('/service', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
-    res.render('about', { 
+    res.render('service', { 
         recent_blogs: recent_blogs,
         ...SEO_CONFIG.service,
         trackingId: process.env.G_TRACKING_ID

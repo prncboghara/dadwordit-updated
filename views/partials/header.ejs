@@ -1,3 +1,11 @@
+<style>
+    .nav-list .active a {
+        border-bottom: 3px solid #e60072;
+        font-weight: bold;
+        color: #e60072 !important;
+        line-height: 30px !important;
+    }
+</style>
 <header class="nav-bg-w main-header navfix fixed-top menu-white">
     <div class="container-fluid m-pad">
         <div class="menu-header">
@@ -77,3 +85,11 @@
         </nav>
     </div>
 </header>
+<script>
+    const menuLinks = document.querySelectorAll('.nav-list .menu a');
+    menuLinks.forEach(link => {
+        if (link.href === window.location.href) {
+            link.closest('li').classList.add('active');
+        }
+    });
+</script>

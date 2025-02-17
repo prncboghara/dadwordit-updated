@@ -1259,6 +1259,7 @@ z-index: 0;}
 .common-heading.pp{ padding: 0;    text-align: left;}
 .common-heading.pp p{    margin: 20px 0 0 0;}
 .single-card-item{ margin-top: 60px;}
+.single-card-item .item-image img{ max-height: 500px !important; height: 350px !important;}
 .filter-menu{text-align:right;}
 .filters .filter-menu.recent {
 list-style: none;
@@ -4864,4 +4865,8 @@ a.smllbtnn {
     margin-left: 10px;
     font-weight: 700;
     font-size: 20px;
+  }
+
+  .pvcpolcy-container::before {
+    background: unset !important;
   }
