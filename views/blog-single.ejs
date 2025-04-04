@@ -3,8 +3,118 @@
 
 <%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
 <style>
-ul{list-style:disc;}
-ul ul{list-style:circle;margin-left: 20px; }
+  .blog-page {
+    /* font-family: 'Arial', sans-serif; */
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  /* Paragraphs */
+  p {
+    margin-bottom: 16px;
+    color: #444;
+  }
+
+  /* Lists */
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #7E54F8;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+
+  /* Links */
+  a {
+    color: #7E54F8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 4px solid #7E54F8;
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555;
+    background: #f9f9ff;
+  }
+
 </style>
 
 <body>
@@ -40,9 +150,9 @@ ul ul{list-style:circle;margin-left: 20px; }
           <div class="blog-header">
             <h1><%= blog.name %></h1>
           </div>
-          <!-- <div class="image-set"><img src="<%= blog.featuredImage %>" alt="blog images" class="img-fluid" /></div> -->
+          <div class="image-set"><img src="<%= blog.cover %>" alt="blog images" class="img-fluid" /></div>
           <div class="blog-content mt30">
-            <%- blog.postBody %>
+            <%- blog.content %>
 
             <div class="row">
               <!-- <div class="col-lg-8 col-md-8 mt30 mb30">
@@ -84,12 +194,11 @@ ul ul{list-style:circle;margin-left: 20px; }
             </div>
           </div> -->
           <div class="comments-block mt60">
-            <h2 class="mb60">Comments:</h2>
-            <div id="commentsSection">
+            <!-- <h2 class="mb60">Comments:</h2> -->
+            <!-- <div id="commentsSection">
               <% if (blog.comments && blog.comments.length > 0) { %>
                 <% blog.comments.forEach(function(comment) { %>
                     <div class="media">
-                      <!-- <div class="user-image"><img src="//user3.jpg" alt="girl" class="img-fluid" /></div> -->
                       <div class="media-body user-info  w-100">
                         <h5 class="mb10">
                           <%= comment.userName %> <small>says:</small>
@@ -104,7 +213,7 @@ ul ul{list-style:circle;margin-left: 20px; }
               <% } else { %>
                 <p>No comments available.</p>
               <% } %>
-            </div>
+            </div> -->
             <!-- <div class="media">
               <div class="user-image"><img src="/images/user-thumb/user3.jpg" alt="girl" class="img-fluid" /></div>
               <div class="media-body user-info">
@@ -145,13 +254,13 @@ ul ul{list-style:circle;margin-left: 20px; }
                   industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
               </div>
             </div> -->
-            <div class="form-block form-blog mt60">
+            <!-- <div class="form-block form-blog mt60">
               <div id="successMessage" class="alert alert-success" style="display: none;">
                 Comment added successfully!
               </div>
               <form id="commentForm">
-                <input type="hidden" name="id" value="<%= blog.id %>"> <!-- Replace with your blogPostId -->
-                <input type="hidden" name="title" value="<%= blog.name %>"> <!-- Replace with your blogPostId -->
+                <input type="hidden" name="id" value="<%= blog.id %>">
+                <input type="hidden" name="title" value="<%= blog.name %>">
                 <div class="fieldsets row">
                   <div class="col-md-6"><input type="text" placeholder="Name" name="userName" /></div>
                   <div class="col-md-6"><input type="email" placeholder="Email" name="userEmail" /></div>
@@ -161,7 +270,7 @@ ul ul{list-style:circle;margin-left: 20px; }
                   <button type="submit" name="#" class="btn-main bg-btn lnk">Submit <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></button>
                 </div>
               </form>
-            </div>
+            </div> -->
           </div>
         </div>
         <!--End Blog Details-->
@@ -182,10 +291,10 @@ ul ul{list-style:circle;margin-left: 20px; }
                   <% recent_blogs.forEach(function(blog) { %>
                     <div class="media">
                       <div class="post-image bdr-radius">
-                        <a href="/<%= blog.url %>"><img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" class="img-fluid" /></a>
+                        <a href="<%= blog.url %>"><img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" class="img-fluid" /></a>
                       </div>
                       <div class="media-body post-info">
-                        <h5><a href="/<%= blog.url %>"><%= blog.name %></a></h5>
+                        <h5><a href="<%= blog.url %>"><%= blog.name %></a></h5>
                         <p><%= blog.created %></p>
                       </div>
                     </div>
