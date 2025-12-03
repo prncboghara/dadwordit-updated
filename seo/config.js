@@ -1,37 +1,114 @@
 const SEO_CONFIG = {
     index: {
-        title: 'Dadword IT - Leading Web Development Agency',
+        title: 'Dadword IT - SaaS Development | Web Development Agency | UI UX Design Services',
         meta: {
-            description: 'Dadword IT is a leading web development agency providing exceptional web design and web development services to help businesses succeed online.',
-            keywords: 'web development agency, web design, web development services, Dadword IT, website development, responsive design, custom web development',
+            description: 'Dadword IT is a leading SaaS development company USA offering custom SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
+            keywords: 'SaaS development company USA, web development agency, web design, web development services, Dadword IT, website development, responsive design, custom web development',
             author: 'Dadword IT'
         },
         og: {
-            title: 'Dadword IT - Leading Web Development Agency',
-            description: 'Exceptional web design and web development services for your business.',
+            title: 'Dadword IT - SaaS Development | Web Development Agency | UI UX Design Services',
+            description: 'Exceptional SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
             image: 'https://dadwordit.com/images/logo.png',
             url: 'https://dadwordit.com',
             type: 'website'
         },
         twitter: {
             card: 'summary_large_image',
-            title: 'Dadword IT - Leading Web Development Agency',
-            description: 'Exceptional web design and web development services for your business.',
+            title: 'Dadword IT - SaaS Development | Web Development Agency | UI UX Design Services',
+            description: 'Exceptional SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
             image: 'https://dadwordit.com/images/logo.png'
         },
         schema: {
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "Dadword IT",
-			"url": "https://dadwordit.com",
-			"description": "Dadword IT is a leading web development agency providing exceptional web design and web development services.",
-			"sameAs": [
-				"https://www.facebook.com/people/Dadword-It/61554692296159/",
-				"https://www.instagram.com/dadword_it/",
-				"https://x.com/dadwordit",
-				"https://www.linkedin.com/company/dadword-it"
-			]
-		}
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Dadword IT",
+            "alternateName": "Dadword IT - SaaS Development Company USA",
+            "description": "Dadword IT is a leading SaaS development company and web development agency providing custom SaaS product development, web development, and UI/UX design services.",
+            "url": "https://www.dadwordit.com",
+            "logo": "https://www.dadwordit.com/images/logo.webp",
+            "image": "https://www.dadwordit.com/images/logo.webp",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall",
+                "addressLocality": "Rajkot",
+                "addressRegion": "Gujarat",
+                "postalCode": "360004",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "22.2969",
+                "longitude": "70.7984"
+            },
+            "telephone": "+91-8511096248",
+            "email": "contact@dadwordit.com",
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "priceRange": "$$",
+            "areaServed": [
+                {
+                    "@type": "Country",
+                    "name": "United States"
+                },
+                {
+                    "@type": "Country",
+                    "name": "Canada"
+                },
+                {
+                    "@type": "Country",
+                    "name": "Germany"
+                },
+                {
+                    "@type": "Country",
+                    "name": "Switzerland"
+                },
+                {
+                    "@type": "Place",
+                    "name": "Europe"
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "SaaS Development",
+                            "description": "Custom SaaS development, SaaS MVP development, and SaaS product development services"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Web Development",
+                            "description": "Full-stack web development, React development, Angular development services"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "UI/UX Design",
+                            "description": "Mobile app UI/UX design and product design services"
+                        }
+                    }
+                ]
+            },
+            "sameAs": [
+                "https://www.facebook.com/people/Dadword-It/61554692296159/",
+                "https://www.instagram.com/dadword_it/",
+                "https://x.com/dadwordit",
+                "https://www.linkedin.com/company/dadword-it"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "20"
+            }
+        }
     },
     about: {
         title: 'About Dadword IT | Leading Web Development Agency',
@@ -54,20 +131,20 @@ const SEO_CONFIG = {
             image: 'https://dadwordit.com/images/logo.png'
         },
         schema: {
-			"@context": "https://schema.org",
-			"@type": "AboutPage",
-			"mainEntityOfPage": {
-			"@type": "WebPage",
-			"@id": "https://www.dadwordit.com/about"
-		},
-			"name": "About Dadword IT",
-			"description": "Learn about Dadword IT, a leading web development agency providing top-notch web design and development services.",
-			"publisher": {
-				"@type": "Organization",
-				"name": "Dadword IT",
-				"url": "https://www.dadwordit.com"
-			}
-		},
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.dadwordit.com/about"
+            },
+            "name": "About Dadword IT",
+            "description": "Learn about Dadword IT, a leading web development agency providing top-notch web design and development services.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dadword IT",
+                "url": "https://www.dadwordit.com"
+            }
+        },
         canonical: "https://www.dadwordit.com/about"
     },
     service: {
@@ -91,39 +168,39 @@ const SEO_CONFIG = {
             image: 'https://dadwordit.com/images/logo.png'
         },
         schema: {
-			"@context": "https://schema.org",
-			"@type": "Service",
-			"name": "Web Development and Design Services",
-			"provider": {
-				"@type": "Organization",
-				"name": "Dadword IT",
-				"url": "https://www.dadwordit.com"
-			},
-			"areaServed": "Global",
-			"description": "We provide professional web development and design services, creating custom, responsive websites for businesses of all sizes.",
-			"hasOfferCatalog": {
-				"@type": "OfferCatalog",
-				"name": "Services",
-				"itemListElement": [
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "Web Development Services",
-							"description": "Custom web development services to meet your business needs."
-						}
-					},
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "Web Design Services",
-							"description": "Responsive and visually appealing web design tailored to your brand."
-						}
-					}
-				]
-			}
-		},
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Web Development and Design Services",
+            "provider": {
+                "@type": "Organization",
+                "name": "Dadword IT",
+                "url": "https://www.dadwordit.com"
+            },
+            "areaServed": "Global",
+            "description": "We provide professional web development and design services, creating custom, responsive websites for businesses of all sizes.",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Web Development Services",
+                            "description": "Custom web development services to meet your business needs."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Web Design Services",
+                            "description": "Responsive and visually appealing web design tailored to your brand."
+                        }
+                    }
+                ]
+            }
+        },
         canonical: "https://www.dadwordit.com/service"
     },
     our_work: {
@@ -207,20 +284,20 @@ const SEO_CONFIG = {
             image: 'https://dadwordit.com/images/logo.png'
         },
         schema: {
-			"@context": "https://schema.org",
-			"@type": "AboutPage",
-			"mainEntityOfPage": {
-			"@type": "WebPage",
-			"@id": "https://www.dadwordit.com/about"
-		},
-			"name": "About Dadword IT",
-			"description": "Learn about Dadword IT, a leading web development agency providing top-notch web design and development services.",
-			"publisher": {
-				"@type": "Organization",
-				"name": "Dadword IT",
-				"url": "https://www.dadwordit.com"
-			}
-		},
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.dadwordit.com/about"
+            },
+            "name": "About Dadword IT",
+            "description": "Learn about Dadword IT, a leading web development agency providing top-notch web design and development services.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dadword IT",
+                "url": "https://www.dadwordit.com"
+            }
+        },
         canonical: "https://www.dadwordit.com/career"
     },
     lets_talk: {
@@ -311,54 +388,54 @@ const SEO_CONFIG = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What services do you offer as an IT agency?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We specialize in web design and web development services. This includes creating visually appealing and user-friendly websites, developing custom web applications, and maintaining and updating your website to ensure it stays functional and secure."
+                {
+                    "@type": "Question",
+                    "name": "What services do you offer as an IT agency?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We specialize in web design and web development services. This includes creating visually appealing and user-friendly websites, developing custom web applications, and maintaining and updating your website to ensure it stays functional and secure."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does it take to complete a web design or development project?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The timeline depends on the complexity and scope of the project. A basic website typically takes 2-4 weeks, while a more complex web application may take several months. We provide a detailed timeline after understanding your requirements."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you help with website maintenance after the project is completed?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Absolutely! We offer ongoing website maintenance and support services, including updates, bug fixes, and security checks, to ensure your website remains up-to-date and performs optimally."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer custom website design or use templates?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We provide fully customized website designs tailored to your brand and business needs. We avoid generic templates to ensure your website stands out and delivers a unique user experience."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will my website be mobile-friendly and responsive?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, all our websites are designed to be mobile-friendly and fully responsive. This ensures your site looks great and functions seamlessly on all devices, including smartphones, tablets, and desktops."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": " Do you provide SEO services for the websites you design?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we ensure your website is optimized for search engines with basic SEO practices, including proper meta tags, clean code, and fast-loading pages. For advanced SEO strategies, we can discuss additional services tailored to your goals."
+                    }
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "How long does it take to complete a web design or development project?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The timeline depends on the complexity and scope of the project. A basic website typically takes 2-4 weeks, while a more complex web application may take several months. We provide a detailed timeline after understanding your requirements."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can you help with website maintenance after the project is completed?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Absolutely! We offer ongoing website maintenance and support services, including updates, bug fixes, and security checks, to ensure your website remains up-to-date and performs optimally."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you offer custom website design or use templates?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We provide fully customized website designs tailored to your brand and business needs. We avoid generic templates to ensure your website stands out and delivers a unique user experience."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Will my website be mobile-friendly and responsive?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, all our websites are designed to be mobile-friendly and fully responsive. This ensures your site looks great and functions seamlessly on all devices, including smartphones, tablets, and desktops."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": " Do you provide SEO services for the websites you design?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we ensure your website is optimized for search engines with basic SEO practices, including proper meta tags, clean code, and fast-loading pages. For advanced SEO strategies, we can discuss additional services tailored to your goals."
-                }
-              }
             ]
         },
         canonical: "https://www.dadwordit.com/faq"

@@ -3,89 +3,99 @@
 
 <%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
 
-<body>
-	<!--Start Header -->
-	<%- include ('partials/header') %>
-	<!--End Header -->
+	<body>
+		<!--Start Header -->
+		<%- include ('partials/header') %>
+			<!--End Header -->
 
-	<!--Breadcrumb Area-->
-	<section class="breadcrumb-area banner-3">
-		<div class="text-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 v-center">
-						<div class="bread-inner">
-							<div class="bread-menu">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="#">Portfolio</a></li>
-								</ul>
-							</div>
-							<div class="bread-title">
-								<h2>Our Projects</h2>
+			<!--Breadcrumb Area-->
+			<section class="breadcrumb-area banner-3">
+				<div class="text-block">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 v-center">
+								<div class="bread-inner">
+									<div class="bread-menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="#">Portfolio</a></li>
+										</ul>
+									</div>
+									<div class="bread-title">
+										<h2>Our Projects</h2>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Breadcrumb Area-->
+			</section>
+			<!--End Breadcrumb Area-->
 
-	<!--Start Portfolio-->
-	<section class="portfolio-page pad-tb">
-		<div class="container">
-		  <div class="row justify-content-center">
-			<div class="col-lg-6">
-			  <div class="common-heading">
-				<span>Our Work</span>
-				<h2 class="mb0">Portfolio</h2>
-			  </div>
-			</div>
-		  </div>
-	  
-		  <div class="row mt60">
-			<% portfolioItems.forEach(item => { %>
-			  <div class="col-lg-12 col-sm-12 wptbb">
-				<div class="pbwide shadow <%= item.bgClass %>">
-				  <div class="portfolio-item-info-tt">
-					<div class="logowide mb20">
-					  <img src="<%= item.logo %>" alt="logo" class="img-fluid">
-					</div>
-					<div class="widebloktag">
-					  <% item.tags.forEach(tag => { %>
-						<span><%= tag %></span>
-					  <% }) %>
-					</div>
-					<h3 class="mt30 mb30"><%= item.title %></h3>
-					<ul class="info-list-ul">
-					  <% item.technologies.forEach(tech => { %>
-						<li><%= tech %></li>
-					  <% }) %>
-					</ul>
-					<a href="<%= item.link %>" target="_blank" class="btn-outline lnk mt30">
-					  View Project <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span>
-					</a>
-				  </div>
-				  <div class="portfolio-wide-image">
-					<div class="img-wide-blocktt tilt-outer">
-					  <div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4" data-tilt-speed="1000" data-tilt-perspective="2000">
-						<div class="desktopblock shadow1">
-						  <img src="<%= item.desktopImage %>" alt="img" class="img-fluid">
+			<!--Start Portfolio-->
+			<section class="portfolio-page pad-tb">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<div class="common-heading">
+								<span>Our Work</span>
+								<h2 class="mb0">Portfolio</h2>
+							</div>
 						</div>
-						<div class="mobileblock shadow1">
-						  <img src="<%= item.mobileImage %>" alt="img" class="img-fluid">
-						</div>
-					  </div>
 					</div>
-				  </div>
+
+					<div class="row mt60">
+						<% portfolioItems.forEach(item=> { %>
+							<div class="col-lg-12 col-sm-12 wptbb">
+								<div class="pbwide shadow <%= item.bgClass %>">
+									<div class="portfolio-item-info-tt">
+										<div class="logowide mb20">
+											<img src="<%= item.logo %>" alt="logo" class="img-fluid">
+										</div>
+										<div class="widebloktag">
+											<% item.tags.forEach(tag=> { %>
+												<span>
+													<%= tag %>
+												</span>
+												<% }) %>
+										</div>
+										<h3 class="mt30 mb30">
+											<%= item.title %>
+										</h3>
+										<ul class="info-list-ul">
+											<% item.technologies.forEach(tech=> { %>
+												<li>
+													<%= tech %>
+												</li>
+												<% }) %>
+										</ul>
+										<a href="<%= item.link %>" target="_blank" class="btn-outline lnk mt30">
+											View Project <i class="fas fa-chevron-right fa-icon"></i><span
+												class="circle"></span>
+										</a>
+									</div>
+									<div class="portfolio-wide-image">
+										<div class="img-wide-blocktt tilt-outer">
+											<div class="innerwidedevice tilt-inner" data-tilt data-tilt-max="4"
+												data-tilt-speed="1000" data-tilt-perspective="2000">
+												<div class="desktopblock shadow1">
+													<img src="<%= item.desktopImage %>" alt="Web development agency USA"
+														class="img-fluid">
+												</div>
+												<div class="mobileblock shadow1">
+													<img src="<%= item.mobileImage %>"
+														alt="Web development company Canada" class="img-fluid">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<% }) %>
+					</div>
 				</div>
-			  </div>
-			<% }) %>
-		  </div>
-		</div>
-	  </section>
-	<!-- <section class="portfolio-page pad-tb">
+			</section>
+			<!-- <section class="portfolio-page pad-tb">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
@@ -203,21 +213,21 @@
 
 		</div>
 	</section> -->
-	<!--End Portfolio-->
+			<!--End Portfolio-->
 
-	<!--Start Footer-->
-	<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-	<!--End Footer-->
+			<!--Start Footer-->
+			<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+				<!--End Footer-->
 
-	<!-- js placed at the end of the document so the pages load faster -->
-	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/plugin.min.js"></script>
-	<script src="js/dark-mode.js"></script>
-	<!--common script file-->
-	<script src="js/main.js"></script>
-	<!-- <script>
+				<!-- js placed at the end of the document so the pages load faster -->
+				<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+				<script src="js/jquery.min.js"></script>
+				<script src="js/bootstrap.bundle.min.js"></script>
+				<script src="js/plugin.min.js"></script>
+				<script src="js/dark-mode.js"></script>
+				<!--common script file-->
+				<script src="js/main.js"></script>
+				<!-- <script>
 		const fetchRecentBlogs = async () => {
 			const response = await fetch('https://api-dadwordit.onrender.com/api/blogs/recent', {});
 			const data = await response.json();
@@ -249,7 +259,7 @@
 			});
 		};
 		fetchRecentBlogs() -->
-	</script>
-</body>
+				</script>
+	</body>
 
 </html>

@@ -1,2 +1,16 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow admin or unnecessary directories (if any exist in future)
+# Disallow: /admin/
+
+# Allow important CSS and JS files for proper rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://www.dadwordit.com/sitemap.xml
+
+# Crawl delay (optional, adjust if needed)
+# Crawl-delay: 1

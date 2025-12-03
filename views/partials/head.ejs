@@ -1,96 +1,249 @@
 <head>
 	<meta charset="utf-8" />
-	<title><%= title %></title>
-	<% if (typeof meta.description !== 'undefined' && meta.description !== null) { %>
-	<meta name="description" content="<%= meta.description %>">
-	<% } %>
-	<% if (typeof meta.keywords !== 'undefined' && meta.keywords !== null) { %>
-	<meta name="keywords" content="<%= meta.keywords %>">
-	<% } %>
-	<% if (typeof meta.author !== 'undefined' && meta.author !== null) { %>
-	<meta name="author" content="<%= meta.author %>">
-	<% } %>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="theme-color" content="#c7ecff">
-
-	<!-- Open Graph (for social sharing) -->
-	<% if (typeof og.title !== 'undefined' && og.title !== null) { %>
-	<meta property="og:title" content="<%= og.title %>">
-	<% } %>
-	<% if (typeof og.description !== 'undefined' && og.description !== null) { %>
-	<meta property="og:description" content="<%= og.description %>">
-	<% } %>
-	<% if (typeof og.image !== 'undefined' && og.image !== null) { %>
-	<meta property="og:image" content="<%= og.image %>">
-	<% } %>
-	<% if (typeof og.url !== 'undefined' && og.url !== null) { %>
-	<meta property="og:url" content="<%= og.url %>">
-	<% } %>
-	<% if (typeof og.type !== 'undefined' && og.type !== null) { %>
-	<meta property="og:type" content="<%= og.type %>">
-	<% } %>
-
-	<!-- Twitter Card -->
-	<% if (typeof twitter !== 'undefined' && twitter !== null) { %>
-		<% if (typeof twitter.card !== 'undefined' && twitter.card !== null) { %>
-		<meta name="twitter:card" content="<%= twitter.card %>">
+	<title>
+		<%= title %>
+	</title>
+	<% if (typeof meta.description !=='undefined' && meta.description !==null) { %>
+		<meta name="description" content="<%= meta.description %>">
 		<% } %>
-		<% if (typeof twitter.title !== 'undefined' && twitter.title !== null) { %>
-		<meta name="twitter:title" content="<%= twitter.title %>">
-		<% } %>
-		<% if (typeof twitter.description !== 'undefined' && twitter.description !== null) { %>
-		<meta name="twitter:description" content="<%= twitter.description %>">
-		<% } %>
-		<% if (typeof twitter.image !== 'undefined' && twitter.image !== null) { %>
-		<meta name="twitter:image" content="<%= twitter.image %>">
-		<% } %>
-	<% } %>
+			<% if (typeof meta.keywords !=='undefined' && meta.keywords !==null) { %>
+				<meta name="keywords" content="<%= meta.keywords %>">
+				<% } %>
+					<% if (typeof meta.author !=='undefined' && meta.author !==null) { %>
+						<meta name="author" content="<%= meta.author %>">
+						<% } %>
+							<meta name="viewport" content="width=device-width,initial-scale=1">
+							<meta http-equiv="X-UA-Compatible" content="IE=edge">
+							<meta name="theme-color" content="#c7ecff">
 
-	<!--website-favicon-->
-	<link href="/images/favicon.png" rel="icon">
-	<!--plugin-css-->
-	<link href="/css/bootstrap.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="/css/bootstrap.min.css" rel="stylesheet"></noscript>
-	
-	<link href="/css/plugin.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="/css/plugin.min.css" rel="stylesheet"></noscript>
+							<!-- Open Graph (for social sharing) -->
+							<% if (typeof og.title !=='undefined' && og.title !==null) { %>
+								<meta property="og:title" content="<%= og.title %>">
+								<% } %>
+									<% if (typeof og.description !=='undefined' && og.description !==null) { %>
+										<meta property="og:description" content="<%= og.description %>">
+										<% } %>
+											<% if (typeof og.image !=='undefined' && og.image !==null) { %>
+												<meta property="og:image" content="<%= og.image %>">
+												<% } %>
+													<% if (typeof og.url !=='undefined' && og.url !==null) { %>
+														<meta property="og:url" content="<%= og.url %>">
+														<% } %>
+															<% if (typeof og.type !=='undefined' && og.type !==null) {
+																%>
+																<meta property="og:type" content="<%= og.type %>">
+																<% } %>
 
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"></noscript>
+																	<!-- Twitter Card -->
+																	<% if (typeof twitter !=='undefined' && twitter
+																		!==null) { %>
+																		<% if (typeof twitter.card !=='undefined' &&
+																			twitter.card !==null) { %>
+																			<meta name="twitter:card"
+																				content="<%= twitter.card %>">
+																			<% } %>
+																				<% if (typeof twitter.title
+																					!=='undefined' && twitter.title
+																					!==null) { %>
+																					<meta name="twitter:title"
+																						content="<%= twitter.title %>">
+																					<% } %>
+																						<% if (typeof
+																							twitter.description
+																							!=='undefined' &&
+																							twitter.description !==null)
+																							{ %>
+																							<meta
+																								name="twitter:description"
+																								content="<%= twitter.description %>">
+																							<% } %>
+																								<% if (typeof
+																									twitter.image
+																									!=='undefined' &&
+																									twitter.image
+																									!==null) { %>
+																									<meta
+																										name="twitter:image"
+																										content="<%= twitter.image %>">
+																									<% } %>
+																										<% } %>
 
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
-	
-	<!-- template-style-->
-	<link href="/css/style.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="/css/style.min.css" rel="stylesheet"></noscript>
+																											<!--website-favicon-->
+																											<link
+																												href="/images/favicon.png"
+																												rel="icon">
+																											<!--plugin-css-->
+																											<link
+																												href="/css/bootstrap.min.css"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="/css/bootstrap.min.css"
+																													rel="stylesheet">
+																											</noscript>
 
-	<link href="/css/responsive.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="/css/responsive.min.css" rel="stylesheet"></noscript>
-	
-	<link href="/css/darkmode.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link href="/css/darkmode.min.css" rel="stylesheet"></noscript>
+																											<link
+																												href="/css/plugin.min.css"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="/css/plugin.min.css"
+																													rel="stylesheet">
+																											</noscript>
 
-	<% if (typeof canonical !== 'undefined' && canonical !== null) { %>
-		<link rel="canonical" href="<%= canonical %>" />
-	<% } %>
+																											<link
+																												href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+																													rel="stylesheet">
+																											</noscript>
 
-	<% if (typeof schema !== 'undefined' && schema !== null) { %>
-		<script type="application/ld+json">
+																											<link
+																												href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+																													rel="stylesheet">
+																											</noscript>
+
+																											<!-- template-style-->
+																											<link
+																												href="/css/style.min.css"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="/css/style.min.css"
+																													rel="stylesheet">
+																											</noscript>
+
+																											<link
+																												href="/css/responsive.min.css"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="/css/responsive.min.css"
+																													rel="stylesheet">
+																											</noscript>
+
+																											<link
+																												href="/css/darkmode.min.css"
+																												rel="stylesheet"
+																												as="style"
+																												onload="this.onload=null;this.rel='stylesheet'" />
+																											<noscript>
+																												<link
+																													href="/css/darkmode.min.css"
+																													rel="stylesheet">
+																											</noscript>
+
+																											<% if
+																												(typeof
+																												canonical
+																												!=='undefined'
+																												&&
+																												canonical
+																												!==null)
+																												{ %>
+																												<link
+																													rel="canonical"
+																													href="<%= canonical %>" />
+																												<% } %>
+
+																													<% if
+																														(typeof
+																														schema
+																														!=='undefined'
+																														&&
+																														schema
+																														!==null)
+																														{
+																														%>
+																														<script
+																															type="application/ld+json">
 			<%- JSON.stringify(schema) %>
 		</script>
-	<% } %>
-	
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+																														<% }
+																															%>
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', "<%= trackingId %>");
-    </script>
+																															<!-- Regional Targeting for SEO -->
+																															<meta
+																																name="geo.region"
+																																content="US-CA" />
+																															<meta
+																																name="geo.region"
+																																content="CA" />
+																															<meta
+																																name="geo.region"
+																																content="DE" />
+																															<meta
+																																name="geo.region"
+																																content="CH" />
+																															<meta
+																																name="geo.placename"
+																																content="United States, Canada, Germany, Switzerland, Europe" />
+																															<meta
+																																name="geo.position"
+																																content="22.2969;70.7984" />
+																															<meta
+																																name="ICBM"
+																																content="22.2969, 70.7984" />
+
+																															<!-- Hreflang for International Targeting -->
+																															<link
+																																rel="alternate"
+																																hreflang="en-us"
+																																href="https://www.dadwordit.com<%= typeof canonical !== 'undefined' && canonical ? canonical.replace('https://www.dadwordit.com', '') : '' %>" />
+																															<link
+																																rel="alternate"
+																																hreflang="en-ca"
+																																href="https://www.dadwordit.com<%= typeof canonical !== 'undefined' && canonical ? canonical.replace('https://www.dadwordit.com', '') : '' %>" />
+																															<link
+																																rel="alternate"
+																																hreflang="en-gb"
+																																href="https://www.dadwordit.com<%= typeof canonical !== 'undefined' && canonical ? canonical.replace('https://www.dadwordit.com', '') : '' %>" />
+																															<link
+																																rel="alternate"
+																																hreflang="de-de"
+																																href="https://www.dadwordit.com<%= typeof canonical !== 'undefined' && canonical ? canonical.replace('https://www.dadwordit.com', '') : '' %>" />
+																															<link
+																																rel="alternate"
+																																hreflang="de-ch"
+																																href="https://www.dadwordit.com<%= typeof canonical !== 'undefined' && canonical ? canonical.replace('https://www.dadwordit.com', '') : '' %>" />
+																															<link
+																																rel="alternate"
+																																hreflang="x-default"
+																																href="https://www.dadwordit.com<%= typeof canonical !== 'undefined' && canonical ? canonical.replace('https://www.dadwordit.com', '') : '' %>" />
+
+																															<link
+																																rel="sitemap"
+																																type="application/xml"
+																																title="Sitemap"
+																																href="/sitemap.xml">
+
+																															<!-- Google tag (gtag.js) -->
+																															<script
+																																async
+																																src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>
+																															<script>
+																																window.dataLayer = window.dataLayer || [];
+																																function gtag() { dataLayer.push(arguments); }
+																																gtag('js', new Date());
+																																gtag('config', "<%= trackingId %>");
+																															</script>
 
 </head>

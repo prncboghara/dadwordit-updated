@@ -23,6 +23,6 @@ app.use((req, res, next) => {
 app.use('/', publicRoutes);
 
 // Start the server
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, "localhost", () => {
     console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
