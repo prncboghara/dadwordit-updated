@@ -490,7 +490,7 @@ display: inline-block;
 position: relative;
 -webkit-box-shadow: 0 10px 15px 0px rgba(233, 30, 99, .15);
 box-shadow: 0 10px 15px 0px rgba(233, 30, 99, .15);}
-.header-heading h1{ font-size: 60px;   line-height: 72px; font-weight: 700;  margin-bottom: 30px;}
+.header-heading h1{ font-size: 38px;   line-height: 72px; font-weight: 700;  margin-bottom: 30px;}
 .header-heading p{font-size: 20px;  line-height: 30px;  margin-bottom: 35px;}
 /**About section**/
 .about-agency .common-heading h2 {margin-bottom: 20px;}
