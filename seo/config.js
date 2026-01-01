@@ -1,13 +1,13 @@
 const SEO_CONFIG = {
     index: {
-        title: 'Dadword IT - SaaS Development | Web Development Agency | UI UX Design Services',
+        title: 'SaaS & Web Development Agency for Startups | Dadword IT',
         meta: {
             description: 'Dadword IT is a leading SaaS development company USA offering custom SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
             keywords: 'SaaS development company USA, web development agency, web design, web development services, Dadword IT, website development, responsive design, custom web development',
             author: 'Dadword IT'
         },
         og: {
-            title: 'Dadword IT - SaaS Development | Web Development Agency | UI UX Design Services',
+            title: 'SaaS & Web Development Agency for Startups | Dadword IT',
             description: 'Exceptional SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
             image: 'https://dadwordit.com/images/logo.png',
             url: 'https://dadwordit.com',
@@ -15,7 +15,7 @@ const SEO_CONFIG = {
         },
         twitter: {
             card: 'summary_large_image',
-            title: 'Dadword IT - SaaS Development | Web Development Agency | UI UX Design Services',
+            title: 'SaaS & Web Development Agency for Startups | Dadword IT',
             description: 'Exceptional SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
             image: 'https://dadwordit.com/images/logo.png'
         },

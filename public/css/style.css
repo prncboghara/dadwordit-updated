@@ -454,7 +454,7 @@ position: absolute; height: 100%; width: 100%; opacity: 0.03;}
 /**Hero section**/
 .hero-bg-bg1:before{
 content: "";
-background: url(../images/hero/banner-shap-2.png);
+/* background: url(../images/hero/banner-shap-2.png); */
 position: absolute;
 height: 100vh;
 right: 0;
