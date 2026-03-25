@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const publicRoutes = require('./routes/public');
 
+require('dotenv').config();
+
 // Serve static files from the "public" directory
 app.use(express.static('public'));
 

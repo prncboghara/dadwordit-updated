@@ -4,6 +4,167 @@
 <head>
 	<link rel="preload" as="image" href="images/hero/hero-image-download.png" type="image/png" />
 	<link rel="preload" href="images/about/about-image-download.webp" as="image" />
+
+	<style>
+		/* GRID OVERLAY (subtle premium feel) */
+		.hero-bg-bg1::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(rgba(20, 1, 1, 0.03) 1px, transparent 1px),
+				linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px) !important;
+			background-size: 40px 40px !important;
+			background-repeat: repeat !important;
+			top: 0;
+			left: 0;
+		}
+
+		.header-heading h1 {
+			line-height: 45px !important;
+		}
+
+		.bg-btn {
+			/* background: transparent !important; */
+			/* color: black !important; */
+			/* border: 1px solid black !important; */
+			/* box-shadow: unset !important; */
+			width: 100% !important;
+		}
+
+		.modern-stats-icons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			list-style: none;
+			padding: 0;
+			margin-top: 25px;
+		}
+
+		.modern-stats-icons li {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 12px 18px;
+			border-radius: 12px;
+			border: 1px solid lightgray;
+			background: rgba(255, 255, 255, 0.6);
+			backdrop-filter: blur(10px);
+		}
+
+		.modern-stats-icons i {
+			color: #7e54f8;
+		}
+
+		.info-list-ul li:before {
+			content: '' !important;
+		}
+
+		.custom-form-container {
+			max-width: 900px;
+			margin: auto;
+			padding: 20px;
+		}
+
+		.form-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 30px;
+		}
+
+		.form-group {
+			position: relative;
+			width: 100%;
+		}
+
+		.form-group input,
+		.form-group select,
+		.form-group textarea {
+			width: 100%;
+			border: none;
+			border-bottom: 2px solid #cbd5e1;
+			outline: none;
+			padding: 10px 5px;
+			font-size: 16px;
+			background: transparent;
+		}
+
+		.form-group textarea {
+			resize: none;
+		}
+
+		.form-group label {
+			position: absolute;
+			top: 10px;
+			left: 5px;
+			font-size: 14px;
+			color: #64748b;
+			pointer-events: none;
+			transition: 0.3s ease;
+		}
+
+		/* Floating effect */
+		.form-group input:focus+label,
+		.form-group input:not(:placeholder-shown)+label,
+		.form-group textarea:focus+label,
+		.form-group textarea:not(:placeholder-shown)+label,
+		.form-group select:focus+label,
+		.form-group select:valid+label {
+			top: -10px;
+			font-size: 12px;
+			color: #7e54f8;
+		}
+
+		/* Bottom line focus */
+		.form-group input:focus,
+		.form-group textarea:focus,
+		.form-group select:focus {
+			border-bottom: 2px solid #7e54f8;
+		}
+
+		/* Full width textarea */
+		.full-width {
+			grid-column: span 2;
+		}
+
+		/* Button */
+		.submit-btn {
+			margin-top: 30px;
+		}
+
+		/* 📱 Responsive */
+		@media (max-width: 768px) {
+			.form-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.full-width {
+				grid-column: span 1;
+			}
+		}
+
+		.form-message {
+			margin-top: 20px;
+			padding: 12px 16px;
+			border-radius: 6px;
+			font-size: 14px;
+			display: none;
+			transition: all 0.3s ease;
+		}
+
+		.form-message.success {
+			background: #ecfdf5;
+			color: #065f46;
+			border: 1px solid #10b981;
+		}
+
+		.form-message.error {
+			background: #fef2f2;
+			color: #7f1d1d;
+			border: 1px solid #ef4444;
+			height: 100% !important;
+		}
+	</style>
 </head>
 
 
@@ -24,26 +185,32 @@
 			<!--End Header -->
 
 			<!--Start Hero-->
-			<section class="hero-section hero-bg-bg1 bg-gradient dark-bg1">
+			<section class="hero-section hero-bg-bg1">
 				<div class="text-block">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6 v-center">
 								<div class="header-heading">
-									<h1 class="wow fadeInUp" data-wow-delay=".2s">Build & Scale Your SaaS Faster with a Trusted Development Partner</h1>
-									<p class="wow fadeInUp" data-wow-delay=".4s">From MVP to scale, we design and build secure, high-performance SaaS and web applications that grow with your business.</p>
-									<a href="/contact-us" class="btn-main bg-btn lnk wow fadeInUp" data-wow-delay=".6s">Book a Free Consultation <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-									<ul class="info-list-ul wow my-5 fadeInUp" data-wow-delay=".8s">
-										<li>5+ Years Experience</li>
-										<li>50+ Projects Delivered</li>
-										<li>20+ Satisfied Clients</li>
-										<li>24/7 Support</li>
+									<h1 class="wow fadeInUp" data-wow-delay=".2s">Build & Scale Your SaaS Faster with a
+										Trusted Development Partner</h1>
+									<p class="wow fadeInUp" data-wow-delay=".4s">From MVP to scale, we design and build
+										secure, high-performance SaaS and web applications that grow with your business.
+									</p>
+									<a href="/contact-us"
+										class="btn-br bg-btn3 btshad-b2 btn-main bg-btn lnk wow fadeInUp"
+										data-wow-delay=".6s">Book a Free Consultation <i
+											class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
+									<ul class="info-list-ul modern-stats-icons wow fadeInUp" data-wow-delay=".8s">
+										<li><i class="fas fa-briefcase"></i> 5+ Years Experience</li>
+										<li><i class="fas fa-code"></i> 50+ Projects Delivered</li>
+										<li><i class="fas fa-users"></i> 20+ Clients</li>
+										<li><i class="fas fa-headset"></i> 24/7 Support</li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-lg-6 v-center">
 								<div class="single-image wow fadeIn" data-wow-delay=".5s">
-									<img src="images/hero/hero-image-download.png"
+									<img src="images/hero/hero2.svg"
 										alt="SaaS development company USA - web development agency" class="img-fluid"
 										width="800" height="600" fetchpriority="high" />
 								</div>
@@ -60,7 +227,7 @@
 					<div class="row">
 						<div class="col-lg-6 v-center">
 							<div class="image-block">
-								<img src="images/about/about-image-download.webp" alt="SaaS app development services"
+								<img src="images/about/about3.svg" alt="SaaS app development services"
 									class="img-fluid no-shadow" fetchpriority="high" />
 							</div>
 						</div>
@@ -68,9 +235,13 @@
 							<div class="common-heading text-l">
 								<span>Your Long-Term Technology Partner for Scalable Digital Products</span>
 								<h2>About Our Agency</h2>
-								<p>Dadword IT is a custom SaaS and web development agency helping startups and small to mid-sized businesses turn ideas into reliable, scalable digital products.</p>
-								<p>We specialize in building modern web applications that are fast, secure, and future-ready. From early-stage MVPs to enterprise-grade platforms, we focus on clean architecture, performance, and business outcomes — not just code.</p>
-								<p>Unlike typical agencies, we work as a product partner, aligning technology decisions with your business goals.</p>
+								<p>Dadword IT is a custom SaaS and web development agency helping startups and small to
+									mid-sized businesses turn ideas into reliable, scalable digital products.</p>
+								<p>We specialize in building modern web applications that are fast, secure, and
+									future-ready. From early-stage MVPs to enterprise-grade platforms, we focus on clean
+									architecture, performance, and business outcomes — not just code.</p>
+								<p>Unlike typical agencies, we work as a product partner, aligning technology decisions
+									with your business goals.</p>
 								<!-- <p class="quote">Our mission is to empower businesses with cutting-edge SaaS solutions
 									and web applications that drive growth. Whether you need a custom SaaS builder,
 									mobile app UI/UX design, or full-stack development services, we deliver excellence
@@ -111,7 +282,8 @@
 										alt="SaaS MVP development company" class="img-fluid" />
 								</div>
 								<h4>SaaS Development</h4>
-								<p>Build, launch, and scale your SaaS product with confidence — from MVP to enterprise-ready platforms.</p>
+								<p>Build, launch, and scale your SaaS product with confidence — from MVP to
+									enterprise-ready platforms.</p>
 								<!-- <a href="/service">Learn More <i class="fas fa-chevron-right fa-icon"></i></a> -->
 							</div>
 						</div>
@@ -120,7 +292,8 @@
 								<div class="s-card-icon"><img src="images/icons/development.svg"
 										alt="Full stack development agency" class="img-fluid" /></div>
 								<h4>Web Development</h4>
-								<p>High-performance full-stack web applications built with modern technologies and scalable architecture.</p>
+								<p>High-performance full-stack web applications built with modern technologies and
+									scalable architecture.</p>
 								<!-- <a href="/service">Learn More <i class="fas fa-chevron-right fa-icon"></i></a> -->
 							</div>
 						</div>
@@ -482,6 +655,54 @@
 								<span>Get a free technical consultation within 24 hours.</span>
 								<h2 class="mt0">Tell Us About Your Project</h2>
 							</div>
+							<div class="custom-form-container">
+								<form id="customForm">
+
+									<div class="form-grid">
+										<!-- Full Name -->
+										<div class="form-group">
+											<input type="text" name="full_name" placeholder=" " required />
+											<label>Full Name*</label>
+										</div>
+
+										<!-- Email -->
+										<div class="form-group">
+											<input type="email" name="email" placeholder=" " required />
+											<label>Email Address*</label>
+										</div>
+
+										<!-- Phone -->
+										<div class="form-group">
+											<input type="text" name="phone" placeholder=" " />
+											<label>Phone / WhatsApp</label>
+										</div>
+
+										<!-- Dropdown -->
+										<div class="form-group">
+											<select name="service" required>
+												<option value="" disabled selected hidden></option>
+												<option>MVP Development</option>
+												<option>AI-powered MVP</option>
+												<option>Web Development</option>
+												<option>UI/UX Design</option>
+												<option>Something else</option>
+											</select>
+											<label>What are you looking to build?*</label>
+										</div>
+										<!-- Message -->
+										<div class="form-group full-width">
+											<textarea name="message" placeholder=" " required></textarea>
+											<label>Briefly describe your project*</label>
+										</div>
+									</div>
+
+									<!-- Success Message -->
+									<div id="formMessage" class="form-message"></div>
+									<!-- Submit -->
+									<button type="submit"
+										class="submit-btn btn-br bg-btn3 btshad-b2 btn-main bg-btn lnk wow fadeInUp">Submit</button>
+								</form>
+							</div>
 							<!-- <div class="form-block">
 						<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
 						<script>
@@ -495,7 +716,7 @@
 						</div>
 						<div class="col-lg-6 v-center">
 							<div class="enquire-image">
-								<img src="images/about/contact.webp" alt="Product design agency for startups"
+								<img src="images/about/about4.svg" alt="Product design agency for startups"
 									class="img-fluid" />
 							</div>
 						</div>
@@ -524,7 +745,8 @@
 								</div>
 								<div class="office-text">
 									<h4>Rajkot</h4>
-									<p>N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall, Rajkot - 360004</p>
+									<p>N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall, Rajkot -
+										360004</p>
 									<a href="https://maps.app.goo.gl/enXW8e3AjDo6iTeK8" target="blank"
 										class="btn-outline">View on Map <i class="fas fa-chevron-right fa-icon"></i></a>
 								</div>
@@ -548,7 +770,7 @@
 				<!--common script file-->
 				<script src="js/main.min.js"></script>
 
-				<script>
+				<!-- <script>
 					window.addEventListener("load", function () {
 						const script = document.createElement("script");
 						script.src = "https://js.hsforms.net/forms/embed/v2.js";
@@ -561,6 +783,54 @@
 							});
 						};
 						document.body.appendChild(script);
+					});
+				</script> -->
+
+				<script>
+					document.getElementById("customForm").addEventListener("submit", async function (e) {
+						e.preventDefault();
+
+						const messageBox = document.getElementById("formMessage");
+
+						const formData = new URLSearchParams();
+						formData.append("fullName", this.full_name.value);
+						formData.append("email", this.email.value);
+						formData.append("phone", this.phone.value);
+						formData.append("projectType", this.service.value);
+						formData.append("description", this.message.value);
+
+						try {
+							const res = await fetch("https://n8n.dadwordit.com/webhook/contact-us", {
+								method: "POST",
+								headers: {
+									"X-API-KEY": "xapi_8f3Kx9LmP2qR7sVwYzA1BcD4EfGhIjKlMnOpQrStUvWxYz12",
+									"Content-Type": "application/x-www-form-urlencoded"
+								},
+								body: formData
+							});
+
+							if (!res.ok) throw new Error("Failed");
+
+							// ✅ Success UI
+							messageBox.style.display = "block";
+							messageBox.className = "form-message success";
+							messageBox.innerText = "✅ Your form has been submitted successfully!";
+
+							this.reset();
+
+						} catch (err) {
+							console.error(err);
+
+							// ❌ Error UI
+							messageBox.style.display = "block";
+							messageBox.className = "form-message error";
+							messageBox.innerText = "❌ Something went wrong. Please try again.";
+						}
+
+						// ⏳ Auto hide after 5 seconds
+						setTimeout(() => {
+							messageBox.style.display = "none";
+						}, 5000);
 					});
 				</script>
 	</body>

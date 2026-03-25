@@ -5,9 +5,25 @@
         color: #e60072 !important;
         line-height: 30px !important;
     }
+    .menu-header {
+        background: white;
+        border-radius: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 50px;
+    }
+    
+    .main-header {
+        border-bottom: unset;
+    }
+
+    .main-header.sticky {
+        box-shadow: unset;
+        background-color: unset;
+    }
 </style>
 <header class="nav-bg-w main-header navfix fixed-top menu-white">
-    <div class="container-fluid m-pad">
+    <div class="container m-pad">
         <div class="menu-header">
             <div class="dsk-logo"><a class="nav-brand" href="./">
                     <img src="/images/white-logo.png" alt="Logo" class="mega-white-logo" />
@@ -37,7 +53,8 @@
                 </ul>
                 <!-- mobile + desktop - sidebar menu- dark mode witch and button -->
                 <ul class="nav-list right-end-btn">
-                    <li class="hidemobile"><a href="/lets-talk" class="btn-br bg-btn3 btshad-b2 lnk">Book a Free Consultation <span class="circle"></span></a> </li>
+                    <li class="hidemobile"><a href="/lets-talk" class="btn-br bg-btn3 btshad-b2 lnk">Book a Free
+                            Consultation <span class="circle"></span></a> </li>
                     <li class="navm- hidedesktop"> <a class="toggle" href="#"><span></span></a></li>
                 </ul>
             </div>
