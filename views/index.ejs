@@ -4,6 +4,230 @@
 <head>
 	<link rel="preload" as="image" href="images/hero/hero-image-download.png" type="image/png" />
 	<link rel="preload" href="images/about/about-image-download.webp" as="image" />
+
+	<style>
+		/* GRID OVERLAY (subtle premium feel) */
+		.hero-bg-bg1::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(rgba(20, 1, 1, 0.03) 1px, transparent 1px),
+				linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px) !important;
+			background-size: 40px 40px !important;
+			background-repeat: repeat !important;
+			top: 0;
+			left: 0;
+		}
+
+		.header-heading h1 {
+			line-height: 45px !important;
+		}
+
+		.bg-btn {
+			width: 100% !important;
+		}
+
+		.modern-stats-icons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			list-style: none;
+			padding: 0;
+			margin-top: 25px;
+		}
+
+		.modern-stats-icons li {
+			padding: 12px 12px;
+			border-radius: 12px;
+			border: 1px solid lightgray;
+			background: rgba(255, 255, 255, 0.6);
+			backdrop-filter: blur(10px);
+			line-height: 20px !important;
+			font-size: 14px !important;
+		}
+
+		.info-list-ul li:before {
+			content: '' !important;
+		}
+
+		.service-section {
+			padding-top: 60px !important;
+		}
+
+		.clients-modern {
+			overflow: hidden;
+			margin-top: 40px;
+		}
+
+		/* GRID / FLEX */
+		.clients-track {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: center;
+			padding: 0;
+			list-style: none;
+		}
+
+		/* ITEM */
+		.client-item {
+			flex: 0 0 calc(16.66% - 20px);
+		}
+
+		/* CARD STYLE */
+		.client-card {
+			height: 190px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: white;
+			border: 1px solid rgba(0, 0, 0, 0.05);
+			transition: all 0.3s ease;
+			cursor: pointer;
+		}
+
+		/* LOGO STYLE */
+		.client-card img {
+			filter: grayscale(100%) opacity(0.7);
+			transition: all 0.3s ease;
+		}
+
+		/* HOVER EFFECT (IMPORTANT) */
+		.client-card:hover {
+			transform: translateY(-6px) scale(1.03);
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+			background: #fff;
+		}
+
+		.client-card:hover img {
+			filter: grayscale(0%) opacity(1);
+		}
+
+		/* RESPONSIVE */
+		@media (max-width: 992px) {
+			.client-item {
+				flex: 0 0 calc(25% - 20px);
+			}
+		}
+
+		@media (max-width: 600px) {
+			.client-item {
+				flex: 0 0 calc(50% - 20px);
+			}
+		}
+
+		/* NEW SECTION */
+		.browser-frame {
+			overflow: hidden;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			background: #fff;
+			border-radius: 12px;
+		}
+
+		.browser-bar {
+			height: 35px;
+			background: #f3f4f6;
+			display: flex;
+			align-items: center;
+			padding: 0 10px;
+			gap: 6px;
+		}
+
+		.browser-bar span {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #d1d5db;
+		}
+
+
+		/* CASE STUDY LAYOUT */
+		.case-study {
+			display: grid;
+			grid-template-columns: 1.1fr 1fr;
+			gap: 60px;
+			align-items: center;
+			margin-bottom: 100px;
+		}
+
+		.case-study.reverse .browser-frame {
+			order: 2;
+		}
+
+		/* IMAGE */
+		.case-image {
+			position: relative;
+		}
+
+		.case-image img {
+			width: 100%;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+		}
+
+		/* CONTENT */
+		.case-top {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-bottom: 20px;
+		}
+
+		.case-top h3 {
+			font-size: 24px;
+		}
+
+		.tag {
+			font-size: 12px;
+			background: #eef2ff;
+			color: #4f46e5;
+			padding: 4px 10px;
+			border-radius: 999px;
+		}
+
+		/* BLOCKS */
+		.case-block {
+			margin-bottom: 18px;
+		}
+
+		.case-block h4 {
+			font-size: 14px;
+			color: #9ca3af;
+			margin-bottom: 4px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.case-block p {
+			font-size: 15px;
+			color: #374151;
+		}
+
+		/* RESULT HIGHLIGHT */
+		.case-block.result {
+			background: #f0fdf4;
+			padding: 12px 16px;
+			border-radius: 8px;
+		}
+
+		.case-block.result p {
+			color: #166534;
+			font-weight: 500;
+		}
+
+		/* RESPONSIVE */
+		@media (max-width: 900px) {
+			.case-study {
+				grid-template-columns: 1fr;
+				gap: 30px;
+			}
+
+			.case-study.reverse .case-image {
+				order: 0;
+			}
+
+		}
+	</style>
 </head>
 
 
@@ -24,26 +248,29 @@
 			<!--End Header -->
 
 			<!--Start Hero-->
-			<section class="hero-section hero-bg-bg1 bg-gradient dark-bg1">
+			<section class="hero-section hero-bg-bg1">
 				<div class="text-block">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6 v-center">
 								<div class="header-heading">
-									<h1 class="wow fadeInUp" data-wow-delay=".2s">Build & Scale Your SaaS Faster with a Trusted Development Partner</h1>
-									<p class="wow fadeInUp" data-wow-delay=".4s">From MVP to scale, we design and build secure, high-performance SaaS and web applications that grow with your business.</p>
-									<a href="/contact-us" class="btn-main bg-btn lnk wow fadeInUp" data-wow-delay=".6s">Book a Free Consultation <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-									<ul class="info-list-ul wow my-5 fadeInUp" data-wow-delay=".8s">
-										<li>5+ Years Experience</li>
-										<li>50+ Projects Delivered</li>
-										<li>20+ Satisfied Clients</li>
-										<li>24/7 Support</li>
+									<h1 class="wow fadeInUp" data-wow-delay=".2s">We build, improve, and scale digital products</h1>
+									<p class="wow fadeInUp" data-wow-delay=".4s">We help startups and growing businesses design, develop, and optimize SaaS products whether you're launching from scratch or upgrading an existing platform.</p>
+									<a href="/contact-us"
+										class="btn-br bg-btn3 btshad-b2 btn-main bg-btn lnk wow fadeInUp"
+										data-wow-delay=".6s">Start Your Project <i
+											class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
+									<ul class="info-list-ul modern-stats-icons wow fadeInUp" data-wow-delay=".8s">
+										<li>5+ Years Building Scalable Products</li>
+										<li>50+ Projects Successfully Delivered</li>
+										<li>Trusted by 20+ Businesses</li>
+										<li>Reliable Support When You Need It</li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-lg-6 v-center">
 								<div class="single-image wow fadeIn" data-wow-delay=".5s">
-									<img src="images/hero/hero-image-download.png"
+									<img src="images/hero/hero2.svg"
 										alt="SaaS development company USA - web development agency" class="img-fluid"
 										width="800" height="600" fetchpriority="high" />
 								</div>
@@ -54,45 +281,6 @@
 			</section>
 			<!--End Hero-->
 
-			<!--Start About-->
-			<section class="about-agency pad-tb">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 v-center">
-							<div class="image-block">
-								<img src="images/about/about-image-download.webp" alt="SaaS app development services"
-									class="img-fluid no-shadow" fetchpriority="high" />
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="common-heading text-l">
-								<span>Your Long-Term Technology Partner for Scalable Digital Products</span>
-								<h2>About Our Agency</h2>
-								<p>Dadword IT is a custom SaaS and web development agency helping startups and small to mid-sized businesses turn ideas into reliable, scalable digital products.</p>
-								<p>We specialize in building modern web applications that are fast, secure, and future-ready. From early-stage MVPs to enterprise-grade platforms, we focus on clean architecture, performance, and business outcomes — not just code.</p>
-								<p>Unlike typical agencies, we work as a product partner, aligning technology decisions with your business goals.</p>
-								<!-- <p class="quote">Our mission is to empower businesses with cutting-edge SaaS solutions
-									and web applications that drive growth. Whether you need a custom SaaS builder,
-									mobile app UI/UX design, or full-stack development services, we deliver excellence
-									across USA, Canada, and Europe.</p>
-								<div class="user- mt30">
-									<div class="media">
-										<div class="user-image bdr-radius"><img
-												src="images/user-thumb/prince-boghara.webp" alt="Custom SaaS builder"
-												class="img-fluid" /></div>
-										<div class="media-body user-info v-center">
-											<h5>Prince Boghara.</h5>
-											<p>Founder of <span>Dadword IT</span></p>
-										</div>
-									</div>
-								</div> -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End About-->
-
 			<!--Start Service-->
 			<section class="service-section web-servic pad-tb">
 				<div class="container">
@@ -100,7 +288,8 @@
 						<div class="col-lg-8">
 							<div class="common-heading">
 								<span>Our Core Services</span>
-								<h2 class="mb30">What We Do Best</h2>
+								<h2 class="mb30">What We Help You Build & Improve</h2>
+								<p>From idea to scalable product or improving what already exists we help you design, develop, and grow digital solutions that drive real business results.</p>
 							</div>
 						</div>
 					</div>
@@ -110,8 +299,8 @@
 								<div class="s-card-icon"><img src="images/icons/branding.svg"
 										alt="SaaS MVP development company" class="img-fluid" />
 								</div>
-								<h4>SaaS Development</h4>
-								<p>Build, launch, and scale your SaaS product with confidence — from MVP to enterprise-ready platforms.</p>
+								<h4>MVP <br> Development</h4>
+								<p>We build lean, scalable MVPs that help you test your idea with real users without wasting time or money.</p>
 								<!-- <a href="/service">Learn More <i class="fas fa-chevron-right fa-icon"></i></a> -->
 							</div>
 						</div>
@@ -119,8 +308,8 @@
 							<div class="s-block" data-tilt data-tilt-max="5" data-tilt-speed="1000">
 								<div class="s-card-icon"><img src="images/icons/development.svg"
 										alt="Full stack development agency" class="img-fluid" /></div>
-								<h4>Web Development</h4>
-								<p>High-performance full-stack web applications built with modern technologies and scalable architecture.</p>
+								<h4>AI-Powered Solutions</h4>
+								<p>We integrate AI into your product to automate workflows, capture leads, and improve decision-making.</p>
 								<!-- <a href="/service">Learn More <i class="fas fa-chevron-right fa-icon"></i></a> -->
 							</div>
 						</div>
@@ -128,22 +317,218 @@
 							<div class="s-block mb0" data-tilt data-tilt-max="5" data-tilt-speed="1000">
 								<div class="s-card-icon"><img src="images/icons/marketing.svg"
 										alt="UI UX design company" class="img-fluid" /></div>
-								<h4>UI/UX Design</h4>
-								<p>User-focused design that improves engagement, usability, and product adoption.</p>
+								<h4>Web Application Development</h4>
+								<p>From SaaS products to custom web apps, we develop high-performance systems tailored to your business needs.</p>
+								<!-- <a href="/service">Learn More <i class="fas fa-chevron-right fa-icon"></i></a> -->
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 mt30 shape-loc wow fadeInUp" data-wow-delay="0.8s">
+							<div class="s-block mb0" data-tilt data-tilt-max="5" data-tilt-speed="1000">
+								<div class="s-card-icon"><img src="images/icons/service1.svg" alt="UI UX design company"
+										class="img-fluid" /></div>
+								<h4>Website Redesign & Optimization</h4>
+								<p>We improve speed, user experience, and conversions to help you get more results from your current traffic.</p>
 								<!-- <a href="/service">Learn More <i class="fas fa-chevron-right fa-icon"></i></a> -->
 							</div>
 						</div>
 					</div>
-					<div class="-cta-btn mt70">
+					<!-- <div class="-cta-btn mt70">
 						<div class="free-cta-title v-center wow zoomInDown" data-wow-delay=".9s">
 							<p>Hire a <span>Dedicated Developer</span></p>
 							<a href="/contact-us" class="btn-main bg-btn2 lnk">Hire Now<i
 									class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</section>
 			<!--End Service-->
+
+			<!--Case Studies-->
+			<section class="results-section">
+				<div class="container">
+					<div class="common-heading mb50">
+						<h2 class="mb10">Proven Results from Real Projects</h2>
+						<p>We don’t just deliver code — we solve real business problems and drive measurable growth for our clients.</p>
+					</div>
+					<% caseStudies.forEach((item, index)=> { %>
+						<div class="case-study wow fadeInUp <%= index % 2 !== 0 ? 'reverse' : '' %>"
+							data-wow-delay="<%= index % 2 === 0 ? '0.2s' : '0.8s' %>">
+							<!-- IMAGE -->
+							<a href="<%= item.link %>" target="_blank" class="browser-frame">
+
+								<div class="case-image">
+									<div class="browser-bar">
+										<span></span><span></span><span></span>
+									</div>
+
+									<img src="<%= item.image %>" alt="<%= item.title %>">
+								</div>
+							</a>
+							<!-- CONTENT -->
+							<div class="case-content">
+								<div class="case-top">
+									<h3>
+										<%= item.title %>
+									</h3>
+									<span class="tag">
+										<%= item.category %>
+									</span>
+								</div>
+
+								<div class="case-block">
+									<h4>Problem</h4>
+									<p>
+										<%= item.problem %>
+									</p>
+								</div>
+
+								<div class="case-block">
+									<h4>Solution</h4>
+									<p>
+										<%= item.solution %>
+									</p>
+								</div>
+
+								<div class="case-block result">
+									<h4>Result</h4>
+									<p>
+										<%= item.result %>
+									</p>
+								</div>
+							</div>
+						</div>
+						<% }) %>
+				</div>
+			</section>
+			<!--END Case Studies-->
+
+			<!--Start Portfolio-->
+			<!-- <section class="portfolio-section pad-tb">
+				<div class="container">
+					<div class="row justify-content-center ">
+						<div class="col-lg-8">
+							<div class="common-heading">
+								<span>Our Work</span>
+								<h2 class="mb0">Products We’ve Built</h2>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<% portfolioItems.slice(0, 4).forEach((item, index)=> { %>
+							<div class="col-lg-6 col-sm-6 mt60 wow fadeInUp"
+								data-wow-delay="<%= index % 2 === 0 ? '0.2s' : '0.8s' %>">
+								<div class="isotope_item hover-scale">
+									<div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
+										<a href="/our-work" target="_blank">
+											<img src="<%= item.portfolioImg %>" alt="<%= item.sortTitle %>"
+												class="img-fluid" />
+										</a>
+									</div>
+									<div class="item-info">
+										<h4><a href="<%= item.link %>" target="_blank">
+												<%= item.sortTitle %>
+											</a></h4>
+									</div>
+								</div>
+							</div>
+							<% }) %>
+
+								<div class="-cta-btn mt70">
+									<div class="free-cta-title v-center wow zoomInDown" data-wow-delay=".9s">
+										<a href="/our-work" class="btn-main bg-btn2 lnk">View More<i
+												class="fas fa-chevron-right fa-icon"></i><span
+												class="circle"></span></a>
+									</div>
+								</div>
+					</div>
+				</div>
+			</section> -->
+			<!--End Portfolio-->
+
+			<!--Start Clients-->
+			<section class="clients-section pad-tb">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="common-heading">
+								<span>Our happy customers</span>
+								<h2>Some of our Clients</h2>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="opl">
+								<div class="clients-modern">
+									<ul class="clients-track">
+										<% clients.forEach(client=> { %>
+											<li class="client-item wow fadeIn" data-wow-delay="<%= client.delay %>">
+												<div class="client-card">
+													<img src="<%= client.image %>" alt="<%= client.alt %>" />
+												</div>
+											</li>
+											<% }) %>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="-cta-btn mt70">
+						<div class="free-cta-title v-center wow zoomInDown" data-wow-delay="1.2s">
+							<p>We <span>Promise.</span> We <span>Deliver.</span></p>
+							<a href="/contact-us" class="btn-main bg-btn2 lnk">Let's Work Together<i
+									class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--End Clients-->
+
+			<!--Start Testinomial-->
+			<section class="testinomial-section pad-tb">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 v-center">
+							<div class="common-heading text-l">
+								<span>Clients Testimonial</span>
+								<h2 class="mb0">What our clients say about our Company.</h2>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="owl-carousel testimonial-card-a pl25">
+								<% testimonials.forEach(testimonial=> { %>
+									<div class="testimonial-card">
+										<div class="t-text">
+											<p>
+												<%= testimonial.text %>
+											</p>
+										</div>
+										<div class="client-thumbs mt30">
+											<div class="media v-center">
+												<div class="user-image bdr-radius">
+													<img src="<%= testimonial.image %>" alt="<%= testimonial.name %>"
+														class="img-fluid" />
+												</div>
+												<div class="media-body user-info">
+													<h5>
+														<%= testimonial.name %>
+													</h5>
+													<p>
+														<%= testimonial.role %>, <small>
+																<%= testimonial.location %>
+															</small>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<% }) %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--End Testinomial-->
 
 			<!--Start statistics-->
 			<div class="statistics-section bg-gradient pad-tb tilt3d">
@@ -227,87 +612,6 @@
 				</div>
 			</div>
 			<!--End statistics-->
-
-			<!--Start Portfolio-->
-			<section class="portfolio-section pad-tb">
-				<div class="container">
-					<div class="row justify-content-center ">
-						<div class="col-lg-8">
-							<div class="common-heading">
-								<span>Our Work</span>
-								<h2 class="mb0">Products We’ve Built</h2>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<% portfolioItems.slice(0, 4).forEach((item, index)=> { %>
-							<div class="col-lg-6 col-sm-6 mt60 wow fadeInUp"
-								data-wow-delay="<%= index % 2 === 0 ? '0.2s' : '0.8s' %>">
-								<div class="isotope_item hover-scale">
-									<div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-										<a href="/our-work" target="_blank">
-											<img src="<%= item.portfolioImg %>" alt="<%= item.sortTitle %>"
-												class="img-fluid" />
-										</a>
-									</div>
-									<div class="item-info">
-										<h4><a href="<%= item.link %>" target="_blank">
-												<%= item.sortTitle %>
-											</a></h4>
-									</div>
-								</div>
-							</div>
-							<% }) %>
-
-								<div class="-cta-btn mt70">
-									<div class="free-cta-title v-center wow zoomInDown" data-wow-delay=".9s">
-										<a href="/our-work" class="btn-main bg-btn2 lnk">View More<i
-												class="fas fa-chevron-right fa-icon"></i><span
-												class="circle"></span></a>
-									</div>
-								</div>
-					</div>
-				</div>
-			</section>
-			<!--End Portfolio-->
-
-			<!--Start Clients-->
-			<section class="clients-section pad-tb">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-8">
-							<div class="common-heading">
-								<span>Our happy customers</span>
-								<h2>Some of our Clients</h2>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="opl">
-								<ul>
-									<% clients.forEach(client=> { %>
-										<li class="wow fadeIn" data-wow-delay="<%= client.delay %>">
-											<div class="clients-logo">
-												<img src="<%= client.image %>" alt="<%= client.alt %>"
-													class="img-fluid" />
-											</div>
-										</li>
-										<% }) %>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="-cta-btn mt70">
-						<div class="free-cta-title v-center wow zoomInDown" data-wow-delay="1.2s">
-							<p>We <span>Promise.</span> We <span>Deliver.</span></p>
-							<a href="/contact-us" class="btn-main bg-btn2 lnk">Let's Work Together<i
-									class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End Clients-->
 
 			<!--Start work-category-->
 			<section class="work-category pad-tb tilt3d">
@@ -427,51 +731,48 @@
 			</section>
 			<!--End  work-category-->
 
-			<!--Start Testinomial-->
-			<section class="testinomial-section pad-tb">
+			<!--Start About-->
+			<section class="about-agency pad-tb">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-5 v-center">
-							<div class="common-heading text-l">
-								<span>Clients Testimonial</span>
-								<h2 class="mb0">What our clients say about our Company.</h2>
+						<div class="col-lg-6 v-center">
+							<div class="image-block">
+								<img src="images/about/about3.svg" alt="SaaS app development services"
+									class="img-fluid no-shadow" fetchpriority="high" />
 							</div>
 						</div>
-						<div class="col-lg-7">
-							<div class="owl-carousel testimonial-card-a pl25">
-								<% testimonials.forEach(testimonial=> { %>
-									<div class="testimonial-card">
-										<div class="t-text">
-											<p>
-												<%= testimonial.text %>
-											</p>
-										</div>
-										<div class="client-thumbs mt30">
-											<div class="media v-center">
-												<div class="user-image bdr-radius">
-													<img src="<%= testimonial.image %>" alt="<%= testimonial.name %>"
-														class="img-fluid" />
-												</div>
-												<div class="media-body user-info">
-													<h5>
-														<%= testimonial.name %>
-													</h5>
-													<p>
-														<%= testimonial.role %>, <small>
-																<%= testimonial.location %>
-															</small>
-													</p>
-												</div>
-											</div>
+						<div class="col-lg-6">
+							<div class="common-heading text-l">
+								<span>Your Long-Term Technology Partner for Scalable Digital Products</span>
+								<h2>About Our Agency</h2>
+								<p>Dadword IT is a custom SaaS and web development agency helping startups and small to
+									mid-sized businesses turn ideas into reliable, scalable digital products.</p>
+								<p>We specialize in building modern web applications that are fast, secure, and
+									future-ready. From early-stage MVPs to enterprise-grade platforms, we focus on clean
+									architecture, performance, and business outcomes — not just code.</p>
+								<p>Unlike typical agencies, we work as a product partner, aligning technology decisions
+									with your business goals.</p>
+								<!-- <p class="quote">Our mission is to empower businesses with cutting-edge SaaS solutions
+									and web applications that drive growth. Whether you need a custom SaaS builder,
+									mobile app UI/UX design, or full-stack development services, we deliver excellence
+									across USA, Canada, and Europe.</p>
+								<div class="user- mt30">
+									<div class="media">
+										<div class="user-image bdr-radius"><img
+												src="images/user-thumb/prince-boghara.webp" alt="Custom SaaS builder"
+												class="img-fluid" /></div>
+										<div class="media-body user-info v-center">
+											<h5>Prince Boghara.</h5>
+											<p>Founder of <span>Dadword IT</span></p>
 										</div>
 									</div>
-									<% }) %>
+								</div> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!--End Testinomial-->
+			<!--End About-->
 
 			<!--Start Enquire Form-->
 			<section class="enquire-form pad-tb">
@@ -482,6 +783,7 @@
 								<span>Get a free technical consultation within 24 hours.</span>
 								<h2 class="mt0">Tell Us About Your Project</h2>
 							</div>
+							<%- include('partials/form') %>
 							<!-- <div class="form-block">
 						<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
 						<script>
@@ -491,11 +793,11 @@
 						});
 						</script>
 					</div> -->
-							<div class="form-block" id="hubspot-form"></div>
+							<!-- <div class="form-block" id="hubspot-form"></div> -->
 						</div>
 						<div class="col-lg-6 v-center">
 							<div class="enquire-image">
-								<img src="images/about/contact.webp" alt="Product design agency for startups"
+								<img src="images/about/about5.svg" alt="Product design agency for startups"
 									class="img-fluid" />
 							</div>
 						</div>
@@ -505,7 +807,7 @@
 			<!--End Enquire Form-->
 
 			<!--Start Location-->
-			<section class="our-office pad-tb">
+			<!-- <section class="our-office pad-tb">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-lg-8">
@@ -524,7 +826,8 @@
 								</div>
 								<div class="office-text">
 									<h4>Rajkot</h4>
-									<p>N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall, Rajkot - 360004</p>
+									<p>N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall, Rajkot -
+										360004</p>
 									<a href="https://maps.app.goo.gl/enXW8e3AjDo6iTeK8" target="blank"
 										class="btn-outline">View on Map <i class="fas fa-chevron-right fa-icon"></i></a>
 								</div>
@@ -532,7 +835,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<!--End Location-->
 
 			<!--Start Footer-->
@@ -548,7 +851,7 @@
 				<!--common script file-->
 				<script src="js/main.min.js"></script>
 
-				<script>
+				<!-- <script>
 					window.addEventListener("load", function () {
 						const script = document.createElement("script");
 						script.src = "https://js.hsforms.net/forms/embed/v2.js";
@@ -562,7 +865,7 @@
 						};
 						document.body.appendChild(script);
 					});
-				</script>
+				</script> -->
 	</body>
 
 </html>

@@ -1,0 +1,31 @@
+{
+  "caseStudies": [
+    {
+      "title": "Pyscle",
+      "category": "E-commerce",
+      "image": "/images/result/thepsycle.png",
+      "link": "https://www.thepsycle.com",
+      "problem": "Outdated UI, poor mobile experience, limited customization, and no dynamic pricing — making the store hard to manage and less effective.",
+      "solution": "Revamped the Shopify theme, fixed responsiveness, added dynamic pricing, and made the store fully customizable.",
+      "result": "Faster, smoother, and more flexible store with improved user experience and better product presentation."
+    },
+    {
+      "title": "Mustdulce",
+      "category": "E-commerce",
+      "image": "/images/result/mustdulce.png",
+      "link": "https://www.mustdulce.ro",
+      "problem": "No existing website, no online presence, and no structured way to attract customers.",
+      "solution": "Built the website from scratch and implemented strong SEO to drive organic traffic and inquiries.",
+      "result": "Consistent customer inquiries and a strong online presence generating real business leads."
+    },
+    {
+      "title": "Eden QR",
+      "category": "Digital Memorial Platform",
+      "image": "/images/result/edenqr.png",
+      "link": "https://edenqr.co.il",
+      "problem": "The platform was half-built with major bugs and incomplete features, making it unstable and not ready for launch. There was no clear structure to deliver a usable product.",
+      "solution": "We completed the entire system, fixed critical bugs, and refined the overall functionality. Ensured the platform was stable, scalable, and ready for real users.",
+      "result": "Successfully launched a fully functional digital memorial platform with QR-based memory pages. Users can now easily preserve and share memories of their loved ones."
+    }
+  ]
+}

@@ -18,7 +18,19 @@
             "mobileImage": "images/portfolio/portfolio-wide-1a.webp",
             "bgClass": "bg-gradient1",
             "portfolioImg": "images/portfolio/m-wise.webp",
-            "sortTitle": "M-Wise"
+            "sortTitle": "M-Wise",
+            "slug": "m-wise",
+            "description": "M-Wise is a modern loyalty program management platform designed to help businesses engage customers, improve retention, and track performance. Our team built a scalable and high-performance solution using modern frontend frameworks and optimized UI/UX to ensure seamless user experience across devices.",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp"
+            ]
         },
         {
             "logo": "images/client/c-m-greeteat-portfolio.webp",
@@ -37,7 +49,19 @@
             "mobileImage": "images/portfolio/portfolio-wide-2a.webp",
             "bgClass": "bg-gradient2",
             "portfolioImg": "images/portfolio/greet-eat.webp",
-            "sortTitle": "Greeteat"
+            "sortTitle": "Greeteat",
+            "slug": "greeteat",
+            "description": "M-Wise is a modern loyalty program management platform designed to help businesses engage customers, improve retention, and track performance. Our team built a scalable and high-performance solution using modern frontend frameworks and optimized UI/UX to ensure seamless user experience across devices.",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/portfolio-wide-2.webp"
+            ]
         },
         {
             "logo": "images/client/c-m-perfume-online-portfolio.webp",
@@ -54,7 +78,13 @@
             "mobileImage": "images/portfolio/portfolio-wide-3a.webp",
             "bgClass": "bg-gradient3",
             "portfolioImg": "images/portfolio/perfume-online.webp",
-            "sortTitle": "Perfume Online"
+            "sortTitle": "Perfume Online",
+            "slug": "perfumeonline",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp"
+            ]
         },
         {
             "logo": "images/client/c-m-lumity-portfolio.webp",
@@ -73,7 +103,13 @@
             "mobileImage": "images/portfolio/portfolio-wide-4a.webp",
             "bgClass": "bg-gradient4",
             "portfolioImg": "images/portfolio/lumity.webp",
-            "sortTitle": "Lumity"
+            "sortTitle": "Lumity",
+            "slug": "lumity",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp"
+            ]
         },
         {
             "logo": "images/client/c-m-organizm-portfolio.png",
@@ -92,7 +128,13 @@
             "mobileImage": "images/portfolio/portfolio-wide-5a.png",
             "bgClass": "bg-gradient4",
             "portfolioImg": "images/portfolio/organizm.png",
-            "sortTitle": "Organizm"
+            "sortTitle": "Organizm",
+            "slug": "organizm",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp"
+            ]
         },
         {
             "logo": "images/client/every.png",
@@ -110,7 +152,13 @@
             "mobileImage": "images/portfolio/portfolio-wide-6a.png",
             "bgClass": "bg-gradient4",
             "portfolioImg": "images/portfolio/portfolio-wide-6.png",
-            "sortTitle": "Every"
+            "sortTitle": "Every",
+            "slug": "every",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp"
+            ]
         },
         {
             "logo": "images/client/pilim.png",
@@ -128,7 +176,13 @@
             "mobileImage": "images/portfolio/portfolio-wide-7a.png",
             "bgClass": "bg-gradient4",
             "portfolioImg": "images/portfolio/portfolio-wide-7.png",
-            "sortTitle": "Pilim"
+            "sortTitle": "Pilim",
+            "slug": "pilim",
+            "images": [
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp",
+                "images/portfolio/m-wise.webp"
+            ]
         }
     ]
 }
