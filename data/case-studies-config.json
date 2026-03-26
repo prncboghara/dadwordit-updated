@@ -1,0 +1,31 @@
+{
+  "caseStudies": [
+    {
+      "title": "Pyscle",
+      "category": "eCommerce",
+      "image": "/images/portfolio/m-wise.webp",
+      "link": "https://pyscle.com",
+      "problem": "Users were not increasing cart value and bundling experience was confusing.",
+      "solution": "Built a seamless bundle system with optimized UX and faster checkout flow.",
+      "result": "Increased average order value by 32% and improved conversions."
+    },
+    {
+      "title": "M-Wise",
+      "category": "SaaS",
+      "image": "/images/portfolio/m-wise.webp",
+      "link": "https://m-wise.eu/",
+      "problem": "Complex system made loyalty management difficult for users.",
+      "solution": "Developed a clean UI with structured workflows and better usability.",
+      "result": "Improved user efficiency and reduced operational friction."
+    },
+    {
+      "title": "Greeteat",
+      "category": "Platform",
+      "image": "/images/portfolio/greet-eat.webp",
+      "link": "https://greeteat.com/",
+      "problem": "Users struggled with scheduling and managing online meetings.",
+      "solution": "Built a smooth booking and meeting flow with real-time interaction.",
+      "result": "Increased user engagement and platform retention."
+    }
+  ]
+}

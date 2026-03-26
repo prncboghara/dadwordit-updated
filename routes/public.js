@@ -9,6 +9,7 @@ const { getRecentBlogs, getBlogs, getBlog, postComment } = require('../controlle
 const portfolioConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/portfolio-config.json'), 'utf8'));
 const testimonialConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/testimonial-config.json'), 'utf8'));
 const clientConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/client-config.json'), 'utf8'));
+const caseStudies = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/case-studies-config.json'), 'utf8'));
 
 router.get('/', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
@@ -16,6 +17,7 @@ router.get('/', async (req, res) => {
         recent_blogs: recent_blogs,
         portfolioItems: portfolioConfig.portfolioItems,
         testimonials: testimonialConfig.testimonials,
+        caseStudies: caseStudies.caseStudies,
         clients: clientConfig.clients,
         ...SEO_CONFIG.index,
         trackingId: process.env.G_TRACKING_ID
