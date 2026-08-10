@@ -522,7 +522,7 @@ body.nav-open{overflow:hidden}
 .soc-icon{width:34px;height:34px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--text-muted);transition:background var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease)}
 .soc-icon:hover{background:rgba(108,71,255,.15);border-color:rgba(108,71,255,.4);color:var(--text)}
 .footer-col-title{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
-.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links{display:flex;flex-direction:column;gap:10px;padding:0;margin:0}
 .footer-links a{font-size:.85rem;color:var(--text-muted);transition:color var(--dur) var(--ease)}
 .footer-links a:hover{color:var(--text)}
 .footer-nl-desc{font-size:.82rem;color:var(--text-muted);margin-bottom:10px}
