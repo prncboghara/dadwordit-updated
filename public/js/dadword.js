@@ -52,9 +52,13 @@
      ---------------------------------------------------------- */
   const navLinks = document.querySelectorAll('.nav-links a');
   navLinks.forEach(function (link) {
-    if (link.href === window.location.href || link.pathname === window.location.pathname) {
-      link.classList.add('active');
+    if (link.pathname !== window.location.pathname) return;
+    // Hash links (e.g. /#product) only match when the hash is present
+    if (link.hash) {
+      if (link.hash === window.location.hash) link.classList.add('active');
+      return;
     }
+    link.classList.add('active');
   });
 
   /* ----------------------------------------------------------
