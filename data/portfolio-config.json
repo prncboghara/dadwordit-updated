@@ -1,7 +1,25 @@
 {
     "portfolioItems": [
         {
-            "logo": "images/client/c-m-wise-portfolio.webp",
+            "logo": "/images/logo.webp",
+            "tags": ["Shopify App", "Product"],
+            "title": "Customer Story: Shopify Customer Segmentation App",
+            "technologies": ["Node.js", "React", "Shopify API", "Prisma", "Supabase"],
+            "link": "https://customersstory.com",
+            "desktopImage": "/images/result/customer-story.png",
+            "mobileImage": "/images/result/customer-story.png",
+            "bgClass": "bg-gradient1",
+            "portfolioImg": "/images/result/customer-story.png",
+            "sortTitle": "Customer Story",
+            "slug": "customer-story",
+            "description": "Customer Story is our own Shopify app for customer segmentation and lifecycle marketing. We designed, built, and shipped it in-house. Just launched — building our own product gives us firsthand insight into the Shopify ecosystem that clients benefit from directly.",
+            "outcome": "Just launched with 10 early installs and a 5-star review on the Shopify App Store. A live product that proves we don't just build for clients — we build for ourselves.",
+            "images": [
+                "/images/result/customer-story.png"
+            ]
+        },
+        {
+            "logo": "/images/client/c-m-wise-portfolio.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -14,26 +32,26 @@
                 "Next Js"
             ],
             "link": "https://m-wise.eu/",
-            "desktopImage": "images/portfolio/portfolio-wide-1.webp",
-            "mobileImage": "images/portfolio/portfolio-wide-1a.webp",
+            "desktopImage": "/images/portfolio/portfolio-wide-1.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-1a.webp",
             "bgClass": "bg-gradient1",
-            "portfolioImg": "images/portfolio/m-wise.webp",
+            "portfolioImg": "/images/portfolio/m-wise.webp",
             "sortTitle": "M-Wise",
             "slug": "m-wise",
             "description": "M-Wise is a modern loyalty program management platform designed to help businesses engage customers, improve retention, and track performance. Our team built a scalable and high-performance solution using modern frontend frameworks and optimized UI/UX to ensure seamless user experience across devices.",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp"
             ]
         },
         {
-            "logo": "images/client/c-m-greeteat-portfolio.webp",
+            "logo": "/images/client/c-m-greeteat-portfolio.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -45,26 +63,26 @@
                 "Node JS"
             ],
             "link": "https://greeteat.com/",
-            "desktopImage": "images/portfolio/portfolio-wide-2.webp",
-            "mobileImage": "images/portfolio/portfolio-wide-2a.webp",
+            "desktopImage": "/images/portfolio/portfolio-wide-2.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-2a.webp",
             "bgClass": "bg-gradient2",
-            "portfolioImg": "images/portfolio/greet-eat.webp",
+            "portfolioImg": "/images/portfolio/greet-eat.webp",
             "sortTitle": "Greeteat",
             "slug": "greeteat",
             "description": "M-Wise is a modern loyalty program management platform designed to help businesses engage customers, improve retention, and track performance. Our team built a scalable and high-performance solution using modern frontend frameworks and optimized UI/UX to ensure seamless user experience across devices.",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/portfolio-wide-2.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/portfolio-wide-2.webp"
             ]
         },
         {
-            "logo": "images/client/c-m-perfume-online-portfolio.webp",
+            "logo": "/images/client/c-m-perfume-online-portfolio.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -74,20 +92,20 @@
                 "Shopify"
             ],
             "link": "https://perfumeonline.ca/",
-            "desktopImage": "images/portfolio/portfolio-wide-3.webp",
-            "mobileImage": "images/portfolio/portfolio-wide-3a.webp",
+            "desktopImage": "/images/portfolio/portfolio-wide-3.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-3a.webp",
             "bgClass": "bg-gradient3",
-            "portfolioImg": "images/portfolio/perfume-online.webp",
+            "portfolioImg": "/images/portfolio/perfume-online.webp",
             "sortTitle": "Perfume Online",
             "slug": "perfumeonline",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp"
             ]
         },
         {
-            "logo": "images/client/c-m-lumity-portfolio.webp",
+            "logo": "/images/client/c-m-lumity-portfolio.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -99,20 +117,20 @@
                 "Laravel"
             ],
             "link": "https://lumity.com/",
-            "desktopImage": "images/portfolio/portfolio-wide-4.webp",
-            "mobileImage": "images/portfolio/portfolio-wide-4a.webp",
+            "desktopImage": "/images/portfolio/portfolio-wide-4.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-4a.webp",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "images/portfolio/lumity.webp",
+            "portfolioImg": "/images/portfolio/lumity.webp",
             "sortTitle": "Lumity",
             "slug": "lumity",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp"
             ]
         },
         {
-            "logo": "images/client/c-m-organizm-portfolio.png",
+            "logo": "/images/portfolio/organizm.png",
             "tags": [
                 "Design",
                 "Coding"
@@ -124,20 +142,20 @@
                 "Node"
             ],
             "link": "https://organizm.ro/",
-            "desktopImage": "images/portfolio/portfolio-wide-5.png",
-            "mobileImage": "images/portfolio/portfolio-wide-5a.png",
+            "desktopImage": "/images/portfolio/portfolio-wide-5.png",
+            "mobileImage": "/images/portfolio/portfolio-wide-5a.png",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "images/portfolio/organizm.png",
+            "portfolioImg": "/images/portfolio/organizm.png",
             "sortTitle": "Organizm",
             "slug": "organizm",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp"
             ]
         },
         {
-            "logo": "images/client/every.png",
+            "logo": "/images/client/every.png",
             "tags": [
                 "Design",
                 "Coding"
@@ -148,20 +166,20 @@
                 "Webflow"
             ],
             "link": "https://every.io/",
-            "desktopImage": "images/portfolio/portfolio-wide-6.png",
-            "mobileImage": "images/portfolio/portfolio-wide-6a.png",
+            "desktopImage": "/images/portfolio/portfolio-wide-6.png",
+            "mobileImage": "/images/portfolio/portfolio-wide-6a.png",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "images/portfolio/portfolio-wide-6.png",
+            "portfolioImg": "/images/portfolio/portfolio-wide-6.png",
             "sortTitle": "Every",
             "slug": "every",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp"
             ]
         },
         {
-            "logo": "images/client/pilim.png",
+            "logo": "/images/client/pilim.png",
             "tags": [
                 "Design",
                 "Coding"
@@ -172,16 +190,16 @@
                 "Angular"
             ],
             "link": "https://www.pilim.net/",
-            "desktopImage": "images/portfolio/portfolio-wide-7.png",
-            "mobileImage": "images/portfolio/portfolio-wide-7a.png",
+            "desktopImage": "/images/portfolio/portfolio-wide-7.png",
+            "mobileImage": "/images/portfolio/portfolio-wide-7a.png",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "images/portfolio/portfolio-wide-7.png",
+            "portfolioImg": "/images/portfolio/portfolio-wide-7.png",
             "sortTitle": "Pilim",
             "slug": "pilim",
             "images": [
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp",
-                "images/portfolio/m-wise.webp"
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/m-wise.webp"
             ]
         }
     ]

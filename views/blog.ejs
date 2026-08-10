@@ -1,202 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
-
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, trackingId}) %>
 <body>
-  <!--Start Header -->
-  <%- include ('partials/header') %>
-  <!--End Header -->
 
-  <!--Breadcrumb Area-->
-  <section class="breadcrumb-area banner-2">
-    <div class="text-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 v-center">
-            <div class="bread-inner">
-              <div class="bread-menu">
-                <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="#">Blog</a></li>
-                </ul>
-              </div>
-              <div class="bread-title">
-                <h2>Blog</h2>
-              </div>
-            </div>
-          </div>
-        </div>
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
+
+<%- include('partials/header') %>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="dw-container">
+    <div class="page-hero-content">
+      <div class="breadcrumb-dw">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Blog</span>
       </div>
+      <span class="section-label">Insights & Updates</span>
+      <h1>From the Dadword IT team.</h1>
+      <p class="section-sub mx-auto">
+        Engineering deep-dives, product lessons, and practical advice for
+        founders building web portals, Shopify apps, and SaaS products.
+      </p>
     </div>
-  </section>
-  <!--End Breadcrumb Area-->
-  <!--Start Blog Grid-->
-  <section class="blog-page pad-tb pt40">
-    <div class="container">
-      <div class="row blog-lists">
-        <% if (blogs && blogs.length > 0) { %>
-          <% blogs.forEach(function(blog) { %>
-            <div class="col-lg-6 col-sm-6 single-card-item">
-              <div class="isotope_item hover-scale">
-                <div class="item-image">
-                  <a href="<%= blog.slug %>"><img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" class="img-fluid" /> </a>
-                  <span class="category-blog">
-                    <% if (blog.tags && blog.tags.length > 0) { %>
-                      <% blog.tags.forEach(function(tag) { %>
-                        <a href="#"><%= tag.name %></a>
-                      <% }); %>
-                    <% } %>
-                  </span>
-                </div>
-                <div class="item-info blog-info">
-                  <div class="entry-blog">
-                    <span class="bypost"><a href="#"><i class="fas fa-user"></i> <%= blog.authorName %></a></span>
-                    <span class="posted-on">
-                      <a href="#"><i class="fas fa-clock"></i> <%= blog.created %></a></a>
-                    </span>
-                    <!-- <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span> -->
-                  </div>
-                  <h4><a href="<%= blog.slug %>"><%= blog.name %></a></a></h4>
-                  <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
-                </div>
-              </div>
-            </div>    
-          <% }); %>
-        <% } else { %>
-            <p>No blogs available.</p>
-        <% } %>
-        <!-- <div class="col-lg-4 col-sm-6 single-card-item">
-          <div class="isotope_item hover-scale">
-            <div class="item-image">
-              <a href="#"><img src="images/blog/blog-1.webp" alt="blog" class="img-fluid" /> </a>
-              <span class="category-blog"><a href="#">iOs</a> <a href="#">Android</a></span>
-            </div>
-            <div class="item-info blog-info">
-              <div class="entry-blog">
-                <span class="bypost"><a href="#"><i class="fas fa-user"></i> Tom Black</a></span>
-                <span class="posted-on">
-                  <a href="#"><i class="fas fa-clock"></i> Sep 24, 2019</a>
-                </span>
-                <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
-              </div>
-              <h4><a href="#">Stock Market App Development - Time, Cost, Features</a></h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
+  </div>
+</section>
+
+<!-- Blog Grid -->
+<section class="dw-section">
+  <div class="dw-container">
+    <% if (blogs && blogs.length > 0) { %>
+
+    <div class="blog-grid">
+      <% blogs.forEach(function(blog, index) { %>
+      <a href="<%= blog.slug %>" class="blog-card reveal reveal-d<%= (index % 4) + 1 %>">
+        <div class="blog-card-img">
+          <img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" loading="<%= index < 4 ? 'eager' : 'lazy' %>" />
+          <% if (blog.tags && blog.tags.length > 0) { %>
+          <div class="blog-card-tags">
+            <% blog.tags.slice(0,2).forEach(function(tag) { %>
+            <span class="blog-tag"><%= tag.name %></span>
+            <% }); %>
           </div>
+          <% } %>
         </div>
-        <div class="col-lg-4 col-sm-6 single-card-item">
-          <div class="isotope_item hover-scale">
-            <div class="item-image">
-              <a href="#"><img src="images/blog/blog-2.webp" alt="blog" class="img-fluid" /> </a>
-              <span class="category-blog"><a href="#">iOs</a> <a href="#">Android</a></span>
-            </div>
-            <div class="item-info blog-info">
-              <div class="entry-blog">
-                <span class="bypost"><a href="#"><i class="fas fa-user"></i> Tom Black</a></span>
-                <span class="posted-on">
-                  <a href="#"><i class="fas fa-clock"></i> Sep 24, 2019</a>
-                </span>
-                <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
-              </div>
-              <h4><a href="#">Finance App Development - Time, Cost, Features</a></h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><i class="far fa-user"></i> <%= blog.authorName %></span>
+            <span><i class="far fa-clock"></i> <%= blog.created %></span>
           </div>
+          <h3 class="blog-card-title"><%= blog.name %></h3>
+          <span class="blog-read-more">Read article &rarr;</span>
         </div>
-        <div class="col-lg-4 col-sm-6 single-card-item">
-          <div class="isotope_item hover-scale">
-            <div class="item-image">
-              <a href="#"><img src="images/blog/blog-3.webp" alt="blog" class="img-fluid" /> </a>
-              <span class="category-blog"><a href="#">Marketing</a> <a href="#">SEM</a></span>
-            </div>
-            <div class="item-info blog-info">
-              <div class="entry-blog">
-                <span class="bypost"><a href="#"><i class="fas fa-user"></i> Tom Black</a></span>
-                <span class="posted-on">
-                  <a href="#"><i class="fas fa-clock"></i> Sep 24, 2019</a>
-                </span>
-                <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
-              </div>
-              <h4><a href="#">How to Increase Your ROI Through scientific SEM?</a></h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 single-card-item">
-          <div class="isotope_item hover-scale">
-            <div class="item-image">
-              <a href="#"><img src="images/blog/blog-4.webp" alt="blog" class="img-fluid" /> </a>
-              <span class="category-blog"><a href="#">Marketing</a> <a href="#">SEO</a></span>
-            </div>
-            <div class="item-info blog-info">
-              <div class="entry-blog">
-                <span class="bypost"><a href="#"><i class="fas fa-user"></i> Tom Black</a></span>
-                <span class="posted-on">
-                  <a href="#"><i class="fas fa-clock"></i> Sep 24, 2019</a>
-                </span>
-                <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
-              </div>
-              <h4><a href="#">How to Increase Website Traffic Using SEO</a></h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 single-card-item">
-          <div class="isotope_item hover-scale">
-            <div class="item-image">
-              <a href="#"><img src="images/blog/blog-5.webp" alt="blog" class="img-fluid" /> </a>
-              <span class="category-blog"><a href="#">Marketing</a> <a href="#">SEO</a></span>
-            </div>
-            <div class="item-info blog-info">
-              <div class="entry-blog">
-                <span class="bypost"><a href="#"><i class="fas fa-user"></i> Tom Black</a></span>
-                <span class="posted-on">
-                  <a href="#"><i class="fas fa-clock"></i> Sep 24, 2019</a>
-                </span>
-                <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
-              </div>
-              <h4><a href="#">How digital transformation has changed the world.</a></h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 single-card-item">
-          <div class="isotope_item hover-scale">
-            <div class="item-image">
-              <a href="#"><img src="images/blog/blog-6.webp" alt="blog" class="img-fluid" /> </a>
-              <span class="category-blog"><a href="#">Marketing</a> <a href="#">SEO</a></span>
-            </div>
-            <div class="item-info blog-info">
-              <div class="entry-blog">
-                <span class="bypost"><a href="#"><i class="fas fa-user"></i> Tom Black</a></span>
-                <span class="posted-on">
-                  <a href="#"><i class="fas fa-clock"></i> Sep 24, 2019</a>
-                </span>
-                <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
-              </div>
-              <h4><a href="#">How digital transformation has changed the world.</a></h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-          </div>
-        </div> -->
-      </div>
+      </a>
+      <% }); %>
     </div>
-  </section>
-  <!--End Blog Grid-->
 
-  <!--Start Footer-->
-  <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-  <!--End Footer-->
+    <% } else { %>
+    <div style="text-align:center;padding:80px 0">
+      <p style="font-size:1.1rem;color:var(--text-faint)">No articles yet. Check back soon.</p>
+      <a href="/" class="btn-outline" style="margin-top:20px">Go Home</a>
+    </div>
+    <% } %>
+  </div>
+</section>
 
-  <!-- js placed at the end of the document so the pages load faster -->
-  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/plugin.min.js"></script>
-  <script src="js/dark-mode.js"></script>
-  <!--common script file-->
-  <script src="js/main.js"></script>
+<!-- CTA -->
+<section class="cta-section dw-section">
+  <div class="dw-container">
+    <span class="section-label" style="justify-content:center">Start a Project</span>
+    <h2 class="reveal">Ready to build something real?</h2>
+    <p class="reveal reveal-d1">Talk to a senior engineer. No sales pitch, just a straight conversation.</p>
+    <div class="cta-btns reveal reveal-d2">
+      <a href="/contact-us" class="btn-primary btn-lg">Start a Project</a>
+      <a href="/lets-talk" class="btn-outline btn-lg">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+
+<style>
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } }
+
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.blog-card:hover { border-color: var(--border-hover); transform: translateY(-4px); color: inherit; }
+
+.blog-card-img { position: relative; overflow: hidden; }
+.blog-card-img img { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform .4s var(--ease); display: block; }
+.blog-card:hover .blog-card-img img { transform: scale(1.04); }
+
+.blog-card-tags { position: absolute; top: 14px; left: 14px; display: flex; gap: 6px; flex-wrap: wrap; }
+.blog-tag { padding: 3px 10px; background: rgba(10,10,15,.75); backdrop-filter: blur(6px); border-radius: 50px; font-size: .7rem; font-weight: 600; color: var(--accent-2); }
+
+.blog-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.blog-card-meta { display: flex; gap: 14px; font-size: .75rem; color: var(--text-faint); }
+.blog-card-meta i { margin-right: 4px; }
+.blog-card-title { font-size: 1.1rem; color: var(--text); margin: 0; line-height: 1.4; flex: 1; }
+.blog-read-more { font-size: .82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+</style>
+
 </body>
-
 </html>

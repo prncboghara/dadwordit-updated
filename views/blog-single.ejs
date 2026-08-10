@@ -1,477 +1,280 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, trackingId}) %>
+<body>
 
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
+
+<%- include('partials/header') %>
+
+<% if (blog) { %>
+
+<!-- Article Hero -->
+<section style="padding:150px 0 48px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(108,71,255,.09) 0%,transparent 60%);pointer-events:none"></div>
+  <div class="dw-container" style="position:relative;z-index:1">
+    <div class="breadcrumb-dw" style="justify-content:flex-start;margin-bottom:24px">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/blog">Blog</a>
+      <span class="breadcrumb-sep">/</span>
+      <span style="color:var(--text-muted)"><%= blog.name %></span>
+    </div>
+
+    <div style="max-width:760px">
+      <% if (blog.tags && blog.tags.length > 0) { %>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+        <% blog.tags.forEach(function(tag) { %>
+        <span style="padding:3px 12px;background:rgba(108,71,255,.1);border:1px solid rgba(108,71,255,.2);border-radius:50px;font-size:.72rem;font-weight:600;color:var(--accent)"><%= tag.name %></span>
+        <% }); %>
+      </div>
+      <% } %>
+
+      <h1 style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:20px;line-height:1.2"><%= blog.name %></h1>
+
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;flex-shrink:0">
+            <%= blog.authorName ? blog.authorName.charAt(0).toUpperCase() : 'D' %>
+          </div>
+          <div>
+            <p style="font-size:.82rem;font-weight:600;color:var(--text);margin:0"><%= blog.authorName %></p>
+            <p style="font-size:.72rem;color:var(--text-faint);margin:0">Dadword IT</p>
+          </div>
+        </div>
+        <span style="font-size:.78rem;color:var(--text-faint)"><i class="far fa-clock" style="margin-right:5px"></i><%= blog.created %></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cover image -->
+<% if (blog.cover) { %>
+<div class="dw-container" style="padding-bottom:0">
+  <div style="border-radius:var(--card-radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-lg);margin-bottom:0">
+    <img src="<%= blog.cover %>" alt="<%= blog.name %>" style="width:100%;display:block;max-height:500px;object-fit:cover" />
+  </div>
+</div>
+<% } %>
+
+<!-- Main content + sidebar -->
+<section style="padding:60px 0 100px">
+  <div class="dw-container">
+    <div class="blog-layout">
+
+      <!-- Article body -->
+      <article class="blog-article">
+        <div class="blog-content">
+          <%- blog.content %>
+        </div>
+
+        <!-- Share -->
+        <div class="blog-share">
+          <span class="blog-share-label">Share this article</span>
+          <div class="blog-share-icons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<%= blog.blogUrl %>" target="_blank" rel="noopener" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=<%= blog.blogUrl %>&text=<%= encodeURIComponent(blog.name) %>" target="_blank" rel="noopener" class="share-btn" aria-label="Share on X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<%= blog.blogUrl %>" target="_blank" rel="noopener" class="share-btn" aria-label="Share on LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+
+        <!-- Recent posts -->
+        <% if (recent_blogs && recent_blogs.length > 0) { %>
+        <div class="sidebar-block">
+          <h4 class="sidebar-title">Recent Articles</h4>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <% recent_blogs.forEach(function(rb) { %>
+            <a href="<%= rb.url %>" class="sidebar-post">
+              <img src="<%= rb.featuredImage %>" alt="<%= rb.name %>" loading="lazy" />
+              <div>
+                <p class="sidebar-post-date"><%= rb.created %></p>
+                <p class="sidebar-post-title"><%= rb.name %></p>
+              </div>
+            </a>
+            <% }); %>
+          </div>
+        </div>
+        <% } %>
+
+        <!-- CTA widget -->
+        <div class="sidebar-cta">
+          <p class="sidebar-cta-label">Have a project in mind?</p>
+          <h4>Let&rsquo;s build it together.</h4>
+          <p style="font-size:.85rem;margin-bottom:16px">Senior-led. AI-enhanced. Custom code only.</p>
+          <a href="/contact-us" class="btn-primary" style="width:100%;justify-content:center">Start a Project</a>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+<% } else { %>
+<section style="min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:160px 24px">
+  <div>
+    <h2>Article not found.</h2>
+    <p style="margin:14px 0 28px">This article may have been moved or removed.</p>
+    <a href="/blog" class="btn-outline btn-lg">&larr; Back to Blog</a>
+  </div>
+</section>
+<% } %>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs || [] }) %>
+<script src="/js/dadword.js" defer></script>
+
 <style>
-  .blog-page {
-    /* font-family: 'Arial', sans-serif; */
-    font-size: 18px;
-    line-height: 1.7;
-    color: #333;
-    background-color: #ffffff;
-    padding: 20px;
-  }
+/* Blog article content */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 60px;
+  align-items: start;
+}
+@media (max-width: 992px) { .blog-layout { grid-template-columns: 1fr; } }
 
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    color: #222;
-    margin-bottom: 12px;
-  }
+.blog-article {}
 
-  h1 {
-    font-size: 32px;
-    font-weight: bold;
-  }
+.blog-content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+}
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: var(--text);
+  margin-top: 2em;
+  margin-bottom: .6em;
+  font-family: var(--font-display);
+  letter-spacing: -.02em;
+}
+.blog-content h2 { font-size: 1.7rem; }
+.blog-content h3 { font-size: 1.35rem; }
+.blog-content h4 { font-size: 1.1rem; }
+.blog-content p { margin-bottom: 1.2em; color: var(--text-muted); }
+.blog-content a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.blog-content a:hover { color: var(--accent-2); }
+.blog-content ul,
+.blog-content ol { padding-left: 1.5em; margin-bottom: 1.2em; }
+.blog-content ul { list-style: disc; }
+.blog-content ol { list-style: decimal; }
+.blog-content li { margin-bottom: .5em; color: var(--text-muted); }
+.blog-content img { border-radius: 10px; border: 1px solid var(--border); margin: 1.5em 0; }
+.blog-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 14px 20px;
+  margin: 1.5em 0;
+  background: rgba(108,71,255,.06);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+.blog-content blockquote p { margin: 0; }
+.blog-content pre {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  font-size: .88rem;
+  line-height: 1.6;
+}
+.blog-content code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: .9em;
+}
+.blog-content :not(pre) > code {
+  padding: 2px 7px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: .85em;
+  color: var(--accent-2);
+}
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: .9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.blog-content th { background: var(--surface-2); color: var(--text); font-weight: 700; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+.blog-content td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.blog-content tr:last-child td { border-bottom: none; }
+.blog-content hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
 
-  h2 {
-    font-size: 28px;
-    font-weight: bold;
-  }
+/* Share */
+.blog-share {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.blog-share-label { font-size: .8rem; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: .06em; }
+.blog-share-icons { display: flex; gap: 8px; }
+.share-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  color: var(--text-muted);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.share-btn:hover { background: rgba(108,71,255,.15); border-color: rgba(108,71,255,.4); color: var(--text); }
 
-  h3 {
-    font-size: 24px;
-    font-weight: bold;
-  }
+/* Sidebar */
+.blog-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 24px; }
+.sidebar-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 24px; }
+.sidebar-title { font-size: .78rem; font-weight: 700; color: var(--text-faint); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 16px; }
+.sidebar-post {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity var(--dur) var(--ease);
+}
+.sidebar-post:last-child { border-bottom: none; padding-bottom: 0; }
+.sidebar-post:hover { opacity: .7; }
+.sidebar-post img { width: 60px; height: 48px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+.sidebar-post-date { font-size: .68rem; color: var(--text-faint); margin: 0 0 3px; }
+.sidebar-post-title { font-size: .82rem; color: var(--text-muted); margin: 0; line-height: 1.4; }
 
-  /* Paragraphs */
-  p {
-    margin-bottom: 16px;
-    color: #444;
-  }
-
-  /* Lists */
-  ul, ol {
-    padding-left: 20px;
-    margin-bottom: 16px;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-
-  ol {
-    list-style-type: decimal;
-  }
-
-  li {
-    margin-bottom: 8px;
-    font-size: 18px;
-    color: #333;
-  }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
-    background: #fff;
-    border: 1px solid #ddd;
-  }
-
-  th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-  }
-
-  th {
-    background-color: #7E54F8;
-    color: #fff;
-    font-weight: bold;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  /* Images */
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px 0;
-    border-radius: 8px;
-  }
-
-  /* Links */
-  a {
-    color: #7E54F8;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Blockquotes */
-  blockquote {
-    border-left: 4px solid #7E54F8;
-    padding: 10px 20px;
-    margin: 20px 0;
-    font-style: italic;
-    color: #555;
-    background: #f9f9ff;
-  }
-
+.sidebar-cta {
+  background: linear-gradient(135deg, rgba(108,71,255,.1) 0%, rgba(0,212,200,.07) 100%);
+  border: 1px solid rgba(108,71,255,.3);
+  border-radius: var(--card-radius);
+  padding: 24px;
+}
+.sidebar-cta-label { font-size: .72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.sidebar-cta h4 { font-size: 1rem; margin-bottom: 8px; }
 </style>
 
-<body>
-  <!--Start Header -->
-  <%- include ('partials/header') %>
-  <!--End Header -->
-
-  <!--Breadcrumb Area-->
-  <section class="breadcrumb-area banner-2">
-    <div class="text-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 v-center">
-            <div class="bread-inner">
-              <div class="bread-menu">
-                <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="blog-grid.html">Blog</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--End Breadcrumb Area-->
-  <!--Start Blog Details-->
-  <section class="blog-page pad-tb">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="blog-header">
-            <h1><%= blog.name %></h1>
-          </div>
-          <div class="image-set"><img src="<%= blog.cover %>" alt="blog images" class="img-fluid" /></div>
-          <div class="blog-content mt30">
-            <%- blog.content %>
-
-            <div class="row">
-              <!-- <div class="col-lg-8 col-md-8 mt30 mb30">
-                <div class="blog-post-tag">
-                  <span>Releted Tags</span>
-                  <a href="#">Web Design</a>
-                  <a href="#">Marketing</a>
-                  <a href="#">SEO</a>
-                </div>
-              </div> -->
-              <div class="col-lg-4 col-md-4 mt30 mb30">
-                <div class="blog-share-icon text-left text-md-right">
-                  <span>Share: </span>
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= blog.blogUrl %>" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="https://twitter.com/intent/tweet?url=<%= blog.blogUrl %>&text=<%= blog.name %>" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/sharing/share-offsite/?url=<%= blog.blogUrl %>" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="author-block">
-            <div class="media">
-              <div class="user-image"><img src="/images/user-thumb/girl.jpg" alt="girl" class="img-fluid" /></div>
-              <div class="media-body user-info">
-                <h5 class="mb10">Sasa Smile</h5>
-                <p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                  odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                  fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </p>
-              </div>
-            </div>
-          </div> -->
-          <div class="comments-block mt60">
-            <!-- <h2 class="mb60">Comments:</h2> -->
-            <!-- <div id="commentsSection">
-              <% if (blog.comments && blog.comments.length > 0) { %>
-                <% blog.comments.forEach(function(comment) { %>
-                    <div class="media">
-                      <div class="media-body user-info  w-100">
-                        <h5 class="mb10">
-                          <%= comment.userName %> <small>says:</small>
-                          <span>
-                            <%= comment.createdAt %> <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                          </span>
-                        </h5>
-                        <p><%= comment.comment %></p>
-                      </div>
-                    </div>
-                  <% }) %>
-              <% } else { %>
-                <p>No comments available.</p>
-              <% } %>
-            </div> -->
-            <!-- <div class="media">
-              <div class="user-image"><img src="/images/user-thumb/user3.jpg" alt="girl" class="img-fluid" /></div>
-              <div class="media-body user-info">
-                <h5 class="mb10">
-                  Petey Cruiser <small>says:</small>
-                  <span>
-                    November 29, 2019 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                  </span>
-                </h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry’s standard dummy text ever since the 1500.</p>
-              </div>
-            </div> -->
-            <!-- <div class="media replied">
-              <div class="user-image"><img src="/images/user-thumb/user3.jpg" alt="girl" class="img-fluid" /></div>
-              <div class="media-body user-info">
-                <h5 class="mb10">
-                  Petey Cruiser <small>says:</small>
-                  <span>
-                    November 29, 2019 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                  </span>
-                </h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry’s standard dummy text ever.</p>
-              </div>
-            </div>
-            <div class="media">
-              <div class="user-image bdr-radius"><img src="/images/user-thumb/user3.jpg" alt="girl" class="img-fluid" />
-              </div>
-              <div class="media-body user-info">
-                <h5 class="mb10">
-                  Petey Cruiser <small>says:</small>
-                  <span>
-                    May 25, 2020 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                  </span>
-                </h5>
-                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-              </div>
-            </div> -->
-            <!-- <div class="form-block form-blog mt60">
-              <div id="successMessage" class="alert alert-success" style="display: none;">
-                Comment added successfully!
-              </div>
-              <form id="commentForm">
-                <input type="hidden" name="id" value="<%= blog.id %>">
-                <input type="hidden" name="title" value="<%= blog.name %>">
-                <div class="fieldsets row">
-                  <div class="col-md-6"><input type="text" placeholder="Name" name="userName" /></div>
-                  <div class="col-md-6"><input type="email" placeholder="Email" name="userEmail" /></div>
-                </div>
-                <div class="fieldsets"><textarea placeholder="Write Your Comment" name="comment"></textarea></div>
-                <div class="fieldsets mt10">
-                  <button type="submit" name="#" class="btn-main bg-btn lnk">Submit <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></button>
-                </div>
-              </form>
-            </div> -->
-          </div>
-        </div>
-        <!--End Blog Details-->
-        <!--Start Sidebar-->
-        <div class="col-lg-4">
-          <div class="sidebar">
-            <!--Start block for offer/ads-->
-            <!-- <div class="offer-image">
-              <img src="/images/blog/strategy-guide.webp" alt="offer" class="img-fluid" />
-            </div> -->
-            <!--End block for offer/ads-->
-            <!--Start Recent post-->
-            <div class="recent-post widgets mt60">
-              <h3 class="mb30">Recent post</h3>
-              
-              <!-- recent posts -->
-              <% if (recent_blogs && recent_blogs.length > 0) { %>
-                  <% recent_blogs.forEach(function(blog) { %>
-                    <div class="media">
-                      <div class="post-image bdr-radius">
-                        <a href="<%= blog.url %>"><img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" class="img-fluid" /></a>
-                      </div>
-                      <div class="media-body post-info">
-                        <h5><a href="<%= blog.url %>"><%= blog.name %></a></h5>
-                        <p><%= blog.created %></p>
-                      </div>
-                    </div>
-                  <% }); %>
-              <% } else { %>
-                  <p>No recent blogs available.</p>
-              <% } %>
-            </div>
-            <!--Start Recent post-->
-            <!--Start Blog Category-->
-            <!-- <div class="recent-post widgets mt60">
-              <h3 class="mb30">Blog Category</h3>
-              <div class="blog-categories">
-                <ul>
-                  <li>
-                    <a href="#">Business <span class="categories-number">(2)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Financial <span class="categories-number">(3)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Uncategorized <span class="categories-number">(4)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Web Design <span class="categories-number">(3)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">WordPress <span class="categories-number">(5)</span></a>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-            <!--End Blog Category-->
-            <!--Start Tags-->
-            <!-- <div class="recent-post widgets mt60">
-              <h3 class="mb30">Most Used Tags</h3>
-              <div class="tabs">
-                <a href="#">webdesign</a>
-                <a href="#">design </a>
-                <a href="#">graphicdesign </a>
-                <a href="#">website </a>
-                <a href="#">marketing </a>
-                <a href="#">branding </a>
-                <a href="#">webdevelopment </a>
-                <a href="#">webdesigner </a>
-                <a href="#">graphicdesign </a>
-                <a href="#">website </a>
-                <a href="#">marketing </a>
-                <a href="#">branding </a>
-              </div>
-            </div> -->
-            <!--End Tags-->
-            <!--Start block for offer/ads-->
-            <!-- <div class="offer-image mt60">
-              <img src="/images/blog/sidebar-image.jpg" alt="offer" class="img-fluid" />
-            </div> -->
-            <!--End block for offer/ads-->
-          </div>
-        </div>
-        <!--End Sidebar-->
-      </div>
-    </div>
-  </section>
-
-  <!--Start Enquire Form-->
-	<!-- <section class="enquire-form pad-tb">
-		<div class="container">
-			<div class="row light-bgs">
-				<div class="col-lg-6">
-					<div class="common-heading text-l">
-						<span>Contact Now</span>
-						<h2 class="mt0">Have Question? Write a Message</h2>
-					</div>
-					<div class="form-block">
-						<form action="#" method="post" name="feedback-form">
-							<div class="fieldsets row">
-								<div class="col-md-6"><input type="text" placeholder="Full Name" name="name"></div>
-								<div class="col-md-6"><input type="email" placeholder="Email Address" name="email">
-								</div>
-							</div>
-							<div class="fieldsets row">
-								<div class="col-md-6"><input type="number" placeholder="Contact Number" name="phone">
-								</div>
-								<div class="col-md-6"><input type="text" placeholder="Subject" name="subject"></div>
-							</div>
-							<div class="fieldsets"><textarea placeholder="Message" name="message"></textarea></div>
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customCheck" name="example1" checked="checked">
-								<label class="custom-control-label" for="customCheck">I agree to the <a href="javascript:void(0)">Terms &amp; Conditions</a> of Business Name.</label>
-							</div>
-							<div class="fieldsets mt20"> <button type="submit" name="submit" class="lnk btn-main bg-btn">Submit <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></button> </div>
-							<p class="trm"><i class="fas fa-lock"></i>We hate spam, and we respect your privacy.</p>
-						</form>
-					</div>
-				</div>
-				<div class="col-lg-6 v-center">
-					<div class="enquire-image">
-						<img src="/images/about/contact.webp" alt="enquire" class="img-fluid" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!--End Enquire Form-->
-
-  <!--Start Footer-->
-  <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-  <!--End Footer-->
-
-  <!-- js placed at the end of the document so the pages load faster -->
-  <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/plugin.min.js"></script>
-  <script src="/js/dark-mode.js"></script>
-  <!--common script file-->
-  <script src="/js/main.js"></script>
-  <script>
-        document.getElementById('commentForm').addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const formData = new FormData(event.target);
-
-      const commentData = {
-        id: formData.get('id'),
-        title: formData.get('title'),
-        userEmail: formData.get('userEmail'),
-        userName: formData.get('userName'),
-        comment: formData.get('comment'),
-      };
-
-      try {
-        const response = await fetch('/add-comment', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(commentData),
-        });
-
-        if (response.ok) {
-          const result = await response.json();
-
-          const successMessage = document.getElementById('successMessage');
-          successMessage.style.display = 'block';
-
-          setTimeout(() => {
-            successMessage.style.display = 'none'
-          }, 5000);
-
-          const commentsSection = document.getElementById('commentsSection');
-          const newComment = document.createElement('div');
-          newComment.classList.add('media');
-          newComment.innerHTML = `
-            <div class="media-body user-info w-100">
-              <h5 class="mb10">
-                ${result.userName} <small>says:</small>
-                <span>
-                  ${result.createdAt} <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                </span>
-              </h5>
-              <p>${result.comment}</p>
-            </div>
-          `;
-
-          commentsSection.appendChild(newComment);
-          event.target.reset();
-        } else {
-          throw new Error('Failed to add comment');
-        }
-      } catch (error) {
-        console.error('Error:', error.message);
-        alert('There was an error adding your comment. Please try again.');
-      }
-    });
-
-  </script>
 </body>
-
 </html>

@@ -1,124 +1,136 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
-
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
-	<!--Start Header -->
-	<%- include ('partials/header') %>
-	<!--End Header -->
 
-	<!--Breadcrumb Area-->
-	<section class="breadcrumb-area banner-1" data-background="images/banner/9.webp">
-		<div class="text-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 v-center">
-						<div class="bread-inner">
-							<div class="bread-menu">
-								<ul>
-									<li><a href="/">Dadword IT</a></li>
-									<li><a href="#">Terms and Conditions</a></li>
-								</ul>
-							</div>
-							<div class="bread-title">
-								<h2>Terms and Conditions</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Breadcrumb Area-->
-	<!--Start -->
-	<section class="about-agency pvcpolcy-container pad-tb block-1">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
 
-					<div class="pvcpolcy">
-						<h4 class="mb10">Effective Date: 01/01/2025</h4>
-						<p class="mb10">Welcome to Dadword IT! These Terms & Conditions govern your use of our website and services. By accessing or using our website or engaging our services, you agree to comply with and be bound by these terms. If you do not agree, please refrain from using our website or services.</p>
+<%- include('partials/header') %>
 
-						<!-- 1. Services Overview section -->
-						<h4 class="mb10 mt30">1. Services Overview</h4>
-						<p class="m-0">Dadword IT provides web design and web development services. The specifics of each project, including deliverables, timelines, and pricing, will be outlined in individual agreements or contracts with our clients.</p>
+<section class="inner-page-hero">
+  <div class="dw-container">
+    <div class="breadcrumb-dw">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Terms &amp; Conditions</span>
+    </div>
+    <h1 class="inner-page-title">Terms &amp; Conditions</h1>
+    <p class="inner-page-sub">Effective Date: 01 January 2025</p>
+  </div>
+</section>
 
-						<!-- 2. Payment Terms section -->
-						<h4 class="mb10 mt30">2. Payment Terms</h4>
-						<p class="m-0">All payments must be made according to the terms specified in the project agreement or invoice.</p>
-						<p class="m-0">Late payments may incur additional charges as specified in the agreement.</p>
-						<p class="m-0">In the event of non-payment, Dadword IT reserves the right to suspend services or withhold deliverables.</p>
+<section class="legal-section">
+  <div class="dw-container">
+    <div class="legal-body">
 
-						<!-- 3. Ownership of Work section -->
-						<h4 class="mb10 mt30">3. Ownership of Work</h4>
-						<p class="m-0">Upon full payment, the ownership of the final deliverables will transfer to the client.</p>
-						<p class="m-0">Dadword IT retains the right to showcase completed work in our portfolio unless otherwise agreed upon.</p>
-						<p class="m-0">All intellectual property created during the project remains the property of Dadword IT until the client fulfills all payment obligations.</p>
+      <p>Welcome to Dadword IT. These Terms and Conditions govern your use of our website and services. By accessing or using our website or engaging our services, you agree to comply with and be bound by these terms. If you do not agree, please refrain from using our website or services.</p>
 
-						<!-- Revisions and Changes section -->
-						<h4 class="mb10 mt30">4. Revisions and Changes</h4>
-						<p class="m-0">Any revisions or changes requested after project approval may incur additional charges and may affect the project timeline.</p>
-						<p class="m-0">The number of revisions included in the project will be specified in the project agreement.</p>
-						
-						<!-- Website Usage Guidelines section -->
-						<h4 class="mb10 mt30">5. Website Usage Guidelines</h4>
-						<p class="mb10">By accessing our website, you agree to:</p>
-						<p class="m-0">Use the site only for lawful purposes.</p>
-						<p class="m-0">Not engage in any activity that disrupts or damages the website or its functionality.</p>
-						<p class="m-0">Refrain from unauthorized use of content, code, or intellectual property from our website.</p>
+      <h2>1. Services Overview</h2>
+      <p>Dadword IT provides custom web development, Shopify app development, SaaS product builds, and related digital services. The specifics of each project including deliverables, timelines, and pricing will be outlined in individual agreements or contracts with our clients.</p>
 
-						<!-- Limitation of Liability section -->
-						<h4 class="mb10 mt30">6. Limitation of Liability</h4>
-						<p class="m-0">Dadword IT is not liable for any direct, indirect, or consequential damages resulting from the use of our website or services.</p>
-						<p class="m-0">We are not responsible for delays, interruptions, or errors caused by third-party services or software.</p>
+      <h2>2. Payment Terms</h2>
+      <ul>
+        <li>All payments must be made according to the terms specified in the project agreement or invoice.</li>
+        <li>Late payments may incur additional charges as specified in the agreement.</li>
+        <li>In the event of non-payment, Dadword IT reserves the right to suspend services or withhold deliverables.</li>
+      </ul>
 
-						<!-- 7. Confidentiality section -->
-						<h4 class="mb10 mt30">7. Confidentiality</h4>
-						<p class="m-0">We maintain the confidentiality of all client information and project details. However, we may use project details and screenshots (excluding sensitive information) for promotional purposes unless agreed otherwise.</p>
+      <h2>3. Ownership of Work</h2>
+      <ul>
+        <li>Upon full payment, ownership of the final deliverables transfers to the client.</li>
+        <li>Dadword IT retains the right to showcase completed work in our portfolio unless otherwise agreed.</li>
+        <li>All intellectual property created during the project remains the property of Dadword IT until the client fulfils all payment obligations.</li>
+      </ul>
 
-						<!-- 8. Third-Party Tools and Services section -->
-						<h4 class="mb10 mt30">8. Third-Party Tools and Services</h4>
-						<p class="m-0">Our services may involve third-party tools or software. Dadword IT is not responsible for the functionality, reliability, or security of these tools. Clients agree to the terms and conditions of third-party services when they are integrated into the project.</p>
+      <h2>4. Revisions and Changes</h2>
+      <ul>
+        <li>Any revisions or changes requested after project approval may incur additional charges and may affect the project timeline.</li>
+        <li>The number of revisions included in the project will be specified in the project agreement.</li>
+      </ul>
 
-						<!-- 9. Termination section -->
-						<h4 class="mb10 mt30">9. Termination</h4>
-						<p class="m-0">Either party may terminate the project agreement with prior written notice as specified in the agreement. In the event of termination, the client will be responsible for payment for all work completed up to the termination date.</p>
+      <h2>5. Website Usage Guidelines</h2>
+      <p>By accessing our website, you agree to:</p>
+      <ul>
+        <li>Use the site only for lawful purposes.</li>
+        <li>Not engage in any activity that disrupts or damages the website or its functionality.</li>
+        <li>Refrain from unauthorised use of content, code, or intellectual property from our website.</li>
+      </ul>
 
-						<!-- 10. Governing Law section -->
-						<h4 class="mb10 mt30">10. Governing Law</h4>
-						<p class="m-0">These Terms & Conditions shall be governed by and construed in accordance with the laws of Rajkot, Gujarat, India. Any disputes arising from these terms will be subject to the exclusive jurisdiction of the courts in Rajkot, Gujarat, India.</p>
+      <h2>6. Limitation of Liability</h2>
+      <ul>
+        <li>Dadword IT is not liable for any direct, indirect, or consequential damages resulting from the use of our website or services.</li>
+        <li>We are not responsible for delays, interruptions, or errors caused by third-party services or software.</li>
+      </ul>
 
-						<!-- 11. Changes to Terms section -->
-						<h4 class="mb10 mt30">11. Changes to Terms</h4>
-						<p class="m-0">Dadword IT reserves the right to update or modify these Terms & Conditions at any time without prior notice. Continued use of our website or services after such changes signifies your acceptance of the updated terms.</p>
+      <h2>7. Confidentiality</h2>
+      <p>We maintain the confidentiality of all client information and project details. We may use project details and screenshots (excluding sensitive information) for promotional purposes unless agreed otherwise.</p>
 
-						<!-- Updates to This Policy section -->
-						<h4 class="mb10 mt30">9. Contact Us</h4>
-						<p class="m-0">If you have any questions or concerns about these Terms & Conditions, please contact us at:</p>
-						<p class="m-0"><strong>Dadword IT</strong></p>
-						<p class="m-0">Email:<strong>support@dadwordit.com</strong></p>
-						<p class="m-0">Phone:<strong>8511096482</strong></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Terms and Conditions-->
+      <h2>8. Third-Party Tools and Services</h2>
+      <p>Our services may involve third-party tools or software. Dadword IT is not responsible for the functionality, reliability, or security of these tools. Clients agree to the terms of third-party services when they are integrated into a project.</p>
 
+      <h2>9. Termination</h2>
+      <p>Either party may terminate the project agreement with prior written notice as specified in the agreement. In the event of termination, the client will be responsible for payment for all work completed up to the termination date.</p>
 
-	<!--Start Footer-->
-	<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-	<!--End Footer-->
+      <h2>10. Governing Law</h2>
+      <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of Rajkot, Gujarat, India. Any disputes arising from these terms will be subject to the exclusive jurisdiction of the courts in Rajkot, Gujarat, India.</p>
 
-	<!-- js placed at the end of the document so the pages load faster -->
-	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/plugin.min.js"></script>
-	<!--common script file-->
-	<script src="js/main.js"></script>
+      <h2>11. Changes to Terms</h2>
+      <p>Dadword IT reserves the right to update or modify these Terms and Conditions at any time without prior notice. Continued use of our website or services after such changes signifies your acceptance of the updated terms.</p>
+
+      <h2>12. Contact Us</h2>
+      <p>If you have any questions or concerns about these Terms and Conditions, please contact us at:</p>
+      <p><strong>Dadword IT</strong><br>Email: <a href="mailto:support@dadwordit.com">support@dadwordit.com</a></p>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+
+<style>
+.inner-page-hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+.inner-page-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin: 12px 0 16px;
+}
+.inner-page-sub {
+  font-size: .9rem;
+  color: var(--text-faint);
+}
+
+.legal-section { padding-bottom: 100px; }
+
+.legal-body {
+  max-width: 760px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: .95rem;
+}
+.legal-body h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 12px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.legal-body h2:first-of-type { margin-top: 32px; padding-top: 32px; }
+.legal-body p { margin: 0 0 14px; }
+.legal-body ul {
+  padding-left: 20px;
+  margin: 0 0 14px;
+}
+.legal-body ul li { margin-bottom: 8px; }
+.legal-body a { color: var(--accent); }
+.legal-body strong { color: var(--text-primary); }
+</style>
+
 </body>
-
 </html>

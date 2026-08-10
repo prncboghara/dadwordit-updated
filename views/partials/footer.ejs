@@ -1,164 +1,90 @@
-<footer>
-    <!-- <div class="footer-row1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="email-subs">
-                        <h3>Get New Insights Weekly</h3>
-                        <p>News letter dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Enter your email</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 v-center">
-                    <div class="email-subs-form">
-                        <form>
-                            <input type="email" placeholder="Email Your Address" name="emails">
-                            <button type="submit" name="submit" class="lnk btn-main bg-btn">Subscribe <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <div class="footer-row2">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-3 col-sm-6  ftr-brand-pp">
-                    <a class="navbar-brand mt30 mb25 f-dark-logo" href="#"> <img src="/images/logo.webp"
-                            alt="Logo" /></a>
-                    <a class="navbar-brand mt30 mb25 f-white-logo" href="#"> <img src="/images/white-logo.webp"
-                            alt="Logo" /></a>
-                    <p>Your Vision, Our Craft, Infinite Possibilities.</p>
-                    <!-- <a href="#" class="btn-main bg-btn3 lnk mt20">Become Partner <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a> -->
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <h5>Contact Us</h5>
-                    <ul class="footer-address-list ftr-details">
-                        <li>
-                            <span>
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@dadwordit.com"
-                                    target="_blank">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </span>
-                            <p>Email <span> <a href="mailto:contact@dadwordit.com">contact@dadwordit.com</a></span>
-                            </p>
-                        </li>
-                        <li>
-                            <span>
-                                <a href="tel:+918511096482">
-                                    <i class="fas fa-phone-alt"></i>
-                                </a>
-                            </span>
-                            <p>Phone <span> <a href="tel:+918511096482">+91 85110 96482</a></span></p>
-                        </li>
-                        <li>
-                            <span>
-                                <a href="https://maps.app.goo.gl/ggZKZeFSU2dBbuhz6" target="_blank"
-                                    style="color: inherit; text-decoration: none;">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </a>
-                            </span>
-                            <p>Address <span> N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall,
-                                    Rajkot - 360004</span></p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <h5>Company</h5>
-                    <ul class="footer-address-list link-hover">
-                        <li><a href="/contact-us">Contact</a></li>
-                        <li><a href="/faq">Customer's FAQ</a></li>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-sm-6 footer-blog-">
-                    <h5>Latest Blogs</h5>
-                    <% if (recent_blogs && recent_blogs.length> 0) { %>
-                        <% recent_blogs.forEach(function(blog) { %>
-                            <div class="single-blog- mb-3">
-                                <div class="post-thumb">
-                                    <a href="<%= blog.url %>">
-                                        <img src="<%= blog.featuredImage %>" alt="<%= blog.name %>">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <p class="post-meta">
-                                        <span class="post-date"><i class="far fa-clock"></i>
-                                            <%= blog.created %>
-                                        </span>
-                                    </p>
-                                    <h4 class="title">
-                                        <a href="<%= blog.url %>">
-                                            <%= blog.name %>
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
-                            <% }); %>
-                                <% } else { %>
-                                    <p>No recent blogs available.</p>
-                                    <% } %>
+<footer class="site-footer">
+  <div class="dw-container">
+    <div class="footer-grid">
 
-                                        <!-- <div class="single-blog-">
-                        <div class="post-thumb"><a href="#"><img src="images/blog/blog-small.webp" alt="blog"></a>
-                        </div>
-                        <div class="content">
-                            <p class="post-meta"><span class="post-date"><i class="far fa-clock"></i>April 15, 2020</span></p>
-                            <h4 class="title"><a href="blog-sngle.html">We Provide you Best &amp; Creative Consulting Service</a></h4>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="/images/white-logo.png" alt="Dadword IT" class="footer-logo" />
+        <p class="footer-tagline">Built by engineers who've shipped real products.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/people/Dadword-It/61554692296159/" target="_blank" rel="noopener" class="soc-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/dadwordit" target="_blank" rel="noopener" class="soc-icon" aria-label="X / Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/dadword_it/" target="_blank" rel="noopener" class="soc-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/dadword-it/" target="_blank" rel="noopener" class="soc-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
+      </div>
+
+      <!-- Work links -->
+      <div>
+        <p class="footer-col-title">Work</p>
+        <ul class="footer-links">
+          <li><a href="/our-work">Portfolio</a></li>
+          <li><a href="/#product">Customer Story</a></li>
+          <li><a href="/service">Services</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company links -->
+      <div>
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/career">Careers</a></li>
+          <li><a href="/lets-talk">Book a Call</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact + newsletter -->
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links" style="margin-bottom:24px">
+          <li>
+            <a href="mailto:contact@dadwordit.com">contact@dadwordit.com</a>
+          </li>
+          <li style="color:var(--text-faint);font-size:.82rem;line-height:1.5">
+            N-1007, North Building, Twinstar,<br>150 Feet Ring Road, Rajkot - 360004
+          </li>
+        </ul>
+
+        <!-- Latest blogs -->
+        <% if (typeof recent_blogs !== 'undefined' && recent_blogs && recent_blogs.length > 0) { %>
+        <p class="footer-col-title" style="margin-top:24px">Latest Posts</p>
+        <% recent_blogs.slice(0, 2).forEach(function(blog) { %>
+        <a href="<%= blog.url %>" class="footer-blog-item">
+          <p class="footer-blog-date"><i class="far fa-clock" style="margin-right:4px"></i><%= blog.created %></p>
+          <p class="footer-blog-title"><%= blog.name %></p>
+        </a>
+        <% }); %>
+        <% } %>
+      </div>
+
     </div>
-    <!-- <div class="footer-brands">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 v-center">
-                    <h5 class="mb10">Top App Development Companies</h5>
-                    <p>News letter dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-                        Enter your email</p>
-                </div>
-                <div class="col-lg-8 v-center">
-                    <ul class="footer-badges-">
-                        <li><a href="#"><img src="images/about/badges-a.webp" alt="badges"></a></li>
-                        <li><a href="#"><img src="images/about/badges-b.webp" alt="badges"></a></li>
-                        <li><a href="#"><img src="images/about/badges-c.webp" alt="badges"></a></li>
-                        <li><a href="#"><img src="images/about/badges-d.webp" alt="badges"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <div class="footer-row3">
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-social-media-icons">
-                            <a href="https://www.facebook.com/people/Dadword-It/61554692296159/" target="blank"><i
-                                    class="fab fa-facebook"></i></a>
-                            <a href="https://x.com/dadwordit" target="blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-                                    class="bi bi-twitter-x" viewBox="0 0 16 16">
-                                    <path
-                                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                                </svg>
-                                <!-- <i class="fab fa-twitter"></i> -->
-                            </a>
-                            <a href="https://www.instagram.com/dadword_it/" target="blank"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/company/dadword-it/?originalSubdomain=in"
-                                target="blank"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                        <div class="footer-">
-                            <p>© 2020-<%= new Date().getFullYear() %>. All Rights Reserved By <a href="#"
-                                        target="blank">Dadword IT</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; 2020 - <%= new Date().getFullYear() %> <a href="/">Dadword IT</a>. All rights reserved.
+      </p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms-and-conditions">Terms</a>
+        <a href="/contact-us">Contact</a>
+      </div>
     </div>
+
+  </div>
 </footer>

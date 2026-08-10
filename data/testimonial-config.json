@@ -1,25 +1,28 @@
 {
-    "testimonials": [
-        {
-            "text": "They're very professional and deliver with a high level of technical knowledge.",
-            "image": "images/user-thumb/sergiu.webp",
-            "name": "Sergiu Manolache",
-            "role": "CEO of Sergman Software Services",
-            "location": "Bucharest, Romania"
-        },
-        {
-            "text": "Dadword IT is the ideal software agency. Passionate, communicative, and smart. Highly recommended.",
-            "image": "images/user-thumb/evazi.webp",
-            "name": "Yashar Evazi",
-            "role": "CEO of ESGWAY",
-            "location": "California, USA"
-        },
-        {
-            "text": "I highly recommend their services to anyone looking for quality Shopify development.",
-            "image": "images/user-thumb/anil.webp",
-            "name": "Anil Pareek",
-            "role": "CEO of Atralia",
-            "location": "Udaipur, India"
-        }
-    ]
+  "testimonials": [
+    {
+      "text": "They're very professional and deliver with a high level of technical knowledge. The team understood our requirements quickly and built exactly what we needed.",
+      "image": "/images/user-thumb/sergiu.webp",
+      "name": "Sergiu Manolache",
+      "role": "CEO, Sergman Software Services",
+      "location": "Bucharest, Romania",
+      "stars": 5
+    },
+    {
+      "text": "Dadword IT is the ideal software agency. Passionate, communicative, and smart. They treated our product like their own — highly recommended for anyone serious about quality.",
+      "image": "/images/user-thumb/evazi.webp",
+      "name": "Yashar Evazi",
+      "role": "CEO, ESGWAY",
+      "location": "California, USA",
+      "stars": 5
+    },
+    {
+      "text": "I highly recommend their services to anyone looking for quality Shopify development. They delivered on time, communicated clearly throughout, and the result exceeded expectations.",
+      "image": "/images/user-thumb/anil.webp",
+      "name": "Anil Pareek",
+      "role": "CEO, Atralia",
+      "location": "Udaipur, India",
+      "stars": 5
+    }
+  ]
 }

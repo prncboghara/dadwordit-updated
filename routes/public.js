@@ -6,19 +6,20 @@ const SEO_CONFIG = require('../seo/config')
 
 const { getRecentBlogs, getBlogs, getBlog, postComment } = require('../controllers/blog')
 
-const portfolioConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/portfolio-config.json'), 'utf8'));
-const testimonialConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/testimonial-config.json'), 'utf8'));
-const clientConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/client-config.json'), 'utf8'));
-const caseStudies = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/case-studies-config.json'), 'utf8'));
+const dataDir = path.join(__dirname, '../data');
+
+function getData(filename) {
+    return JSON.parse(fs.readFileSync(path.join(dataDir, filename), 'utf8'));
+}
 
 router.get('/', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
     res.render('index', {
         recent_blogs: recent_blogs,
-        portfolioItems: portfolioConfig.portfolioItems,
-        testimonials: testimonialConfig.testimonials,
-        caseStudies: caseStudies.caseStudies,
-        clients: clientConfig.clients,
+        portfolioItems: getData('portfolio-config.json').portfolioItems,
+        testimonials: getData('testimonial-config.json').testimonials,
+        caseStudies: getData('case-studies-config.json').caseStudies,
+        clients: getData('client-config.json').clients,
         ...SEO_CONFIG.index,
         trackingId: process.env.G_TRACKING_ID
     });
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
 router.get('/portfolio/:slug', async (req, res) => {
     const slug = req.params.slug;
     let recent_blogs = await getRecentBlogs()
-    const project = portfolioConfig.portfolioItems.find(
+    const project = getData('portfolio-config.json').portfolioItems.find(
         item => item.slug === slug
     );
 
@@ -66,7 +67,7 @@ router.get('/our-work', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
     res.render('our-work', {
         recent_blogs: recent_blogs,
-        portfolioItems: portfolioConfig.portfolioItems,
+        portfolioItems: getData('portfolio-config.json').portfolioItems,
         ...SEO_CONFIG.our_work,
         trackingId: process.env.G_TRACKING_ID
     });
@@ -109,7 +110,14 @@ router.get('/blog/:slug', async (req, res) => {
             canonical: null
         });
     } else {
-        res.render('blog-single', {})
+        res.render('blog-single', {
+            blog: null,
+            recent_blogs: recent_blogs,
+            trackingId: process.env.G_TRACKING_ID,
+            title: 'Article Not Found | Dadword IT',
+            meta: { description: '' },
+            og: null, twitter: null, schema: null, canonical: null
+        });
     }
 });
 

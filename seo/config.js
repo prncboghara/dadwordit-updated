@@ -1,30 +1,30 @@
 const SEO_CONFIG = {
     index: {
-        title: 'SaaS & Web Development Agency for Startups | Dadword IT',
+        title: 'Dadword IT — Web Portals, Shopify Apps & SaaS Development Agency',
         meta: {
-            description: 'Dadword IT is a leading SaaS development company USA offering custom SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
-            keywords: 'SaaS development company USA, web development agency, web design, web development services, Dadword IT, website development, responsive design, custom web development',
+            description: 'Dadword IT is a senior-led web development agency specialising in custom web portals, Shopify app development, and SaaS product engineering. AI-enhanced delivery for US, Canada & Europe.',
+            keywords: 'custom web portal development, Shopify app development agency, SaaS product engineering, AI-enhanced web development, web development agency USA, Node.js React Next.js agency',
             author: 'Dadword IT'
         },
         og: {
-            title: 'SaaS & Web Development Agency for Startups | Dadword IT',
-            description: 'Exceptional SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
-            image: 'https://dadwordit.com/images/logo.png',
-            url: 'https://dadwordit.com',
+            title: 'Dadword IT — Web Portals, Shopify Apps & SaaS Development Agency',
+            description: 'Senior-led. AI-accelerated. We build custom web portals, Shopify apps, and SaaS products for startups and product companies in the US, Canada, and Europe.',
+            image: 'https://www.dadwordit.com/images/logo.webp',
+            url: 'https://www.dadwordit.com',
             type: 'website'
         },
         twitter: {
             card: 'summary_large_image',
-            title: 'SaaS & Web Development Agency for Startups | Dadword IT',
-            description: 'Exceptional SaaS product development, web development services, and UI/UX design for USA, Canada, Germany, Switzerland & Europe.',
-            image: 'https://dadwordit.com/images/logo.png'
+            title: 'Dadword IT — Web Portals, Shopify Apps & SaaS Development Agency',
+            description: 'Senior-led. AI-accelerated. Custom web portals, Shopify apps, and SaaS products for US, Canada & Europe.',
+            image: 'https://www.dadwordit.com/images/logo.webp'
         },
         schema: {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Dadword IT",
-            "alternateName": "Dadword IT - SaaS Development Company USA",
-            "description": "Dadword IT is a leading SaaS development company and web development agency providing custom SaaS product development, web development, and UI/UX design services.",
+            "alternateName": "Dadword IT - Web Portal & Shopify Development Agency",
+            "description": "Dadword IT is a senior-led web development agency building custom web portals, Shopify apps, and SaaS products with AI-enhanced engineering workflows.",
             "url": "https://www.dadwordit.com",
             "logo": "https://www.dadwordit.com/images/logo.webp",
             "image": "https://www.dadwordit.com/images/logo.webp",
@@ -41,7 +41,7 @@ const SEO_CONFIG = {
                 "latitude": "22.2969",
                 "longitude": "70.7984"
             },
-            "telephone": "+91-8511096248",
+            "telephone": "",
             "email": "contact@dadwordit.com",
             "openingHours": "Mo-Fr 09:00-18:00",
             "priceRange": "$$",
@@ -75,24 +75,32 @@ const SEO_CONFIG = {
                         "@type": "Offer",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "SaaS Development",
-                            "description": "Custom SaaS development, SaaS MVP development, and SaaS product development services"
+                            "name": "Custom Web Portal Development",
+                            "description": "B2B dashboards, client portals, and SaaS platform development with React and Next.js"
                         }
                     },
                     {
                         "@type": "Offer",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "Web Development",
-                            "description": "Full-stack web development, React development, Angular development services"
+                            "name": "Shopify App Development",
+                            "description": "Custom Shopify apps, theme extensions, and Hydrogen storefronts"
                         }
                     },
                     {
                         "@type": "Offer",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "UI/UX Design",
-                            "description": "Mobile app UI/UX design and product design services"
+                            "name": "SaaS Product Engineering",
+                            "description": "Full-stack SaaS product development from MVP to enterprise scale"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "AI-Enhanced Development",
+                            "description": "AI-assisted software engineering using Cursor and Claude for faster, senior-quality delivery"
                         }
                     }
                 ]
@@ -111,15 +119,15 @@ const SEO_CONFIG = {
         }
     },
     about: {
-        title: 'About Dadword IT | Leading Web Development Agency',
+        title: 'About Dadword IT | Boutique Senior-Led Web Development Agency',
         meta: {
-            description: 'Learn about Dadword IT, a top-rated web development and design agency. Discover our mission, expertise, and services we provide to help businesses grow online.',
-            keywords: 'About Dadword IT, web development agency, web design services',
+            description: 'Dadword IT is a boutique, senior-led web development agency building custom web portals, Shopify apps, and SaaS products. AI-enhanced engineering since 2024.',
+            keywords: 'about Dadword IT, boutique web development agency, senior web developers, AI-enhanced development agency',
             author: 'Dadword IT'
         },
         og: {
-            title: 'About Dadword IT | Leading Web Development Agency',
-            description: 'Learn about Dadword IT, a top-rated web development and design agency. Discover our mission, expertise, and services we provide to help businesses grow online.',
+            title: 'About Dadword IT | Boutique Senior-Led Web Development Agency',
+            description: 'A lean, senior-led engineering team building web portals, Shopify apps, and SaaS products. AI-enhanced since 2024.',
             image: 'https://dadwordit.com/images/logo.png',
             url: 'https://dadwordit.com',
             type: 'website'
@@ -148,15 +156,15 @@ const SEO_CONFIG = {
         canonical: "https://www.dadwordit.com/about"
     },
     service: {
-        title: 'Web Development & Design Services | Dadword IT',
+        title: 'Services — Web Portals, Shopify Apps, SaaS & AI Development | Dadword IT',
         meta: {
-            description: 'Discover professional web development and design services by Dadword IT. We build custom, responsive websites tailored to your business needs. Contact us today!',
-            keywords: 'Creative Agency, Marketing Agency, Web Development Agency',
+            description: 'Custom web portal development, Shopify app development, SaaS product engineering, and AI-enhanced development services. Senior engineers, faster delivery.',
+            keywords: 'custom web portal development, Shopify app development, SaaS engineering, AI-assisted development agency, Node.js Next.js Shopify agency',
             author: 'Dadword IT'
         },
         og: {
-            title: 'Web Development & Design Services | Dadword IT',
-            description: 'Discover professional web development and design services by Dadword IT. We build custom, responsive websites tailored to your business needs. Contact us today!',
+            title: 'Services — Web Portals, Shopify Apps, SaaS & AI Development | Dadword IT',
+            description: 'Specialist services: custom web portals, Shopify apps, SaaS product engineering, and AI-enhanced development. Senior-led, boutique agency.',
             image: 'https://dadwordit.com/images/logo.png',
             url: 'https://dadwordit.com',
             type: 'website'
