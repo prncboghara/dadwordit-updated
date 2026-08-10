@@ -1,209 +1,270 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, trackingId}) %>
+<body>
 
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
 
-	<body>
-		<!--Start Header -->
-		<%- include ('partials/header') %>
-			<!--End Header -->
+<%- include('partials/header') %>
 
-			<!--Breadcrumb Area-->
-			<section class="breadcrumb-area banner-6">
-				<div class="text-block">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 v-center">
-								<div class="bread-inner">
-									<div class="bread-menu wow fadeInUp" data-wow-delay=".2s">
-										<ul>
-											<li><a href="/html">Home</a></li>
-											<li><a href="#">Book a Free Consultation</a></li>
-										</ul>
-									</div>
-									<div class="bread-title wow fadeInUp" data-wow-delay=".5s">
-										<h2>Book a Free Consultation</h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End Breadcrumb Area-->
+<section class="lt-page">
+  <div class="dw-container">
 
-			<!--Start Enquire Form-->
-			<section class="contact-page pad-tb">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-11 v-center">
-							<div class="common-heading text-l">
-								<span>Book a Free Consultation</span>
-								<h2 class="mt0 mb0">Talking Today, Building Tomorrow</h2>
-								<p class="mb60 mt20">Let’s discuss how we can collaborate and grow together.</p>
-							</div>
-							<!-- <div class="form-block" id="schedule">
-								<div class="meetings-iframe-container"
-									data-src="https://meetings.hubspot.com/pboghara?embed=true"></div>
-								<script type="text/javascript"
-									src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
-							</div> -->
+    <div class="lt-layout">
 
-							<div id="schedule">
+      <!-- LEFT: context + trust -->
+      <div class="lt-left">
 
-								<!-- Calendly inline widget begin -->
-								<div class="calendly-inline-widget"
-									data-url="https://calendly.com/dadwordit/project-discussion-strategy-call?month=2026-03"
-									style="min-width:320px;height:700px;">
-								</div>
+        <div class="breadcrumb-dw" style="justify-content:flex-start;margin-bottom:28px">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Book a Call</span>
+        </div>
 
-								<script src="https://assets.calendly.com/assets/external/widget.js"
-									type="text/javascript" async></script>
-								<!-- Calendly inline widget end -->
+        <span class="section-label" style="margin-bottom:12px">Free 30-Min Call</span>
+        <h1 class="lt-title">Let's talk about<br>your project.</h1>
+        <p class="lt-sub">
+          No sales pitch, no obligation. Just a straight conversation with a
+          senior engineer about your idea, challenge, or roadmap.
+        </p>
 
-							</div>
-						</div>
+        <!-- What to expect -->
+        <div class="lt-expect">
+          <p class="lt-expect-title">What we cover in 30 minutes</p>
+          <ul class="lt-checklist">
+            <li>
+              <span class="lt-check">&#10003;</span>
+              Your project goals and timeline
+            </li>
+            <li>
+              <span class="lt-check">&#10003;</span>
+              The right tech stack for your use case
+            </li>
+            <li>
+              <span class="lt-check">&#10003;</span>
+              Rough scope and budget fit
+            </li>
+            <li>
+              <span class="lt-check">&#10003;</span>
+              Next steps if we're a good match
+            </li>
+          </ul>
+        </div>
 
-					</div>
-				</div>
-			</section>
+        <!-- Trust signals -->
+        <div class="lt-trust">
+          <div class="lt-trust-item">
+            <div class="lt-trust-avatar">S</div>
+            <div>
+              <p class="lt-trust-quote">"They're very professional and deliver with a high level of technical knowledge."</p>
+              <p class="lt-trust-name">Sergiu Manolache, CEO, Sergman Software</p>
+            </div>
+          </div>
+          <div class="lt-trust-item">
+            <div class="lt-trust-avatar" style="background:var(--accent-2)">Y</div>
+            <div>
+              <p class="lt-trust-quote">"Dadword IT is the ideal software agency. Passionate, communicative, and smart."</p>
+              <p class="lt-trust-name">Yashar Evazi, CEO, ESGWAY</p>
+            </div>
+          </div>
+        </div>
 
-			<section class="testinomial-section pad-tb bglight">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-5 v-center">
-							<div class="common-heading text-l">
-								<span>Clients Testimonial</span>
-								<h2 class="mb0">What our clients say about our Company.</h2>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							<div class="owl-carousel testimonial-card-a pl25">
-								<div class="testimonial-card">
-									<div class="t-text">
-										<p>They're very professional and deliver with a high level of technical
-											knowledge.</p>
-									</div>
-									<div class="client-thumbs mt30">
-										<div class="media v-center">
-											<div class="user-image bdr-radius"><img src="images/user-thumb/sergiu.webp"
-													alt="girl" class="img-fluid" /></div>
-											<div class="media-body user-info v-center">
-												<h5>Sergiu Manolache</h5>
-												<p>CEO of Sergman Software Services, <small>Bucharest, Romania</small>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="testimonial-card">
-									<div class="t-text">
-										<p>Dadword IT is the ideal software agency. Passionate, communicative, and
-											smart. Highly recommended.</p>
-									</div>
-									<div class="client-thumbs mt30">
-										<div class="media v-center">
-											<div class="user-image bdr-radius"><img src="images/user-thumb/evazi.webp"
-													alt="girl" class="img-fluid" /></div>
-											<div class="media-body user-info">
-												<h5>Yashar Evazi</h5>
-												<p>CEO of ESGWAY, <small>California, USA</small></p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="testimonial-card">
-									<div class="t-text">
-										<p>I highly recommend their services to anyone looking for quality Shopify
-											development.</p>
-									</div>
-									<div class="client-thumbs mt30">
-										<div class="media v-center">
-											<div class="user-image bdr-radius"><img src="images/user-thumb/anil.webp"
-													alt="girl" class="img-fluid" /></div>
-											<div class="media-body user-info">
-												<h5>Anil Pareek</h5>
-												<p>CEO of Atralia, <small>Udaipur, India</small></p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End Enquire Form-->
-			<!--Start Location-->
-			<section class="contact-location pad-tb bglight">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-8">
-							<div class="common-heading">
-								<span>Our Locations</span>
-								<h2>Our office</h2>
-							</div>
-						</div>
-					</div>
-					<div class="row justify-content-center upset shape-numm">
-						<!-- <div class="col-lg-4 col-sm-6 shape-loc wow fadeInUp" data-wow-delay=".2s">
-					<div class="office-card">
-						<div class="skyline-img">
-							<img src="images/location/newyork.png" alt="New York" class="img-fluid" />
-						</div>
-						<div class="office-text">
-							<h4>New York</h4>
-							<p>603 FA Forest Avenue, New York, USA 10021</p>
-							<a href="javascript:void(0)" target="blank" class="btn-outline">View on Map <i
-									class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 shape-loc wow fadeInUp" data-wow-delay=".4s">
-					<div class="office-card">
-						<div class="skyline-img">
-							<img src="images/location/sydeny.png" alt="sydney" class="img-fluid" />
-						</div>
-						<div class="office-text">
-							<h4>Sydney</h4>
-							<p>2449 Columbia Boulevard, Sydney, 10021</p>
-							<a href="javascript:void(0)" target="blank" class="btn-outline">View on Map <i
-									class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div> -->
-						<div class="col-lg-4 col-sm-6 shape-loc wow fadeInUp" data-wow-delay=".6s">
-							<div class="office-card mb0">
-								<div class="skyline-img" data-tilt data-tilt-max="4" data-tilt-speed="1000">
-									<img src="images/location/india.webp" alt="New York" class="img-fluid" />
-								</div>
-								<div class="office-text">
-									<h4>Rajkot</h4>
-									<p>N-1007, North Building, Twinstar, 150 Feet Ring Road, Opp. Balaji Hall, Rajkot -
-										360004</p>
-									<a href="javascript:void(0)" target="blank" class="btn-outline">View on Map <i
-											class="fas fa-chevron-right fa-icon"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End Location-->
-			<!--Start Footer-->
-			<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-				<!--End Footer-->
+        <!-- Contact fallback -->
+        <div class="lt-fallback">
+          <span>Prefer email?</span>
+          <a href="mailto:contact@dadwordit.com">contact@dadwordit.com</a>
+        </div>
 
+      </div>
 
-				<!-- js placed at the end of the document so the pages load faster -->
-				<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-				<script src="js/jquery.min.js"></script>
-				<script src="js/validator.min.js"></script>
-				<script src="js/form.js"></script>
-				<script src="js/bootstrap.bundle.min.js"></script>
-				<script src="js/plugin.min.js"></script>
-				<!--common script file-->
-				<script src="js/main.js"></script>
-	</body>
+      <!-- RIGHT: Calendly embed -->
+      <div class="lt-right">
+        <div class="lt-calendar-wrap">
+          <div class="lt-calendar-label">
+            <span class="lt-cal-dot"></span>
+            Pick a time that works for you
+          </div>
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/dadwordit/project-discussion-strategy-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0f&text_color=e2e2e8&primary_color=6c47ff"
+               style="min-width:280px;height:680px">
+          </div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        </div>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+
+<style>
+.lt-page {
+  padding-top: 140px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.lt-layout {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 72px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .lt-layout { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* Left */
+.lt-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.lt-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+
+.lt-expect {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+.lt-expect-title {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 16px;
+}
+.lt-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lt-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+.lt-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0,212,200,.12);
+  border: 1px solid rgba(0,212,200,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  color: var(--accent-2);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* Trust quotes */
+.lt-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.lt-trust-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.lt-trust-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.lt-trust-quote {
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 5px;
+  font-style: italic;
+}
+.lt-trust-name {
+  font-size: .72rem;
+  color: var(--text-faint);
+  margin: 0;
+  font-weight: 600;
+}
+
+.lt-fallback {
+  font-size: .85rem;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lt-fallback a {
+  color: var(--accent);
+  font-weight: 600;
+}
+.lt-fallback a:hover { color: var(--accent-2); }
+
+/* Right: Calendly wrapper */
+.lt-right { position: sticky; top: 100px; }
+
+.lt-calendar-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.lt-calendar-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.lt-cal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 8px rgba(0,212,200,.5);
+  flex-shrink: 0;
+}
+.calendly-inline-widget {
+  border: none;
+}
+</style>
+
+</body>
 </html>

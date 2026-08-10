@@ -1,205 +1,203 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, trackingId}) %>
+<body>
 
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
 
-	<body>
-		<!--Start Header -->
-		<%- include ('partials/header') %>
-			<!--End Header -->
+<%- include('partials/header') %>
 
-			<!--Breadcrumb Area-->
-			<section class="breadcrumb-area banner-1" data-background="images/banner/9.webp">
-				<div class="text-block">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 v-center">
-								<div class="bread-inner">
-									<div class="bread-menu">
-										<ul>
-											<li><a href="/">Home</a></li>
-											<li><a href="#">About Us</a></li>
-										</ul>
-									</div>
-									<div class="bread-title">
-										<h2>About Dadword IT</h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End Breadcrumb Area-->
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="dw-container">
+    <div class="page-hero-content">
+      <div class="breadcrumb-dw">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>About</span>
+      </div>
+      <span class="section-label">Our Story</span>
+      <h1>Boutique. Senior-led.<br>AI-augmented.</h1>
+      <p class="section-sub mx-auto">
+        We're a lean, experienced engineering team that builds products
+        for the long haul, not just to hit a deadline.
+      </p>
+    </div>
+  </div>
+</section>
 
-			<!--Start About-->
-			<section class="about-agency pad-tb block-1">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 v-center">
-							<div class="about-image">
-								<img src="images/about/company-about.svg"
-									alt="SaaS development company USA - Custom web development agency and UI UX design services"
-									class="img-fluid" />
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="common-heading text-l ">
-								<span>About Us</span>
-								<h2>About Dadword IT</h2>
-								<p>Dadword IT is a custom SaaS and web development agency helping startups and small to mid-sized businesses build scalable, high-performance digital products.</p>
-								<p>We specialize in SaaS platforms and modern web applications using technologies like React, Angular, Laravel, and Node.js. From early-stage MVPs to fully scalable production systems, we focus on clean architecture, performance, and long-term maintainability — so your product grows smoothly as your business scales.</p>
-								<p>What truly sets us apart is our partnership-driven approach. We don’t just execute tasks — we collaborate closely with founders and business teams to understand goals, users, and challenges. Through transparent communication, predictable delivery, and a strong engineering mindset, we help businesses turn ideas into reliable, market-ready products.</p>
-								<p>Trusted by clients across USA, Canada, and Europe, Dadword IT is committed to quality, accountability, and building solutions that create real business impact.</p>
-							</div>
-							<div class="row in-stats small about-statistics">
-								<div class="col-lg-4 col-sm-4">
-									<div class="statistics">
-										<div class="statnumb counter-number">
-											<span class="counter">20</span>
-											<p>Happy Clients</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-4">
-									<div class="statistics">
-										<div class="statnumb">
-											<span class="counter">2</span><span>k</span>
-											<p>Hours Worked</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-4">
-									<div class="statistics mb0">
-										<div class="statnumb counter-number">
-											<span class="counter">50</span>
-											<p>Projects Done</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End About-->
+<!-- Story Section -->
+<section class="about-story dw-section">
+  <div class="dw-container">
+    <div class="about-story-grid">
 
-			<!--Start why-choose-->
-			<section class="why-choose pad-tb">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-6">
-							<div class="common-heading">
-								<span>We Are Awesome</span>
-								<h2 class="mb30">Why Choose Us</h2>
-								<p>We combine technical excellence with a startup-friendly mindset to deliver solutions that are both scalable and business-focused.</p>
-							</div>
-						</div>
-					</div>
-					<div class="row upset">
-						<div class="col-lg-6 col-sm-6 mt30">
-							<div class="s-block up-hor">
-								<div class="s-card-icon"><img src="images/icons/research.svg"
-										alt="SaaS product development agency - Research and analysis by full stack development company"
-										class="img-fluid" />
-								</div>
-								<h4>Reasearch and Analysis</h4>
-								<p>We take time to deeply understand your business model, users, and technical requirements. This allows us to design data-driven, scalable solutions that align with your long-term product vision — not just short-term fixes.</p>
-							</div>
-						</div>
-						<div class="col-lg-6 col-sm-6 mt30">
-							<div class="s-block up-hor">
-								<div class="s-card-icon"><img src="images/icons/chat.svg"
-										alt="Web development company Canada - Best web app development services with transparent communication"
-										class="img-fluid" />
-								</div>
-								<h4>Collaboration & Clear Communication</h4>
-								<p>We work as an extension of your team. Through regular updates, clear documentation, and open discussions, we ensure alignment at every stage — from planning to deployment.</p>
-							</div>
-						</div>
-						<div class="col-lg-6 col-sm-6 mt30">
-							<div class="s-block up-hor">
-								<div class="s-card-icon"><img src="images/icons/monitor.svg"
-										alt="React development agency - Angular development company for custom SaaS builder solutions"
-										class="img-fluid" />
-								</div>
-								<h4>Creative & Scalable Engineering</h4>
-								<p>Our engineers combine creativity with strong technical foundations to build modern, future-ready applications. We focus on performance, security, and scalability so your product is ready for growth from day one.</p>
-							</div>
-						</div>
-						<div class="col-lg-6 col-sm-6 mt30">
-							<div class="s-block up-hor">
-								<div class="s-card-icon"><img src="images/icons/trasparency.svg"
-										alt="UI UX design agency USA - SaaS MVP development company and product design agency for startups"
-										class="img-fluid" /></div>
-								<h4>Transparency & Smooth Process</h4>
-								<p>No hidden costs. No unclear timelines. We follow transparent processes, realistic estimates, and simple workflows — making collaboration smooth, predictable, and stress-free.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End why-choose-->
+      <div class="about-story-body">
+        <span class="section-label reveal">Who We Are</span>
+        <h2 class="reveal reveal-d1">We build products,<br>not just websites.</h2>
+        <div class="about-story-body reveal reveal-d2" style="margin-top:24px">
+          <p>
+            Dadword IT started as a small team of engineers who wanted to build things
+            that actually work at scale. Over five years, we've grown into a boutique
+            development partner for startups and product companies in the US, Canada,
+            and Europe.
+          </p>
+          <p>
+            We specialise in custom web portals, Shopify app development, and SaaS
+            product engineering. The kind of work that requires both deep technical
+            knowledge and business thinking.
+          </p>
+          <p>
+            In 2024, we integrated AI-assisted engineering (Cursor + Claude) into our
+            daily workflow. Not as a shortcut, but as a force multiplier. We ship
+            senior-quality work in less time, which means lower costs and faster
+            time-to-market for you.
+          </p>
+          <p>
+            Our own product, <a href="https://customersstory.com" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Customer Story</a>, is a live Shopify app
+            used by merchants worldwide. Building something yourself is
+            the fastest way to understand what clients really need.
+          </p>
+        </div>
+      </div>
 
-			<!--Start Enquire Form-->
-			<section class="enquire-form pad-tb">
-				<div class="container">
-					<div class="row light-bgs">
-						<div class="col-lg-6">
-							<div class="common-heading text-l">
-								<span>Contact Now</span>
-								<h2 class="mt0">Have Question? Write a Message</h2>
-							</div>
-							<!-- <div class="form-block">
-						<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-						<script>
-						hbspt.forms.create({
-							portalId: "46121436",
-							formId: "a4dda3ad-3513-478c-8b30-a551c782cb95"
-						});
-						</script>
-					</div> -->
-							<!-- <div class="form-block" id="hubspot-form"></div> -->
-							 <%- include('partials/form') %>
-						</div>
-						<div class="col-lg-6 v-center">
-							<div class="enquire-image">
-								<img src="images/about/have-q.svg" alt="Product design agency for startups"
-									class="img-fluid" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End Enquire Form-->
+      <div class="reveal reveal-d2">
+        <div class="about-highlight-box">
+          <blockquote>
+            We don't hire junior engineers for client projects.
+            Every engagement is handled by people who've shipped real products,
+            encountered real edge cases, and learned from real mistakes.
+          </blockquote>
+        </div>
 
-			<!--Start Footer-->
-			<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-				<!--End Footer-->
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;gap:14px;align-items:flex-start">
+            <span style="font-size:1.5rem">&#127760;</span>
+            <div>
+              <h5 style="font-size:.9rem;margin-bottom:3px">Global Clients</h5>
+              <p style="font-size:.82rem;margin:0">US, Canada, and Europe. Async-first, timezone-friendly delivery.</p>
+            </div>
+          </div>
+          <div style="padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;gap:14px;align-items:flex-start">
+            <span style="font-size:1.5rem">&#128640;</span>
+            <div>
+              <h5 style="font-size:.9rem;margin-bottom:3px">50+ Projects Shipped</h5>
+              <p style="font-size:.82rem;margin:0">From 2-week MVPs to multi-year product partnerships.</p>
+            </div>
+          </div>
+          <div style="padding:20px;background:linear-gradient(135deg,rgba(108,71,255,.07),rgba(0,212,200,.04));border:1px solid rgba(108,71,255,.3);border-radius:12px;display:flex;gap:14px;align-items:flex-start">
+            <span style="font-size:1.5rem">&#9889;</span>
+            <div>
+              <h5 style="font-size:.9rem;margin-bottom:3px;color:var(--accent-2)">AI-Enhanced Since 2024</h5>
+              <p style="font-size:.82rem;margin:0">Cursor + Claude as standard tooling across all projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-				<!-- js placed at the end of the document so the pages load faster -->
-				<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-				<script src="js/jquery.min.js"></script>
-				<script src="js/bootstrap.bundle.min.js"></script>
-				<script src="js/plugin.min.js"></script>
-				<script src="js/dark-mode.js"></script>
-				<!--common script file-->
-				<script src="js/main.js"></script>
-				<script>
-					window.addEventListener("load", function () {
-						const script = document.createElement("script");
-						script.src = "https://js.hsforms.net/forms/embed/v2.js";
-						script.charset = "utf-8";
-						script.onload = function () {
-							hbspt.forms.create({
-								portalId: "46121436",
-								formId: "a4dda3ad-3513-478c-8b30-a551c782cb95",
-								target: "#hubspot-form",
-							});
-						};
-						document.body.appendChild(script);
-					});
-				</script>
-	</body>
+    </div>
+  </div>
+</section>
 
+<!-- Stats -->
+<section class="stats-section">
+  <div class="dw-container">
+    <div class="stats-row">
+      <div class="stat-item reveal">
+        <span class="stat-icon">&#128197;</span>
+        <span class="stat-number stat-counter" data-target="5" data-suffix="+">5+</span>
+        <span class="stat-label">Years in Business</span>
+      </div>
+      <div class="stat-item reveal reveal-d1">
+        <span class="stat-icon">&#128640;</span>
+        <span class="stat-number stat-counter" data-target="50" data-suffix="+">50+</span>
+        <span class="stat-label">Projects Delivered</span>
+      </div>
+      <div class="stat-item reveal reveal-d2">
+        <span class="stat-icon">&#127760;</span>
+        <span class="stat-number stat-counter" data-target="20" data-suffix="+">20+</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+      <div class="stat-item reveal reveal-d3">
+        <span class="stat-icon">&#127988;</span>
+        <span class="stat-number stat-counter" data-target="4">4</span>
+        <span class="stat-label">Countries Served</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us pillars -->
+<section class="pillars-section dw-section">
+  <div class="dw-container">
+    <div class="text-center" style="margin-bottom:0">
+      <span class="section-label reveal">Why Dadword IT</span>
+      <h2 class="reveal reveal-d1">The four things that<br>set us apart.</h2>
+    </div>
+
+    <div class="pillars-full-grid">
+
+      <div class="pillar-card-full reveal">
+        <span class="pillar-num-label">01: Discovery</span>
+        <h3>Deep Discovery First</h3>
+        <p>
+          We spend the first phase understanding your business model, your users,
+          and your constraints before writing a line of code. This means fewer
+          pivots, less rework, and a product that actually solves the right problem.
+        </p>
+      </div>
+
+      <div class="pillar-card-full reveal reveal-d1">
+        <span class="pillar-num-label">02: Collaboration</span>
+        <h3>Async-first Collaboration</h3>
+        <p>
+          We work with clients in the US, Canada, and Europe, so we've built
+          a culture of clear written communication, detailed weekly updates,
+          and async-friendly processes that keep projects moving without
+          requiring constant meetings.
+        </p>
+      </div>
+
+      <div class="pillar-card-full reveal reveal-d2">
+        <span class="pillar-num-label">03: Engineering</span>
+        <h3>Senior-Only Engineering</h3>
+        <p>
+          Every project is handled end-to-end by senior engineers. No juniors
+          learning on your budget. No account manager mediating between you and
+          the dev team. You work directly with the people building your product.
+        </p>
+      </div>
+
+      <div class="pillar-card-full ai-highlight reveal reveal-d3">
+        <span class="pillar-num-label">04: Speed</span>
+        <h3>AI-Enhanced Speed &#9889;</h3>
+        <p>
+          We use Cursor and Claude as daily engineering tools, not as a replacement
+          for expertise, but as a force multiplier. Our senior engineers guide and
+          review every output. The result: faster delivery cycles and lower total
+          cost, without any compromise on code quality.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section dw-section">
+  <div class="dw-container">
+    <span class="section-label" style="justify-content:center">Work With Us</span>
+    <h2 class="reveal">Ready to build something real?</h2>
+    <p class="reveal reveal-d1">Start with a free 30-minute discovery call.</p>
+    <div class="cta-btns reveal reveal-d2">
+      <a href="/contact-us" class="btn-primary btn-lg">Start a Project</a>
+      <a href="/lets-talk" class="btn-outline btn-lg">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+</body>
 </html>

@@ -1,141 +1,286 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, trackingId}) %>
+<body>
 
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
 
-    <style>
-    /* Masonry Layout */
-    .masonry-grid {
-        column-count: 3;
-        column-gap: 15px;
-    }
+<%- include('partials/header') %>
 
-    .masonry-item {
-        break-inside: avoid;
-        margin-bottom: 15px;
-    }
+<section class="cd-page">
+  <div class="dw-container">
 
-    .masonry-item img {
-        width: 100%;
-        border-radius: 12px;
-        display: block;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-dw" style="justify-content:flex-start;margin-bottom:40px">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/our-work">Work</a>
+      <span class="breadcrumb-sep">/</span>
+      <span><%= project.sortTitle %></span>
+    </div>
 
-    /* Hover Effect */
-    .masonry-item img:hover {
-        transform: scale(1.03);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+    <div class="cd-layout">
 
-    /* Responsive */
-    @media (max-width: 992px) {
-        .masonry-grid {
-            column-count: 2;
-        }
-    }
+      <!-- LEFT: Content -->
+      <div class="cd-left">
 
-    @media (max-width: 576px) {
-        .masonry-grid {
-            column-count: 1;
-        }
-    }
-    </style>
+        <!-- Tags -->
+        <div class="cd-tags">
+          <% (project.tags || ['Web']).forEach(function(tag) { %>
+          <span class="cd-tag"><%= tag %></span>
+          <% }); %>
+        </div>
 
-    <body>
-        <!--Start Header -->
-            <%- include ('partials/header') %>
-        <!--End Header -->
-        
-        <!--Breadcrumb Area-->
-        <section class="breadcrumb-area banner-3">
-            <div class="text-block">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 v-center">
-                            <div class="bread-inner">
-                                <div class="bread-menu">
-                                    <ul>
-                                        <li><a href="/our-work">Portfolio</a></li>
-                                        <li><a href="#"><%= project.slug %></a></li>
-                                    </ul>
-                                </div>
-                                <div class="bread-title">
-                                    <h2><%= project.title %></h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <h1 class="cd-title"><%= project.title %></h1>
+
+        <!-- Meta row -->
+        <div class="cd-meta-row">
+          <div class="cd-meta-item">
+            <span class="cd-meta-lbl">Client</span>
+            <span class="cd-meta-val"><%= project.sortTitle %></span>
+          </div>
+          <div class="cd-meta-item">
+            <span class="cd-meta-lbl">Stack</span>
+            <span class="cd-meta-val"><%= (project.technologies || []).join(', ') %></span>
+          </div>
+          <% if (project.link) { %>
+          <div class="cd-meta-item">
+            <span class="cd-meta-lbl">Live</span>
+            <a href="<%= project.link %>" target="_blank" rel="noopener" class="cd-meta-link">View site &rarr;</a>
+          </div>
+          <% } %>
+        </div>
+
+        <!-- Tech pills -->
+        <div class="product-stack" style="margin-bottom:32px">
+          <% (project.technologies || []).forEach(function(tech) { %>
+          <span class="stack-pill"><%= tech %></span>
+          <% }); %>
+        </div>
+
+        <!-- Content blocks -->
+        <div class="cd-blocks">
+          <div class="cd-block">
+            <span class="cd-block-num">01</span>
+            <div>
+              <h3 class="cd-block-title">The Challenge</h3>
+              <p class="cd-block-text"><%= project.description || 'A complex engineering challenge required careful planning and a scalable technical approach.' %></p>
             </div>
-        </section>
-        <!--End Breadcrumb Area-->
+          </div>
 
-        <section class="portfolio-detail pad-tb">
-            <div class="container">
-
-                <!-- Title -->
-                <h1>
-                    <%= project.title %>
-                </h1>
-
-                <!-- Tags -->
-                <div class="tags">
-                    <% project.tags.forEach(tag=> { %>
-                        <span>
-                            <%= tag %>
-                        </span>
-                        <% }) %>
-                </div>
-
-                <!-- Description -->
-                <p class="mt20">
-                    <%= project.description %>
-                </p>
-
-                <!-- Technologies -->
-                <!-- <ul class="info-list-ul mt30">
-                    <% project.technologies.forEach(tech=> { %>
-                        <li>
-                            <%= tech %>
-                        </li>
-                        <% }) %>
-                </ul> -->
-
-                <!-- Image Gallery -->
-                <div class="masonry-grid mt40">
-                    <% project.images.forEach(img => { %>
-                        <div class="masonry-item">
-                            <img src="/<%= img %>" alt="">
-                        </div>
-                    <% }) %>
-                </div>
-
-                <!-- Visit Website -->
-                <div class="custom-nav mt20" role="navigation" style="justify-content: center !important;">
-                    <ul class="nav-list left-end-btn">
-                        <li class="hidemobile"><a href="<%= project.link %>"
-                                class="btn-br bg-btn3 btshad-b2 lnk">Visit Live Project <span
-                                    class="circle"></span></a> </li>
-                        <li class="navm- hidedesktop"> <a class="toggle" href="#"><span></span></a></li>
-                    </ul>
-                </div>
-
+          <div class="cd-block">
+            <span class="cd-block-num">02</span>
+            <div>
+              <h3 class="cd-block-title">Our Approach</h3>
+              <p class="cd-block-text">We designed a modular architecture using <%= (project.technologies || ['modern web technologies']).join(', ') %> to deliver a performant, maintainable solution that fits the client&rsquo;s long-term goals.</p>
             </div>
-        </section>
+          </div>
 
-        <!--Start Footer-->
-            <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-        <!--End Footer-->
+          <div class="cd-block cd-block-highlight">
+            <span class="cd-block-num">03</span>
+            <div>
+              <h3 class="cd-block-title">The Outcome</h3>
+              <p class="cd-block-text"><%= project.outcome || 'A production-ready product shipped on time, with a clean codebase and full documentation handed over to the client team.' %></p>
+            </div>
+          </div>
+        </div>
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/plugin.min.js"></script>
-        <script src="/js/dark-mode.js"></script>
-        <!--common script file-->
-        <script src="/js/main.js"></script>
-    </body>
+        <!-- CTAs -->
+        <div class="cd-ctas">
+          <a href="/contact-us" class="btn-primary">Start a Similar Project</a>
+          <a href="/our-work" class="btn-outline">&larr; All Work</a>
+        </div>
 
+      </div>
+
+      <!-- RIGHT: Sticky image panel -->
+      <div class="cd-right">
+        <div class="cd-image-panel">
+          <div class="cd-browser-frame">
+            <div class="cd-browser-bar">
+              <span style="background:#ff5f57"></span>
+              <span style="background:#febc2e"></span>
+              <span style="background:#28c840"></span>
+              <span class="cd-browser-url"><%= project.link ? project.link.replace('https://','') : project.sortTitle.toLowerCase() + '.com' %></span>
+            </div>
+            <img
+              src="<%= project.desktopImage || project.portfolioImg %>"
+              alt="<%= project.title %> screenshot"
+              class="cd-screenshot"
+              loading="eager"
+            />
+          </div>
+
+          <% if (project.link) { %>
+          <a href="<%= project.link %>" target="_blank" rel="noopener" class="cd-live-btn">
+            View Live Project &rarr;
+          </a>
+          <% } %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+
+<style>
+.cd-page {
+  padding-top: 140px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.cd-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .cd-layout { grid-template-columns: 1fr; gap: 48px; }
+  .cd-right { order: -1; }
+}
+
+/* Tags */
+.cd-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.cd-tag {
+  padding: 4px 12px;
+  background: rgba(108,71,255,.1);
+  border: 1px solid rgba(108,71,255,.25);
+  border-radius: 50px;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.cd-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+/* Meta row */
+.cd-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.cd-meta-item {
+  flex: 1;
+  min-width: 120px;
+  padding: 14px 18px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cd-meta-item:last-child { border-right: none; }
+.cd-meta-lbl { font-size: .68rem; font-weight: 700; color: var(--text-faint); text-transform: uppercase; letter-spacing: .07em; }
+.cd-meta-val { font-size: .85rem; color: var(--text-muted); font-weight: 500; }
+.cd-meta-link { font-size: .85rem; color: var(--accent); font-weight: 600; }
+.cd-meta-link:hover { color: var(--accent-2); }
+
+/* Content blocks */
+.cd-blocks { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+.cd-block {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cd-block:first-child { padding-top: 0; }
+.cd-block-highlight { background: none; }
+.cd-block-highlight .cd-block-title { color: var(--accent-2); }
+.cd-block-num {
+  font-size: .72rem;
+  font-weight: 800;
+  color: var(--text-faint);
+  letter-spacing: .06em;
+  padding-top: 4px;
+  flex-shrink: 0;
+  width: 24px;
+}
+.cd-block-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+.cd-block-text { font-size: .9rem; line-height: 1.75; color: var(--text-muted); margin: 0; }
+
+/* CTAs */
+.cd-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Right panel */
+.cd-right { position: sticky; top: 100px; }
+
+.cd-image-panel { display: flex; flex-direction: column; gap: 16px; }
+
+.cd-browser-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  background: var(--surface);
+}
+.cd-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.cd-browser-bar span:not(.cd-browser-url) {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.cd-browser-url {
+  margin-left: 8px;
+  font-size: .72rem;
+  color: var(--text-faint);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 3px 10px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cd-screenshot {
+  width: 100%;
+  display: block;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cd-live-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.cd-live-btn:hover {
+  background: rgba(108,71,255,.08);
+  border-color: rgba(108,71,255,.35);
+  color: var(--text);
+}
+</style>
+
+</body>
 </html>

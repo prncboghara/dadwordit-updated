@@ -1,112 +1,124 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
-
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
-	<!--Start Header -->
-	<%- include ('partials/header') %>
-	<!--End Header -->
 
-	<!--Breadcrumb Area-->
-	<section class="breadcrumb-area banner-1" data-background="images/banner/9.webp">
-		<div class="text-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 v-center">
-						<div class="bread-inner">
-							<div class="bread-menu">
-								<ul>
-									<li><a href="/">Dadword IT</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-								</ul>
-							</div>
-							<div class="bread-title">
-								<h2>Privacy Policy Page</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Breadcrumb Area-->
-	<!--Start Privacy Policy-->
-	<section class="about-agency pvcpolcy-container pad-tb block-1">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
 
-					<div class="pvcpolcy">
-						<h4 class="mb10">Effective Date: 01/01/2025</h4>
-						<p class="mb10">At <strong>Dadword IT</strong>At Dadword IT, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you interact with our website or use our services.</p>
-						<!-- Information we collect section -->
-						<h4 class="mb10 mt30">1. Information We Collect</h4>
-						<p class="mb10">We may collect the following types of information:</p>
-						<p class="m-0"><strong>Personal Information:</strong> Name, email address, phone number, company details, and other information you provide when contacting us or using our services.</p>
-						<p class="m-0"><strong>Non-Personal Information:</strong> Data such as browser type, IP address, and website usage statistics collected through cookies and similar technologies.</p>
-						
-						<!-- How We Use Your Information section -->
-						<h4 class="mb10 mt30">2. How We Use Your Information</h4>
-						<p class="mb10">We use the information collected to:</p>
-						<p class="m-0">Provide, operate, and improve our web design and development services.</p>
-						<p class="m-0">Respond to inquiries, provide customer support, and communicate with you about our services.</p>
-						<p class="m-0">Personalize user experiences and optimize website performance.</p>
-						<p class="m-0">Comply with legal requirements and enforce our terms of service.</p>
+<%- include('partials/header') %>
 
-						<!-- How We Protect Your Information section -->
-						<h4 class="mb10 mt30">3. How We Protect Your Information</h4>
-						<p class="m-0">We implement appropriate security measures to protect your personal data from unauthorized access, disclosure, or alteration. While we strive to use commercially acceptable means to protect your information, no method of transmission over the internet is 100% secure.</p>
+<section class="inner-page-hero">
+  <div class="dw-container">
+    <div class="breadcrumb-dw">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Privacy Policy</span>
+    </div>
+    <h1 class="inner-page-title">Privacy Policy</h1>
+    <p class="inner-page-sub">Effective Date: 01 January 2025</p>
+  </div>
+</section>
 
-						<!-- Sharing Your Information section -->
-						<h4 class="mb10 mt30">4. Sharing Your Information</h4>
-						<p class="m-0">We do not sell, trade, or rent your personal information to third parties. However, we may share your data with trusted partners who assist us in operating our website or delivering services, as long as they agree to keep this information confidential.</p>
+<section class="legal-section">
+  <div class="dw-container">
+    <div class="legal-body">
 
-						<!-- Cookies section -->
-						<h4 class="mb10 mt30">5. Cookies</h4>
-						<p class="m-0">Our website uses cookies to enhance user experience and gather analytics. You can manage or disable cookies through your browser settings. Please note that disabling cookies may impact some features of our website.</p>
-						
-						<!-- Your Rights section -->
-						<h4 class="mb10 mt30">6. Your Rights</h4>
-						<p class="mb10">You have the right to:</p>
-						<p class="m-0">Access the personal information we hold about you.</p>
-						<p class="m-0">Request corrections to inaccurate or incomplete data.</p>
-						<p class="m-0">Request the deletion of your personal data, subject to legal obligations.</p>
-						<p>To exercise these rights, please contact us at contact@dadwordit.com</p>
+      <p>At <strong>Dadword IT</strong>, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you interact with our website or use our services.</p>
 
-						<!-- Third-Party Links section -->
-						<h4 class="mb10 mt30">7. Third-Party Links</h4>
-						<p class="m-0">Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites.</p>
+      <h2>1. Information We Collect</h2>
+      <p>We may collect the following types of information:</p>
+      <ul>
+        <li><strong>Personal Information:</strong> Name, email address, company details, and other information you provide when contacting us or using our services.</li>
+        <li><strong>Non-Personal Information:</strong> Data such as browser type, IP address, and website usage statistics collected through cookies and similar technologies.</li>
+      </ul>
 
-						<!-- Updates to This Policy section -->
-						<h4 class="mb10 mt30">8. Updates to This Policy</h4>
-						<p class="m-0">We may update this Privacy Policy periodically to reflect changes in our practices or applicable laws. We encourage you to review this page regularly for any updates.</p>
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information collected to:</p>
+      <ul>
+        <li>Provide, operate, and improve our web development services.</li>
+        <li>Respond to enquiries, provide support, and communicate about our services.</li>
+        <li>Personalise user experiences and optimise website performance.</li>
+        <li>Comply with legal requirements and enforce our terms of service.</li>
+      </ul>
 
-						<!-- Updates to This Policy section -->
-						<h4 class="mb10 mt30">9. Contact Us</h4>
-						<p class="m-0">If you have any questions or concerns about this Privacy Policy or how your information is handled, please contact us at:</p>
-						<p class="m-0"><strong>Dadword IT</strong></p>
-						<p class="m-0">Email:<strong>support@dadwordit.com</strong></p>
-						<p class="m-0">Phone:<strong>8511096482</strong></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Privacy Policy-->
+      <h2>3. How We Protect Your Information</h2>
+      <p>We implement appropriate security measures to protect your personal data from unauthorised access, disclosure, or alteration. While we strive to use commercially acceptable means to protect your information, no method of transmission over the internet is 100% secure.</p>
 
+      <h2>4. Sharing Your Information</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share your data with trusted partners who assist us in operating our website or delivering services, as long as they agree to keep this information confidential.</p>
 
-	<!--Start Footer-->
-	<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-	<!--End Footer-->
+      <h2>5. Cookies</h2>
+      <p>Our website uses cookies to enhance user experience and gather analytics. You can manage or disable cookies through your browser settings. Please note that disabling cookies may affect some features of our website.</p>
 
-	<!-- js placed at the end of the document so the pages load faster -->
-	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/plugin.min.js"></script>
-	<!--common script file-->
-	<script src="js/main.js"></script>
+      <h2>6. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal information we hold about you.</li>
+        <li>Request corrections to inaccurate or incomplete data.</li>
+        <li>Request the deletion of your personal data, subject to legal obligations.</li>
+      </ul>
+      <p>To exercise these rights, please contact us at <a href="mailto:contact@dadwordit.com">contact@dadwordit.com</a>.</p>
+
+      <h2>7. Third-Party Links</h2>
+      <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites.</p>
+
+      <h2>8. Updates to This Policy</h2>
+      <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable laws. We encourage you to review this page regularly for any updates.</p>
+
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy or how your information is handled, please contact us at:</p>
+      <p><strong>Dadword IT</strong><br>Email: <a href="mailto:support@dadwordit.com">support@dadwordit.com</a></p>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+
+<style>
+.inner-page-hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+.inner-page-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin: 12px 0 16px;
+}
+.inner-page-sub {
+  font-size: .9rem;
+  color: var(--text-faint);
+}
+
+.legal-section { padding-bottom: 100px; }
+
+.legal-body {
+  max-width: 760px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: .95rem;
+}
+.legal-body h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 12px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.legal-body h2:first-of-type { margin-top: 32px; padding-top: 32px; }
+.legal-body p { margin: 0 0 14px; }
+.legal-body ul {
+  padding-left: 20px;
+  margin: 0 0 14px;
+}
+.legal-body ul li { margin-bottom: 8px; }
+.legal-body a { color: var(--accent); }
+.legal-body strong { color: var(--text-primary); }
+</style>
+
 </body>
-
 </html>

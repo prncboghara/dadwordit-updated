@@ -1,379 +1,374 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
+<body>
 
-<%- include ('partials/head', {title, meta, og, twitter, schema, canonical}) %>
+<div id="dw-preloader">
+  <div class="dw-preloader-bar"></div>
+</div>
 
-   <body>
-      <!--Start Header -->
-      <%- include ('partials/header') %>
-         <!--End Header -->
+<%- include('partials/header') %>
 
-         <!--Breadcrumb Area-->
-         <section class="breadcrumb-area banner-6">
-            <div class="text-block">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12 v-center">
-                        <div class="bread-inner">
-                           <div class="bread-menu wow fadeInUp" data-wow-delay=".2s">
-                              <ul>
-                                 <li><a href="/">Home</a></li>
-                                 <li><a href="#">Career</a></li>
-                              </ul>
-                           </div>
-                           <div class="bread-title wow fadeInUp" data-wow-delay=".5s">
-                              <h2>Job Openings</h2>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!--End Breadcrumb Area-->
-         <!--Start About-->
-         <section class="about-agencys pad-tb block-1 dark-bg3">
-            <div class="container">
-               <div class="row justify-content-between">
-                  <div class="col-lg-6">
-                     <div class="common-heading text-l">
-                        <h2 class="mb20">Career and Culture at Dadword IT</h2>
-                        <p>At Dadword IT, we foster a culture of innovation and collaboration. Our team thrives on
-                           tackling challenges and creating impactful solutions while ensuring every voice is heard and
-                           valued.</p>
-                        <p>Joining us means being part of a community that embraces growth, diversity, and learning.
-                           Whether in design, development, or tech, you'll have the opportunities and support to excel.
-                        </p>
-                        <a href="#jobs" class="btn-main bg-btn2 lnk mt30"> View Opening <i
-                              class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-5">
-                     <div class="mb0 m-mt30">
-                        <img src="images/service/career1.svg" alt="SaaS development company" class="img-fluid" />
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!--End About-->
-         <!--Start Why Choose-->
-         <!-- <section class="service-block pad-tb bg-gradient7">
-      <div class="container">
-         <div class="row justify-content-center">
-            <div class="col-lg-8">
-               <div class="common-heading ptag">
-                  <span>Welcome to Niwax</span>
-                  <h2>Perks To Work With Niwax</h2>
-                  <p class="mb30">Donec metus lorem, vulputate at sapien sit amet, auctor iaculis lorem. In vel
-                     hendrerit nisi. Vestibulum eget risus velit.</p>
-               </div>
-            </div>
-         </div>
-         <div class="row justify-content-center">
-            <div class="col-lg-4 col-sm-6 mt30  wow fadeIn" data-wow-delay=".2s">
-               <div class="s-block wide-sblock">
-                  <div class="s-card-icon"><img src="images/icons/teama.svg" alt="service" class="img-fluid"></div>
-                  <div class="s-block-content">
-                     <h4>Reliable Service. In House Team</h4>
-                     <p>In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt30 wow fadeIn" data-wow-delay=".5s">
-               <div class="s-block wide-sblock">
-                  <div class="s-card-icon"><img src="images/icons/link.svg" alt="service" class="img-fluid"></div>
-                  <div class="s-block-content">
-                     <h4>Trusted by People Like You</h4>
-                     <p>In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt30 wow fadeIn" data-wow-delay=".8s">
-               <div class="s-block wide-sblock">
-                  <div class="s-card-icon"><img src="images/icons/tech.svg" alt="service" class="img-fluid"></div>
-                  <div class="s-block-content">
-                     <h4>Complete Technical Competency</h4>
-                     <p>In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt30 wow fadeIn" data-wow-delay="1.1s">
-               <div class="s-block wide-sblock">
-                  <div class="s-card-icon"><img src="images/icons/hi.svg" alt="service" class="img-fluid"></div>
-                  <div class="s-block-content">
-                     <h4>Friendly & Cordial in Nature</h4>
-                     <p>In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt30 wow fadeIn" data-wow-delay="1.4s">
-               <div class="s-block wide-sblock">
-                  <div class="s-card-icon"><img src="images/icons/badge.svg" alt="service" class="img-fluid"></div>
-                  <div class="s-block-content">
-                     <h4>Excellent Quality Delivered on Time</h4>
-                     <p>In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt30 wow fadeIn" data-wow-delay="1.7s">
-               <div class="s-block wide-sblock">
-                  <div class="s-card-icon"><img src="images/icons/tin.svg" alt="service" class="img-fluid"></div>
-                  <div class="s-block-content">
-                     <h4>Effective & Continuous Communication</h4>
-                     <p>In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
+<section class="inner-page-hero">
+  <div class="dw-container">
+    <div class="breadcrumb-dw">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Careers</span>
+    </div>
+    <h1 class="inner-page-title">Careers at Dadword IT</h1>
+    <p class="inner-page-sub">
+      Join a lean, senior-led team building real products for growing businesses.
+    </p>
+  </div>
+</section>
+
+<!-- Culture section -->
+<section class="career-culture">
+  <div class="dw-container">
+    <div class="culture-grid">
+      <div class="culture-text">
+        <span class="section-label">Why work with us</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">Build things that matter.<br>Grow every week.</h2>
+        <p>At Dadword IT we foster a culture of craft and accountability. Our engineers work on real products with real users, not agency throw-away work. You will have ownership, a direct line to decision-makers, and the freedom to push for quality.</p>
+        <p>We use modern tooling including AI-assisted workflows, so you will ship faster and spend more time on the hard, interesting problems.</p>
+        <a href="#jobs" class="dw-btn-primary" style="margin-top:8px">View Open Roles</a>
       </div>
-   </section> -->
-         <!--End Why Choose-->
-         <!--Start Enquire Form-->
-         <section class="contact-page pad-tb" id="jobs">
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                     <div class="common-heading ptag">
-                        <span>Jobs</span>
-                        <h2>Current Openings</h2>
-                        <p class="mb60">08 Sep 2020 Latest Jobs</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="row justify-content-center">
-                  <div class="col-lg-10">
-                     <div class="career-card-div">
-                        <div class="accordion" id="accordionExample">
-                           <!-- <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                           <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                              data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapseOne">
-                              Web & Visual Designer - 2 Post
-                           </button>
-                        </h2>
-                        <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                           data-bs-parent="#accordionExample">
-                           <div class="accordion-body">
-                              <div class="data-reqs">
-                                 <h5 class="pt20 pb20">Overview</h5>
-                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's specimen book. Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. </p>
-                                 <h5 class="pt20 pb20">Required experience</h5>
-                                 <p>5 Years Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's specimen book. Lorem Ipsum is simply dummy text
-                                    of the printing and typesetting industry. </p>
-                                 <h4 class="pb20 pt20">Skills Required:</h4>
-                                 <ul class="list-ul ul-check">
-                                    <li>Deep familiarity with Core PHP and Laravel</li>
-                                    <li>Experience of Ajax &amp; Jquery</li>
-                                    <li>Good understanding of JSON &amp; third-party libraries and APIs</li>
-                                    <li>Should be able to understand entire development life cycle concept. (Design,
-                                       build, deploy, test, deploy online &amp; support)</li>
-                                    <li>Strong knowledge in Web Services &amp; API's, LBS, Social Network Integration
-                                       etc.</li>
-                                    <li>Strong knowledge in database (Mysql)</li>
-                                    <li>Good Knowledge in Google APIs</li>
-                                    <li>Good understanding of MVC concepts and design patterns</li>
-                                    <li>Strong object oriented programming and design skills</li>
-                                    <li>Knowledge in versioning Tools that includes like trunk, branch, export, import
-                                       and copy will be an added advantage</li>
-                                 </ul>
-                                 <a href="#" class="btn-main bg-btn3 lnk mt20" data-bs-toggle="modal"
-                                    data-bs-target="#modalform">Apply Now<i
-                                       class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+      <div class="culture-pillars">
+        <div class="culture-pillar">
+          <span class="pillar-icon"><i class="fa-solid fa-code-branch"></i></span>
+          <div>
+            <h4>Ownership</h4>
+            <p>You own your code end to end, from design review to deployment.</p>
+          </div>
+        </div>
+        <div class="culture-pillar">
+          <span class="pillar-icon"><i class="fa-solid fa-bolt"></i></span>
+          <div>
+            <h4>AI-First Workflow</h4>
+            <p>We use Cursor, Claude, and other AI tools as standard — not as experiments.</p>
+          </div>
+        </div>
+        <div class="culture-pillar">
+          <span class="pillar-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          <div>
+            <h4>Real Growth</h4>
+            <p>Senior engineers who mentor, not gatekeep. Grow your skills on every sprint.</p>
+          </div>
+        </div>
+        <div class="culture-pillar">
+          <span class="pillar-icon"><i class="fa-solid fa-earth-asia"></i></span>
+          <div>
+            <h4>Remote-Friendly</h4>
+            <p>We care about output, not hours. Work from wherever you do your best thinking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                           <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                              data-bs-target="#collapse-2" aria-expanded="true" aria-controls="collapseOne">
-                              Head of UX and Design - 3 Post
-                           </button>
-                        </h2>
-                        <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                           data-bs-parent="#accordionExample">
-                           <div class="accordion-body">
-                              <div class="data-reqs">
-                                 <h5 class="pt20 pb20">Overview</h5>
-                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's specimen book. Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. </p>
-                                 <h5 class="pt20 pb20">Required experience</h5>
-                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's specimen book. Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. </p>
-                                 <h4 class="pb20 pt20">Skills Required:</h4>
-                                 <ul class="list-ul ul-check">
-                                    <li>Deep familiarity with Core PHP and Laravel</li>
-                                    <li>Experience of Ajax &amp; Jquery</li>
-                                    <li>Good understanding of JSON &amp; third-party libraries and APIs</li>
-                                    <li>Should be able to understand entire development life cycle concept. (Design,
-                                       build, deploy, test, deploy online &amp; support)</li>
-                                    <li>Strong knowledge in Web Services &amp; API's, LBS, Social Network Integration
-                                       etc.</li>
-                                    <li>Strong knowledge in database (Mysql)</li>
-                                    <li>Good Knowledge in Google APIs</li>
-                                    <li>Good understanding of MVC concepts and design patterns</li>
-                                    <li>Strong object oriented programming and design skills</li>
-                                    <li>Knowledge in versioning Tools that includes like trunk, branch, export, import
-                                       and copy will be an added advantage</li>
-                                 </ul>
-                                 <a href="#" class="btn-main bg-btn3 lnk mt20" data-bs-toggle="modal"
-                                    data-bs-target="#modalform">Apply Now<i
-                                       class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div> -->
-                        </div>
-                     </div>
-                  </div>
-               </div>
+<!-- Jobs section -->
+<section class="career-jobs" id="jobs">
+  <div class="dw-container">
+    <div class="jobs-header">
+      <span class="section-label">Open roles</span>
+      <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">Current Openings</h2>
+    </div>
+
+    <div id="jobs-list">
+      <div class="jobs-loading">
+        <div class="jobs-spinner"></div>
+        <p>Loading openings...</p>
+      </div>
+    </div>
+
+    <div class="jobs-empty" id="jobs-empty" style="display:none">
+      <p>No open roles at the moment. We do hire on a rolling basis.</p>
+      <a href="/contact-us" class="dw-btn-outline">Send us your CV anyway</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js" defer></script>
+
+<script>
+(function () {
+  const SHEET_URL = "https://docs.google.com/spreadsheets/d/1BDnfKov1N5hjxalZz7PaJy9J_UMgk2zjYfxVQGxcNd4/gviz/tq?tqx=out:json";
+  const container = document.getElementById('jobs-list');
+  const emptyMsg  = document.getElementById('jobs-empty');
+
+  fetch(SHEET_URL)
+    .then(r => r.text())
+    .then(data => {
+      const json    = JSON.parse(data.substring(47).slice(0, -2));
+      const rows    = json.table.rows;
+      const jobList = rows.map(row => ({
+        title:               row.c[0]?.v,
+        num_of_posts:        row.c[1]?.v,
+        description:         row.c[2]?.v,
+        required_skills:     row.c[3]?.v,
+        required_experience: row.c[4]?.v,
+        location:            row.c[5]?.v,
+        job_type:            row.c[6]?.v,
+        applyLink:           row.c[7]?.v
+      })).filter(j => j.title);
+
+      container.innerHTML = '';
+
+      if (!jobList.length) {
+        emptyMsg.style.display = 'block';
+        return;
+      }
+
+      jobList.forEach((job, i) => {
+        const skills    = (job.required_skills || '').split(',').filter(Boolean);
+        const skillHtml = skills.map(s => `<li>${s.trim()}</li>`).join('');
+        const meta      = [job.location, job.job_type].filter(Boolean).join(' &middot; ');
+
+        const el = document.createElement('div');
+        el.className = 'job-item';
+        el.dataset.job = i;
+        el.innerHTML = `
+          <div class="job-header">
+            <div class="job-header-left">
+              <h3 class="job-title">${job.title}</h3>
+              ${meta ? `<p class="job-meta">${meta}</p>` : ''}
             </div>
-         </section>
-         <!--End Enquire Form-->
-         <div class="popup-modals">
-            <div class="modal" id="modalform">
-               <div class="modal-dialog">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <div class="common-heading">
-                           <h4 class="mt0 mb0">Apply Now</h4>
-                        </div>
-                        <button type="button" class="closes" data-bs-dismiss="modal">&times;</button>
-                     </div>
-                     <!-- Modal body -->
-                     <div class="modal-body pt40 pb60">
-                        <div class="form-block fdgn2">
-                           <form id="contact-form" method="post" action="#">
-                              <div class="fieldsets row">
-                                 <div class="col-md-6 form-group"><input id="form_name" type="text" name="name"
-                                       placeholder="Enter your name *" required="required"> </div>
-                                 <div class="col-md-6 form-group"><input id="form_email" type="email" name="email"
-                                       placeholder="Enter your email *" required="required"> </div>
-                              </div>
-                              <div class="fieldsets row">
-                                 <div class="col-md-6 form-group"><input id="form_phone" type="text" name="phone"
-                                       placeholder="Enter your Phone No *" required="required"> </div>
-                                 <div class="col-md-6 form-group">
-                                    <select id="form_need" name="need" required="required">
-                                       <option value="">Select Post</option>
-                                       <option value="Graphic Design">Graphic Design</option>
-                                       <option value="Web Design">Web Design</option>
-                                       <option value="App Design">App Design</option>
-                                       <option value="Other">Other</option>
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="fieldsets form-group"> <textarea id="form_message" name="message"
-                                    placeholder="Message *" rows="4" required="required"></textarea> </div>
-                              <div class="fieldsets- row">
-                                 <div class="col-md-12 form-group">
-                                    <div class="custom-file">
-                                       <input type="file" class="custom-file-input mb0" id="customFile">
-                                       <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
-                                    <p><small>Please upload maximum 5 files Only pdf, docx and doc files.</small></p>
-                                 </div>
-                              </div>
-                              <div class="fieldsets mt20">
-                                 <button type="submit" class="lnk btn-main bg-btn">Submit Application<span
-                                       class="circle"></span></button>
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            <div class="job-header-right">
+              ${job.num_of_posts ? `<span class="job-badge">${job.num_of_posts} opening${job.num_of_posts > 1 ? 's' : ''}</span>` : ''}
+              <span class="job-toggle-icon"><i class="fa-solid fa-plus"></i></span>
             </div>
-         </div>
-         <!--Start Footer-->
-         <footer>
-            <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-         </footer>
-         <!--End Footer-->
-         <!-- js placed at the end of the document so the pages load faster -->
-         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-         <script src="js/jquery.min.js"></script>
-         <script src="js/bootstrap.bundle.min.js"></script>
-         <script src="js/plugin.min.js"></script>
-         <script src="js/dark-mode.js"></script>
-         <!--common script file-->
-         <script src="js/main.js"></script>
-         <script>
-            // Add the following code if you want the name of the file appear on select
-            $(".custom-file-input").on("change", function () {
-               var fileName = $(this).val().split("\\").pop();
-               $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-            });
-         </script>
-         <script>
-            const SHEET_URL = "https://docs.google.com/spreadsheets/d/1BDnfKov1N5hjxalZz7PaJy9J_UMgk2zjYfxVQGxcNd4/gviz/tq?tqx=out:json";
+          </div>
+          <div class="job-body">
+            ${job.description ? `<p>${job.description}</p>` : ''}
+            ${job.required_experience ? `<p><strong>Experience:</strong> ${job.required_experience}</p>` : ''}
+            ${skillHtml ? `<p class="skills-label">Skills Required</p><ul class="job-skills">${skillHtml}</ul>` : ''}
+            ${job.applyLink ? `<a href="${job.applyLink}" target="_blank" rel="noopener" class="dw-btn-primary" style="margin-top:16px;display:inline-flex">Apply Now <i class="fa-solid fa-arrow-right" style="margin-left:6px"></i></a>` : ''}
+          </div>
+        `;
 
-            fetch(SHEET_URL)
-               .then(response => response.text())
-               .then(data => {
-                  // Parse the response to JSON
-                  const json = JSON.parse(data.substring(47).slice(0, -2));
-                  const rows = json.table.rows;
+        el.querySelector('.job-header').addEventListener('click', () => {
+          const isOpen = el.classList.contains('open');
+          document.querySelectorAll('.job-item').forEach(j => j.classList.remove('open'));
+          if (!isOpen) el.classList.add('open');
+        });
 
-                  // Map job data
-                  const jobList = rows.map(row => ({
-                     title: row.c[0]?.v,
-                     num_of_posts: row.c[1]?.v,
-                     description: row.c[2]?.v,
-                     required_skills: row.c[3]?.v,
-                     required_experience: row.c[4]?.v,
-                     location: row.c[5]?.v,
-                     job_type: row.c[6]?.v,
-                     applyLink: row.c[7]?.v
-                  }));
+        container.appendChild(el);
+      });
+    })
+    .catch(err => {
+      console.error('Error loading jobs:', err);
+      container.innerHTML = '';
+      emptyMsg.style.display = 'block';
+    });
+})();
+</script>
 
-                  // Display jobs on the page
-                  const jobContainer = document.getElementById("accordionExample");
-                  // console.log("jobList", jobList)
-                  jobList.forEach((job, i) => {
-                     const skills = job.required_skills.split(',');
-                     let skill_ele = ''
-                     skills.forEach(skill => {
-                        skill_ele += `<li>${skill}</li>`
-                     })
+<style>
+.inner-page-hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+.inner-page-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin: 12px 0 16px;
+}
+.inner-page-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+}
 
-                     const element = `
-                  <div class="accordion-item">
-                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${i}" aria-expanded="true" aria-controls="collapseOne">
-                           ${job.title} - ${job.num_of_posts} Post
-                        </button>
-                     </h2>
-                     <div id="collapse-${i}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                           <div class="data-reqs">
-                              <h5 class="pt20 pb20">Overview</h5>
-                              <p>${job.description}</p>
-                              <h5 class="pt20 pb20">Required experience</h5>
-                              <p>${job.required_experience}</p>
-                              <h4 class="pb20 pt20">Skills Required:</h4>
-                              <ul class="list-ul ul-check">
-                                 ${skill_ele}
-                              </ul>
-                              <a href="${job.applyLink}" class="btn-main bg-btn3 lnk mt20" target="_blank">Apply Now<i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               `;
-                     jobContainer.innerHTML += element;
-                  });
-               })
-               .catch(err => console.error("Error loading jobs:", err));
+/* Culture */
+.career-culture { padding-bottom: 80px; }
+.culture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 900px) { .culture-grid { grid-template-columns: 1fr; gap: 40px; } }
+.culture-text p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.culture-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 480px) { .culture-pillars { grid-template-columns: 1fr; } }
+.culture-pillar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.pillar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(108,71,255,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.culture-pillar h4 {
+  font-size: .85rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.culture-pillar p {
+  font-size: .78rem;
+  color: var(--text-faint);
+  margin: 0;
+  line-height: 1.5;
+}
 
-         </script>
-   </body>
+/* Jobs */
+.career-jobs { padding-bottom: 100px; }
+.jobs-header { margin-bottom: 36px; }
 
+.jobs-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0;
+  color: var(--text-faint);
+  font-size: .85rem;
+}
+.jobs-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { rotate: 360deg; } }
+
+.jobs-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-faint);
+}
+.jobs-empty p { margin-bottom: 20px; }
+
+.job-item {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.job-item:hover, .job-item.open { border-color: var(--accent); }
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  gap: 16px;
+}
+.job-header-left { flex: 1; }
+.job-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text-primary);
+}
+.job-meta {
+  font-size: .78rem;
+  color: var(--text-faint);
+  margin: 0;
+}
+.job-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.job-badge {
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(108,71,255,.12);
+  border: 1px solid rgba(108,71,255,.25);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.job-toggle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  color: var(--text-faint);
+  transition: all .25s;
+  flex-shrink: 0;
+}
+.job-item.open .job-toggle-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  rotate: 45deg;
+}
+
+.job-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+  padding: 0 24px;
+}
+.job-item.open .job-body {
+  max-height: 600px;
+  padding: 0 24px 24px;
+}
+.job-body p {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+.job-body strong { color: var(--text-primary); }
+.skills-label {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 16px 0 8px !important;
+}
+.job-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.job-skills li {
+  font-size: .78rem;
+  color: var(--text-muted);
+  background: var(--surface-2, rgba(255,255,255,.04));
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+</style>
+
+</body>
 </html>
