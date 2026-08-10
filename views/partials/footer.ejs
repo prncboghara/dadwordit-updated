@@ -8,18 +8,18 @@
         <p class="footer-tagline">Built by engineers who've shipped real products.</p>
         <div class="footer-socials">
           <a href="https://www.facebook.com/people/Dadword-It/61554692296159/" target="_blank" rel="noopener" class="soc-icon" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
+            <%- include('icon', { name: 'facebook' }) %>
           </a>
           <a href="https://x.com/dadwordit" target="_blank" rel="noopener" class="soc-icon" aria-label="X / Twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+            <svg class="dw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
             </svg>
           </a>
           <a href="https://www.instagram.com/dadword_it/" target="_blank" rel="noopener" class="soc-icon" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
+            <%- include('icon', { name: 'instagram' }) %>
           </a>
           <a href="https://www.linkedin.com/company/dadword-it/" target="_blank" rel="noopener" class="soc-icon" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
+            <%- include('icon', { name: 'linkedin' }) %>
           </a>
         </div>
       </div>
@@ -65,7 +65,7 @@
         <p class="footer-col-title" style="margin-top:24px">Latest Posts</p>
         <% recent_blogs.slice(0, 2).forEach(function(blog) { %>
         <a href="<%= blog.url %>" class="footer-blog-item">
-          <p class="footer-blog-date"><i class="far fa-clock" style="margin-right:4px"></i><%= blog.created %></p>
+          <p class="footer-blog-date"><span style="margin-right:4px"><%- include('icon', { name: 'clock' }) %></span><%= blog.created %></p>
           <p class="footer-blog-title"><%= blog.name %></p>
         </a>
         <% }); %>

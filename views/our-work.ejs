@@ -19,10 +19,10 @@
         <span>Our Work</span>
       </div>
       <span class="section-label">Portfolio</span>
-      <h1>Products we've built<br>for real businesses.</h1>
+      <h1>Shopify apps, web portals &amp; SaaS products we've shipped.</h1>
       <p class="section-sub mx-auto">
-        Every project here started with a real problem and ended with a measurable outcome.
-        No filler, no spec work.
+        Every project here started with a real business problem and ended with a measurable outcome.
+        Browse custom Shopify apps, B2B web portals, and SaaS platforms built by Dadword IT for clients in the US, Canada, and Europe.
       </p>
     </div>
   </div>
@@ -51,7 +51,7 @@
       %>
       <div class="port-card reveal" data-category="<%= cat %>">
         <div class="port-img-wrap">
-          <img src="<%= item.portfolioImg %>" alt="<%= item.sortTitle %>" loading="<%= index < 2 ? 'eager' : 'lazy' %>" />
+          <img src="<%= item.portfolioImg %>" alt="<%= item.sortTitle %>" width="640" height="410" loading="<%= index < 2 ? 'eager' : 'lazy' %>" />
           <div class="port-overlay">
             <a href="/portfolio/<%= item.slug %>" class="btn-primary" style="font-size:.85rem;padding:10px 20px">View Case Study</a>
           </div>
@@ -70,6 +70,85 @@
       <% }); %>
     </div>
 
+    <!-- How we deliver -->
+    <div class="work-process reveal">
+      <span class="section-label">How we deliver</span>
+      <h2>From discovery to launch — without the agency theatre.</h2>
+      <p class="section-sub" style="margin-top:14px">
+        We run a senior-led process built for product companies: clear scope, AI-enhanced engineering, and shipping cadence you can track.
+      </p>
+      <div class="work-process-grid">
+        <div class="work-process-card">
+          <h3>1. Discover</h3>
+          <p>We map goals, users, and constraints. You get a practical stack recommendation and a timeline before we write production code.</p>
+        </div>
+        <div class="work-process-card">
+          <h3>2. Build</h3>
+          <p>Senior engineers ship in short cycles — portals, Shopify apps, or SaaS MVPs — with demos you can click, not slide decks.</p>
+        </div>
+        <div class="work-process-card">
+          <h3>3. Launch</h3>
+          <p>We harden, deploy, and hand over. Optional retainers cover monitoring, fixes, and the next feature wave after go-live.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outcomes -->
+    <div class="work-outcomes reveal">
+      <span class="section-label">Outcomes</span>
+      <h2>Results our clients care about.</h2>
+      <ul class="work-outcomes-list">
+        <li><strong>Shopify apps that merchants actually use</strong> — including Customer Story, our customer segmentation and storytelling product on the Shopify App Store.</li>
+        <li><strong>B2B web portals</strong> that replace spreadsheets and email chains with role-based workflows and dashboards.</li>
+        <li><strong>SaaS MVPs</strong> that reach paying users faster without locking you into throwaway architecture.</li>
+        <li><strong>AI-enhanced delivery</strong> so senior engineers ship more in the same calendar time — without cutting quality.</li>
+      </ul>
+    </div>
+
+    <!-- FAQs -->
+    <div class="work-faq reveal">
+      <span class="section-label">FAQ</span>
+      <h2>Questions about our portfolio</h2>
+      <div class="faq-list">
+        <div class="faq-item" data-faq>
+          <button class="faq-q" aria-expanded="true">
+            What kinds of projects are in the Dadword IT portfolio?
+            <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+          </button>
+          <div class="faq-a">
+            <p>Our portfolio includes Shopify apps, custom B2B web portals, and SaaS products. Each case study covers the problem, stack, and measurable outcome.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" aria-expanded="false">
+            Do you build custom Shopify apps or only themes?
+            <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+          </button>
+          <div class="faq-a">
+            <p>We specialise in custom Shopify apps and theme extensions — for example Customer Story — not template reskins.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" aria-expanded="false">
+            Can I see more detail on a specific case study?
+            <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+          </button>
+          <div class="faq-a">
+            <p>Yes. Open any project card on this page to read the full case study, including goals, architecture, and results.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" aria-expanded="false">
+            How do I start a similar project with Dadword IT?
+            <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+          </button>
+          <div class="faq-a">
+            <p>Send a project inquiry via <a href="/contact-us">Contact Us</a>, or <a href="/lets-talk">book a free 30-minute strategy call</a>. We will assess fit and outline next steps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -77,11 +156,11 @@
 <section class="cta-section dw-section">
   <div class="dw-container">
     <span class="section-label" style="justify-content:center">Next Project</span>
-    <h2 class="reveal">Want your project here?</h2>
-    <p class="reveal reveal-d1">Let's talk about what you're building.</p>
+    <h2 class="reveal">Want your Shopify app, portal, or SaaS here?</h2>
+    <p class="reveal reveal-d1">Tell us what you&rsquo;re building — we&rsquo;ll reply with a clear plan and honest fit assessment.</p>
     <div class="cta-btns reveal reveal-d2">
-      <a href="/contact-us" class="btn-primary btn-lg">Start a Project</a>
-      <a href="/lets-talk" class="btn-outline btn-lg">Book a Call</a>
+      <a href="/contact-us" class="btn-primary btn-lg">Send a Project Inquiry</a>
+      <a href="/lets-talk" class="btn-outline btn-lg">Book a Strategy Call</a>
     </div>
   </div>
 </section>

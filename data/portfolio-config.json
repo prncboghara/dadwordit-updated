@@ -6,16 +6,16 @@
             "title": "Customer Story: Shopify Customer Segmentation App",
             "technologies": ["Node.js", "React", "Shopify API", "Prisma", "Supabase"],
             "link": "https://customersstory.com",
-            "desktopImage": "/images/result/customer-story.png",
-            "mobileImage": "/images/result/customer-story.png",
+            "desktopImage": "/images/result/customer-story.webp",
+            "mobileImage": "/images/result/customer-story.webp",
             "bgClass": "bg-gradient1",
-            "portfolioImg": "/images/result/customer-story.png",
+            "portfolioImg": "/images/result/customer-story.webp",
             "sortTitle": "Customer Story",
             "slug": "customer-story",
             "description": "Customer Story is our own Shopify app for customer segmentation and lifecycle marketing. We designed, built, and shipped it in-house. Just launched — building our own product gives us firsthand insight into the Shopify ecosystem that clients benefit from directly.",
             "outcome": "Just launched with 10 early installs and a 5-star review on the Shopify App Store. A live product that proves we don't just build for clients — we build for ourselves.",
             "images": [
-                "/images/result/customer-story.png"
+                "/images/result/customer-story.webp"
             ]
         },
         {
@@ -130,7 +130,7 @@
             ]
         },
         {
-            "logo": "/images/portfolio/organizm.png",
+            "logo": "/images/portfolio/organizm.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -142,10 +142,10 @@
                 "Node"
             ],
             "link": "https://organizm.ro/",
-            "desktopImage": "/images/portfolio/portfolio-wide-5.png",
-            "mobileImage": "/images/portfolio/portfolio-wide-5a.png",
+            "desktopImage": "/images/portfolio/portfolio-wide-5.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-5a.webp",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "/images/portfolio/organizm.png",
+            "portfolioImg": "/images/portfolio/organizm.webp",
             "sortTitle": "Organizm",
             "slug": "organizm",
             "images": [
@@ -155,7 +155,7 @@
             ]
         },
         {
-            "logo": "/images/client/every.png",
+            "logo": "/images/client/every.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -166,10 +166,10 @@
                 "Webflow"
             ],
             "link": "https://every.io/",
-            "desktopImage": "/images/portfolio/portfolio-wide-6.png",
-            "mobileImage": "/images/portfolio/portfolio-wide-6a.png",
+            "desktopImage": "/images/portfolio/portfolio-wide-6.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-6a.webp",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "/images/portfolio/portfolio-wide-6.png",
+            "portfolioImg": "/images/portfolio/portfolio-wide-6.webp",
             "sortTitle": "Every",
             "slug": "every",
             "images": [
@@ -179,7 +179,7 @@
             ]
         },
         {
-            "logo": "/images/client/pilim.png",
+            "logo": "/images/client/pilim.webp",
             "tags": [
                 "Design",
                 "Coding"
@@ -190,10 +190,10 @@
                 "Angular"
             ],
             "link": "https://www.pilim.net/",
-            "desktopImage": "/images/portfolio/portfolio-wide-7.png",
-            "mobileImage": "/images/portfolio/portfolio-wide-7a.png",
+            "desktopImage": "/images/portfolio/portfolio-wide-7.webp",
+            "mobileImage": "/images/portfolio/portfolio-wide-7a.webp",
             "bgClass": "bg-gradient4",
-            "portfolioImg": "/images/portfolio/portfolio-wide-7.png",
+            "portfolioImg": "/images/portfolio/portfolio-wide-7.webp",
             "sortTitle": "Pilim",
             "slug": "pilim",
             "images": [

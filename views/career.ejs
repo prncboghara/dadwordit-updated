@@ -36,28 +36,28 @@
       </div>
       <div class="culture-pillars">
         <div class="culture-pillar">
-          <span class="pillar-icon"><i class="fa-solid fa-code-branch"></i></span>
+          <span class="pillar-icon"><%- include('partials/icon', { name: 'code-branch' }) %></span>
           <div>
             <h4>Ownership</h4>
             <p>You own your code end to end, from design review to deployment.</p>
           </div>
         </div>
         <div class="culture-pillar">
-          <span class="pillar-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span class="pillar-icon"><%- include('partials/icon', { name: 'bolt' }) %></span>
           <div>
             <h4>AI-First Workflow</h4>
             <p>We use Cursor, Claude, and other AI tools as standard — not as experiments.</p>
           </div>
         </div>
         <div class="culture-pillar">
-          <span class="pillar-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          <span class="pillar-icon"><%- include('partials/icon', { name: 'trend-up' }) %></span>
           <div>
             <h4>Real Growth</h4>
             <p>Senior engineers who mentor, not gatekeep. Grow your skills on every sprint.</p>
           </div>
         </div>
         <div class="culture-pillar">
-          <span class="pillar-icon"><i class="fa-solid fa-earth-asia"></i></span>
+          <span class="pillar-icon"><%- include('partials/icon', { name: 'globe' }) %></span>
           <div>
             <h4>Remote-Friendly</h4>
             <p>We care about output, not hours. Work from wherever you do your best thinking.</p>
@@ -138,14 +138,14 @@
             </div>
             <div class="job-header-right">
               ${job.num_of_posts ? `<span class="job-badge">${job.num_of_posts} opening${job.num_of_posts > 1 ? 's' : ''}</span>` : ''}
-              <span class="job-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+              <span class="job-toggle-icon"><svg class="dw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span>
             </div>
           </div>
           <div class="job-body">
             ${job.description ? `<p>${job.description}</p>` : ''}
             ${job.required_experience ? `<p><strong>Experience:</strong> ${job.required_experience}</p>` : ''}
             ${skillHtml ? `<p class="skills-label">Skills Required</p><ul class="job-skills">${skillHtml}</ul>` : ''}
-            ${job.applyLink ? `<a href="${job.applyLink}" target="_blank" rel="noopener" class="dw-btn-primary" style="margin-top:16px;display:inline-flex">Apply Now <i class="fa-solid fa-arrow-right" style="margin-left:6px"></i></a>` : ''}
+            ${job.applyLink ? `<a href="${job.applyLink}" target="_blank" rel="noopener" class="dw-btn-primary" style="margin-top:16px;display:inline-flex">Apply Now <svg class="dw-icon" style="margin-left:6px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>` : ''}
           </div>
         `;
 

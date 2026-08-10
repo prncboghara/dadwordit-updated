@@ -44,7 +44,7 @@
             <p style="font-size:.72rem;color:var(--text-faint);margin:0">Dadword IT</p>
           </div>
         </div>
-        <span style="font-size:.78rem;color:var(--text-faint)"><i class="far fa-clock" style="margin-right:5px"></i><%= blog.created %></span>
+        <span style="font-size:.78rem;color:var(--text-faint)"><span style="margin-right:5px"><%- include('partials/icon', { name: 'clock' }) %></span><%= blog.created %></span>
       </div>
     </div>
   </div>
@@ -75,13 +75,13 @@
           <span class="blog-share-label">Share this article</span>
           <div class="blog-share-icons">
             <a href="https://www.facebook.com/sharer/sharer.php?u=<%= blog.blogUrl %>" target="_blank" rel="noopener" class="share-btn" aria-label="Share on Facebook">
-              <i class="fab fa-facebook-f"></i>
+              <%- include('partials/icon', { name: 'facebook' }) %>
             </a>
             <a href="https://twitter.com/intent/tweet?url=<%= blog.blogUrl %>&text=<%= encodeURIComponent(blog.name) %>" target="_blank" rel="noopener" class="share-btn" aria-label="Share on X">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
+              <svg class="dw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
             </a>
             <a href="https://www.linkedin.com/sharing/share-offsite/?url=<%= blog.blogUrl %>" target="_blank" rel="noopener" class="share-btn" aria-label="Share on LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
+              <%- include('partials/icon', { name: 'linkedin' }) %>
             </a>
           </div>
         </div>

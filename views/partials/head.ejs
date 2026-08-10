@@ -40,16 +40,18 @@
 
   <!-- Structured Data -->
   <% if (typeof schema !== 'undefined' && schema) { %>
-  <script type="application/ld+json"><%- JSON.stringify(schema) %></script>
+  <% const schemas = Array.isArray(schema) ? schema : [schema]; %>
+  <% schemas.forEach(function(block) { if (block) { %>
+  <script type="application/ld+json"><%- JSON.stringify(block) %></script>
+  <% } }); %>
   <% } %>
 
   <!-- Favicon -->
   <link href="/images/favicon.png" rel="icon">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Self-hosted fonts -->
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Bootstrap grid only -->
   <link href="/css/bootstrap.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -57,10 +59,6 @@
 
   <!-- Dadword Design System -->
   <link href="/css/dadword.css" rel="stylesheet">
-
-  <!-- Font Awesome icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"></noscript>
 
   <!-- Regional SEO (office NAP) -->
   <meta name="geo.region"    content="IN-GJ" />
@@ -73,6 +71,15 @@
   <link rel="alternate" hreflang="x-default" href="<%= hreflangUrl %>" />
 
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+  <!-- Hide preloader immediately on return visits -->
+  <script>
+    try {
+      if (sessionStorage.getItem('dwVisited')) {
+        document.documentElement.classList.add('dw-skip-preloader');
+      }
+    } catch (e) {}
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>

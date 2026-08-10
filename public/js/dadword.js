@@ -7,14 +7,29 @@
   'use strict';
 
   /* ----------------------------------------------------------
-     Preloader
+     Preloader (first visit per session only)
      ---------------------------------------------------------- */
-  window.addEventListener('load', function () {
+  (function initPreloader() {
     const pre = document.getElementById('dw-preloader');
-    if (pre) {
-      setTimeout(function () { pre.classList.add('hidden'); }, 500);
+    if (!pre) return;
+
+    let seen = false;
+    try {
+      seen = !!sessionStorage.getItem('dwVisited');
+    } catch (e) {}
+
+    if (seen || document.documentElement.classList.contains('dw-skip-preloader')) {
+      pre.classList.add('hidden');
+      return;
     }
-  });
+
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        pre.classList.add('hidden');
+        try { sessionStorage.setItem('dwVisited', '1'); } catch (e) {}
+      }, 500);
+    });
+  })();
 
   /* ----------------------------------------------------------
      Sticky Nav
@@ -254,6 +269,30 @@
   const heights    = [40, 65, 80, 55, 90, 70, 45, 85, 60];
   mockupBars.forEach(function (bar, i) {
     bar.style.height = (heights[i % heights.length] || 60) + '%';
+  });
+
+  /* ----------------------------------------------------------
+     FAQ accordion
+     ---------------------------------------------------------- */
+  document.querySelectorAll('[data-faq]').forEach(function (item) {
+    const btn = item.querySelector('.faq-q');
+    if (!btn || btn.dataset.faqBound) return;
+    btn.dataset.faqBound = '1';
+    if (btn.getAttribute('aria-expanded') === 'true') {
+      item.classList.add('open');
+    }
+    btn.addEventListener('click', function () {
+      const opening = !item.classList.contains('open');
+      document.querySelectorAll('[data-faq]').forEach(function (f) {
+        f.classList.remove('open');
+        const q = f.querySelector('.faq-q');
+        if (q) q.setAttribute('aria-expanded', 'false');
+      });
+      if (opening) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 
 })();

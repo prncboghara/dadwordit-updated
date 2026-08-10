@@ -2,12 +2,11 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const path = require('path');
-const SEO_CONFIG = require('../seo/config')
+const SEO_CONFIG = require('../seo/config');
+const { SITE, LOGO, withBreadcrumb } = require('../seo/schema');
 
-const { getRecentBlogs, getBlogs, getBlog } = require('../controllers/blog')
+const { getRecentBlogs, getBlogs, getBlog } = require('../controllers/blog');
 
-const SITE = 'https://www.dadwordit.com';
-const LOGO = `${SITE}/images/logo.webp`;
 const dataDir = path.join(__dirname, '../data');
 
 function getData(filename) {
@@ -27,6 +26,17 @@ function absoluteUrl(url) {
     return `${SITE}${url.startsWith('/') ? url : `/${url}`}`;
 }
 
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+function blogPath(slug) {
+    if (!slug) return '';
+    if (slug.startsWith('/blog/')) return slug;
+    if (slug.startsWith('/')) return `/blog${slug}`;
+    return `/blog/${slug}`;
+}
+
 function buildPortfolioSeo(project, slug) {
     const description = trimMeta(
         project.description ||
@@ -39,22 +49,22 @@ function buildPortfolioSeo(project, slug) {
         project.tags.some(tag => /shopify app|product|saas/i.test(tag));
 
     const schema = {
-        "@context": "https://schema.org",
-        "@type": isApp ? "SoftwareApplication" : "CreativeWork",
-        "name": project.title,
-        "description": description,
-        "url": pageUrl,
-        "image": image,
-        "author": {
-            "@type": "Organization",
-            "name": "Dadword IT",
-            "url": SITE
+        '@context': 'https://schema.org',
+        '@type': isApp ? 'SoftwareApplication' : 'CreativeWork',
+        name: project.title,
+        description,
+        url: pageUrl,
+        image,
+        author: {
+            '@type': 'Organization',
+            name: 'Dadword IT',
+            url: SITE
         }
     };
 
     if (isApp) {
-        schema.applicationCategory = "BusinessApplication";
-        schema.operatingSystem = "Web";
+        schema.applicationCategory = 'BusinessApplication';
+        schema.operatingSystem = 'Web';
     }
 
     return {
@@ -77,13 +87,56 @@ function buildPortfolioSeo(project, slug) {
             description,
             image
         },
-        schema,
+        schema: withBreadcrumb(schema, [
+            { name: 'Home', url: `${SITE}/` },
+            { name: 'Our Work', url: `${SITE}/our-work` },
+            { name: project.sortTitle || project.title, url: pageUrl }
+        ]),
         canonical: pageUrl
     };
 }
 
+const OUR_WORK_FAQ_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What kinds of projects are in the Dadword IT portfolio?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Our portfolio includes Shopify apps, custom B2B web portals, and SaaS products. Each case study covers the problem, stack, and measurable outcome.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'Do you build custom Shopify apps or only themes?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'We specialise in custom Shopify apps and theme extensions — for example Customer Story, our Shopify customer segmentation and storytelling app — not template reskins.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'Can I see more detail on a specific case study?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. Open any project card on this page to read the full case study, including goals, architecture, and results.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How do I start a similar project with Dadword IT?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Send a project inquiry via Contact Us, or book a free 30-minute strategy call on Let\'s Talk. We will assess fit and outline next steps.'
+            }
+        }
+    ]
+};
+
 router.get('/', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
     res.render('index', {
         recent_blogs: recent_blogs,
         portfolioItems: getData('portfolio-config.json').portfolioItems,
@@ -97,7 +150,7 @@ router.get('/', async (req, res) => {
 
 router.get('/portfolio/:slug', async (req, res) => {
     const slug = req.params.slug;
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
     const project = getData('portfolio-config.json').portfolioItems.find(
         item => item.slug === slug
     );
@@ -114,51 +167,90 @@ router.get('/portfolio/:slug', async (req, res) => {
     });
 });
 
-
 router.get('/about', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.about);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'About', url: `${SITE}/about` }
+    ]);
     res.render('about', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.about,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/service', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.service);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Services', url: `${SITE}/service` }
+    ]);
     res.render('service', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.service,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/our-work', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const portfolioItems = getData('portfolio-config.json').portfolioItems;
+    const seo = deepClone(SEO_CONFIG.our_work);
+    seo.schema.itemListElement = portfolioItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.sortTitle || item.title,
+        url: `${SITE}/portfolio/${item.slug}`
+    }));
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Our Work', url: `${SITE}/our-work` }
+    ]).concat([OUR_WORK_FAQ_SCHEMA]);
     res.render('our-work', {
         recent_blogs: recent_blogs,
-        portfolioItems: getData('portfolio-config.json').portfolioItems,
-        ...SEO_CONFIG.our_work,
+        portfolioItems,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/blog', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
-    const blogs = await getBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const blogs = await getBlogs();
+    const seo = deepClone(SEO_CONFIG.blog);
+    seo.schema.blogPost = (blogs || []).slice(0, 20).map(blog => {
+        const slugPath = blogPath(blog.slug || blog.url || '');
+        return {
+            '@type': 'BlogPosting',
+            headline: blog.name || blog.title,
+            url: slugPath ? `${SITE}${slugPath}` : undefined,
+            datePublished: blog.publishedAt || blog.created || undefined,
+            author: {
+                '@type': 'Person',
+                name: blog.authorName || 'Dadword IT'
+            }
+        };
+    }).filter(post => post.url);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Blog', url: `${SITE}/blog` }
+    ]);
     res.render('blog', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.blog,
+        ...seo,
         blogs: blogs,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/blog/:slug', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
     const blog = await getBlog(`${req.params.slug}`);
     if (blog && blog.length) {
-        const _blog = blog[0]
+        const _blog = blog[0];
         const pageUrl = `${SITE}/blog/${req.params.slug}`;
         const metaTitle = _blog.seo?.metaTitle || _blog.name;
         const metaDescription = _blog.seo?.metaDescription || '';
@@ -186,30 +278,34 @@ router.get('/blog/:slug', async (req, res) => {
                 description: metaDescription,
                 image
             },
-            schema: {
-                "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                "headline": metaTitle,
-                "description": metaDescription,
-                "image": image,
-                "datePublished": _blog.publishedAt || undefined,
-                "author": {
-                    "@type": "Person",
-                    "name": _blog.authorName || 'Dadword IT'
+            schema: withBreadcrumb({
+                '@context': 'https://schema.org',
+                '@type': 'BlogPosting',
+                headline: metaTitle,
+                description: metaDescription,
+                image,
+                datePublished: _blog.publishedAt || undefined,
+                author: {
+                    '@type': 'Person',
+                    name: _blog.authorName || 'Dadword IT'
                 },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Dadword IT",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": LOGO
+                publisher: {
+                    '@type': 'Organization',
+                    name: 'Dadword IT',
+                    logo: {
+                        '@type': 'ImageObject',
+                        url: LOGO
                     }
                 },
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": pageUrl
+                mainEntityOfPage: {
+                    '@type': 'WebPage',
+                    '@id': pageUrl
                 }
-            },
+            }, [
+                { name: 'Home', url: `${SITE}/` },
+                { name: 'Blog', url: `${SITE}/blog` },
+                { name: metaTitle, url: pageUrl }
+            ]),
             canonical: pageUrl
         });
     } else {
@@ -225,55 +321,85 @@ router.get('/blog/:slug', async (req, res) => {
 });
 
 router.get('/career', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.career);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Careers', url: `${SITE}/career` }
+    ]);
     res.render('career', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.career,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/lets-talk', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.lets_talk);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Book a Call', url: `${SITE}/lets-talk` }
+    ]);
     res.render('lets-talk', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.lets_talk,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/contact-us', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.contact_us);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Contact', url: `${SITE}/contact-us` }
+    ]);
     res.render('contact-us', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.contact_us,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/faq', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.customer_faq);
+    seo.schema = withBreadcrumb(seo.schema, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'FAQ', url: `${SITE}/faq` }
+    ]);
     res.render('faq', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.customer_faq,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/privacy-policy', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.privacy_policy);
+    seo.schema = withBreadcrumb(null, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Privacy Policy', url: `${SITE}/privacy-policy` }
+    ]);
     res.render('privacy-policy', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.privacy_policy,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
 
 router.get('/terms-and-conditions', async (req, res) => {
-    let recent_blogs = await getRecentBlogs()
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.terms_and_condition);
+    seo.schema = withBreadcrumb(null, [
+        { name: 'Home', url: `${SITE}/` },
+        { name: 'Terms', url: `${SITE}/terms-and-conditions` }
+    ]);
     res.render('terms-and-conditions', {
         recent_blogs: recent_blogs,
-        ...SEO_CONFIG.terms_and_condition,
+        ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
 });
@@ -301,12 +427,7 @@ router.get('/sitemap.xml', async (req, res) => {
     let blogPaths = [];
     try {
         const blogs = await getBlogs();
-        blogPaths = (blogs || []).map(blog => {
-            const slug = blog.slug || '';
-            if (slug.startsWith('/blog/')) return slug;
-            if (slug.startsWith('/')) return `/blog${slug}`;
-            return `/blog/${slug}`;
-        }).filter(Boolean);
+        blogPaths = (blogs || []).map(blog => blogPath(blog.slug || '')).filter(Boolean);
     } catch (e) {
         blogPaths = [];
     }

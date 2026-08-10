@@ -48,8 +48,8 @@
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><i class="far fa-user"></i> <%= blog.authorName %></span>
-            <span><i class="far fa-clock"></i> <%= blog.created %></span>
+            <span><%- include('partials/icon', { name: 'user' }) %> <%= blog.authorName %></span>
+            <span><%- include('partials/icon', { name: 'clock' }) %> <%= blog.created %></span>
           </div>
           <h3 class="blog-card-title"><%= blog.name %></h3>
           <span class="blog-read-more">Read article &rarr;</span>
