@@ -69,15 +69,15 @@
             "portfolioImg": "/images/portfolio/greet-eat.webp",
             "sortTitle": "Greeteat",
             "slug": "greeteat",
-            "description": "M-Wise is a modern loyalty program management platform designed to help businesses engage customers, improve retention, and track performance. Our team built a scalable and high-performance solution using modern frontend frameworks and optimized UI/UX to ensure seamless user experience across devices.",
+            "description": "Greeteat is an online meeting platform that helps teams schedule, host, and follow up on conversations in one place. We built a responsive React and Node.js experience focused on fast join flows, clear agendas, and a clean interface that works across desktop and mobile.",
             "images": [
-                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/greet-eat.webp",
                 "/images/portfolio/portfolio-wide-2.webp",
-                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/greet-eat.webp",
                 "/images/portfolio/portfolio-wide-2.webp",
-                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/greet-eat.webp",
                 "/images/portfolio/portfolio-wide-2.webp",
-                "/images/portfolio/m-wise.webp",
+                "/images/portfolio/greet-eat.webp",
                 "/images/portfolio/portfolio-wide-2.webp"
             ]
         },

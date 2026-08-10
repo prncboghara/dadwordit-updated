@@ -85,15 +85,14 @@ const getBlog = async (slug) => {
             name: blog.title,
             authorName: blog.author.name,
             created: moment(blog.publishedAt).format('MMM DD, YYYY'),
+            publishedAt: blog.publishedAt,
             main_image: `${STRAPI_URL}${blog.main_image.url}`,
             cover: `${STRAPI_URL}${blog.cover.url}`,
             slug: blog.slug,
             content: converter.makeHtml(blog.content),
             comments: [],
-            blogUrl: `https://dadwordit.com/blog/${blog.slug}`,
+            blogUrl: `https://www.dadwordit.com/blog/${blog.slug}`,
             seo: blog.blocks.find(b => b.__component === 'shared.seo')
-            // state: blog.state,
-            // metaDescription: blog.metaDescription,
         }));
 
     } catch (error) {

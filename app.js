@@ -1,11 +1,31 @@
 const express = require('express');
+const compression = require('compression');
+const path = require('path');
 const app = express();
 const publicRoutes = require('./routes/public');
 
 require('dotenv').config();
 
-// Serve static files from the "public" directory
-app.use(express.static('public'));
+app.use(compression());
+
+app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    if (process.env.NODE_ENV === 'production') {
+        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    }
+    next();
+});
+
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '30d',
+    immutable: true,
+    setHeaders: (res, filePath) => {
+        if (/\.(html?)$/i.test(filePath)) {
+            res.setHeader('Cache-Control', 'no-cache');
+        }
+    }
+}));
 
 app.set('view engine', 'ejs');
 app.set('views', './views');

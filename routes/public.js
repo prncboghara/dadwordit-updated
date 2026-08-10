@@ -4,12 +4,82 @@ const fs = require('fs');
 const path = require('path');
 const SEO_CONFIG = require('../seo/config')
 
-const { getRecentBlogs, getBlogs, getBlog, postComment } = require('../controllers/blog')
+const { getRecentBlogs, getBlogs, getBlog } = require('../controllers/blog')
 
+const SITE = 'https://www.dadwordit.com';
+const LOGO = `${SITE}/images/logo.webp`;
 const dataDir = path.join(__dirname, '../data');
 
 function getData(filename) {
     return JSON.parse(fs.readFileSync(path.join(dataDir, filename), 'utf8'));
+}
+
+function trimMeta(text, max = 160) {
+    if (!text) return '';
+    const cleaned = String(text).replace(/\s+/g, ' ').trim();
+    if (cleaned.length <= max) return cleaned;
+    return cleaned.slice(0, max - 1).trimEnd() + '…';
+}
+
+function absoluteUrl(url) {
+    if (!url) return LOGO;
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    return `${SITE}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
+function buildPortfolioSeo(project, slug) {
+    const description = trimMeta(
+        project.description ||
+        project.outcome ||
+        `${project.title} — case study by Dadword IT.`
+    );
+    const image = absoluteUrl(project.portfolioImg || project.desktopImage || project.images?.[0]);
+    const pageUrl = `${SITE}/portfolio/${slug}`;
+    const isApp = Array.isArray(project.tags) &&
+        project.tags.some(tag => /shopify app|product|saas/i.test(tag));
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": isApp ? "SoftwareApplication" : "CreativeWork",
+        "name": project.title,
+        "description": description,
+        "url": pageUrl,
+        "image": image,
+        "author": {
+            "@type": "Organization",
+            "name": "Dadword IT",
+            "url": SITE
+        }
+    };
+
+    if (isApp) {
+        schema.applicationCategory = "BusinessApplication";
+        schema.operatingSystem = "Web";
+    }
+
+    return {
+        title: `${project.title} | Case Study | Dadword IT`,
+        meta: {
+            description,
+            keywords: Array.isArray(project.tags) ? project.tags.join(', ') : 'web development case study',
+            author: 'Dadword IT'
+        },
+        og: {
+            title: project.title,
+            description,
+            image,
+            url: pageUrl,
+            type: 'website'
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: project.title,
+            description,
+            image
+        },
+        schema,
+        canonical: pageUrl
+    };
 }
 
 router.get('/', async (req, res) => {
@@ -36,9 +106,9 @@ router.get('/portfolio/:slug', async (req, res) => {
         return res.status(404).render('404');
     }
 
-    res.render('portfolio-detail', { 
-        project, 
-        ...SEO_CONFIG.our_work,
+    res.render('portfolio-detail', {
+        project,
+        ...buildPortfolioSeo(project, slug),
         trackingId: process.env.G_TRACKING_ID,
         recent_blogs: recent_blogs,
     });
@@ -87,30 +157,63 @@ router.get('/blog', async (req, res) => {
 router.get('/blog/:slug', async (req, res) => {
     let recent_blogs = await getRecentBlogs()
     const blog = await getBlog(`${req.params.slug}`);
-    if (blog) {
+    if (blog && blog.length) {
         const _blog = blog[0]
+        const pageUrl = `${SITE}/blog/${req.params.slug}`;
+        const metaTitle = _blog.seo?.metaTitle || _blog.name;
+        const metaDescription = _blog.seo?.metaDescription || '';
+        const image = _blog.main_image || LOGO;
+
         res.render('blog-single', {
             recent_blogs: recent_blogs,
             blog: _blog,
             trackingId: process.env.G_TRACKING_ID,
-            title: `${_blog.seo.metaTitle} | Dadword IT`,
+            title: `${metaTitle} | Dadword IT`,
             meta: {
-                description: _blog.seo.metaDescription,
+                description: metaDescription,
                 author: _blog.authorName
             },
             og: {
-                title: _blog.seo.metaTitle,
-                description: _blog.seo.metaDescription,
-                image: _blog.main_image,
-                url: `https://dadwordit.com/blog/${req.params.slug}`,
-                type: 'website'
+                title: metaTitle,
+                description: metaDescription,
+                image,
+                url: pageUrl,
+                type: 'article'
             },
-            twitter: null,
-            schema: null,
-            canonical: null
+            twitter: {
+                card: 'summary_large_image',
+                title: metaTitle,
+                description: metaDescription,
+                image
+            },
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": metaTitle,
+                "description": metaDescription,
+                "image": image,
+                "datePublished": _blog.publishedAt || undefined,
+                "author": {
+                    "@type": "Person",
+                    "name": _blog.authorName || 'Dadword IT'
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Dadword IT",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": LOGO
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": pageUrl
+                }
+            },
+            canonical: pageUrl
         });
     } else {
-        res.render('blog-single', {
+        res.status(404).render('blog-single', {
             blog: null,
             recent_blogs: recent_blogs,
             trackingId: process.env.G_TRACKING_ID,
@@ -175,6 +278,50 @@ router.get('/terms-and-conditions', async (req, res) => {
     });
 });
 
-// router.post('/add-comment', postComment);
+router.get('/sitemap.xml', async (req, res) => {
+    const lastmod = new Date().toISOString().split('T')[0];
+    const staticPaths = [
+        '/',
+        '/about',
+        '/service',
+        '/our-work',
+        '/blog',
+        '/career',
+        '/lets-talk',
+        '/contact-us',
+        '/faq',
+        '/privacy-policy',
+        '/terms-and-conditions'
+    ];
+
+    const portfolioPaths = getData('portfolio-config.json').portfolioItems.map(
+        item => `/portfolio/${item.slug}`
+    );
+
+    let blogPaths = [];
+    try {
+        const blogs = await getBlogs();
+        blogPaths = (blogs || []).map(blog => {
+            const slug = blog.slug || '';
+            if (slug.startsWith('/blog/')) return slug;
+            if (slug.startsWith('/')) return `/blog${slug}`;
+            return `/blog/${slug}`;
+        }).filter(Boolean);
+    } catch (e) {
+        blogPaths = [];
+    }
+
+    const urls = [...staticPaths, ...portfolioPaths, ...blogPaths];
+    const body = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(loc => `  <url>
+    <loc>${SITE}${loc === '/' ? '/' : loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>`).join('\n')}
+</urlset>
+`;
+
+    res.type('application/xml').send(body);
+});
 
 module.exports = router;
