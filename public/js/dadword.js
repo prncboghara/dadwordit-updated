@@ -267,15 +267,6 @@
   }
 
   /* ----------------------------------------------------------
-     Mockup bar heights (random heights for chart bars)
-     ---------------------------------------------------------- */
-  const mockupBars = document.querySelectorAll('.mockup-bar');
-  const heights    = [40, 65, 80, 55, 90, 70, 45, 85, 60];
-  mockupBars.forEach(function (bar, i) {
-    bar.style.height = (heights[i % heights.length] || 60) + '%';
-  });
-
-  /* ----------------------------------------------------------
      FAQ accordion
      ---------------------------------------------------------- */
   document.querySelectorAll('[data-faq]').forEach(function (item) {

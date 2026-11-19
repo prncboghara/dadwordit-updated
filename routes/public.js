@@ -113,7 +113,7 @@ const OUR_WORK_FAQ_SCHEMA = {
             name: 'Do you build custom Shopify apps or only themes?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'We specialise in custom Shopify apps and theme extensions — for example Customer Story, our Shopify customer segmentation and storytelling app — not template reskins.'
+                text: 'We specialise in custom Shopify apps and theme extensions, not template reskins.'
             }
         },
         {
@@ -147,6 +147,9 @@ router.get('/', async (req, res) => {
         trackingId: process.env.G_TRACKING_ID
     });
 });
+
+// Customer Story app was discontinued; keep the old case study URL from 404ing
+router.get('/portfolio/customer-story', (req, res) => res.redirect(301, '/our-work'));
 
 router.get('/portfolio/:slug', async (req, res) => {
     const slug = req.params.slug;

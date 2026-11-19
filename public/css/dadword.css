@@ -319,54 +319,6 @@ body.nav-open{overflow:hidden}
 .service-link:hover{gap:10px;color:var(--accent)}
 
 /* ----------------------------------------------------------
-   9. Customer Story (Product Showcase)
-   ---------------------------------------------------------- */
-.product-section{padding:var(--section-py) 0;background:var(--surface);position:relative;overflow:hidden}
-.product-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(108,71,255,.07) 0%,transparent 60%);pointer-events:none}
-
-.product-own-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:rgba(0,212,200,.1);border:1px solid rgba(0,212,200,.25);border-radius:50px;font-size:.68rem;font-weight:700;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:20px}
-
-.product-title{font-size:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:14px}
-.product-desc{font-size:1rem;margin-bottom:28px;max-width:480px}
-
-.product-metrics{display:flex;gap:28px;margin-bottom:28px;flex-wrap:wrap}
-.metric-num{font-family:var(--font-display);font-size:1.8rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;display:block}
-.metric-label{font-size:.75rem;color:var(--text-faint);font-weight:500;margin-top:2px;display:block}
-
-.product-stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.stack-pill{padding:4px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;font-size:.75rem;font-weight:500;color:var(--text-muted);transition:border-color var(--dur) var(--ease),color var(--dur) var(--ease)}
-.stack-pill:hover{border-color:var(--accent);color:var(--text)}
-
-.product-ctas{display:flex;gap:12px;flex-wrap:wrap}
-
-/* CSS dashboard mockup */
-.product-mockup{position:relative}
-.mockup-browser{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg)}
-.mockup-topbar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--border)}
-.mockup-dot{width:10px;height:10px;border-radius:50%}
-.mockup-url{flex:1;height:18px;background:var(--surface);border-radius:4px;margin:0 12px;padding:0 10px;font-size:.65rem;color:var(--text-faint);display:flex;align-items:center;font-family:'Fira Code',monospace}
-.mockup-body{padding:16px;display:flex;gap:12px;min-height:280px}
-.mockup-sidebar{width:120px;flex-shrink:0;display:flex;flex-direction:column;gap:6px}
-.mockup-nav-row{height:28px;border-radius:6px;background:var(--surface-2)}
-.mockup-nav-row.active-nav{background:rgba(108,71,255,.25);border:1px solid rgba(108,71,255,.3)}
-.mockup-main{flex:1;display:flex;flex-direction:column;gap:10px}
-.mockup-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mockup-stat{background:var(--surface-2);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:6px}
-.mockup-stat-lbl{height:7px;background:var(--text-faint);border-radius:4px;width:55%;opacity:.5}
-.mockup-stat-val{height:18px;background:var(--gradient);border-radius:4px;width:75%;opacity:.7}
-.mockup-chart{flex:1;background:var(--surface-2);border-radius:8px;padding:12px;display:flex;align-items:flex-end;gap:5px}
-.mockup-bar{flex:1;border-radius:4px 4px 0 0;background:var(--gradient);opacity:.55;transition:opacity .3s}
-.mockup-bar:hover{opacity:1}
-.mockup-table{background:var(--surface-2);border-radius:8px;overflow:hidden}
-.mockup-row{display:flex;gap:8px;padding:7px 10px;border-bottom:1px solid var(--border);align-items:center}
-.mockup-row:last-child{border-bottom:none}
-.mockup-avatar{width:20px;height:20px;border-radius:50%;background:var(--accent);flex-shrink:0;opacity:.6}
-.mockup-text{height:7px;background:var(--text-faint);border-radius:4px;opacity:.35;flex:1}
-.mockup-pill{height:16px;width:44px;border-radius:4px;background:rgba(0,212,200,.2);flex-shrink:0}
-
-@media(max-width:992px){.product-section .dw-grid-2{grid-template-columns:1fr}.product-mockup{margin-top:40px}}
-
-/* ----------------------------------------------------------
    10. Case Studies
    ---------------------------------------------------------- */
 .casestudies-section{padding:var(--section-py) 0}
