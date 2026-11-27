@@ -13,6 +13,27 @@ const router = express.Router();
 const WEBHOOK_URL = process.env.CONTACT_WEBHOOK_URL || 'https://n8n.dadwordit.com/webhook/contact-us';
 
 const LIMITS = { fullName: 120, email: 160, company: 160, phone: 40, projectType: 80, budget: 40, description: 5000 };
+
+// Where the lead came from (optional; set by the browser from UTM tags, referrer and landing page).
+const SOURCE_LIMITS = {
+    utmSource: 100, utmMedium: 100, utmCampaign: 150, utmTerm: 150, utmContent: 150,
+    clickId: 300, referrer: 500, landingPage: 500, formPage: 200
+};
+
+// One-line summary for the inbox / CRM, e.g. "google / cpc (shopify-apps)" or "Referral: clutch.co" or "Direct".
+function summarizeSource(s) {
+    if (s.utmSource || s.utmMedium) {
+        return [s.utmSource || '?', s.utmMedium || '?'].join(' / ') + (s.utmCampaign ? ` (${s.utmCampaign})` : '');
+    }
+    if (s.clickId) return 'Paid click: ' + s.clickId.split(':')[0];
+    if (s.referrer) {
+        let host = s.referrer;
+        try { host = new URL(s.referrer).host.replace(/^www\./, ''); } catch (e) {}
+        if (/(^|\.)(google|bing|duckduckgo|yahoo|ecosia|baidu|yandex)\./.test(host)) return 'Organic search: ' + host;
+        return 'Referral: ' + host;
+    }
+    return 'Direct';
+}
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 // Simple in-memory rate limit: 5 submissions per IP per 10 minutes.
@@ -61,6 +82,9 @@ router.post('/api/contact', express.urlencoded({ extended: false, limit: '20kb' 
     if (!EMAIL_RE.test(lead.email)) {
         return res.status(400).json({ ok: false, error: 'Please enter a valid email address.' });
     }
+
+    for (const [field, max] of Object.entries(SOURCE_LIMITS)) lead[field] = clean(body[field], max);
+    lead.leadSource = summarizeSource(lead);
 
     const key = process.env.CONTACT_WEBHOOK_KEY;
     if (!key) {
