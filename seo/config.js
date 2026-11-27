@@ -496,13 +496,13 @@ const SEO_CONFIG = {
     privacy_policy: {
         title: 'Privacy Policy | Dadword IT',
         meta: {
-            description: "Read Dadword IT's Privacy Policy to understand how we handle your data and protect your privacy while using our web development services.",
+            description: "How Dadword IT collects, uses and protects personal data under the GDPR and UK GDPR: cookies, analytics consent, data sharing, retention and your rights.",
             keywords: 'Privacy Policy, Data Protection, Web Development Privacy, Privacy Policy Dadword IT',
             author: 'Dadword IT'
         },
         og: {
             title: 'Privacy Policy | Dadword IT',
-            description: "Read Dadword IT's Privacy Policy to understand how we handle your data and protect your privacy while using our web development services.",
+            description: "How Dadword IT collects, uses and protects personal data under the GDPR and UK GDPR: cookies, analytics consent, data sharing, retention and your rights.",
             image: OG_IMAGE,
             url: `${SITE}/privacy-policy`,
             type: 'website'
@@ -510,7 +510,7 @@ const SEO_CONFIG = {
         twitter: {
             card: 'summary_large_image',
             title: 'Privacy Policy | Dadword IT',
-            description: "Read Dadword IT's Privacy Policy to understand how we handle your data and protect your privacy while using our web development services.",
+            description: "How Dadword IT collects, uses and protects personal data under the GDPR and UK GDPR: cookies, analytics consent, data sharing, retention and your rights.",
             image: OG_IMAGE
         },
         schema: null,
