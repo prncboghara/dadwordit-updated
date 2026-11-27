@@ -309,7 +309,7 @@
     var sel = document.getElementById('f-service');
     if (!sel || !window.URLSearchParams) return;
     var type = new URLSearchParams(window.location.search).get('type');
-    var map = { 'white-label': 'White-Label Partnership' };
+    var map = { 'white-label': 'White-Label Partnership', 'shopify': 'Shopify App' };
     if (type && map[type]) sel.value = map[type];
   })();
 

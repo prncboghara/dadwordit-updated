@@ -354,6 +354,40 @@ router.get('/career', async (req, res) => {
     });
 });
 
+router.get('/shopify-app-development', async (req, res) => {
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.shopify_app);
+    const shopifyFaq = getData('shopify-app-config.json').faq;
+    seo.schema = [
+        ...[].concat(withBreadcrumb(seo.schema, [
+            { name: 'Home', url: `${SITE}/` },
+            { name: 'Services', url: `${SITE}/service` },
+            { name: 'Shopify App Development', url: `${SITE}/shopify-app-development` }
+        ])),
+        {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: shopifyFaq.map(f => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a }
+            }))
+        }
+    ];
+    const caseStudies = getData('case-studies-config.json').caseStudies;
+    const portfolio = getData('portfolio-config.json').portfolioItems;
+    const testimonials = getData('testimonial-config.json').testimonials;
+    res.render('shopify-app-development', {
+        recent_blogs: recent_blogs,
+        shopifyFaq,
+        shopifyCase: caseStudies.find(c => /shopify/i.test(c.category)) || null,
+        shopifyPortfolio: portfolio.filter(p => (p.technologies || []).some(t => /shopify/i.test(t))),
+        shopifyQuote: testimonials.find(t => /shopify/i.test(t.text)) || null,
+        ...seo,
+        trackingId: process.env.G_TRACKING_ID
+    });
+});
+
 router.get('/white-label', async (req, res) => {
     let recent_blogs = await getRecentBlogs();
     const seo = deepClone(SEO_CONFIG.white_label);
@@ -459,6 +493,7 @@ router.get('/sitemap.xml', async (req, res) => {
         '/',
         '/about',
         '/service',
+        '/shopify-app-development',
         '/white-label',
         '/our-work',
         '/blog',

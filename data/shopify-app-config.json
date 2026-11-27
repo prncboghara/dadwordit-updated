@@ -1,0 +1,32 @@
+{
+  "faq": [
+    {
+      "q": "Should I build a custom app or a public Shopify App Store app?",
+      "a": "A custom app is installed on your store only, needs no App Store review and is the fastest route when the problem is specific to your business. A public app is listed on the Shopify App Store for any merchant to install, and has to pass Shopify's app review. We help you pick the right one during discovery."
+    },
+    {
+      "q": "Do I need Shopify Plus?",
+      "a": "No. Most custom apps, admin tools, bundles, pricing and discount logic, and theme app extensions work on every Shopify plan. Some checkout customisations are only available on Shopify Plus, and we tell you up front if your idea needs it."
+    },
+    {
+      "q": "How long does a custom Shopify app take?",
+      "a": "It depends on scope. A focused app such as a bundle or pricing rule is usually much quicker than a public app with billing, onboarding and App Store review. After discovery you get a written scope with a timeline and a fixed price."
+    },
+    {
+      "q": "Who owns the app and the code?",
+      "a": "You do. The code lives in your repository and the app is created in your Shopify Partner or store account. On final payment you own everything, with documentation and access handed over."
+    },
+    {
+      "q": "Will a custom app slow down my store?",
+      "a": "It should not. We build storefront features as theme app extensions that only load where they are used, and run heavy work in the app's backend or in Shopify Functions instead of in your theme."
+    },
+    {
+      "q": "Do you maintain the app after launch?",
+      "a": "Yes. Shopify releases a new API version every quarter and retires old ones, so apps need regular updates. We offer monthly maintenance for API upgrades, fixes and new features."
+    },
+    {
+      "q": "Can you build Shopify apps for my agency's clients?",
+      "a": "Yes. We build Shopify apps and stores white-label for agencies, under your brand and inside your tools. See our white-label partnership page for how it works."
+    }
+  ]
+}
