@@ -3,8 +3,12 @@ const compression = require('compression');
 const path = require('path');
 const app = express();
 const publicRoutes = require('./routes/public');
+const contactRoutes = require('./routes/contact');
 
 require('dotenv').config();
+
+// The app listens on localhost behind a reverse proxy; trust its X-Forwarded-For for real client IPs.
+app.set('trust proxy', 'loopback');
 
 app.use(compression());
 
@@ -42,6 +46,7 @@ app.use((req, res, next) => {
     }
 });
 
+app.use('/', contactRoutes);
 app.use('/', publicRoutes);
 
 // Start the server

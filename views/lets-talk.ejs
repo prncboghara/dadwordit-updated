@@ -3,9 +3,6 @@
 <%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
 
-<div id="dw-preloader">
-  <div class="dw-preloader-bar"></div>
-</div>
 
 <%- include('partials/header') %>
 
@@ -54,6 +51,11 @@
           </ul>
         </div>
 
+        <!-- Upwork proof -->
+        <div style="margin-bottom:24px">
+          <%- include('partials/upwork-proof', { variant: 'card' }) %>
+        </div>
+
         <!-- Trust signals -->
         <div class="lt-trust">
           <div class="lt-trust-item">
@@ -88,7 +90,7 @@
             Pick a time that works for you
           </div>
           <div class="calendly-inline-widget"
-               data-url="https://calendly.com/dadwordit/project-discussion-strategy-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0f&text_color=e2e2e8&primary_color=6c47ff"
+               data-url="https://calendly.com/dadwordit/project-discussion-strategy-call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=fbfaf6&text_color=111110&primary_color=d9420c"
                style="min-width:280px;height:680px">
           </div>
           <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -100,7 +102,7 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js" defer></script>
+<script src="/js/dadword.js?v=4.1" defer></script>
 
 <style>
 .lt-page {
@@ -168,8 +170,8 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(0,212,200,.12);
-  border: 1px solid rgba(0,212,200,.3);
+  background: rgba(var(--accent-2-rgb),.12);
+  border: 1px solid rgba(var(--accent-2-rgb),.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,7 +261,7 @@
   height: 8px;
   border-radius: 50%;
   background: var(--accent-2);
-  box-shadow: 0 0 8px rgba(0,212,200,.5);
+  box-shadow: 0 0 8px rgba(var(--accent-2-rgb),.5);
   flex-shrink: 0;
 }
 .calendly-inline-widget {

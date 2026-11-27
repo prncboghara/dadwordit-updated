@@ -1,0 +1,38 @@
+<%
+  /* Upwork social proof. Usage: include('partials/upwork-proof', { variant: 'inline' | 'card' }) */
+  var u = (typeof upwork !== 'undefined' && upwork) ? upwork : null;
+  var v = (typeof variant !== 'undefined' && variant) ? variant : 'inline';
+  var c = (typeof clutch !== 'undefined' && clutch) ? clutch : null;
+%>
+<% if (u) { %>
+<% if (v === 'card') { %>
+<div class="upw-card">
+  <div class="upw-card-top">
+    <span class="upw-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <span class="upw-score"><%= u.rating %></span>
+    <span class="upw-count">from <%= u.reviews %> verified Upwork reviews</span>
+  </div>
+  <ul class="upw-facts">
+    <li><strong><%= u.badge %></strong> on Upwork</li>
+    <li><strong><%= u.jobSuccess %></strong> Job Success</li>
+    <li><strong><%= u.hours %></strong> hours billed</li>
+  </ul>
+  <% if (c) { %>
+  <p class="upw-also">Also rated <strong><%= c.rating %>&#9733;</strong> on Clutch from <%= c.reviews %> independently verified reviews. <a href="<%= c.reviewsUrl %>" target="_blank" rel="noopener">See Clutch &rarr;</a></p>
+  <% } %>
+  <div class="upw-card-actions">
+    <a href="<%= u.profileUrl %>" target="_blank" rel="noopener" class="upw-link">Read the reviews &rarr;</a>
+    <a href="<%= u.profileUrl %>" target="_blank" rel="noopener" class="upw-link upw-link-muted">Prefer Upwork escrow? Hire us there</a>
+  </div>
+</div>
+<% } else { %>
+<a class="upw-inline" href="<%= u.profileUrl %>" target="_blank" rel="noopener" aria-label="<%= u.rating %> star rating from <%= u.reviews %> Upwork reviews, <%= u.badge %>, <%= u.jobSuccess %> Job Success. Opens Upwork profile.">
+  <span class="upw-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+  <span><strong><%= u.rating %></strong> from <%= u.reviews %> Upwork reviews</span>
+  <span class="upw-sep" aria-hidden="true">&middot;</span>
+  <span><strong><%= u.badge %></strong></span>
+  <span class="upw-sep" aria-hidden="true">&middot;</span>
+  <span><strong><%= u.jobSuccess %></strong> Job Success</span>
+</a>
+<% } %>
+<% } %>

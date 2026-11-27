@@ -6,7 +6,24 @@ const SAME_AS = [
     'https://www.facebook.com/people/Dadword-It/61554692296159/',
     'https://www.instagram.com/dadword_it/',
     'https://x.com/dadwordit',
-    'https://www.linkedin.com/company/dadword-it'
+    'https://www.linkedin.com/company/dadword-it',
+    'https://clutch.co/profile/dadword-it',
+    'https://www.upwork.com/agencies/dadwordit/'
+];
+
+// Target markets: used for areaServed everywhere
+const AREA_SERVED = [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'Canada' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Country', name: 'Australia' },
+    { '@type': 'Place', name: 'European Union' },
+    { '@type': 'Country', name: 'United Arab Emirates' },
+    { '@type': 'Country', name: 'Saudi Arabia' },
+    { '@type': 'Country', name: 'Qatar' },
+    { '@type': 'Country', name: 'Kuwait' },
+    { '@type': 'Country', name: 'Bahrain' },
+    { '@type': 'Country', name: 'Oman' }
 ];
 
 const ADDRESS = {
@@ -27,6 +44,7 @@ const ORGANIZATION = {
     image: OG_IMAGE,
     email: 'contact@dadwordit.com',
     address: ADDRESS,
+    areaServed: AREA_SERVED,
     sameAs: SAME_AS
 };
 
@@ -64,6 +82,7 @@ module.exports = {
     OG_IMAGE,
     SAME_AS,
     ADDRESS,
+    AREA_SERVED,
     ORGANIZATION,
     WEBSITE,
     buildBreadcrumb,

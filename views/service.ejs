@@ -3,9 +3,6 @@
 <%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
 
-<div id="dw-preloader">
-  <div class="dw-preloader-bar"></div>
-</div>
 
 <%- include('partials/header') %>
 
@@ -19,7 +16,7 @@
         <span>Services</span>
       </div>
       <span class="section-label">What We Do</span>
-      <h1>Build Scalable Products<br>with Expert Engineering</h1>
+      <h1>Build <em>Scalable</em> Products<br>with Expert Engineering</h1>
       <p class="section-sub mx-auto">
         We specialise in a focused set of services where senior engineering and
         AI-enhanced workflows deliver the best outcomes for your business.
@@ -51,9 +48,9 @@
         <p>Full-stack product builds from zero to launch, or from MVP to scale. We handle architecture, API design, authentication, database schema, background jobs, and deployment. Node.js, Prisma, Supabase, and modern React on the frontend.</p>
       </div>
 
-      <div class="svc-card reveal reveal-d1" style="background:linear-gradient(135deg,rgba(108,71,255,.07),rgba(0,212,200,.04));border-color:rgba(108,71,255,.3);position:relative">
+      <div class="svc-card reveal reveal-d1" style="background:linear-gradient(135deg,rgba(var(--accent-rgb),.07),rgba(var(--accent-2-rgb),.04));border-color:rgba(var(--accent-rgb),.3);position:relative">
         <span class="service-badge">&#9889; New</span>
-        <div class="service-icon" style="margin-bottom:18px;font-size:1.4rem;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:rgba(108,71,255,.15);border:1px solid rgba(108,71,255,.3);border-radius:12px">&#129302;</div>
+        <div class="service-icon" style="margin-bottom:18px;font-size:1.4rem;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:rgba(var(--accent-rgb),.15);border:1px solid rgba(var(--accent-rgb),.3);border-radius:12px">&#129302;</div>
         <h3>AI-Enhanced Development</h3>
         <p>We use Cursor and Claude in our engineering workflow as force multipliers, enabling faster iteration cycles without sacrificing code quality or architectural integrity. You get the same senior-quality output in significantly less time.</p>
       </div>
@@ -100,7 +97,7 @@
     <div class="row">
       <div class="col-lg-5">
         <span class="section-label reveal">How We Work</span>
-        <h2 class="reveal reveal-d1">Our process,<br>start to finish.</h2>
+        <h2 class="reveal reveal-d1">Our process,<br><em>start to finish.</em></h2>
         <p class="section-sub reveal reveal-d2">
           A repeatable, transparent process that keeps projects on time
           and on budget, without surprises.
@@ -151,7 +148,7 @@
 <section class="cta-section dw-section">
   <div class="dw-container">
     <span class="section-label" style="justify-content:center">Start a Conversation</span>
-    <h2 class="reveal">Have a project in mind?</h2>
+    <h2 class="reveal">Have a project in <em>mind?</em></h2>
     <p class="reveal reveal-d1">Tell us what you're building and we'll come back with a plan.</p>
     <div class="cta-btns reveal reveal-d2">
       <a href="/contact-us" class="btn-primary btn-lg">Start a Project</a>
@@ -161,6 +158,6 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js" defer></script>
+<script src="/js/dadword.js?v=4.1" defer></script>
 </body>
 </html>

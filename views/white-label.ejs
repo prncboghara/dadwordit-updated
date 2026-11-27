@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
+<body>
+
+
+<%- include('partials/header') %>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="wl-hero">
+  <div class="dw-container">
+    <div class="wl-hero-grid">
+
+      <div class="wl-hero-copy">
+        <div class="breadcrumb-dw" style="justify-content:flex-start">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>White Label</span>
+        </div>
+        <span class="section-label">White-Label Partnerships</span>
+        <h1>Your brand.<br>Our <em>engineers.</em></h1>
+        <p class="wl-hero-sub">
+          White-label web, Shopify and SaaS development for agencies and consultancies.
+          We build under your name, work inside your tools, and stay invisible to your clients.
+        </p>
+        <div class="hero-ctas">
+          <a href="/lets-talk" class="btn-primary btn-lg">Book a Partner Call</a>
+          <a href="/contact-us?type=white-label" class="btn-outline btn-lg">Send a Brief</a>
+        </div>
+        <%- include('partials/upwork-proof', { variant: 'inline' }) %>
+      </div>
+
+      <aside class="wl-promise dw-ink" aria-label="The white-label promise">
+        <p class="wl-promise-title">The white-label promise</p>
+        <ol class="wl-promise-list">
+          <li><span>01</span><div><strong>NDA before kickoff.</strong> Signed before we see a single client file.</div></li>
+          <li><span>02</span><div><strong>Your brand on everything.</strong> No Dadword credits in code, footers, docs or invoices to your client.</div></li>
+          <li><span>03</span><div><strong>Invisible by default.</strong> We only talk to your client if you ask us to, and then under your name.</div></li>
+          <li><span>04</span><div><strong>You own the IP.</strong> Code, designs and documentation are yours on payment.</div></li>
+          <li><span>05</span><div><strong>We never pitch your clients.</strong> Non-solicitation is written into every partner agreement.</div></li>
+        </ol>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHO IT'S FOR
+     ========================================================= -->
+<section class="dw-section">
+  <div class="dw-container">
+    <div class="services-header">
+      <span class="section-label reveal">Who We Partner With</span>
+      <h2 class="reveal reveal-d1">Built for teams who sell <em>the work.</em></h2>
+      <p class="section-sub reveal reveal-d2">
+        You own the client relationship and the strategy. We become the senior engineering
+        team behind it, without the cost and risk of hiring.
+      </p>
+    </div>
+
+    <div class="wl-audience">
+      <div class="wl-aud-item reveal">
+        <h3>Digital &amp; marketing agencies</h3>
+        <p>Say yes to web apps, portals and integrations your in-house team can't take on.</p>
+      </div>
+      <div class="wl-aud-item reveal reveal-d1">
+        <h3>Design &amp; branding studios</h3>
+        <p>Hand us your Figma files. We ship pixel-faithful, production-grade builds.</p>
+      </div>
+      <div class="wl-aud-item reveal reveal-d2">
+        <h3>Shopify agencies</h3>
+        <p>Custom apps, bundles, pricing logic and theme extensions beyond what themes can do.</p>
+      </div>
+      <div class="wl-aud-item reveal reveal-d3">
+        <h3>Consultants &amp; fractional CTOs</h3>
+        <p>Deliver the build you scoped with a team you can rely on, under your own name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHAT WE DELIVER
+     ========================================================= -->
+<section class="dw-section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="dw-container">
+    <div class="services-header">
+      <span class="section-label reveal">What We Deliver</span>
+      <h2 class="reveal reveal-d1">Everything your clients ask for, <em>under your name.</em></h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <h3>Web portals &amp; dashboards</h3>
+        <p>Client portals, admin panels and multi-role, multi-tenant platforms on React and Next.js.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <h3>Shopify stores &amp; apps</h3>
+        <p>Custom apps, theme extensions, bundles and advanced pricing logic for your merchants.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <h3>SaaS products &amp; MVPs</h3>
+        <p>From idea to live product: auth, billing with Stripe, dashboards and APIs.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>AI integrations</h3>
+        <p>Chatbots, voice agents with Vapi and Twilio, and workflow automation for lead handling.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <h3>Websites &amp; CMS builds</h3>
+        <p>Fast Next.js, Laravel and WordPress builds from your designs, SEO-ready on launch.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <h3>Maintenance &amp; support</h3>
+        <p>Monthly retainers for fixes, updates and new features on the sites you already run.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HOW IT WORKS
+     ========================================================= -->
+<section class="dw-section">
+  <div class="dw-container">
+    <div class="row">
+      <div class="col-lg-5">
+        <span class="section-label reveal">How It Works</span>
+        <h2 class="reveal reveal-d1">From brief to handover, <em>in your workflow.</em></h2>
+        <p class="section-sub reveal reveal-d2">
+          We plug into how you already run projects, so your clients get one
+          consistent experience: yours.
+        </p>
+      </div>
+      <div class="col-lg-7">
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Partner call &amp; NDA</h4>
+              <p>We learn how your agency works, the clients you serve and the gaps you need covered. NDA and partner terms are signed up front.</p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d1">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>Scope &amp; quote to you</h4>
+              <p>Send us the brief. We return a scoped estimate and timeline priced for you, and you set the price for your client.</p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d2">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Build inside your tools</h4>
+              <p>We work in your Slack, Jira or ClickUp and your GitHub, using your email aliases if needed. Weekly demos for you to present.</p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d3">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>QA &amp; branded handover</h4>
+              <p>Tested, documented and delivered with your branding, ready for you to hand to your client.</p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-d4">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h4>Ongoing support</h4>
+              <p>Stay on as your support team after launch, or hand everything over. Your call.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ENGAGEMENT MODELS
+     ========================================================= -->
+<section class="dw-section" style="padding-top:0">
+  <div class="dw-container">
+    <div class="services-header">
+      <span class="section-label reveal">Engagement Models</span>
+      <h2 class="reveal reveal-d1">Pick the model that fits <em>your pipeline.</em></h2>
+    </div>
+
+    <div class="wl-models">
+      <div class="wl-model reveal">
+        <p class="wl-model-kicker">Per project</p>
+        <h3>Project-based</h3>
+        <p>Fixed scope, fixed price. Best for client projects with a clear brief and deadline.</p>
+        <ul>
+          <li>Scoped estimate within 48 hours</li>
+          <li>Milestone-based billing</li>
+          <li>Branded handover pack</li>
+        </ul>
+      </div>
+      <div class="wl-model wl-model-featured reveal reveal-d1">
+        <p class="wl-model-kicker">Monthly</p>
+        <h3>Dedicated developer</h3>
+        <p>A senior developer embedded in your team, working your hours on your projects.</p>
+        <ul>
+          <li>Full-time or part-time</li>
+          <li>Joins your standups and tools</li>
+          <li>Swap or scale with notice</li>
+        </ul>
+      </div>
+      <div class="wl-model reveal reveal-d2">
+        <p class="wl-model-kicker">Flexible</p>
+        <h3>Overflow hours</h3>
+        <p>A bank of hours for spikes, small tasks and maintenance across all your clients.</p>
+        <ul>
+          <li>Use hours across clients</li>
+          <li>Monthly time reports</li>
+          <li>Ideal for retainers</li>
+        </ul>
+      </div>
+    </div>
+    <p class="wl-models-note reveal">Partner rates are shared on our first call and stay fixed for the length of each engagement.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     PARTNER QUOTE
+     ========================================================= -->
+<% var partnerQuote = (testimonials || []).find(function(t){ return /Sergiu/.test(t.name); }); %>
+<% if (partnerQuote) { %>
+<section class="wl-quote-section">
+  <div class="dw-container">
+    <figure class="wl-quote reveal">
+      <blockquote>&ldquo;<%= partnerQuote.text %>&rdquo;</blockquote>
+      <figcaption>
+        <strong><%= partnerQuote.name %></strong>, <%= partnerQuote.role %>
+        <% if (partnerQuote.sourceUrl) { %>
+        &middot; <a href="<%= partnerQuote.sourceUrl %>" target="_blank" rel="noopener">Verified on <%= partnerQuote.source %></a>
+        <% } %>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<% } %>
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+<section class="dw-section">
+  <div class="dw-container">
+    <div class="work-faq reveal" style="margin:0 auto">
+      <span class="section-label">FAQ</span>
+      <h2>White-label <em>questions.</em></h2>
+      <div class="faq-list">
+        <% whiteLabelFaq.forEach(function(f, i) { %>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" aria-expanded="<%= i === 0 ? 'true' : 'false' %>">
+            <%= f.q %>
+            <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+          </button>
+          <div class="faq-a">
+            <p><%= f.a %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA
+     ========================================================= -->
+<section class="cta-section dw-section">
+  <div class="dw-container">
+    <span class="section-label" style="justify-content:center">Become a Partner</span>
+    <h2 class="reveal">Add a senior dev team,<br><em>without hiring.</em></h2>
+    <p class="reveal reveal-d1">Tell us about your agency and the work you want to say yes to.</p>
+    <div class="cta-btns reveal reveal-d2">
+      <a href="/lets-talk" class="btn-primary btn-lg">Book a Partner Call</a>
+      <a href="/contact-us?type=white-label" class="btn-outline btn-lg">Send a Brief</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js?v=4.1" defer></script>
+</body>
+</html>

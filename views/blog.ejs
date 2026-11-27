@@ -3,9 +3,6 @@
 <%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
 
-<div id="dw-preloader">
-  <div class="dw-preloader-bar"></div>
-</div>
 
 <%- include('partials/header') %>
 
@@ -19,7 +16,7 @@
         <span>Blog</span>
       </div>
       <span class="section-label">Insights & Updates</span>
-      <h1>From the Dadword IT team.</h1>
+      <h1>From the Dadword IT <em>team.</em></h1>
       <p class="section-sub mx-auto">
         Engineering deep-dives, product lessons, and practical advice for
         founders building web portals, Shopify apps, and SaaS products.
@@ -71,7 +68,7 @@
 <section class="cta-section dw-section">
   <div class="dw-container">
     <span class="section-label" style="justify-content:center">Start a Project</span>
-    <h2 class="reveal">Ready to build something real?</h2>
+    <h2 class="reveal">Ready to build something <em>real?</em></h2>
     <p class="reveal reveal-d1">Talk to a senior engineer. No sales pitch, just a straight conversation.</p>
     <div class="cta-btns reveal reveal-d2">
       <a href="/contact-us" class="btn-primary btn-lg">Start a Project</a>
@@ -81,7 +78,7 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js" defer></script>
+<script src="/js/dadword.js?v=4.1" defer></script>
 
 <style>
 .blog-grid {

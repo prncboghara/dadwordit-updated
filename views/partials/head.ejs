@@ -14,7 +14,7 @@
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#6c47ff">
+  <meta name="theme-color" content="#f4f1ea">
 
   <!-- Open Graph -->
   <% if (typeof og !== 'undefined' && og) { %>
@@ -51,35 +51,20 @@
 
   <!-- Self-hosted fonts -->
   <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Bootstrap grid only -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="/css/bootstrap.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Editorial serif accent -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Dadword Design System -->
-  <link href="/css/dadword.css" rel="stylesheet">
-
-  <!-- Regional SEO (office NAP) -->
-  <meta name="geo.region"    content="IN-GJ" />
-  <meta name="geo.placename" content="Rajkot" />
-  <meta name="geo.position"  content="22.2969;70.7984" />
-  <meta name="ICBM"          content="22.2969, 70.7984" />
+  <link href="/css/dadword.css?v=4.1" rel="stylesheet">
 
   <% const hreflangUrl = (typeof canonical !== 'undefined' && canonical) ? canonical : 'https://www.dadwordit.com/'; %>
   <link rel="alternate" hreflang="en" href="<%= hreflangUrl %>" />
   <link rel="alternate" hreflang="x-default" href="<%= hreflangUrl %>" />
 
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-
-  <!-- Hide preloader immediately on return visits -->
-  <script>
-    try {
-      if (sessionStorage.getItem('dwVisited')) {
-        document.documentElement.classList.add('dw-skip-preloader');
-      }
-    } catch (e) {}
-  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>

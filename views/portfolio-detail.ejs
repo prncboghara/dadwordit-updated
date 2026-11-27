@@ -3,9 +3,6 @@
 <%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
 
-<div id="dw-preloader">
-  <div class="dw-preloader-bar"></div>
-</div>
 
 <%- include('partials/header') %>
 
@@ -126,7 +123,7 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js" defer></script>
+<script src="/js/dadword.js?v=4.1" defer></script>
 
 <style>
 .cd-page {
@@ -151,8 +148,8 @@
 .cd-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
 .cd-tag {
   padding: 4px 12px;
-  background: rgba(108,71,255,.1);
-  border: 1px solid rgba(108,71,255,.25);
+  background: rgba(var(--accent-rgb),.1);
+  border: 1px solid rgba(var(--accent-rgb),.25);
   border-radius: 50px;
   font-size: .72rem;
   font-weight: 700;
@@ -276,8 +273,8 @@
   transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .cd-live-btn:hover {
-  background: rgba(108,71,255,.08);
-  border-color: rgba(108,71,255,.35);
+  background: rgba(var(--accent-rgb),.08);
+  border-color: rgba(var(--accent-rgb),.35);
   color: var(--text);
 }
 </style>

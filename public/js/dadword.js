@@ -206,7 +206,37 @@
   });
 
   /* ----------------------------------------------------------
-     Contact form (reuses existing n8n webhook)
+     Lead tracking (GA4). Mark `generate_lead` as a key event in GA.
+     ---------------------------------------------------------- */
+  function track(name, params) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
+  }
+
+  // Calendly bookings (inline widget posts messages to the page)
+  window.addEventListener('message', function (e) {
+    if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
+    var ev = e.data && e.data.event;
+    if (ev === 'calendly.event_scheduled') {
+      track('generate_lead', { method: 'calendly_booking', page: window.location.pathname });
+    } else if (ev === 'calendly.date_and_time_selected') {
+      track('booking_time_selected', { page: window.location.pathname });
+    }
+  });
+
+  // Outbound intent clicks: email, Upwork, Clutch, booking page
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('mailto:') === 0) track('contact_click', { method: 'email', page: window.location.pathname });
+    else if (href.indexOf('upwork.com') !== -1) track('profile_click', { platform: 'upwork', page: window.location.pathname });
+    else if (href.indexOf('clutch.co') !== -1) track('profile_click', { platform: 'clutch', page: window.location.pathname });
+    else if (href.indexOf('/lets-talk') === 0) track('cta_click', { target: 'book_call', page: window.location.pathname });
+    else if (href.indexOf('/contact-us') === 0) track('cta_click', { target: 'contact', page: window.location.pathname });
+  });
+
+  /* ----------------------------------------------------------
+     Contact form: posts to /api/contact, which forwards to n8n server-side
      ---------------------------------------------------------- */
   const contactForm = document.getElementById('dw-contact-form');
   if (contactForm) {
@@ -228,18 +258,24 @@
       fd.append('projectType', form.service.value);
       fd.append('budget',      form.budget ? form.budget.value : '');
       fd.append('description', form.message.value);
+      fd.append('website',     form.website ? form.website.value : '');
 
       try {
-        const res = await fetch('https://n8n.dadwordit.com/webhook/contact-us', {
+        const res = await fetch('/api/contact', {
           method:  'POST',
-          headers: {
-            'X-API-KEY':     'xapi_8f3Kx9LmP2qR7sVwYzA1BcD4EfGhIjKlMnOpQrStUvWxYz12',
-            'Content-Type':  'application/x-www-form-urlencoded'
-          },
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: fd
         });
+        const data = await res.json().catch(function () { return {}; });
 
-        if (!res.ok) throw new Error('Failed');
+        if (!res.ok || !data.ok) throw new Error(data.error || 'Something went wrong. Please email us at contact@dadwordit.com');
+
+        track('generate_lead', {
+          method: 'contact_form',
+          project_type: form.service.value || 'unknown',
+          budget: (form.budget && form.budget.value) || 'unknown',
+          page: window.location.pathname
+        });
 
         if (msgBox) {
           msgBox.className = 'form-msg-box success';
@@ -250,7 +286,7 @@
         console.error(err);
         if (msgBox) {
           msgBox.className = 'form-msg-box error';
-          msgBox.textContent = 'Something went wrong. Please email us at contact@dadwordit.com';
+          msgBox.textContent = err.message || 'Something went wrong. Please email us at contact@dadwordit.com';
         }
       }
 
@@ -265,6 +301,17 @@
       }
     });
   }
+
+  /* ----------------------------------------------------------
+     Preselect project type from ?type= (e.g. /contact-us?type=white-label)
+     ---------------------------------------------------------- */
+  (function () {
+    var sel = document.getElementById('f-service');
+    if (!sel || !window.URLSearchParams) return;
+    var type = new URLSearchParams(window.location.search).get('type');
+    var map = { 'white-label': 'White-Label Partnership' };
+    if (type && map[type]) sel.value = map[type];
+  })();
 
   /* ----------------------------------------------------------
      FAQ accordion

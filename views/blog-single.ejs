@@ -3,9 +3,6 @@
 <%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
 
-<div id="dw-preloader">
-  <div class="dw-preloader-bar"></div>
-</div>
 
 <%- include('partials/header') %>
 
@@ -13,7 +10,7 @@
 
 <!-- Article Hero -->
 <section style="padding:150px 0 48px;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(108,71,255,.09) 0%,transparent 60%);pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(var(--accent-rgb),.09) 0%,transparent 60%);pointer-events:none"></div>
   <div class="dw-container" style="position:relative;z-index:1">
     <div class="breadcrumb-dw" style="justify-content:flex-start;margin-bottom:24px">
       <a href="/">Home</a>
@@ -27,7 +24,7 @@
       <% if (blog.tags && blog.tags.length > 0) { %>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
         <% blog.tags.forEach(function(tag) { %>
-        <span style="padding:3px 12px;background:rgba(108,71,255,.1);border:1px solid rgba(108,71,255,.2);border-radius:50px;font-size:.72rem;font-weight:600;color:var(--accent)"><%= tag.name %></span>
+        <span style="padding:3px 12px;background:rgba(var(--accent-rgb),.1);border:1px solid rgba(var(--accent-rgb),.2);border-radius:50px;font-size:.72rem;font-weight:600;color:var(--accent)"><%= tag.name %></span>
         <% }); %>
       </div>
       <% } %>
@@ -132,7 +129,7 @@
 <% } %>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs || [] }) %>
-<script src="/js/dadword.js" defer></script>
+<script src="/js/dadword.js?v=4.1" defer></script>
 
 <style>
 /* Blog article content */
@@ -179,7 +176,7 @@
   border-left: 3px solid var(--accent);
   padding: 14px 20px;
   margin: 1.5em 0;
-  background: rgba(108,71,255,.06);
+  background: rgba(var(--accent-rgb),.06);
   border-radius: 0 8px 8px 0;
   font-style: italic;
   color: var(--text-muted);
@@ -246,7 +243,7 @@
   color: var(--text-muted);
   transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
-.share-btn:hover { background: rgba(108,71,255,.15); border-color: rgba(108,71,255,.4); color: var(--text); }
+.share-btn:hover { background: rgba(var(--accent-rgb),.15); border-color: rgba(var(--accent-rgb),.4); color: var(--text); }
 
 /* Sidebar */
 .blog-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 24px; }
@@ -267,8 +264,8 @@
 .sidebar-post-title { font-size: .82rem; color: var(--text-muted); margin: 0; line-height: 1.4; }
 
 .sidebar-cta {
-  background: linear-gradient(135deg, rgba(108,71,255,.1) 0%, rgba(0,212,200,.07) 100%);
-  border: 1px solid rgba(108,71,255,.3);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),.1) 0%, rgba(var(--accent-2-rgb),.07) 100%);
+  border: 1px solid rgba(var(--accent-rgb),.3);
   border-radius: var(--card-radius);
   padding: 24px;
 }
