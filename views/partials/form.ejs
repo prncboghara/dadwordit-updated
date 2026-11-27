@@ -3,6 +3,12 @@
 
     <div id="dw-form-msg" class="form-msg-box" role="alert"></div>
 
+    <!-- Spam trap: hidden from people, bots fill it in -->
+    <div class="form-hp" aria-hidden="true">
+      <label for="f-website">Leave this field empty</label>
+      <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
     <div class="form-row-2">
       <div class="form-group">
         <label class="form-lbl" for="f-name">Full Name *</label>
@@ -35,6 +41,7 @@
           <option value="SaaS Product">SaaS Product Engineering</option>
           <option value="AI Development">AI-Enhanced Development</option>
           <option value="Legacy Modernization">Legacy Modernization</option>
+          <option value="White-Label Partnership">White-Label Partnership (agencies)</option>
           <option value="Other">Other</option>
         </select>
       </div>

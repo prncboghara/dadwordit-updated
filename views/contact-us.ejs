@@ -3,9 +3,6 @@
 <%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
 <body>
 
-<div id="dw-preloader">
-  <div class="dw-preloader-bar"></div>
-</div>
 
 <%- include('partials/header') %>
 
@@ -75,7 +72,11 @@
         </div>
 
         <!-- Mini trust signals -->
-        <div style="margin-top:40px;padding:20px 24px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px">
+        <div style="margin-top:32px">
+          <%- include('partials/upwork-proof', { variant: 'card' }) %>
+        </div>
+
+        <div style="margin-top:24px;padding:20px 24px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px">
           <p style="font-size:.78rem;color:var(--text-faint);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">What happens next</p>
           <div style="display:flex;flex-direction:column;gap:10px">
             <div style="display:flex;gap:10px;align-items:flex-start">
@@ -102,6 +103,6 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js" defer></script>
+<script src="/js/dadword.js?v=4.1" defer></script>
 </body>
 </html>

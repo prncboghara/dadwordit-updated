@@ -13,6 +13,22 @@ function getData(filename) {
     return JSON.parse(fs.readFileSync(path.join(dataDir, filename), 'utf8'));
 }
 
+// Redirect trailing-slash URLs (/about/ -> /about) so each page has one URL
+router.use((req, res, next) => {
+    if (req.path.length > 1 && req.path.endsWith('/')) {
+        const q = req.url.slice(req.path.length);
+        return res.redirect(301, req.path.replace(/\/+$/, '') + q);
+    }
+    next();
+});
+
+// Upwork + Clutch social-proof numbers, available to every view as `upwork` / `clutch`
+router.use((req, res, next) => {
+    try { res.locals.upwork = getData('upwork-config.json'); } catch (e) { res.locals.upwork = null; }
+    try { res.locals.clutch = getData('clutch-config.json'); } catch (e) { res.locals.clutch = null; }
+    next();
+});
+
 function trimMeta(text, max = 160) {
     if (!text) return '';
     const cleaned = String(text).replace(/\s+/g, ' ').trim();
@@ -38,10 +54,11 @@ function blogPath(slug) {
 }
 
 function buildPortfolioSeo(project, slug) {
+    const stack = (project.technologies || []).join(', ');
     const description = trimMeta(
         project.description ||
         project.outcome ||
-        `${project.title} — case study by Dadword IT.`
+        `${project.title}: case study by Dadword IT${stack ? `, built with ${stack}` : ''}. See the screens, tech stack and how we delivered it for the client.`
     );
     const image = absoluteUrl(project.portfolioImg || project.desktopImage || project.images?.[0]);
     const pageUrl = `${SITE}/portfolio/${slug}`;
@@ -256,14 +273,14 @@ router.get('/blog/:slug', async (req, res) => {
         const _blog = blog[0];
         const pageUrl = `${SITE}/blog/${req.params.slug}`;
         const metaTitle = _blog.seo?.metaTitle || _blog.name;
-        const metaDescription = _blog.seo?.metaDescription || '';
+        const metaDescription = trimMeta(_blog.seo?.metaDescription || _blog.description || '');
         const image = _blog.main_image || LOGO;
 
         res.render('blog-single', {
             recent_blogs: recent_blogs,
             blog: _blog,
             trackingId: process.env.G_TRACKING_ID,
-            title: `${metaTitle} | Dadword IT`,
+            title: metaTitle.length > 55 ? metaTitle : `${metaTitle} | Dadword IT`,
             meta: {
                 description: metaDescription,
                 author: _blog.authorName
@@ -332,6 +349,35 @@ router.get('/career', async (req, res) => {
     ]);
     res.render('career', {
         recent_blogs: recent_blogs,
+        ...seo,
+        trackingId: process.env.G_TRACKING_ID
+    });
+});
+
+router.get('/white-label', async (req, res) => {
+    let recent_blogs = await getRecentBlogs();
+    const seo = deepClone(SEO_CONFIG.white_label);
+    const whiteLabelFaq = getData('white-label-config.json').faq;
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: whiteLabelFaq.map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+        }))
+    };
+    seo.schema = [
+        ...[].concat(withBreadcrumb(seo.schema, [
+            { name: 'Home', url: `${SITE}/` },
+            { name: 'White Label', url: `${SITE}/white-label` }
+        ])),
+        faqSchema
+    ];
+    res.render('white-label', {
+        recent_blogs: recent_blogs,
+        testimonials: getData('testimonial-config.json').testimonials,
+        whiteLabelFaq,
         ...seo,
         trackingId: process.env.G_TRACKING_ID
     });
@@ -413,6 +459,7 @@ router.get('/sitemap.xml', async (req, res) => {
         '/',
         '/about',
         '/service',
+        '/white-label',
         '/our-work',
         '/blog',
         '/career',

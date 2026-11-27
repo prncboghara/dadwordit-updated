@@ -6,7 +6,9 @@
       "name": "Sergiu Manolache",
       "role": "CEO, Sergman Software Services",
       "location": "Bucharest, Romania",
-      "stars": 5
+      "stars": 5,
+      "source": "Clutch",
+      "sourceUrl": "https://clutch.co/profile/dadword-it#reviews"
     },
     {
       "text": "Dadword IT is the ideal software agency. Passionate, communicative, and smart. They treated our product like their own — highly recommended for anyone serious about quality.",
@@ -22,7 +24,9 @@
       "name": "Anil Pareek",
       "role": "CEO, Atralia",
       "location": "Udaipur, India",
-      "stars": 5
+      "stars": 5,
+      "source": "Clutch",
+      "sourceUrl": "https://clutch.co/profile/dadword-it#reviews"
     }
   ]
 }

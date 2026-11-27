@@ -1,16 +1,16 @@
-const { SITE, LOGO, OG_IMAGE, SAME_AS, ADDRESS, ORGANIZATION, WEBSITE } = require('./schema');
+const { SITE, LOGO, OG_IMAGE, SAME_AS, ADDRESS, AREA_SERVED, ORGANIZATION, WEBSITE } = require('./schema');
 
 const SEO_CONFIG = {
     index: {
         title: 'Dadword IT | Web Portals, Shopify Apps & SaaS',
         meta: {
-            description: 'Senior-led agency for custom web portals, Shopify apps, and SaaS products. AI-enhanced delivery for US, Canada & Europe. Book a free discovery call today.',
+            description: 'Senior-led agency building web portals, Shopify apps & SaaS for clients in the US, UK, Canada, Australia, EU & Gulf. Book a free discovery call.',
             keywords: 'custom web portal development, Shopify app development agency, SaaS product engineering, AI-enhanced web development, web development agency USA, Node.js React Next.js agency',
             author: 'Dadword IT'
         },
         og: {
             title: 'Dadword IT | Web Portals, Shopify Apps & SaaS',
-            description: 'Senior-led. AI-accelerated. Custom web portals, Shopify apps, and SaaS products for US, Canada, and Europe.',
+            description: 'Senior-led. AI-accelerated. Custom web portals, Shopify apps, and SaaS products for the US, UK, Canada, Australia, Europe and the Gulf.',
             image: OG_IMAGE,
             url: `${SITE}/`,
             type: 'website'
@@ -18,7 +18,7 @@ const SEO_CONFIG = {
         twitter: {
             card: 'summary_large_image',
             title: 'Dadword IT | Web Portals, Shopify Apps & SaaS',
-            description: 'Senior-led. AI-accelerated. Custom web portals, Shopify apps, and SaaS products for US, Canada & Europe.',
+            description: 'Senior-led. AI-accelerated. Custom web portals, Shopify apps, and SaaS products for the US, UK, Canada, Australia, EU & Gulf.',
             image: OG_IMAGE
         },
         schema: {
@@ -42,13 +42,7 @@ const SEO_CONFIG = {
                     email: 'contact@dadwordit.com',
                     openingHours: 'Mo-Fr 09:00-18:00',
                     priceRange: '$$',
-                    areaServed: [
-                        { '@type': 'Country', name: 'United States' },
-                        { '@type': 'Country', name: 'Canada' },
-                        { '@type': 'Country', name: 'Germany' },
-                        { '@type': 'Country', name: 'Switzerland' },
-                        { '@type': 'Place', name: 'Europe' }
-                    ],
+                    areaServed: AREA_SERVED,
                     hasOfferCatalog: {
                         '@type': 'OfferCatalog',
                         name: 'Services',
@@ -162,7 +156,7 @@ const SEO_CONFIG = {
                 name: 'Dadword IT',
                 url: SITE
             },
-            areaServed: 'Global',
+            areaServed: AREA_SERVED,
             description: 'Custom web portal development, Shopify app development, SaaS product engineering, and AI-enhanced delivery for startups and product companies.',
             hasOfferCatalog: {
                 '@type': 'OfferCatalog',
@@ -205,6 +199,45 @@ const SEO_CONFIG = {
         },
         canonical: `${SITE}/service`
     },
+    white_label: {
+        title: 'White-Label Web & Shopify Development for Agencies | Dadword IT',
+        meta: {
+            description: 'White-label web, Shopify and SaaS development for agencies. We build under your brand, work in your tools and stay invisible to your clients. NDA from day one.',
+            keywords: 'white label web development, white label Shopify development, white label development agency, outsourced web development for agencies, agency development partner',
+            author: 'Dadword IT'
+        },
+        og: {
+            title: 'White-Label Development Partner for Agencies | Dadword IT',
+            description: 'Your brand. Our engineers. White-label web portals, Shopify apps and SaaS builds for agencies and consultancies.',
+            image: OG_IMAGE,
+            url: `${SITE}/white-label`,
+            type: 'website'
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: 'White-Label Development Partner for Agencies | Dadword IT',
+            description: 'Your brand. Our engineers. White-label web portals, Shopify apps and SaaS builds for agencies.',
+            image: OG_IMAGE
+        },
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'White-Label Web & Shopify Development',
+            serviceType: 'White-label software development',
+            provider: {
+                '@type': 'Organization',
+                name: 'Dadword IT',
+                url: SITE
+            },
+            audience: {
+                '@type': 'BusinessAudience',
+                audienceType: 'Digital agencies, design studios, Shopify agencies and consultants'
+            },
+            areaServed: AREA_SERVED,
+            description: 'White-label development of web portals, Shopify stores and apps, SaaS products and AI integrations, delivered under the partner agency\'s brand.'
+        },
+        canonical: `${SITE}/white-label`
+    },
     our_work: {
         title: 'Shopify Apps, Web Portals & SaaS Portfolio | Dadword IT',
         meta: {
@@ -231,7 +264,7 @@ const SEO_CONFIG = {
             name: 'Web Development Portfolio',
             description: 'A showcase of Shopify apps, web portals, and SaaS products built by Dadword IT.',
             url: `${SITE}/our-work`,
-            areaServed: 'Global',
+            areaServed: AREA_SERVED,
             itemListElement: []
         },
         canonical: `${SITE}/our-work`
@@ -331,7 +364,7 @@ const SEO_CONFIG = {
             url: `${SITE}/lets-talk`,
             description: 'Schedule a free 30-minute strategy call with a senior engineer at Dadword IT.',
             contactOption: ['Online'],
-            areaServed: 'Global',
+            areaServed: AREA_SERVED,
             availableLanguage: ['English']
         },
         canonical: `${SITE}/lets-talk`
@@ -363,7 +396,7 @@ const SEO_CONFIG = {
             url: `${SITE}/contact-us`,
             description: 'Send a project inquiry or email Dadword IT about web portal, Shopify app, or SaaS development.',
             contactOption: ['Email', 'Online'],
-            areaServed: 'Global',
+            areaServed: AREA_SERVED,
             availableLanguage: ['English']
         },
         canonical: `${SITE}/contact-us`

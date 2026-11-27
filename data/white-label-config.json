@@ -1,0 +1,32 @@
+{
+  "faq": [
+    {
+      "q": "Will my clients know Dadword IT is involved?",
+      "a": "No. By default we work entirely under your brand. There are no Dadword credits in code, footers, documentation or deliverables, and we only speak to your client if you ask us to."
+    },
+    {
+      "q": "Who owns the code and designs?",
+      "a": "You do. All code, designs and documentation are transferred to you (or directly to your client) once the work is paid for."
+    },
+    {
+      "q": "How do you price work for agencies?",
+      "a": "You get partner rates that stay fixed for each engagement. You add your margin and set the price for your client. We never share our rates with your client."
+    },
+    {
+      "q": "Can you join calls with my clients?",
+      "a": "Yes, if you want us to. We join as part of your team, using your company name and an email alias on your domain."
+    },
+    {
+      "q": "Do you sign NDAs and non-solicitation agreements?",
+      "a": "Yes. An NDA and a non-solicitation clause are signed before kickoff. We will never approach or pitch your clients."
+    },
+    {
+      "q": "Which time zones do you work with?",
+      "a": "We are based in India and agree fixed overlap hours with each partner for calls and standups, covering the UK, Europe, Australia and US time zones."
+    },
+    {
+      "q": "How quickly can you start?",
+      "a": "Most partner projects start within one to two weeks of signing, depending on scope. Overflow hours and small tasks can often start sooner."
+    }
+  ]
+}
