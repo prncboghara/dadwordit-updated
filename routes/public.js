@@ -6,6 +6,7 @@ const SEO_CONFIG = require('../seo/config');
 const { SITE, LOGO, OG_IMAGE, AREA_SERVED, withBreadcrumb } = require('../seo/schema');
 
 const { getRecentBlogs, getBlogs, getBlog } = require('../controllers/blog');
+const { publicConfig: publicQuoteConfig } = require('../controllers/quote');
 
 const dataDir = path.join(__dirname, '../data');
 
@@ -472,6 +473,34 @@ router.get('/white-label', async (req, res) => {
     });
 });
 
+router.get('/get-a-quote', async (req, res) => {
+    const recent_blogs = await getRecentBlogs();
+    const quote = publicQuoteConfig(); // labels only; prices stay on the server
+    const seo = deepClone(SEO_CONFIG.get_a_quote);
+    seo.schema = [
+        ...[].concat(withBreadcrumb(seo.schema, [
+            { name: 'Home', url: `${SITE}/` },
+            { name: 'Get a Quote', url: `${SITE}/get-a-quote` }
+        ])),
+        {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: quote.faq.map(f => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a }
+            }))
+        }
+    ];
+    res.render('get-a-quote', {
+        recent_blogs,
+        quote,
+        selectedType: typeof req.query.type === 'string' ? req.query.type : '',
+        ...seo,
+        trackingId: process.env.G_TRACKING_ID
+    });
+});
+
 router.get('/lets-talk', async (req, res) => {
     let recent_blogs = await getRecentBlogs();
     const seo = deepClone(SEO_CONFIG.lets_talk);
@@ -550,6 +579,7 @@ router.get('/sitemap.xml', async (req, res) => {
         '/service',
         ...SERVICE_PAGES.map(svc => `/${svc.slug}`),
         '/white-label',
+        '/get-a-quote',
         '/our-work',
         '/blog',
         '/career',

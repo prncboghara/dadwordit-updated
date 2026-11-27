@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
+<body>
+<%
+  /* Quote builder. Options and FAQ come from data/quote-config.json via controllers/quote.js
+     (publicConfig: labels only, prices never reach this page). */
+  var startType = quote.projects.some(function (p) { return p.id === selectedType; }) ? selectedType : quote.projects[0].id;
+%>
+
+<%- include('partials/header') %>
+
+<!-- Page Hero -->
+<section class="page-hero" style="padding-bottom:56px">
+  <div class="dw-container">
+    <div class="page-hero-content">
+      <div class="breadcrumb-dw">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Get a Quote</span>
+      </div>
+      <span class="section-label">Free Project Quote</span>
+      <h1>Get a quote for your <em>project.</em></h1>
+      <p class="section-sub mx-auto">
+        Tell us what you need in a few clicks. We review every request personally and email
+        you a quote within 24 hours. Free, with no obligation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Quote builder -->
+<section class="dw-section est-section">
+  <div class="dw-container">
+    <form class="est-grid" id="est-form" novalidate onsubmit="return false">
+
+      <div class="est-steps">
+
+        <fieldset class="est-step">
+          <legend><span class="est-num">01</span> What are you building?</legend>
+          <div class="est-types">
+            <% quote.projects.forEach(function (p) { %>
+            <label class="est-card">
+              <input type="radio" name="est-type" value="<%= p.id %>" <%= p.id === startType ? 'checked' : '' %> />
+              <span class="est-card-body">
+                <strong><%= p.label %></strong>
+                <small><%= p.blurb %></small>
+              </span>
+            </label>
+            <% }); %>
+          </div>
+        </fieldset>
+
+        <fieldset class="est-step">
+          <legend><span class="est-num">02</span> Which features do you need?</legend>
+          <% quote.projects.forEach(function (p) { %>
+          <div class="est-features" data-for="<%= p.id %>" <%= p.id === startType ? '' : 'hidden' %>>
+            <p class="est-included">Always included: <%= p.baseLabel %>. Not sure? Pick what seems closest.</p>
+            <% p.features.forEach(function (f) { %>
+            <label class="est-check">
+              <input type="checkbox" name="est-feature-<%= p.id %>" value="<%= f.id %>" />
+              <span class="est-check-box" aria-hidden="true"></span>
+              <span class="est-check-txt">
+                <strong><%= f.label %></strong>
+                <small><%= f.hint %></small>
+              </span>
+            </label>
+            <% }); %>
+          </div>
+          <% }); %>
+        </fieldset>
+
+        <fieldset class="est-step">
+          <legend><span class="est-num">03</span> How should it look?</legend>
+          <div class="est-pills">
+            <% quote.design.forEach(function (d, i) { %>
+            <label class="est-pill">
+              <input type="radio" name="est-design" value="<%= d.id %>" <%= i === 0 ? 'checked' : '' %> />
+              <span><strong><%= d.label %></strong><small><%= d.hint %></small></span>
+            </label>
+            <% }); %>
+          </div>
+        </fieldset>
+
+        <fieldset class="est-step">
+          <legend><span class="est-num">04</span> How soon do you need it?</legend>
+          <div class="est-pills">
+            <% quote.timeline.forEach(function (t, i) { %>
+            <label class="est-pill">
+              <input type="radio" name="est-timeline" value="<%= t.id %>" <%= i === 0 ? 'checked' : '' %> />
+              <span><strong><%= t.label %></strong><small><%= t.hint %></small></span>
+            </label>
+            <% }); %>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <!-- Live summary -->
+      <aside class="est-result dw-ink" id="est-result" aria-labelledby="est-result-title">
+        <p class="est-result-lbl" id="est-result-title">Your project</p>
+        <p class="est-project" id="est-project" aria-live="polite">&mdash;</p>
+        <ul class="est-lines" id="est-lines"></ul>
+
+        <a href="#est-quote" class="btn-primary btn-lg est-cta" id="est-quote-btn">Request my quote</a>
+        <a href="/lets-talk" class="est-call">Or book a free 30-min call &rarr;</a>
+
+        <ul class="est-promise">
+          <li>Personal quote by email within 24 hours</li>
+          <li>Fixed price after a short scoping chat</li>
+          <li>Free, no obligation</li>
+        </ul>
+      </aside>
+
+    </form>
+  </div>
+</section>
+
+<!-- Mobile: keep the selection in view while choosing -->
+<a href="#est-result" class="est-mini dw-ink" id="est-mini" aria-hidden="true" tabindex="-1">
+  <span class="est-mini-lbl">Selected</span>
+  <strong id="est-mini-txt">&mdash;</strong>
+  <span class="est-mini-go">Next &rarr;</span>
+</a>
+
+<!-- Request form -->
+<section class="contact-section dw-section" id="est-quote">
+  <div class="dw-container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-label">Almost Done</span>
+        <h2>Where should we send <em>your quote?</em></h2>
+        <p class="section-sub" style="margin-bottom:28px">
+          We&rsquo;ve added your selections. Tell us a little about the project and we&rsquo;ll
+          email your quote within 24 hours, Monday to Saturday.
+        </p>
+        <div class="est-summary" id="est-summary" hidden>
+          <p class="cdetail-lbl">Your selections</p>
+          <p class="est-summary-txt" id="est-summary-txt"></p>
+        </div>
+        <div style="margin-top:28px">
+          <%- include('partials/upwork-proof', { variant: 'card' }) %>
+        </div>
+      </div>
+
+      <%- include('partials/form') %>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="dw-section">
+  <div class="dw-container" style="max-width:820px">
+    <span class="section-label">Quote FAQ</span>
+    <h2>Questions about <em>quotes.</em></h2>
+    <div class="faq-list">
+      <% quote.faq.forEach(function (f, i) { %>
+      <div class="faq-item" data-faq>
+        <button class="faq-q" aria-expanded="<%= i === 0 ? 'true' : 'false' %>">
+          <%= f.q %>
+          <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+        </button>
+        <div class="faq-a">
+          <p><%= f.a %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="est-config"><%- JSON.stringify({ projects: quote.projects, design: quote.design, timeline: quote.timeline }).replace(/</g, '\\u003c') %></script>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js?v=4.8" defer></script>
+<script src="/js/quote-builder.js?v=1.0" defer></script>
+</body>
+</html>

@@ -33,6 +33,7 @@
           <a href="<%= quoteUrl %>" class="btn-primary btn-lg"><%= s.hero.cta %></a>
           <a href="/lets-talk" class="btn-outline btn-lg">Book a Call</a>
         </div>
+        <p class="sp-est-link"><a href="/get-a-quote<%= s.formType ? '?type=' + s.formType : '' %>">Get a free quote in 1 minute &rarr;</a></p>
         <%- include('partials/upwork-proof', { variant: 'inline' }) %>
       </div>
 
@@ -281,6 +282,6 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js?v=4.6" defer></script>
+<script src="/js/dadword.js?v=4.8" defer></script>
 </body>
 </html>
