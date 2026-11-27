@@ -309,6 +309,46 @@
   });
 
   /* ----------------------------------------------------------
+     Lead source: remember how this visit started (UTM tags, ad click id,
+     external referrer, landing page) so the contact form can say where the
+     lead came from. Kept in sessionStorage only (cleared when the tab
+     closes) and sent only if the visitor submits the form.
+     ---------------------------------------------------------- */
+  var LEAD_SOURCE_KEY = 'dw_lead_source';
+  var leadSource = (function () {
+    var stored = null;
+    try { stored = JSON.parse(sessionStorage.getItem(LEAD_SOURCE_KEY) || 'null'); } catch (e) {}
+
+    var params = {};
+    try { params = Object.fromEntries(new URLSearchParams(window.location.search)); } catch (e) {}
+    var hasCampaign = ['utm_source', 'utm_medium', 'utm_campaign', 'gclid', 'fbclid', 'li_fat_id']
+      .some(function (k) { return params[k]; });
+
+    var ref = '';
+    try {
+      if (document.referrer && new URL(document.referrer).host !== window.location.host) ref = document.referrer;
+    } catch (e) {}
+
+    // First touch wins, unless this page view carries new campaign tags.
+    if (stored && !hasCampaign) return stored;
+
+    var src = {
+      utmSource:   params.utm_source || '',
+      utmMedium:   params.utm_medium || '',
+      utmCampaign: params.utm_campaign || '',
+      utmTerm:     params.utm_term || '',
+      utmContent:  params.utm_content || '',
+      clickId:     params.gclid ? 'gclid:' + params.gclid
+                 : params.fbclid ? 'fbclid:' + params.fbclid
+                 : params.li_fat_id ? 'li_fat_id:' + params.li_fat_id : '',
+      referrer:    ref,
+      landingPage: window.location.pathname + window.location.search
+    };
+    try { sessionStorage.setItem(LEAD_SOURCE_KEY, JSON.stringify(src)); } catch (e) {}
+    return src;
+  })();
+
+  /* ----------------------------------------------------------
      Contact form: posts to /api/contact, which forwards to n8n server-side
      ---------------------------------------------------------- */
   const contactForm = document.getElementById('dw-contact-form');
@@ -332,6 +372,8 @@
       fd.append('budget',      form.budget ? form.budget.value : '');
       fd.append('description', form.message.value);
       fd.append('website',     form.website ? form.website.value : '');
+      Object.keys(leadSource).forEach(function (k) { fd.append(k, leadSource[k] || ''); });
+      fd.append('formPage',    window.location.pathname);
 
       try {
         const res = await fetch('/api/contact', {
