@@ -1,0 +1,189 @@
+{
+  "order": 4,
+  "name": "AI Development",
+  "formType": "ai",
+  "seo": {
+    "title": "AI Development & Automation Services | AI Agents | Dadword IT",
+    "description": "AI voice agents, chatbots, LLM features and workflow automation with OpenAI, Claude, Vapi and Twilio. For the US, UK, Canada, Australia, EU & Gulf.",
+    "keywords": "AI development services, AI integration company, AI voice agent development, AI chatbot development, workflow automation agency, LLM app development, Vapi developer",
+    "ogTitle": "AI Development & Automation | Dadword IT",
+    "ogDescription": "Voice agents, chatbots, LLM features and workflow automation, built into your product and business by a senior team.",
+    "serviceType": "AI development and automation",
+    "schemaDescription": "AI development and integration: voice agents with Vapi and Twilio, chatbots and assistants, LLM features inside web and SaaS products, and workflow automation with n8n, using OpenAI and Claude models."
+  },
+  "hero": {
+    "label": "AI Development & Automation",
+    "h1": "AI that does real work <em>in your business.</em>",
+    "sub": "Voice agents that answer calls, chatbots that know your business, and automations that remove manual steps. We build AI into your product and operations where it saves time or money, for companies in the US, UK, Canada, Australia, Europe and the Gulf.",
+    "cta": "Get an AI Project Quote",
+    "asideTitle": "What we build with AI",
+    "aside": [
+      {
+        "t": "AI voice agents",
+        "d": "Answer and qualify inbound calls, book appointments and hand off to your team, with Vapi and Twilio."
+      },
+      {
+        "t": "Chatbots & assistants",
+        "d": "Website and in-app assistants trained on your own content, products and policies."
+      },
+      {
+        "t": "Workflow automation",
+        "d": "Lead handling, data entry, follow-ups and reporting automated with n8n and APIs."
+      },
+      {
+        "t": "AI features in your product",
+        "d": "Search, summaries, document extraction and recommendations inside your web app or SaaS."
+      },
+      {
+        "t": "AI-accelerated delivery",
+        "d": "Our engineers use Claude and Cursor every day, so every project ships faster with senior review."
+      }
+    ]
+  },
+  "audience": {
+    "label": "Who It's For",
+    "h2": "Practical AI, <em>not experiments.</em>",
+    "sub": "We start from a task that costs you time or leads today, then build the smallest AI system that handles it reliably.",
+    "items": [
+      {
+        "t": "Service businesses",
+        "d": "Never miss an inbound call or enquiry, even outside office hours."
+      },
+      {
+        "t": "Sales & support teams",
+        "d": "Qualify leads and answer routine questions automatically, and pass the rest to people."
+      },
+      {
+        "t": "SaaS products",
+        "d": "Add AI features your users will pay for, built into your existing product."
+      },
+      {
+        "t": "Operations teams",
+        "d": "Automate repetitive work across email, spreadsheets, CRMs and internal tools."
+      }
+    ]
+  },
+  "build": {
+    "label": "What We Build",
+    "h2": "From one automation to <em>AI-powered products.</em>",
+    "cards": [
+      {
+        "t": "Voice agents",
+        "d": "Inbound and outbound calls with natural voice, call routing, booking and CRM updates."
+      },
+      {
+        "t": "Knowledge chatbots",
+        "d": "Assistants that answer from your documents, help centre and product data, with sources."
+      },
+      {
+        "t": "Lead qualification",
+        "d": "Capture, score and route leads from calls, forms and chats straight into your CRM."
+      },
+      {
+        "t": "Document processing",
+        "d": "Extract data from invoices, forms and PDFs into your systems, with human review where it matters."
+      },
+      {
+        "t": "LLM product features",
+        "d": "Summaries, smart search, drafting and recommendations, with cost and safety controls."
+      },
+      {
+        "t": "Automation workflows",
+        "d": "n8n and API workflows that connect your tools and remove manual steps."
+      }
+    ]
+  },
+  "proof": {
+    "label": "Recent Work",
+    "h2": "AI systems <em>in use.</em>",
+    "recent": {
+      "label": "Recent build",
+      "title": "AI voice agent for call handling and lead qualification",
+      "text": "An AI voice agent built with Vapi and Twilio that answers inbound calls, asks qualifying questions and captures leads automatically, so no enquiry is missed when the team is busy or offline."
+    },
+    "portfolio": []
+  },
+  "process": {
+    "h2": "From a manual task to <em>a reliable system.</em>",
+    "sub": "AI projects fail when they start with the model. We start with the task, measure it, and only then choose the tools.",
+    "steps": [
+      {
+        "t": "Pick the task",
+        "d": "We find one process where AI clearly saves time or captures more leads, and agree how success is measured."
+      },
+      {
+        "t": "Prototype",
+        "d": "A working prototype on your real data or calls, so you can judge quality before committing to a full build."
+      },
+      {
+        "t": "Build & integrate",
+        "d": "Connect the AI to your phone system, website, CRM or product, with fallbacks to a human when needed."
+      },
+      {
+        "t": "Test & guardrails",
+        "d": "Test against real scenarios, add limits on cost, privacy and what the AI may say or do."
+      },
+      {
+        "t": "Launch & improve",
+        "d": "Go live, monitor conversations and results, and improve prompts and flows over time."
+      }
+    ]
+  },
+  "stack": {
+    "h2": "Best-in-class <em>AI tools.</em>",
+    "items": [
+      "OpenAI API",
+      "Claude API",
+      "Vapi",
+      "Twilio",
+      "n8n",
+      "Vector search",
+      "Supabase",
+      "PostgreSQL",
+      "Node.js",
+      "Next.js"
+    ]
+  },
+  "related": [
+    {
+      "href": "/blog/the-hidden-side-of-ai-and-automation",
+      "title": "The hidden side of AI and automation: what businesses must know"
+    },
+    {
+      "href": "/blog/ai-digital-ecosystem-replace-websites",
+      "title": "AI digital ecosystems: why your business needs more than a website"
+    }
+  ],
+  "faqH2": "AI development <em>questions.</em>",
+  "faq": [
+    {
+      "q": "What can an AI voice agent actually do?",
+      "a": "Answer inbound calls 24/7, ask qualifying questions, answer common questions about your business, book appointments, and send the details to your CRM or team. Calls it can't handle are transferred to a person."
+    },
+    {
+      "q": "Which AI models do you use?",
+      "a": "We choose per task, typically OpenAI or Claude models for language, and Vapi with Twilio for voice. We avoid lock-in so the model can be swapped as better options appear."
+    },
+    {
+      "q": "Is our data safe?",
+      "a": "We use API providers that don't train on your data, keep personal data to the minimum the task needs, and can host parts of the system in your own cloud. We follow GDPR-friendly practices for EU and UK users."
+    },
+    {
+      "q": "How much does an AI project cost to run?",
+      "a": "Running costs are usage-based: per call minute or per request. We estimate them during the prototype and add limits so costs stay predictable."
+    },
+    {
+      "q": "Can you add AI to our existing product?",
+      "a": "Yes. We add AI features to existing web apps and SaaS products through APIs, without rebuilding what already works."
+    },
+    {
+      "q": "How do you use AI in your own development?",
+      "a": "Our engineers use Claude and Cursor daily to write, test and refactor code faster. Architecture, security and final code review are always done by senior developers."
+    }
+  ],
+  "cta": {
+    "label": "Start With One Task",
+    "h2": "Which task should AI <em>take off your plate?</em>",
+    "p": "Tell us the process or calls you want to automate. We'll reply within 24 hours with how we'd approach it."
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "order": 1,
+  "name": "Web Portal Development",
+  "formType": "web-portal",
+  "seo": {
+    "title": "Custom Web Portal Development Company | Dadword IT",
+    "description": "Custom web portals: client portals, admin dashboards and multi-tenant B2B platforms in React, Next.js and Node.js. For the US, UK, Canada, Australia, EU & Gulf.",
+    "keywords": "custom web portal development, client portal development, B2B portal development company, admin dashboard development, multi-tenant platform development, Next.js portal developers",
+    "ogTitle": "Custom Web Portal Development | Dadword IT",
+    "ogDescription": "Client portals, admin dashboards and multi-tenant B2B platforms, designed and built by a senior team.",
+    "serviceType": "Web portal development",
+    "schemaDescription": "Design and development of custom web portals: client and customer portals, admin dashboards, internal tools and multi-role, multi-tenant B2B platforms built with React, Next.js, Node.js and Laravel."
+  },
+  "hero": {
+    "label": "Web Portal Development",
+    "h1": "Custom web portals <em>your users actually use.</em>",
+    "sub": "Client portals, admin dashboards and multi-tenant B2B platforms that replace spreadsheets, email threads and tools that no longer fit. Designed and built by senior engineers for companies in the US, UK, Canada, Australia, Europe and the Gulf.",
+    "cta": "Get a Portal Quote",
+    "asideTitle": "Portals we build",
+    "aside": [
+      {
+        "t": "Client & customer portals",
+        "d": "Self-service accounts, documents, orders, invoices and support in one place for your customers."
+      },
+      {
+        "t": "Admin dashboards",
+        "d": "Back-office tools for your team with the reports, filters and bulk actions they need every day."
+      },
+      {
+        "t": "Multi-tenant B2B platforms",
+        "d": "One platform serving many organisations, each with its own users, roles and data."
+      },
+      {
+        "t": "Partner & vendor portals",
+        "d": "Onboarding, approvals and shared workflows with suppliers, resellers or franchisees."
+      },
+      {
+        "t": "Internal tools",
+        "d": "Replace spreadsheets and manual steps with a tool built around how your team works."
+      }
+    ]
+  },
+  "audience": {
+    "label": "Who It's For",
+    "h2": "When spreadsheets <em>stop scaling.</em>",
+    "sub": "Most portals start as a workaround: shared drives, spreadsheets and inboxes. We turn the process you already run into a secure web application.",
+    "items": [
+      {
+        "t": "Service businesses",
+        "d": "Give clients one login for projects, documents, approvals and invoices."
+      },
+      {
+        "t": "B2B companies",
+        "d": "Let customers order, track and reorder without emailing your sales team."
+      },
+      {
+        "t": "Operations teams",
+        "d": "Replace spreadsheets with dashboards, workflows and an audit trail."
+      },
+      {
+        "t": "Startups",
+        "d": "Launch a portal-style product with roles, billing and an admin from day one."
+      }
+    ]
+  },
+  "build": {
+    "label": "What We Build",
+    "h2": "Everything a portal needs, <em>built in.</em>",
+    "cards": [
+      {
+        "t": "Roles & permissions",
+        "d": "Admins, managers, clients and guests, each seeing exactly the data and actions they should."
+      },
+      {
+        "t": "Multi-tenant architecture",
+        "d": "Separate organisations on one platform, with isolated data and per-tenant settings."
+      },
+      {
+        "t": "Dashboards & reporting",
+        "d": "Charts, filters and exports built on your real data, fast even as it grows."
+      },
+      {
+        "t": "Workflows & approvals",
+        "d": "Requests, reviews, sign-offs and notifications by email and in-app."
+      },
+      {
+        "t": "Payments & invoicing",
+        "d": "Stripe subscriptions, one-off payments and invoices, linked to each account."
+      },
+      {
+        "t": "Integrations",
+        "d": "Connect your CRM, ERP, accounting software and other tools through their APIs."
+      }
+    ]
+  },
+  "proof": {
+    "label": "Portfolio",
+    "h2": "Portals and platforms <em>we've shipped.</em>",
+    "portfolio": [
+      "m-wise",
+      "organizm",
+      "every",
+      "pilim"
+    ],
+    "quote": "Sergiu Manolache"
+  },
+  "process": {
+    "h2": "From process map to <em>live portal.</em>",
+    "sub": "We design the screens before we write code, so you see the portal working before the build starts.",
+    "steps": [
+      {
+        "t": "Discovery & process mapping",
+        "d": "We map who uses the portal, what each role does and which systems it must connect to. Output: a written scope with timeline and price."
+      },
+      {
+        "t": "UX & clickable prototype",
+        "d": "Wireframes and a clickable Figma prototype for every role, reviewed with your team."
+      },
+      {
+        "t": "Architecture & build",
+        "d": "Data model, roles, APIs and the front end, delivered in short iterations with a demo every week."
+      },
+      {
+        "t": "Security & testing",
+        "d": "Role-based access checks, input validation, automated tests and a security review before launch."
+      },
+      {
+        "t": "Launch & support",
+        "d": "Deployment, monitoring, documentation and handover. Ongoing support and new features on a monthly plan."
+      }
+    ]
+  },
+  "stack": {
+    "h2": "Proven tools, <em>no lock-in.</em>",
+    "items": [
+      "React",
+      "Next.js",
+      "Angular",
+      "Node.js",
+      "Laravel",
+      "TypeScript",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Prisma",
+      "Supabase",
+      "Stripe",
+      "AWS",
+      "Vercel",
+      "Docker"
+    ]
+  },
+  "related": [],
+  "faqH2": "Web portal <em>questions.</em>",
+  "faq": [
+    {
+      "q": "How much does a custom web portal cost?",
+      "a": "It depends on the number of user roles, workflows and integrations. After a discovery call we send a written scope with a fixed price, so you know the cost before any development starts."
+    },
+    {
+      "q": "How long does it take to build a portal?",
+      "a": "It depends on the number of roles, workflows and integrations. We deliver in phases, starting with the core roles and workflows, so your users get value before the whole platform is finished."
+    },
+    {
+      "q": "Can the portal connect to our existing systems?",
+      "a": "Yes. We integrate with CRMs, ERPs, accounting tools, payment providers and internal databases through their APIs, or build an API layer where none exists."
+    },
+    {
+      "q": "How do you keep client data secure?",
+      "a": "Role-based access control, encrypted connections, hashed credentials, audit logs and data isolation between tenants. We follow GDPR-friendly practices for EU and UK users."
+    },
+    {
+      "q": "Who owns the code?",
+      "a": "You do. The code lives in your repository, and on final payment you own everything, with documentation and access handed over."
+    },
+    {
+      "q": "Can you take over a portal another team started?",
+      "a": "Yes. We audit the existing code, fix what blocks a launch and continue from there. See our legacy modernization service for how we approach it."
+    }
+  ],
+  "cta": {
+    "label": "Start Your Portal",
+    "h2": "Tell us what your portal <em>needs to do.</em>",
+    "p": "Describe your users and the process you want to move online. We'll reply within 24 hours with how we'd build it."
+  }
+}

@@ -767,3 +767,23 @@ a.trust-badge:hover{color:var(--text)}
 .sa-more{margin-top:40px;font-size:.9rem;color:var(--text-muted)}
 .sa-more a{color:var(--accent);font-weight:600}
 .wl-aud-item a{color:var(--accent);font-weight:600}
+.sp-recent{margin-top:40px;padding:28px 32px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--card-radius);max-width:820px}
+.sp-recent-kicker{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.sp-recent h3{font-size:1.3rem;margin-bottom:10px}
+.sp-recent p:last-child{font-size:.95rem}
+.sp-port{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;margin-top:40px;background:var(--border);border:1px solid var(--border);border-radius:var(--card-radius);overflow:hidden}
+.sp-port-item{background:var(--bg);padding:22px 22px 18px;display:flex;flex-direction:column;gap:4px;transition:background var(--dur) var(--ease)}
+.sp-port-item:hover{background:var(--surface)}
+.sp-port-name{font-size:1.15rem;font-weight:600;color:var(--text);letter-spacing:-.02em}
+.sp-port-desc{font-size:.85rem;color:var(--text-muted)}
+.sp-port-cta{margin-top:10px;font-size:.82rem;font-weight:600;color:var(--accent)}
+.sp-related{margin-top:48px;padding-top:24px;border-top:1px solid var(--border)}
+.sp-related-title{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin-bottom:12px}
+.sp-related ul{margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.sp-related a{color:var(--text);font-weight:500;text-decoration:underline;text-decoration-color:var(--border-hover);text-underline-offset:4px}
+.sp-related a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.sp-others{padding:40px 0;border-top:1px solid var(--border)}
+.sp-others-title{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin-bottom:14px}
+.sp-others-list{display:flex;flex-wrap:wrap;gap:10px}
+.sp-others-list a{padding:9px 16px;border:1px solid var(--border-hover);border-radius:50px;font-size:.88rem;font-weight:500;color:var(--text);transition:all var(--dur) var(--ease)}
+.sp-others-list a:hover{background:var(--text);color:var(--bg);border-color:var(--text)}

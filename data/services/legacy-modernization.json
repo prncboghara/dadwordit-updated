@@ -1,0 +1,185 @@
+{
+  "order": 5,
+  "name": "Legacy Modernization",
+  "formType": "legacy",
+  "seo": {
+    "title": "Legacy App Modernization & Software Rescue | Dadword IT",
+    "description": "Modernize or rescue legacy and half-built web apps: code audits, Angular, PHP and Laravel upgrades, performance and security fixes, without a risky rewrite.",
+    "keywords": "legacy application modernization, software project rescue, take over development project, Angular upgrade services, Laravel upgrade, PHP modernization, web app performance optimization",
+    "ogTitle": "Legacy App Modernization & Project Rescue | Dadword IT",
+    "ogDescription": "Audit, stabilise and modernize ageing or half-built web apps, without a risky full rewrite.",
+    "serviceType": "Legacy application modernization",
+    "schemaDescription": "Modernization and rescue of legacy and unfinished web applications: code audits, framework upgrades for Angular, PHP and Laravel, performance and security fixes, and incremental re-architecture."
+  },
+  "hero": {
+    "label": "Legacy Modernization & Project Rescue",
+    "h1": "Fix the app you have. <em>Skip the rewrite.</em>",
+    "sub": "Your app is slow, outdated or half-finished, and the original developers are gone. We audit it, stabilise it and modernize it step by step, so it keeps running while it improves. For companies in the US, UK, Canada, Australia, Europe and the Gulf.",
+    "cta": "Get a Code Audit",
+    "asideTitle": "When teams call us",
+    "aside": [
+      {
+        "t": "A half-finished project",
+        "d": "The previous team left, the app isn't launchable and nobody knows what state it's in."
+      },
+      {
+        "t": "An outdated framework",
+        "d": "Old Angular, PHP or Laravel versions that block new features and security updates."
+      },
+      {
+        "t": "Slow and fragile",
+        "d": "Pages time out, releases break things, and every change takes longer than it should."
+      },
+      {
+        "t": "Security worries",
+        "d": "Unpatched dependencies, weak authentication or no idea what's exposed."
+      },
+      {
+        "t": "No documentation",
+        "d": "The knowledge left with the last developer, and onboarding anyone new is painful."
+      }
+    ]
+  },
+  "audience": {
+    "label": "Who It's For",
+    "h2": "Your app still matters. <em>Its code needs help.</em>",
+    "sub": "A rewrite is rarely the cheapest answer. We keep what works, replace what doesn't, and ship improvements from the first weeks.",
+    "items": [
+      {
+        "t": "Founders with a stalled build",
+        "d": "Get a half-built product finished and launched instead of starting over."
+      },
+      {
+        "t": "Companies on old stacks",
+        "d": "Upgrade frameworks and infrastructure without stopping the business."
+      },
+      {
+        "t": "Teams without a developer",
+        "d": "Hand us the codebase and get a reliable team that owns maintenance."
+      },
+      {
+        "t": "Agencies",
+        "d": "Pass us the legacy projects your team doesn't have time for. <a href=\"/white-label\">See white-label partnerships</a>."
+      }
+    ]
+  },
+  "build": {
+    "label": "What We Do",
+    "h2": "Audit, stabilise, <em>modernize.</em>",
+    "cards": [
+      {
+        "t": "Code & architecture audit",
+        "d": "A written report on code quality, security, performance and risks, with a prioritised plan."
+      },
+      {
+        "t": "Project rescue",
+        "d": "Take over unfinished projects, fix critical bugs and get them to a stable launch."
+      },
+      {
+        "t": "Framework upgrades",
+        "d": "Angular, React, PHP, Laravel and Node.js upgrades done in safe, tested steps."
+      },
+      {
+        "t": "Performance optimisation",
+        "d": "Faster pages and APIs through query tuning, caching and front-end fixes."
+      },
+      {
+        "t": "Security hardening",
+        "d": "Patch vulnerable dependencies, fix authentication and lock down data access."
+      },
+      {
+        "t": "Incremental re-architecture",
+        "d": "Replace the worst parts one at a time behind stable APIs, while the app stays live."
+      }
+    ]
+  },
+  "proof": {
+    "label": "Case Study",
+    "h2": "A rescued project, <em>now live.</em>",
+    "caseStudy": "Eden QR",
+    "portfolio": [],
+    "quote": "Sergiu Manolache"
+  },
+  "process": {
+    "h2": "Improve it <em>while it runs.</em>",
+    "sub": "Every step is tested and reversible, so your users never become the test environment.",
+    "steps": [
+      {
+        "t": "Access & audit",
+        "d": "We review the code, infrastructure and data, and send a written report with risks and a prioritised plan."
+      },
+      {
+        "t": "Stabilise",
+        "d": "Fix critical bugs and security issues, add backups, monitoring and a proper deployment process."
+      },
+      {
+        "t": "Modernize in steps",
+        "d": "Upgrade frameworks and replace weak parts one at a time, with tests around everything we touch."
+      },
+      {
+        "t": "Document & hand over",
+        "d": "Clear documentation, so the next developer, yours or ours, can work on it without guessing."
+      },
+      {
+        "t": "Maintain",
+        "d": "Monthly maintenance for updates, fixes and new features, so the app doesn't fall behind again."
+      }
+    ]
+  },
+  "stack": {
+    "h2": "Old and new stacks, <em>both covered.</em>",
+    "items": [
+      "Angular",
+      "React",
+      "Next.js",
+      "Node.js",
+      "PHP",
+      "Laravel",
+      "Symfony",
+      "WordPress",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "AWS",
+      "Docker"
+    ]
+  },
+  "related": [
+    {
+      "href": "/blog/template-vs-custom-websites-2025-hidden-costs-why-custom-wins",
+      "title": "Template vs custom websites: the hidden costs"
+    }
+  ],
+  "faqH2": "Modernization <em>questions.</em>",
+  "faq": [
+    {
+      "q": "Should we rewrite the app or modernize it?",
+      "a": "Usually modernize. A full rewrite is expensive, slow and risky. After the audit we tell you honestly which parts are worth keeping and which should be rebuilt."
+    },
+    {
+      "q": "Can you take over a project another team started?",
+      "a": "Yes. We regularly take over unfinished or unstable projects, get access to the code and servers, and continue from there."
+    },
+    {
+      "q": "What does the code audit include?",
+      "a": "Code quality, architecture, security, dependencies, performance and infrastructure, with a written report and a prioritised plan with estimates."
+    },
+    {
+      "q": "Will the app go down during modernization?",
+      "a": "No. We work in small, tested steps on a staging environment and release changes gradually, so the live app keeps running."
+    },
+    {
+      "q": "Which old technologies do you work with?",
+      "a": "Older Angular versions, PHP, Laravel, Symfony, WordPress and older Node.js and React codebases, among others."
+    },
+    {
+      "q": "What happens after the app is stable?",
+      "a": "We can stay on as your maintenance team for updates, fixes and new features, or hand over to your developers with full documentation."
+    }
+  ],
+  "cta": {
+    "label": "Start With an Audit",
+    "h2": "Send us the app <em>nobody wants to touch.</em>",
+    "p": "Tell us what it does and what's going wrong. We'll reply within 24 hours with how we'd approach it."
+  }
+}

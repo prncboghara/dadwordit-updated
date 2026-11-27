@@ -1,0 +1,89 @@
+{
+  "order": 2,
+  "name": "Shopify App Development",
+  "formType": "shopify",
+  "seo": {
+    "title": "Shopify App Development Agency | Custom Shopify Apps | Dadword IT",
+    "description": "Custom Shopify apps: bundles, pricing logic, Shopify Functions, admin apps and integrations. Fixed-price builds for the US, UK, Canada, Australia, EU & Gulf.",
+    "keywords": "Shopify app development, custom Shopify app developer, Shopify app development agency, Shopify Functions developer, Shopify bundles app, Shopify Plus developer",
+    "ogTitle": "Custom Shopify App Development | Dadword IT",
+    "ogDescription": "Custom and public Shopify apps, bundles and pricing logic, Shopify Functions and integrations, built by a senior team.",
+    "serviceType": "Shopify app development",
+    "schemaDescription": "Custom and public Shopify app development, including bundles and pricing logic with Shopify Functions, embedded admin apps, theme app extensions and integrations with ERPs, CRMs and fulfilment partners."
+  },
+  "hero": {
+    "label": "Shopify App Development",
+    "h1": "Custom Shopify apps, <em>built for how you sell.</em>",
+    "sub": "When off-the-shelf apps can't handle your bundles, pricing or workflows, we build the app your store actually needs. Custom and public apps, Shopify Functions and theme extensions, for merchants and agencies in the US, UK, Canada, Australia, Europe and the Gulf.",
+    "cta": "Get a Shopify App Quote",
+    "asideTitle": "What merchants hire us for",
+    "aside": [
+      { "t": "Bundles & pricing logic", "d": "Build-your-own bundles, tiered and dynamic pricing, custom discounts with Shopify Functions." },
+      { "t": "Custom admin apps", "d": "Embedded tools for your team inside Shopify admin: orders, inventory, reporting." },
+      { "t": "Integrations", "d": "Connect Shopify to your ERP, CRM, 3PL or internal systems through the Admin API and webhooks." },
+      { "t": "Storefront features", "d": "Theme app extensions and custom sections your team can edit without a developer." },
+      { "t": "Public App Store apps", "d": "From MVP to listing, including billing and Shopify's app review." }
+    ]
+  },
+  "audience": {
+    "label": "Who It's For",
+    "h2": "When the App Store <em>runs out.</em>",
+    "sub": "Most stores start with off-the-shelf apps. You come to us when you're stacking five of them to fake one feature, or when no app does what your business needs.",
+    "items": [
+      { "t": "Growing Shopify brands", "d": "Replace a stack of overlapping apps with one custom app that fits your catalogue and pricing." },
+      { "t": "Shopify Plus merchants", "d": "Checkout extensions, B2B pricing and integrations that match how your operations already run." },
+      { "t": "SaaS founders", "d": "Turn your product into a public Shopify app, ready for App Store review and billing." },
+      { "t": "Agencies", "d": "Hand off the app build while you keep the client. <a href=\"/white-label\">See white-label partnerships</a>." }
+    ]
+  },
+  "build": {
+    "label": "What We Build",
+    "h2": "Shopify apps and features, <em>end to end.</em>",
+    "cards": [
+      { "t": "Custom (private) apps", "d": "Apps built for one store and installed only there. No App Store review, fastest route to a working feature." },
+      { "t": "Public App Store apps", "d": "Multi-store apps with OAuth install, Shopify billing, onboarding and a listing that passes Shopify's review." },
+      { "t": "Bundles, pricing & discounts", "d": "Custom bundles, tiered and dynamic pricing and discount rules, run server-side with Shopify Functions." },
+      { "t": "Theme app extensions", "d": "App blocks and custom sections that merchants add and edit in the theme editor, without touching code." },
+      { "t": "Integrations & automation", "d": "Sync orders, stock and customers with ERPs, CRMs and fulfilment partners using the Admin API and webhooks." },
+      { "t": "Headless storefronts", "d": "Hydrogen or Next.js storefronts on the Storefront API when you need full control over the front end." }
+    ]
+  },
+  "proof": {
+    "label": "Case Study",
+    "h2": "Shopify work, <em>in production.</em>",
+    "caseStudy": "Pyscle",
+    "portfolio": ["perfumeonline"],
+    "quote": "Anil Pareek"
+  },
+  "process": {
+    "h2": "From idea to <em>installed app.</em>",
+    "sub": "Every app is built and tested on a development store first, so your live store is never the test environment.",
+    "steps": [
+      { "t": "Discovery & app spec", "d": "We map the feature to Shopify's building blocks (Admin API, Functions, extensions) and confirm what your plan supports. Output: a written spec with timeline and fixed price." },
+      { "t": "Prototype on a dev store", "d": "You click through a working prototype with your real products before full development starts." },
+      { "t": "Build & test", "d": "Built with Shopify's app tooling, Polaris and App Bridge for the admin, and tested against real orders, discounts and edge cases." },
+      { "t": "Install or App Store launch", "d": "Custom apps are installed on your store. Public apps go through Shopify's app review, and we handle the submission and any fixes it asks for." },
+      { "t": "Maintenance", "d": "Shopify ships a new API version every quarter. We keep your app current, fix issues and add features on a monthly plan." }
+    ]
+  },
+  "stack": {
+    "h2": "Built on Shopify's <em>own tooling.</em>",
+    "items": ["Shopify Admin GraphQL API", "Storefront API", "Shopify Functions", "Theme app extensions", "Checkout UI extensions", "Polaris", "App Bridge", "Webhooks", "Liquid", "Hydrogen", "Node.js", "React", "PostgreSQL & Prisma"]
+  },
+  "related": [],
+  "faqH2": "Shopify app <em>questions.</em>",
+  "faq": [
+    { "q": "Should I build a custom app or a public Shopify App Store app?", "a": "A custom app is installed on your store only, needs no App Store review and is the fastest route when the problem is specific to your business. A public app is listed on the Shopify App Store for any merchant to install, and has to pass Shopify's app review. We help you pick the right one during discovery." },
+    { "q": "Do I need Shopify Plus?", "a": "No. Most custom apps, admin tools, bundles, pricing and discount logic, and theme app extensions work on every Shopify plan. Some checkout customisations are only available on Shopify Plus, and we tell you up front if your idea needs it." },
+    { "q": "How long does a custom Shopify app take?", "a": "It depends on scope. A focused app such as a bundle or pricing rule is usually much quicker than a public app with billing, onboarding and App Store review. After discovery you get a written scope with a timeline and a fixed price." },
+    { "q": "Who owns the app and the code?", "a": "You do. The code lives in your repository and the app is created in your Shopify Partner or store account. On final payment you own everything, with documentation and access handed over." },
+    { "q": "Will a custom app slow down my store?", "a": "It should not. We build storefront features as theme app extensions that only load where they are used, and run heavy work in the app's backend or in Shopify Functions instead of in your theme." },
+    { "q": "Do you maintain the app after launch?", "a": "Yes. Shopify releases a new API version every quarter and retires old ones, so apps need regular updates. We offer monthly maintenance for API upgrades, fixes and new features." },
+    { "q": "Can you build Shopify apps for my agency's clients?", "a": "Yes. We build Shopify apps and stores white-label for agencies, under your brand and inside your tools. See our white-label partnership page for how it works." }
+  ],
+  "cta": {
+    "label": "Start Your App",
+    "h2": "Tell us what your store <em>needs to do.</em>",
+    "p": "Send the feature you're missing. We'll reply within 24 hours with how we'd build it on Shopify."
+  }
+}

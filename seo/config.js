@@ -199,53 +199,6 @@ const SEO_CONFIG = {
         },
         canonical: `${SITE}/service`
     },
-    shopify_app: {
-        title: 'Shopify App Development Agency | Custom Shopify Apps | Dadword IT',
-        meta: {
-            description: 'Custom Shopify apps: bundles, pricing logic, Shopify Functions, admin apps and integrations. Fixed-price builds for the US, UK, Canada, Australia, EU & Gulf.',
-            keywords: 'Shopify app development, custom Shopify app developer, Shopify app development agency, Shopify Functions developer, Shopify bundles app, Shopify Plus developer',
-            author: 'Dadword IT'
-        },
-        og: {
-            title: 'Custom Shopify App Development | Dadword IT',
-            description: 'Custom and public Shopify apps, bundles and pricing logic, Shopify Functions and integrations, built by a senior team.',
-            image: OG_IMAGE,
-            url: `${SITE}/shopify-app-development`,
-            type: 'website'
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: 'Custom Shopify App Development | Dadword IT',
-            description: 'Custom and public Shopify apps, bundles and pricing logic, Shopify Functions and integrations.',
-            image: OG_IMAGE
-        },
-        schema: {
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: 'Shopify App Development',
-            serviceType: 'Shopify app development',
-            provider: {
-                '@type': 'Organization',
-                name: 'Dadword IT',
-                url: SITE
-            },
-            areaServed: AREA_SERVED,
-            description: 'Custom and public Shopify app development, including bundles and pricing logic with Shopify Functions, embedded admin apps, theme app extensions and integrations with ERPs, CRMs and fulfilment partners.',
-            hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Shopify app services',
-                itemListElement: [
-                    'Custom Shopify apps',
-                    'Public Shopify App Store apps',
-                    'Bundles, pricing and discount logic',
-                    'Theme app extensions',
-                    'Shopify integrations',
-                    'Headless Shopify storefronts'
-                ].map(name => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } }))
-            }
-        },
-        canonical: `${SITE}/shopify-app-development`
-    },
     white_label: {
         title: 'White-Label Web & Shopify Development for Agencies | Dadword IT',
         meta: {

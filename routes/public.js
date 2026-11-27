@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 const SEO_CONFIG = require('../seo/config');
-const { SITE, LOGO, withBreadcrumb } = require('../seo/schema');
+const { SITE, LOGO, OG_IMAGE, AREA_SERVED, withBreadcrumb } = require('../seo/schema');
 
 const { getRecentBlogs, getBlogs, getBlog } = require('../controllers/blog');
 
@@ -354,37 +354,74 @@ router.get('/career', async (req, res) => {
     });
 });
 
-router.get('/shopify-app-development', async (req, res) => {
-    let recent_blogs = await getRecentBlogs();
-    const seo = deepClone(SEO_CONFIG.shopify_app);
-    const shopifyFaq = getData('shopify-app-config.json').faq;
-    seo.schema = [
-        ...[].concat(withBreadcrumb(seo.schema, [
-            { name: 'Home', url: `${SITE}/` },
-            { name: 'Services', url: `${SITE}/service` },
-            { name: 'Shopify App Development', url: `${SITE}/shopify-app-development` }
-        ])),
-        {
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: shopifyFaq.map(f => ({
-                '@type': 'Question',
-                name: f.q,
-                acceptedAnswer: { '@type': 'Answer', text: f.a }
-            }))
+// ---------------------------------------------------------------------------
+// Service landing pages: one data file per page in data/services/<slug>.json,
+// all rendered by views/service-page.ejs
+// ---------------------------------------------------------------------------
+const servicesDir = path.join(dataDir, 'services');
+const SERVICE_PAGES = fs.readdirSync(servicesDir)
+    .filter(f => f.endsWith('.json'))
+    .map(f => ({ slug: f.replace(/\.json$/, ''), ...JSON.parse(fs.readFileSync(path.join(servicesDir, f), 'utf8')) }))
+    .sort((a, b) => (a.order || 99) - (b.order || 99));
+
+function buildServiceSeo(svc) {
+    const pageUrl = `${SITE}/${svc.slug}`;
+    const service = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: svc.name,
+        serviceType: svc.seo.serviceType,
+        description: svc.seo.schemaDescription,
+        provider: { '@type': 'Organization', name: 'Dadword IT', url: SITE },
+        areaServed: AREA_SERVED,
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: `${svc.name} services`,
+            itemListElement: svc.build.cards.map(c => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: c.t } }))
         }
-    ];
-    const caseStudies = getData('case-studies-config.json').caseStudies;
-    const portfolio = getData('portfolio-config.json').portfolioItems;
-    const testimonials = getData('testimonial-config.json').testimonials;
-    res.render('shopify-app-development', {
-        recent_blogs: recent_blogs,
-        shopifyFaq,
-        shopifyCase: caseStudies.find(c => /shopify/i.test(c.category)) || null,
-        shopifyPortfolio: portfolio.filter(p => (p.technologies || []).some(t => /shopify/i.test(t))),
-        shopifyQuote: testimonials.find(t => /shopify/i.test(t.text)) || null,
-        ...seo,
-        trackingId: process.env.G_TRACKING_ID
+    };
+    const faq = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: svc.faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+    };
+    return {
+        title: svc.seo.title,
+        meta: { description: svc.seo.description, keywords: svc.seo.keywords, author: 'Dadword IT' },
+        og: { title: svc.seo.ogTitle, description: svc.seo.ogDescription, image: OG_IMAGE, url: pageUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title: svc.seo.ogTitle, description: svc.seo.ogDescription, image: OG_IMAGE },
+        schema: [
+            ...withBreadcrumb(service, [
+                { name: 'Home', url: `${SITE}/` },
+                { name: 'Services', url: `${SITE}/service` },
+                { name: svc.name, url: pageUrl }
+            ]),
+            faq
+        ],
+        canonical: pageUrl
+    };
+}
+
+SERVICE_PAGES.forEach(svc => {
+    router.get(`/${svc.slug}`, async (req, res) => {
+        const recent_blogs = await getRecentBlogs();
+        const caseStudies = getData('case-studies-config.json').caseStudies;
+        const portfolio = getData('portfolio-config.json').portfolioItems;
+        const testimonials = getData('testimonial-config.json').testimonials;
+        const p = svc.proof || {};
+        res.render('service-page', {
+            recent_blogs,
+            svc,
+            proof: {
+                caseStudy: p.caseStudy ? caseStudies.find(c => c.title === p.caseStudy) || null : null,
+                recent: p.recent || null,
+                portfolio: (p.portfolio || []).map(slug => portfolio.find(x => x.slug === slug)).filter(Boolean),
+                quote: p.quote ? testimonials.find(t => t.name === p.quote) || null : null
+            },
+            otherServices: SERVICE_PAGES.filter(o => o.slug !== svc.slug).map(o => ({ slug: o.slug, name: o.name })),
+            ...buildServiceSeo(svc),
+            trackingId: process.env.G_TRACKING_ID
+        });
     });
 });
 
@@ -493,7 +530,7 @@ router.get('/sitemap.xml', async (req, res) => {
         '/',
         '/about',
         '/service',
-        '/shopify-app-development',
+        ...SERVICE_PAGES.map(svc => `/${svc.slug}`),
         '/white-label',
         '/our-work',
         '/blog',

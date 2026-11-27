@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title, meta, og, twitter, schema, canonical, trackingId}) %>
+<body>
+<%
+  /* Data-driven service landing page. Content: data/services/<slug>.json
+     Fields marked "html" in that file (h1, h2, d, a) are trusted first-party markup. */
+  var s = svc;
+  var quoteUrl = '/contact-us' + (s.formType ? '?type=' + s.formType : '');
+%>
+
+<%- include('partials/header') %>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="wl-hero">
+  <div class="dw-container">
+    <div class="wl-hero-grid">
+
+      <div class="wl-hero-copy">
+        <div class="breadcrumb-dw" style="justify-content:flex-start">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/service">Services</a>
+          <span class="breadcrumb-sep">/</span>
+          <span><%= s.name %></span>
+        </div>
+        <span class="section-label"><%= s.hero.label %></span>
+        <h1><%- s.hero.h1 %></h1>
+        <p class="wl-hero-sub"><%= s.hero.sub %></p>
+        <div class="hero-ctas">
+          <a href="<%= quoteUrl %>" class="btn-primary btn-lg"><%= s.hero.cta %></a>
+          <a href="/lets-talk" class="btn-outline btn-lg">Book a Call</a>
+        </div>
+        <%- include('partials/upwork-proof', { variant: 'inline' }) %>
+      </div>
+
+      <aside class="wl-promise dw-ink" aria-label="<%= s.hero.asideTitle %>">
+        <p class="wl-promise-title"><%= s.hero.asideTitle %></p>
+        <ul class="sa-list">
+          <% s.hero.aside.forEach(function(item) { %>
+          <li><strong><%= item.t %></strong><span><%= item.d %></span></li>
+          <% }); %>
+        </ul>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHO IT'S FOR
+     ========================================================= -->
+<section class="dw-section">
+  <div class="dw-container">
+    <div class="services-header">
+      <span class="section-label reveal"><%= s.audience.label %></span>
+      <h2 class="reveal reveal-d1"><%- s.audience.h2 %></h2>
+      <p class="section-sub reveal reveal-d2"><%= s.audience.sub %></p>
+    </div>
+    <div class="wl-audience">
+      <% s.audience.items.forEach(function(item, i) { %>
+      <div class="wl-aud-item reveal<%= i ? ' reveal-d' + i : '' %>">
+        <h3><%= item.t %></h3>
+        <p><%- item.d %></p>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHAT WE BUILD
+     ========================================================= -->
+<section class="dw-section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="dw-container">
+    <div class="services-header">
+      <span class="section-label reveal"><%= s.build.label %></span>
+      <h2 class="reveal reveal-d1"><%- s.build.h2 %></h2>
+    </div>
+    <div class="services-grid">
+      <% s.build.cards.forEach(function(card, i) { %>
+      <div class="service-card reveal<%= i % 3 ? ' reveal-d' + (i % 3) : '' %>">
+        <h3><%= card.t %></h3>
+        <p><%= card.d %></p>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROOF: case study, recent build, portfolio links
+     ========================================================= -->
+<% if (proof.caseStudy || proof.recent || proof.portfolio.length) { %>
+<section class="dw-section">
+  <div class="dw-container">
+    <span class="section-label reveal"><%= s.proof.label || 'Proof' %></span>
+    <h2 class="reveal reveal-d1"><%- s.proof.h2 %></h2>
+
+    <% if (proof.caseStudy) { var c = proof.caseStudy; %>
+    <div class="case-list" style="margin-top:48px">
+      <div class="case-row reveal">
+        <a href="<%= c.link %>" target="_blank" rel="noopener" class="case-browser">
+          <div class="case-browser-bar">
+            <span style="background:#ff5f57"></span>
+            <span style="background:#febc2e"></span>
+            <span style="background:#28c840"></span>
+          </div>
+          <img src="<%= c.image %>" alt="<%= c.title %>" width="1200" height="661" loading="lazy" />
+        </a>
+        <div class="case-content">
+          <span class="case-category"><%= c.category %></span>
+          <h3 class="case-title"><%= c.title %></h3>
+          <div class="case-block">
+            <p class="case-block-label">Problem</p>
+            <p class="case-block-text"><%= c.problem %></p>
+          </div>
+          <div class="case-block">
+            <p class="case-block-label">Solution</p>
+            <p class="case-block-text"><%= c.solution %></p>
+          </div>
+          <div class="case-block">
+            <p class="case-block-label">Result</p>
+            <p class="case-block-text case-result"><%= c.result %></p>
+          </div>
+          <a href="<%= c.link %>" target="_blank" rel="noopener" class="case-cta">View Live Project &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+    <% if (proof.recent) { %>
+    <div class="sp-recent reveal">
+      <p class="sp-recent-kicker"><%= proof.recent.label %></p>
+      <h3><%= proof.recent.title %></h3>
+      <p><%= proof.recent.text %></p>
+    </div>
+    <% } %>
+
+    <% if (proof.portfolio.length) { %>
+    <div class="sp-port reveal">
+      <% proof.portfolio.forEach(function(p) { %>
+      <a class="sp-port-item" href="/portfolio/<%= p.slug %>">
+        <span class="sp-port-name"><%= p.sortTitle || p.title %></span>
+        <span class="sp-port-desc"><%= (p.title || '').split(' - ')[1] || (p.technologies || []).join(', ') %></span>
+        <span class="sp-port-cta">Case study &rarr;</span>
+      </a>
+      <% }); %>
+    </div>
+    <% } %>
+  </div>
+</section>
+<% } %>
+
+<!-- =========================================================
+     REVIEW
+     ========================================================= -->
+<% if (proof.quote) { var q = proof.quote; %>
+<section class="wl-quote-section" style="padding-top:0">
+  <div class="dw-container">
+    <figure class="wl-quote reveal">
+      <blockquote>&ldquo;<%= q.text %>&rdquo;</blockquote>
+      <figcaption>
+        <strong><%= q.name %></strong>, <%= q.role %>
+        <% if (q.sourceUrl) { %>
+        &middot; <a href="<%= q.sourceUrl %>" target="_blank" rel="noopener">Verified on <%= q.source %></a>
+        <% } %>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<% } %>
+
+<!-- =========================================================
+     PROCESS
+     ========================================================= -->
+<section class="dw-section" style="border-top:1px solid var(--border)">
+  <div class="dw-container">
+    <div class="row">
+      <div class="col-lg-5">
+        <span class="section-label reveal">How It Works</span>
+        <h2 class="reveal reveal-d1"><%- s.process.h2 %></h2>
+        <p class="section-sub reveal reveal-d2"><%= s.process.sub %></p>
+      </div>
+      <div class="col-lg-7">
+        <div class="process-steps">
+          <% s.process.steps.forEach(function(step, i) { %>
+          <div class="process-step reveal<%= i ? ' reveal-d' + Math.min(i, 4) : '' %>">
+            <div class="step-num"><%= String(i + 1).padStart(2, '0') %></div>
+            <div class="step-body">
+              <h4><%= step.t %></h4>
+              <p><%= step.d %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     STACK + RELATED READING
+     ========================================================= -->
+<section class="dw-section" style="padding-top:0">
+  <div class="dw-container">
+    <span class="section-label reveal">Stack</span>
+    <h2 class="reveal reveal-d1"><%- s.stack.h2 %></h2>
+    <div class="tech-grid reveal reveal-d2">
+      <% s.stack.items.forEach(function(t) { %><span class="tech-pill"><%= t %></span><% }); %>
+    </div>
+
+    <% if (s.related && s.related.length) { %>
+    <div class="sp-related reveal">
+      <p class="sp-related-title">Related reading</p>
+      <ul>
+        <% s.related.forEach(function(r) { %>
+        <li><a href="<%= r.href %>"><%= r.title %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+<section class="dw-section" style="background:var(--surface);border-top:1px solid var(--border)">
+  <div class="dw-container">
+    <div class="work-faq reveal" style="margin:0 auto">
+      <span class="section-label">FAQ</span>
+      <h2><%- s.faqH2 %></h2>
+      <div class="faq-list">
+        <% s.faq.forEach(function(f, i) { %>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" aria-expanded="<%= i === 0 ? 'true' : 'false' %>">
+            <%= f.q %>
+            <span class="faq-icon"><%- include('partials/icon', { name: 'plus' }) %></span>
+          </button>
+          <div class="faq-a">
+            <p><%= f.a %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     OTHER SERVICES
+     ========================================================= -->
+<section class="sp-others">
+  <div class="dw-container">
+    <p class="sp-others-title">Other services</p>
+    <div class="sp-others-list">
+      <% otherServices.forEach(function(o) { %>
+      <a href="/<%= o.slug %>"><%= o.name %> <span aria-hidden="true">&rarr;</span></a>
+      <% }); %>
+      <a href="/white-label">White-Label for Agencies <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA
+     ========================================================= -->
+<section class="cta-section dw-section">
+  <div class="dw-container">
+    <span class="section-label" style="justify-content:center"><%= s.cta.label %></span>
+    <h2 class="reveal"><%- s.cta.h2 %></h2>
+    <p class="reveal reveal-d1"><%= s.cta.p %></p>
+    <div class="cta-btns reveal reveal-d2">
+      <a href="<%= quoteUrl %>" class="btn-primary btn-lg"><%= s.hero.cta %></a>
+      <a href="/lets-talk" class="btn-outline btn-lg">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', { recent_blogs: recent_blogs }) %>
+<script src="/js/dadword.js?v=4.3" defer></script>
+</body>
+</html>
