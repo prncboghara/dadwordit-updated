@@ -1,0 +1,192 @@
+{
+  "order": 3,
+  "name": "SaaS Development",
+  "formType": "saas",
+  "seo": {
+    "title": "SaaS Development Company | SaaS MVP Development | Dadword IT",
+    "description": "SaaS development from MVP to scale: multi-tenant architecture, Stripe billing, auth and dashboards. For startups in the US, UK, Canada, Australia, EU & Gulf.",
+    "keywords": "SaaS development company, SaaS MVP development, SaaS product development agency, multi-tenant SaaS development, Next.js SaaS developers, Node.js SaaS development",
+    "ogTitle": "SaaS & MVP Development | Dadword IT",
+    "ogDescription": "From MVP to scale: SaaS products with multi-tenant architecture, billing and dashboards, built by a senior team.",
+    "serviceType": "SaaS product development",
+    "schemaDescription": "End-to-end SaaS product development: MVPs, multi-tenant architecture, authentication, Stripe subscription billing, dashboards, APIs and deployment, using Next.js, React, Node.js, Laravel and PostgreSQL."
+  },
+  "hero": {
+    "label": "SaaS Development",
+    "h1": "From MVP to <em>paying customers.</em>",
+    "sub": "We design, build and launch SaaS products for founders and product teams: the architecture, billing and admin that make a product work as a business. A senior team for startups in the US, UK, Canada, Australia, Europe and the Gulf.",
+    "cta": "Get a SaaS Quote",
+    "asideTitle": "What every SaaS needs",
+    "aside": [
+      {
+        "t": "Multi-tenant architecture",
+        "d": "Workspaces or organisations with isolated data, roles and settings from day one."
+      },
+      {
+        "t": "Auth & onboarding",
+        "d": "Sign-up, SSO, invitations and a first-run experience that gets users to value fast."
+      },
+      {
+        "t": "Subscription billing",
+        "d": "Stripe plans, trials, upgrades, usage-based pricing and invoices."
+      },
+      {
+        "t": "Admin & analytics",
+        "d": "An internal admin to manage customers, plus the product metrics you need to grow."
+      },
+      {
+        "t": "APIs & integrations",
+        "d": "Public APIs, webhooks and connections to the tools your customers already use."
+      }
+    ]
+  },
+  "audience": {
+    "label": "Who It's For",
+    "h2": "Built for teams <em>shipping a product.</em>",
+    "sub": "Whether you're validating an idea or scaling past your first customers, we build the product, not just the screens.",
+    "items": [
+      {
+        "t": "Founders with an idea",
+        "d": "Go from concept to a launchable MVP with the features that matter for your first customers."
+      },
+      {
+        "t": "Startups after the MVP",
+        "d": "Rebuild or extend a quick first version into a product that scales."
+      },
+      {
+        "t": "Businesses productising a tool",
+        "d": "Turn an internal tool or service into a SaaS you can sell to others."
+      },
+      {
+        "t": "Product teams",
+        "d": "Add senior engineers to ship your roadmap faster, without a long hiring process."
+      }
+    ]
+  },
+  "build": {
+    "label": "What We Build",
+    "h2": "The whole product, <em>not just the front end.</em>",
+    "cards": [
+      {
+        "t": "MVP scoping & design",
+        "d": "We cut the idea down to what your first customers need, then design the screens in Figma."
+      },
+      {
+        "t": "Product engineering",
+        "d": "Front end, back end, database and background jobs, with clean code your next hire can pick up."
+      },
+      {
+        "t": "Billing & plans",
+        "d": "Stripe subscriptions, trials, seats, usage limits and the customer portal to manage them."
+      },
+      {
+        "t": "Dashboards & reporting",
+        "d": "In-app analytics and exports your customers rely on, built to stay fast as data grows."
+      },
+      {
+        "t": "AI features",
+        "d": "Assistants, search, summaries and automation using LLMs where they save your users real time."
+      },
+      {
+        "t": "Cloud & DevOps",
+        "d": "Deployment on AWS or Vercel, CI/CD, backups and monitoring set up before launch."
+      }
+    ]
+  },
+  "proof": {
+    "label": "Portfolio",
+    "h2": "Products <em>we've built.</em>",
+    "portfolio": [
+      "m-wise",
+      "pilim",
+      "greeteat"
+    ],
+    "quote": "Yashar Evazi"
+  },
+  "process": {
+    "h2": "From idea to <em>launch, in phases.</em>",
+    "sub": "Each phase ends with something you can show to users or investors, so you never wait months to see progress.",
+    "steps": [
+      {
+        "t": "Discovery & MVP scope",
+        "d": "We define your users, the core workflow and what to leave out of version one. Output: a written scope with timeline and fixed price."
+      },
+      {
+        "t": "Design & prototype",
+        "d": "User flows and a clickable Figma prototype you can test with real users before development."
+      },
+      {
+        "t": "Build in sprints",
+        "d": "Two-week sprints with a demo at the end of each, in a staging environment you can try yourself."
+      },
+      {
+        "t": "Launch",
+        "d": "Production deployment, billing switched on, monitoring and analytics in place."
+      },
+      {
+        "t": "Iterate & scale",
+        "d": "New features from real user feedback, performance work and scaling as you grow."
+      }
+    ]
+  },
+  "stack": {
+    "h2": "A stack that <em>scales with you.</em>",
+    "items": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "Laravel",
+      "PostgreSQL",
+      "Prisma",
+      "Supabase",
+      "Stripe",
+      "AWS",
+      "Vercel",
+      "Docker",
+      "OpenAI & Claude APIs"
+    ]
+  },
+  "related": [
+    {
+      "href": "/blog/saas-mvp-mistakes-to-avoid",
+      "title": "5 MVP mistakes that kill SaaS startups (and how to avoid them)"
+    },
+    {
+      "href": "/blog/saas-features-2025-future-proof",
+      "title": "Must-have features for a successful SaaS product"
+    }
+  ],
+  "faqH2": "SaaS development <em>questions.</em>",
+  "faq": [
+    {
+      "q": "How much does it cost to build a SaaS MVP?",
+      "a": "It depends on the number of user roles, core workflows and integrations. After a discovery call we send a written scope with a fixed price, and we help you cut anything that isn't needed for your first customers."
+    },
+    {
+      "q": "How long does an MVP take?",
+      "a": "It depends on scope. We plan the build in phases so you have a working product to show users early, then add features based on their feedback."
+    },
+    {
+      "q": "Do you build multi-tenant SaaS?",
+      "a": "Yes. We design multi-tenant architecture from the start: organisations or workspaces with isolated data, roles, per-tenant settings and billing."
+    },
+    {
+      "q": "Can you take over an MVP another team built?",
+      "a": "Yes. We audit the code, fix what blocks growth and continue development, or recommend a rebuild only where it's genuinely cheaper. See our legacy modernization service."
+    },
+    {
+      "q": "Who owns the code and IP?",
+      "a": "You do. Everything lives in your repositories and cloud accounts, and on final payment all code and IP is yours."
+    },
+    {
+      "q": "Do you work with non-technical founders?",
+      "a": "Yes. We explain technical decisions in plain language, write the product spec with you and act as your technical team until you hire your own."
+    }
+  ],
+  "cta": {
+    "label": "Start Your Product",
+    "h2": "Tell us what you're <em>building.</em>",
+    "p": "Share the idea and who it's for. We'll reply within 24 hours with how we'd scope the first version."
+  }
+}
