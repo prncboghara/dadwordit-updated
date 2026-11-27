@@ -110,7 +110,7 @@
         <% for(var i = 0; i < 2; i++) { %>
         <% clients.forEach(function(client) { %>
         <div class="logo-item">
-          <img src="<%= client.image %>" alt="<%= client.alt %>" loading="lazy" />
+          <img src="<%= client.image %>" alt="<%= client.alt %>"<% if (client.width) { %> width="<%= client.width %>" height="<%= client.height %>"<% } %> loading="lazy" />
         </div>
         <% }); %>
         <% } %>
@@ -314,7 +314,7 @@
         <p class="t-text">&ldquo;<%= t.text %>&rdquo;</p>
         <div class="t-author">
           <% if (t.image) { %>
-          <img src="<%= t.image %>" alt="<%= t.name %>" class="t-avatar" loading="lazy" />
+          <img src="<%= t.image %>" alt="<%= t.name %>" class="t-avatar" width="42" height="42" loading="lazy" />
           <% } else { %>
           <div class="t-avatar-init"><%= t.name.charAt(0) %></div>
           <% } %>
@@ -405,28 +405,28 @@
           <div class="about-mini-card reveal">
             <div class="about-mini-icon">&#128269;</div>
             <div>
-              <h5>Deep Discovery</h5>
+              <h3>Deep Discovery</h3>
               <p>We spend time understanding your business before writing a single line of code.</p>
             </div>
           </div>
           <div class="about-mini-card reveal reveal-d1">
             <div class="about-mini-icon">&#128101;</div>
             <div>
-              <h5>Senior-Only Engineering</h5>
+              <h3>Senior-Only Engineering</h3>
               <p>Every project is handled by senior engineers. No juniors learning on your dime.</p>
             </div>
           </div>
           <div class="about-mini-card reveal reveal-d2">
             <div class="about-mini-icon">&#128203;</div>
             <div>
-              <h5>Transparent Delivery</h5>
+              <h3>Transparent Delivery</h3>
               <p>Weekly updates, clean documentation, and full code ownership handed to you at launch.</p>
             </div>
           </div>
           <div class="about-mini-card ai-mini-card reveal reveal-d3">
             <div class="about-mini-icon">&#9889;</div>
             <div>
-              <h5>AI-Enhanced Speed</h5>
+              <h3>AI-Enhanced Speed</h3>
               <p>We use Cursor + Claude as engineering force multipliers. Same quality, fewer calendar weeks.</p>
             </div>
           </div>
@@ -502,7 +502,7 @@
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
 
 <!-- Scripts -->
-<script src="/js/dadword.js?v=4.5" defer></script>
+<script src="/js/dadword.js?v=4.6" defer></script>
 
 </body>
 </html>

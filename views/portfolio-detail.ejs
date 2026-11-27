@@ -62,7 +62,7 @@
           <div class="cd-block">
             <span class="cd-block-num">01</span>
             <div>
-              <h3 class="cd-block-title">The Challenge</h3>
+              <h2 class="cd-block-title">The Challenge</h2>
               <p class="cd-block-text"><%= project.description || 'A complex engineering challenge required careful planning and a scalable technical approach.' %></p>
             </div>
           </div>
@@ -70,7 +70,7 @@
           <div class="cd-block">
             <span class="cd-block-num">02</span>
             <div>
-              <h3 class="cd-block-title">Our Approach</h3>
+              <h2 class="cd-block-title">Our Approach</h2>
               <p class="cd-block-text">We designed a modular architecture using <%= (project.technologies || ['modern web technologies']).join(', ') %> to deliver a performant, maintainable solution that fits the client&rsquo;s long-term goals.</p>
             </div>
           </div>
@@ -78,11 +78,20 @@
           <div class="cd-block cd-block-highlight">
             <span class="cd-block-num">03</span>
             <div>
-              <h3 class="cd-block-title">The Outcome</h3>
+              <h2 class="cd-block-title">The Outcome</h2>
               <p class="cd-block-text"><%= project.outcome || 'A production-ready product shipped on time, with a clean codebase and full documentation handed over to the client team.' %></p>
             </div>
           </div>
         </div>
+
+        <% if (typeof relatedService !== 'undefined' && relatedService) { %>
+        <div class="rel-service">
+          <p class="rel-service-kicker">Service behind this project</p>
+          <p class="rel-service-name"><%= relatedService.name %></p>
+          <p class="rel-service-sub"><%= relatedService.sub %></p>
+          <a href="/<%= relatedService.slug %>" class="service-link">Explore <%= relatedService.name.toLowerCase() %> &rarr;</a>
+        </div>
+        <% } %>
 
         <!-- CTAs -->
         <div class="cd-ctas">
@@ -106,7 +115,10 @@
               src="<%= project.desktopImage || project.portfolioImg %>"
               alt="<%= project.title %> screenshot"
               class="cd-screenshot"
+              width="640"
+              height="410"
               loading="eager"
+              fetchpriority="high"
             />
           </div>
 
@@ -123,7 +135,7 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js?v=4.5" defer></script>
+<script src="/js/dadword.js?v=4.6" defer></script>
 
 <style>
 .cd-page {

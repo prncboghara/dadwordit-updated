@@ -67,6 +67,15 @@
           <%- blog.content %>
         </div>
 
+        <% if (typeof relatedService !== 'undefined' && relatedService) { %>
+        <div class="rel-service">
+          <p class="rel-service-kicker">Related service</p>
+          <p class="rel-service-name"><%= relatedService.name %></p>
+          <p class="rel-service-sub"><%= relatedService.sub %></p>
+          <a href="/<%= relatedService.slug %>" class="btn-primary">See <%= relatedService.name %></a>
+        </div>
+        <% } %>
+
         <!-- Share -->
         <div class="blog-share">
           <span class="blog-share-label">Share this article</span>
@@ -85,16 +94,16 @@
       </article>
 
       <!-- Sidebar -->
-      <aside class="blog-sidebar">
+      <div class="blog-sidebar">
 
         <!-- Recent posts -->
         <% if (recent_blogs && recent_blogs.length > 0) { %>
         <div class="sidebar-block">
-          <h4 class="sidebar-title">Recent Articles</h4>
+          <h2 class="sidebar-title">Recent Articles</h2>
           <div style="display:flex;flex-direction:column;gap:0">
             <% recent_blogs.forEach(function(rb) { %>
             <a href="<%= rb.url %>" class="sidebar-post">
-              <img src="<%= rb.featuredImage %>" alt="<%= rb.name %>" loading="lazy" />
+              <img src="<%= rb.featuredImage %>" alt="<%= rb.name %>" width="60" height="48" loading="lazy" />
               <div>
                 <p class="sidebar-post-date"><%= rb.created %></p>
                 <p class="sidebar-post-title"><%= rb.name %></p>
@@ -108,12 +117,12 @@
         <!-- CTA widget -->
         <div class="sidebar-cta">
           <p class="sidebar-cta-label">Have a project in mind?</p>
-          <h4>Let&rsquo;s build it together.</h4>
+          <h2 class="sidebar-cta-title">Let&rsquo;s build it together.</h2>
           <p style="font-size:.85rem;margin-bottom:16px">Senior-led. AI-enhanced. Custom code only.</p>
           <a href="/contact-us" class="btn-primary" style="width:100%;justify-content:center">Start a Project</a>
         </div>
 
-      </aside>
+      </div>
     </div>
   </div>
 </section>
@@ -129,7 +138,7 @@
 <% } %>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs || [] }) %>
-<script src="/js/dadword.js?v=4.5" defer></script>
+<script src="/js/dadword.js?v=4.6" defer></script>
 
 <style>
 /* Blog article content */
@@ -270,7 +279,7 @@
   padding: 24px;
 }
 .sidebar-cta-label { font-size: .72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
-.sidebar-cta h4 { font-size: 1rem; margin-bottom: 8px; }
+.sidebar-cta h4, .sidebar-cta-title { font-size: 1rem; margin-bottom: 8px; }
 </style>
 
 </body>
