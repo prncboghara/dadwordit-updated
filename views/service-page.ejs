@@ -190,7 +190,7 @@
           <div class="process-step reveal<%= i ? ' reveal-d' + Math.min(i, 4) : '' %>">
             <div class="step-num"><%= String(i + 1).padStart(2, '0') %></div>
             <div class="step-body">
-              <h4><%= step.t %></h4>
+              <h3><%= step.t %></h3>
               <p><%= step.d %></p>
             </div>
           </div>
@@ -281,6 +281,6 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js?v=4.5" defer></script>
+<script src="/js/dadword.js?v=4.6" defer></script>
 </body>
 </html>

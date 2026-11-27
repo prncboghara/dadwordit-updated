@@ -3,6 +3,25 @@ const axios = require('axios');
 const moment = require('moment');
 const showdown = require('showdown');
 
+// The page title is the only <h1>. Shift the article's headings so its top level
+// becomes <h2> and no heading levels are skipped.
+function normalizeHeadings(html) {
+    const levels = [...new Set([...html.matchAll(/<h([1-6])[\s>]/gi)].map(m => Number(m[1])))].sort();
+    if (!levels.length) return html;
+    // Map the levels used (e.g. 1,3,4) onto consecutive levels from h2, then walk the
+    // headings in order so none goes more than one level deeper than the one before.
+    const map = Object.fromEntries(levels.map((lvl, i) => [lvl, Math.min(6, 2 + i)]));
+    let prev = 1;
+    const stack = [];
+    return html.replace(/<(\/?)h([1-6])(?=[\s>])/gi, (m, slash, n) => {
+        if (slash) return `</h${stack.pop() || map[n]}`;
+        const level = Math.min(map[n], prev + 1);
+        prev = level;
+        stack.push(level);
+        return `<h${level}`;
+    });
+}
+
 const getRecentBlogs = async () => {
     try {
         const TOKEN = process.env.STRAPI_TOKEN;
@@ -89,7 +108,7 @@ const getBlog = async (slug) => {
             main_image: `${STRAPI_URL}${blog.main_image.url}`,
             cover: `${STRAPI_URL}${blog.cover.url}`,
             slug: blog.slug,
-            content: converter.makeHtml(blog.content),
+            content: normalizeHeadings(converter.makeHtml(blog.content)),
             comments: [],
             blogUrl: `https://www.dadwordit.com/blog/${blog.slug}`,
             seo: blog.blocks.find(b => b.__component === 'shared.seo')

@@ -180,6 +180,7 @@ router.get('/portfolio/:slug', async (req, res) => {
     }
 
     res.render('portfolio-detail', {
+            relatedService: (s => s ? { slug: s.slug, name: s.name, sub: s.hero.sub } : null)(SERVICE_PAGES.find(s => s.slug === project.service)),
         project,
         ...buildPortfolioSeo(project, slug),
         trackingId: process.env.G_TRACKING_ID,
@@ -276,9 +277,11 @@ router.get('/blog/:slug', async (req, res) => {
         const metaDescription = trimMeta(_blog.seo?.metaDescription || _blog.description || '');
         const image = _blog.main_image || LOGO;
 
+        const svc = serviceForBlog(_blog);
         res.render('blog-single', {
             recent_blogs: recent_blogs,
             blog: _blog,
+            relatedService: svc ? { slug: svc.slug, name: svc.name, sub: svc.hero.sub, cta: svc.hero.cta } : null,
             trackingId: process.env.G_TRACKING_ID,
             title: metaTitle.length > 55 ? metaTitle : `${metaTitle} | Dadword IT`,
             meta: {
@@ -400,6 +403,21 @@ function buildServiceSeo(svc) {
         ],
         canonical: pageUrl
     };
+}
+
+const serviceBySlug = slug => SERVICE_PAGES.find(s => s.slug === slug) || null;
+
+// Pick the service page a blog post should point readers to, from its title/tags.
+const BLOG_SERVICE_RULES = [
+    [/shopify|e-?commerce/i, 'shopify-app-development'],
+    [/saas|mvp/i, 'saas-development'],
+    [/\bai\b|automation|deepseek|chatgpt|llm/i, 'ai-development'],
+    [/security|legacy|hidden costs|custom wins/i, 'legacy-modernization']
+];
+function serviceForBlog(blog) {
+    const text = [blog.name, blog.seo && blog.seo.metaTitle, ...(blog.tags || []).map(t => t.name || t)].join(' ');
+    const rule = BLOG_SERVICE_RULES.find(([re]) => re.test(text));
+    return serviceBySlug(rule ? rule[1] : 'web-portal-development');
 }
 
 SERVICE_PAGES.forEach(svc => {

@@ -30,11 +30,12 @@
   <div class="dw-container">
     <% if (blogs && blogs.length > 0) { %>
 
+    <h2 class="visually-hidden">Latest articles</h2>
     <div class="blog-grid">
       <% blogs.forEach(function(blog, index) { %>
       <a href="<%= blog.slug %>" class="blog-card reveal reveal-d<%= (index % 4) + 1 %>">
         <div class="blog-card-img">
-          <img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" loading="<%= index < 4 ? 'eager' : 'lazy' %>" />
+          <img src="<%= blog.featuredImage %>" alt="<%= blog.name %>" width="640" height="360" loading="<%= index < 4 ? 'eager' : 'lazy' %>" />
           <% if (blog.tags && blog.tags.length > 0) { %>
           <div class="blog-card-tags">
             <% blog.tags.slice(0,2).forEach(function(tag) { %>
@@ -78,7 +79,7 @@
 </section>
 
 <%- include('partials/footer', { recent_blogs: recent_blogs }) %>
-<script src="/js/dadword.js?v=4.5" defer></script>
+<script src="/js/dadword.js?v=4.6" defer></script>
 
 <style>
 .blog-grid {
