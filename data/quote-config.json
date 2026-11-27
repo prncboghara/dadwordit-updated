@@ -1,0 +1,405 @@
+{
+  "_note": "Quote builder (/get-a-quote). Prices are in USD and stay on the server: visitors never see them. They are only used to add an internal estimate to each quote request in n8n (field internalEstimate). Estimate = (base + ticked features) x design factor x timeline factor, rounded to 500. `formValue` must match an option in views/partials/form.ejs; `id` matches ?type= on service pages.",
+  "currency": "USD",
+  "projects": [
+    {
+      "id": "shopify",
+      "formValue": "Shopify App",
+      "label": "Shopify app",
+      "blurb": "Custom or public app, Functions, extensions",
+      "base": {
+        "low": 3000,
+        "high": 6000,
+        "weeks": 3
+      },
+      "baseLabel": "App setup, core feature, testing and launch",
+      "features": [
+        {
+          "id": "functions",
+          "label": "Bundles, discounts or pricing logic",
+          "hint": "Shopify Functions",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1.5
+        },
+        {
+          "id": "admin",
+          "label": "Embedded admin dashboard",
+          "hint": "Settings, reports inside Shopify admin",
+          "low": 1500,
+          "high": 3000,
+          "weeks": 1
+        },
+        {
+          "id": "storefront",
+          "label": "Storefront widget",
+          "hint": "Theme app extension or app block",
+          "low": 1500,
+          "high": 3000,
+          "weeks": 1
+        },
+        {
+          "id": "integration",
+          "label": "Connect an ERP, CRM or 3PL",
+          "hint": "Sync orders, stock or customers",
+          "low": 2500,
+          "high": 5000,
+          "weeks": 2
+        },
+        {
+          "id": "billing",
+          "label": "Public app with plans and billing",
+          "hint": "For selling on the App Store",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1.5
+        },
+        {
+          "id": "listing",
+          "label": "App Store listing and review",
+          "hint": "Listing, compliance, review fixes",
+          "low": 1000,
+          "high": 2000,
+          "weeks": 1
+        },
+        {
+          "id": "plus",
+          "label": "Multi-store or Shopify Plus features",
+          "hint": "Checkout extensions, B2B, markets",
+          "low": 1500,
+          "high": 3000,
+          "weeks": 1
+        }
+      ]
+    },
+    {
+      "id": "saas",
+      "formValue": "SaaS Product",
+      "label": "SaaS product",
+      "blurb": "MVP or next version of your product",
+      "base": {
+        "low": 12000,
+        "high": 20000,
+        "weeks": 8
+      },
+      "baseLabel": "Sign-up, core workflow, hosting and launch",
+      "features": [
+        {
+          "id": "billing",
+          "label": "Subscriptions and billing",
+          "hint": "Stripe plans, trials, invoices",
+          "low": 2500,
+          "high": 5000,
+          "weeks": 1.5
+        },
+        {
+          "id": "teams",
+          "label": "Teams, roles and permissions",
+          "hint": "Multi-tenant accounts",
+          "low": 3000,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "admin",
+          "label": "Internal admin panel",
+          "hint": "Manage users, data and support",
+          "low": 2500,
+          "high": 5000,
+          "weeks": 1.5
+        },
+        {
+          "id": "integrations",
+          "label": "Third-party integrations",
+          "hint": "CRM, email, calendar, APIs",
+          "low": 2500,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "reports",
+          "label": "Dashboards and reports",
+          "hint": "Charts, exports, analytics",
+          "low": 3000,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "ai",
+          "label": "AI features",
+          "hint": "Summaries, search, assistants",
+          "low": 4000,
+          "high": 10000,
+          "weeks": 3
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile app (iOS and Android)",
+          "hint": "Cross-platform app",
+          "low": 10000,
+          "high": 20000,
+          "weeks": 6
+        }
+      ]
+    },
+    {
+      "id": "web-portal",
+      "formValue": "Web Portal",
+      "label": "Web portal",
+      "blurb": "Customer, partner or internal portal",
+      "base": {
+        "low": 8000,
+        "high": 15000,
+        "weeks": 6
+      },
+      "baseLabel": "Login, core screens, hosting and launch",
+      "features": [
+        {
+          "id": "roles",
+          "label": "Multiple user roles",
+          "hint": "Customers, staff, admins",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1.5
+        },
+        {
+          "id": "documents",
+          "label": "Documents and file sharing",
+          "hint": "Uploads, approvals, e-sign",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1.5
+        },
+        {
+          "id": "payments",
+          "label": "Online payments",
+          "hint": "Invoices, cards, payouts",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1.5
+        },
+        {
+          "id": "integrations",
+          "label": "Connect ERP, CRM or accounting",
+          "hint": "Two-way data sync",
+          "low": 3000,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "reports",
+          "label": "Dashboards and reports",
+          "hint": "KPIs, exports",
+          "low": 2500,
+          "high": 5000,
+          "weeks": 1.5
+        },
+        {
+          "id": "notifications",
+          "label": "Email and SMS notifications",
+          "hint": "Alerts, reminders",
+          "low": 1000,
+          "high": 2500,
+          "weeks": 1
+        },
+        {
+          "id": "languages",
+          "label": "Multiple languages",
+          "hint": "Including right-to-left",
+          "low": 1500,
+          "high": 3000,
+          "weeks": 1
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "formValue": "AI Development",
+      "label": "AI and automation",
+      "blurb": "Chatbots, agents, document AI, workflows",
+      "base": {
+        "low": 6000,
+        "high": 12000,
+        "weeks": 4
+      },
+      "baseLabel": "Prototype and one production workflow",
+      "features": [
+        {
+          "id": "rag",
+          "label": "Answers from your documents",
+          "hint": "Search and chat over your data",
+          "low": 3000,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "chatbot",
+          "label": "Website or WhatsApp assistant",
+          "hint": "Customer-facing chat",
+          "low": 2500,
+          "high": 5000,
+          "weeks": 1.5
+        },
+        {
+          "id": "voice",
+          "label": "Voice agent",
+          "hint": "Answers or makes phone calls",
+          "low": 5000,
+          "high": 10000,
+          "weeks": 3
+        },
+        {
+          "id": "crm",
+          "label": "Connect to your CRM or tools",
+          "hint": "Create leads, tickets, records",
+          "low": 2000,
+          "high": 5000,
+          "weeks": 1.5
+        },
+        {
+          "id": "automation",
+          "label": "Workflow automation",
+          "hint": "Multi-step processes, n8n",
+          "low": 1500,
+          "high": 4000,
+          "weeks": 1
+        },
+        {
+          "id": "guardrails",
+          "label": "Monitoring, cost limits and review",
+          "hint": "Logs, safety rules, human review",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "formValue": "Legacy Modernization",
+      "label": "Legacy modernization",
+      "blurb": "Upgrade or migrate an older system",
+      "base": {
+        "low": 8000,
+        "high": 16000,
+        "weeks": 6
+      },
+      "baseLabel": "Code audit, plan and first upgrade phase",
+      "features": [
+        {
+          "id": "framework",
+          "label": "Framework upgrade",
+          "hint": "e.g. AngularJS, old PHP, jQuery",
+          "low": 6000,
+          "high": 15000,
+          "weeks": 4
+        },
+        {
+          "id": "database",
+          "label": "Database migration",
+          "hint": "Schema changes, data move",
+          "low": 3000,
+          "high": 8000,
+          "weeks": 2
+        },
+        {
+          "id": "cloud",
+          "label": "Move to the cloud",
+          "hint": "AWS, Azure or GCP",
+          "low": 3000,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "api",
+          "label": "New API layer",
+          "hint": "For apps and integrations",
+          "low": 3000,
+          "high": 6000,
+          "weeks": 2
+        },
+        {
+          "id": "security",
+          "label": "Security and performance fixes",
+          "hint": "From an audit",
+          "low": 2000,
+          "high": 4000,
+          "weeks": 1
+        },
+        {
+          "id": "tests",
+          "label": "Automated tests",
+          "hint": "Safety net for future changes",
+          "low": 2000,
+          "high": 5000,
+          "weeks": 1.5
+        }
+      ]
+    }
+  ],
+  "design": [
+    {
+      "id": "simple",
+      "label": "Simple design",
+      "hint": "Clean UI from a proven kit",
+      "factor": 1,
+      "weeks": 0
+    },
+    {
+      "id": "custom",
+      "label": "Custom design",
+      "hint": "Designed for your brand",
+      "factor": 1.15,
+      "weeks": 1
+    },
+    {
+      "id": "premium",
+      "label": "Premium design",
+      "hint": "Full design system, animations",
+      "factor": 1.3,
+      "weeks": 2
+    }
+  ],
+  "timeline": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "hint": "Best value",
+      "factor": 1,
+      "weeksFactor": 1
+    },
+    {
+      "id": "fast",
+      "label": "Fast track",
+      "hint": "Larger team, sooner launch",
+      "factor": 1.2,
+      "weeksFactor": 0.75
+    }
+  ],
+  "faq": [
+    {
+      "q": "How does the quote work?",
+      "a": "Pick what you need, add a few words about your project and send the request. We review it and email you a quote within 24 hours, usually with a couple of questions so the price fits your project."
+    },
+    {
+      "q": "Is the quote free?",
+      "a": "Yes. The quote and any follow-up call are free and there is no obligation to go ahead."
+    },
+    {
+      "q": "Do you offer fixed prices?",
+      "a": "Yes. Every project starts with a written scope and a fixed price. If the scope changes, we agree on the change and its price before doing the work."
+    },
+    {
+      "q": "What affects the price of a project?",
+      "a": "Mainly the number of features and user roles, the systems we need to connect to, how custom the design is and how soon you need to launch. We help you cut anything that is not needed for the first version."
+    },
+    {
+      "q": "What if I am not sure which features I need?",
+      "a": "Pick what seems closest and describe your goal in the message. We will suggest the simplest version that does the job in our reply."
+    },
+    {
+      "q": "Do you have partner rates for agencies?",
+      "a": "Yes. Agencies get fixed partner rates for white-label work, so you can add your margin and price the project for your client."
+    }
+  ]
+}

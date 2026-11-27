@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const { quoteFromSelections } = require('../controllers/quote');
 
 const router = express.Router();
 
@@ -85,6 +86,23 @@ router.post('/api/contact', express.urlencoded({ extended: false, limit: '20kb' 
 
     for (const [field, max] of Object.entries(SOURCE_LIMITS)) lead[field] = clean(body[field], max);
     lead.leadSource = summarizeSource(lead);
+
+    // From /get-a-quote: turn the selections into a readable request plus an internal
+    // price estimate for the team. Prices are worked out here, never in the browser.
+    try {
+        const quote = quoteFromSelections({
+            type: clean(body.quoteType, 40),
+            features: clean(body.quoteFeatures, 400),
+            design: clean(body.quoteDesign, 40),
+            timeline: clean(body.quoteTimeline, 40)
+        });
+        lead.quoteRequest = quote ? quote.quoteRequest : '';
+        lead.internalEstimate = quote ? quote.internalEstimate : '';
+    } catch (err) {
+        console.error('[contact] quote estimate failed:', err.message);
+        lead.quoteRequest = '';
+        lead.internalEstimate = '';
+    }
 
     const key = process.env.CONTACT_WEBHOOK_KEY;
     if (!key) {

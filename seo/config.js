@@ -337,6 +337,36 @@ const SEO_CONFIG = {
         },
         canonical: `${SITE}/career`
     },
+    get_a_quote: {
+        title: 'Get a Free Project Quote | Shopify Apps, SaaS & Portals | Dadword IT',
+        meta: {
+            description: 'Get a free quote for your Shopify app, SaaS product, web portal, AI or legacy modernization project. Pick what you need and we email a personal quote within 24 hours.',
+            keywords: 'get a quote web development, Shopify app development quote, SaaS development quote, custom software quote, web portal development quote',
+            author: 'Dadword IT'
+        },
+        og: {
+            title: 'Get a Free Project Quote | Dadword IT',
+            description: 'Pick what you need for your Shopify app, SaaS, portal or AI project and get a personal quote by email within 24 hours.',
+            image: OG_IMAGE,
+            url: `${SITE}/get-a-quote`,
+            type: 'website'
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: 'Get a Free Project Quote | Dadword IT',
+            description: 'Pick what you need for your Shopify app, SaaS, portal or AI project and get a personal quote by email within 24 hours.',
+            image: OG_IMAGE
+        },
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Get a Project Quote',
+            url: `${SITE}/get-a-quote`,
+            description: 'Request a free quote for custom Shopify app, SaaS, web portal, AI or legacy modernization work.',
+            provider: { '@type': 'Organization', name: 'Dadword IT', url: SITE }
+        },
+        canonical: `${SITE}/get-a-quote`
+    },
     lets_talk: {
         title: 'Book a Strategy Call | Dadword IT',
         meta: {

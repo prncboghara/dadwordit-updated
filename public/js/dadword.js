@@ -374,6 +374,8 @@
       fd.append('website',     form.website ? form.website.value : '');
       Object.keys(leadSource).forEach(function (k) { fd.append(k, leadSource[k] || ''); });
       fd.append('formPage',    window.location.pathname);
+      // Extra fields a page adds to the form (e.g. quote selections on /get-a-quote)
+      form.querySelectorAll('input[type="hidden"][data-extra]').forEach(function (el) { fd.append(el.name, el.value); });
 
       try {
         const res = await fetch('/api/contact', {
@@ -389,12 +391,13 @@
           method: 'contact_form',
           project_type: form.service.value || 'unknown',
           budget: (form.budget && form.budget.value) || 'unknown',
+          from_quote_builder: form.quoteType && form.quoteType.value ? 'yes' : 'no',
           page: window.location.pathname
         });
 
         if (msgBox) {
           msgBox.className = 'form-msg-box success';
-          msgBox.textContent = 'Thanks! We\'ll be in touch within 24 hours.';
+          msgBox.textContent = form.getAttribute('data-success') || 'Thanks! We\'ll be in touch within 24 hours.';
         }
         form.reset();
       } catch (err) {
