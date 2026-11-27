@@ -787,3 +787,25 @@ a.trust-badge:hover{color:var(--text)}
 .sp-others-list{display:flex;flex-wrap:wrap;gap:10px}
 .sp-others-list a{padding:9px 16px;border:1px solid var(--border-hover);border-radius:50px;font-size:.88rem;font-weight:500;color:var(--text);transition:all var(--dur) var(--ease)}
 .sp-others-list a:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+/* ----------------------------------------------------------
+   27. Cookie consent + legal pages
+   ---------------------------------------------------------- */
+.cc-banner{position:fixed;left:16px;bottom:16px;z-index:1100;width:min(440px,calc(100vw - 32px));padding:20px 22px;background:#111110;color:#f4f1ea;border-radius:var(--card-radius);box-shadow:0 18px 50px rgba(17,17,16,.28)}
+.cc-title{font-weight:600;font-size:.95rem;color:#f4f1ea;margin-bottom:6px}
+.cc-text{font-size:.84rem;line-height:1.6;color:#c9c4b9;margin-bottom:16px}
+.cc-text a{color:#ff8a5c;text-decoration:underline;text-underline-offset:3px}
+.cc-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cc-btn{padding:11px 14px;border-radius:var(--btn-radius);border:1px solid rgba(244,241,234,.45);background:transparent;color:#f4f1ea;font-size:.86rem;font-weight:600;cursor:pointer;transition:background var(--dur) var(--ease),color var(--dur) var(--ease)}
+.cc-btn:hover,.cc-btn:focus-visible{background:#f4f1ea;color:#111110}
+.cc-btn:focus-visible{outline:2px solid #ff8a5c;outline-offset:2px}
+@media(max-width:480px){.cc-banner{left:8px;right:8px;bottom:8px;width:auto}}
+.footer-cookie-btn{padding:0;background:none;border:none;font:inherit;font-size:.78rem;color:var(--text-faint);cursor:pointer;transition:color var(--dur) var(--ease)}
+.footer-cookie-btn:hover{color:var(--text)}
+.legal-body ul{list-style:disc}
+.legal-body h3{font-size:.98rem;font-weight:600;color:var(--text);margin:22px 0 8px}
+.legal-table-wrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--border);border-radius:var(--card-radius)}
+.legal-table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:520px}
+.legal-table th,.legal-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+.legal-table th{font-weight:600;color:var(--text);background:var(--surface)}
+.legal-table tr:last-child td{border-bottom:none}

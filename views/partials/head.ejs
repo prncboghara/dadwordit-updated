@@ -58,7 +58,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Dadword Design System -->
-  <link href="/css/dadword.css?v=4.3" rel="stylesheet">
+  <link href="/css/dadword.css?v=4.4" rel="stylesheet">
 
   <% const hreflangUrl = (typeof canonical !== 'undefined' && canonical) ? canonical : 'https://www.dadwordit.com/'; %>
   <link rel="alternate" hreflang="en" href="<%= hreflangUrl %>" />
@@ -66,12 +66,27 @@
 
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>
+  <!-- Google Analytics with Consent Mode v2.
+       Analytics cookies are off by default for visitors in the EEA, UK and Switzerland
+       until they accept in the cookie banner; ad storage is off for everyone (no ads run).
+       The visitor's saved choice (localStorage "dwConsent", 12 months) is applied before config. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var CONSENT_REGIONS = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'];
+      var adsOff = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+      gtag('consent', 'default', Object.assign({ analytics_storage: 'denied', region: CONSENT_REGIONS, wait_for_update: 500 }, adsOff));
+      gtag('consent', 'default', Object.assign({ analytics_storage: 'granted' }, adsOff));
+      try {
+        var saved = JSON.parse(localStorage.getItem('dwConsent') || 'null');
+        if (saved && (saved.v === 'granted' || saved.v === 'denied') && Date.now() - saved.t < 365 * 864e5) {
+          gtag('consent', 'update', { analytics_storage: saved.v });
+        }
+      } catch (e) {}
+    })();
     gtag('js', new Date());
     gtag('config', "<%= trackingId %>");
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= trackingId %>"></script>
 </head>

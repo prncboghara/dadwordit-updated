@@ -206,6 +206,79 @@
   });
 
   /* ----------------------------------------------------------
+     Cookie consent (pairs with Consent Mode defaults in partials/head.ejs)
+     Shown automatically to visitors on a European time zone until they choose;
+     anyone can reopen it from "Cookie settings" in the footer.
+     ---------------------------------------------------------- */
+  (function () {
+    var KEY = 'dwConsent';
+    var MAX_AGE = 365 * 864e5;
+
+    function readChoice() {
+      try {
+        var c = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (c && (c.v === 'granted' || c.v === 'denied') && Date.now() - c.t < MAX_AGE) return c.v;
+      } catch (e) {}
+      return null;
+    }
+
+    function clearAnalyticsCookies() {
+      var host = location.hostname.replace(/^www\./, '');
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (/^_ga/.test(name)) {
+          ['', '; domain=' + host, '; domain=.' + host].forEach(function (d) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+          });
+        }
+      });
+    }
+
+    function save(value) {
+      try { localStorage.setItem(KEY, JSON.stringify({ v: value, t: Date.now() })); } catch (e) {}
+      if (typeof window.gtag === 'function') window.gtag('consent', 'update', { analytics_storage: value });
+      if (value === 'denied') clearAnalyticsCookies();
+    }
+
+    var banner;
+    function close() { if (banner) { banner.remove(); banner = null; } }
+
+    function open() {
+      if (banner && banner.isConnected) return;
+      banner = document.createElement('div');
+      banner.className = 'cc-banner';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-labelledby', 'cc-title');
+      banner.setAttribute('aria-describedby', 'cc-text');
+      banner.innerHTML =
+        '<p class="cc-title" id="cc-title">Cookies on this site</p>' +
+        '<p class="cc-text" id="cc-text">We use Google Analytics cookies to understand which pages are useful. ' +
+        'They only run if you accept. You can change this any time under Cookie settings. ' +
+        '<a href="/privacy-policy#cookies">Privacy policy</a></p>' +
+        '<div class="cc-actions">' +
+          '<button type="button" class="cc-btn" data-cc="denied">Reject</button>' +
+          '<button type="button" class="cc-btn" data-cc="granted">Accept analytics</button>' +
+        '</div>';
+      banner.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-cc]');
+        if (!btn) return;
+        save(btn.getAttribute('data-cc'));
+        close();
+      });
+      document.body.appendChild(banner);
+    }
+
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    var inEurope = /^Europe\//.test(tz) || /^Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)$/.test(tz);
+    if (!readChoice() && inEurope) open();
+
+    document.querySelectorAll('[data-cookie-settings]').forEach(function (btn) {
+      btn.addEventListener('click', open);
+    });
+  })();
+
+  /* ----------------------------------------------------------
      Lead tracking (GA4). Mark `generate_lead` as a key event in GA.
      ---------------------------------------------------------- */
   function track(name, params) {
