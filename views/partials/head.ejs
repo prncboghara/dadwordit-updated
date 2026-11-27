@@ -14,7 +14,7 @@
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#6c47ff">
+  <meta name="theme-color" content="#f4f1ea">
 
   <!-- Open Graph -->
   <% if (typeof og !== 'undefined' && og) { %>
@@ -51,14 +51,18 @@
 
   <!-- Self-hosted fonts -->
   <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Editorial serif accent -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
   <!-- Bootstrap grid only -->
   <link href="/css/bootstrap.min.css" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="/css/bootstrap.min.css" rel="stylesheet"></noscript>
 
   <!-- Dadword Design System -->
-  <link href="/css/dadword.css" rel="stylesheet">
+  <link href="/css/dadword.css?v=3.3" rel="stylesheet">
 
   <!-- Regional SEO (office NAP) -->
   <meta name="geo.region"    content="IN-GJ" />
